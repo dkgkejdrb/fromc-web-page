@@ -1,17 +1,85 @@
 /* CSS 스타일 리셋 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -19,25 +87,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -62,9 +149,9 @@ table {
 
 .header {
 	display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 70px;
+	flex-direction: row;
+	width: 100%;
+	height: 70px;
 }
 
 .header .left {
@@ -75,12 +162,12 @@ table {
 
 .header .left .logo {
 	width: 135px;
-    height: 100%;
-    background-image: url(Assets/logo_fromc.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-left: 40px;
+	height: 100%;
+	background-image: url(Assets/logo_fromc.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 40px;
 }
 
 .header .right {
@@ -96,7 +183,7 @@ table {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	
+
 	width: 100px;
 	height: 40px;
 	border: solid;
@@ -108,7 +195,7 @@ table {
 	height: 500px;
 }
 
-.videoWrap > video {
+.videoWrap>video {
 	width: 100%;
 	height: 100%;
 	background-color: coral;
@@ -116,36 +203,34 @@ table {
 
 .ContactWrap .ContactBtn {
 	display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
 	border: solid;
 	color: black;
 
-    position: fixed;
-    bottom: 15%;
-    right: 2%; 
-    width: 120px;
-    height: 70px;
+	position: fixed;
+	bottom: 15%;
+	right: 2%;
+	width: 120px;
+	height: 70px;
 	border-radius: 15px;
 }
 
 .ContactSliderBtn {
-    position: fixed;
-    bottom: 9%;
-    right: 3.5%; 
-    width: 50px;
-    height: 50px;
-    color: black;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+	position: fixed;
+	bottom: 9%;
+	right: 3.5%;
+	width: 50px;
+	height: 50px;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
 
 	border: solid;
-    border-radius: 50%;
+	border-radius: 50%;
 }
 
 .features {
@@ -155,6 +240,7 @@ table {
 	display: flex;
 	justify-content: center;
 }
+
 .features .wrap {
 	width: 80%;
 	height: 100%;
@@ -177,7 +263,7 @@ table {
 	height: 100%;
 }
 
-.features .wrap .leftPictureSection .contents .picture{
+.features .wrap .leftPictureSection .contents .picture {
 	width: 50%;
 	background-color: darkgoldenrod;
 }
@@ -191,9 +277,9 @@ table {
 	height: 100%;
 
 	background-image: url(Assets/그림2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .features .wrap .leftPictureSection .contents .text {
@@ -231,7 +317,7 @@ table {
 	height: 100%;
 }
 
-.features .wrap .rightPictureSection .contents .picture{
+.features .wrap .rightPictureSection .contents .picture {
 	width: 50%;
 	background-color: darkgoldenrod;
 }
@@ -245,9 +331,9 @@ table {
 	height: 100%;
 
 	background-image: url(Assets/그림3.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .features .wrap .rightPictureSection .contents .text {
@@ -284,7 +370,7 @@ table {
 	height: 100%;
 }
 
-.features .wrap .leftPictureSection .contents .picture{
+.features .wrap .leftPictureSection .contents .picture {
 	width: 50%;
 	background-color: darkgoldenrod;
 }
@@ -298,9 +384,9 @@ table {
 	height: 100%;
 
 	background-image: url(Assets/그림4.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .features .wrap .leftPictureSection .contents .text {
@@ -338,7 +424,7 @@ table {
 	height: 100%;
 }
 
-.features .wrap .rightPictureSection .contents .picture{
+.features .wrap .rightPictureSection .contents .picture {
 	width: 50%;
 	background-color: darkgoldenrod;
 }
@@ -352,9 +438,9 @@ table {
 	height: 100%;
 
 	background-image: url(Assets/그림5.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .features .wrap .rightPictureSection .contents .text {
@@ -389,4 +475,134 @@ table {
 	justify-content: center;
 	width: 80%;
 	background-color: yellowgreen
+}
+
+.contactToRegister {
+	width: 100%;
+	height: 2140px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.contactToRegister .wrap {
+	width: 80%;
+	height: 100%;
+	background-color: burlywood;
+}
+
+.contactToRegister .wrap .introduction {
+	height: 400px;
+	background-color: blueviolet;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.contactToRegister .wrap .introduction .customP {
+	margin-top: 30px;
+}
+
+.contactToRegister .wrap .programsChoice {
+	height: 250px;
+	background-color: blanchedalmond;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.contactToRegister .wrap .programsChoice .wrap {
+	display: flex;
+	width: 100%;
+	background-color: red;
+}
+
+.contactToRegister .wrap .programsChoice .wrap .title {
+	display: flex;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .programsChoice .wrap .listWrap {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .programsChoice .wrap .listWrap .list {
+	display: flex;
+	width: 100%;
+}
+
+.contactToRegister .wrap .numbersOfLesson {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.contactToRegister .wrap .numbersOfLesson .wrap {
+	display: flex;
+	width: 100%;
+}
+
+.contactToRegister .wrap .numbersOfLesson .wrap .title {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .numbersOfLesson .wrap .listWrap {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .selectRegion {
+	height: 600px;
+	background-color: aquamarine;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.contactToRegister .wrap .selectRegion .wrap {
+	width: 100%;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title {
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap {
+	width: 100%;
+	height: 100%;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
+	width: 100%;
+	height: 100%;
+
+	background-image: url(Assets/서울시지도.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }

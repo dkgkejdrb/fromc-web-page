@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="header"  id='/#home'>
+        <div className="header" id='/#home'>
             <div className="left">
                 <Link to="/" className="logo">
 
@@ -12,7 +12,7 @@ const Header = () => {
                 <Link to="/ProgramsPage" className="headerBtn">
                     <span>프로그램</span>
                 </Link>
-                <Link to="" className="headerBtn">
+                <Link to="/ContactToRegister" className="headerBtn" target="_blank">
                     <span>도입 문의</span>
                 </Link>
             </div>

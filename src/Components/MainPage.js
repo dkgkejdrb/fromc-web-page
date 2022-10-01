@@ -8,11 +8,11 @@ import Programs from './Programs';
 const MainPage = () => {
     return (
         <div className='MainPage'>
-                <Header />
-                <Contact />
-                <VideoWrap VideoWrapSrc='' />
-                <Features />
-                <Programs />
+            <Header />
+            <Contact />
+            <VideoWrap VideoWrapSrc='' />
+            <Features />
+            <Programs />
         </div>
     );
 }
