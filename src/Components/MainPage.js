@@ -10,7 +10,7 @@ const MainPage = () => {
         <div className='MainPage'>
             <Header />
             <Contact />
-            <VideoWrap VideoWrapSrc='' />
+            <VideoWrap VideoWrapSrc='./video.mp4' />
             <Features />
             <Programs />
         </div>

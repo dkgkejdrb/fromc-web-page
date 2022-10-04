@@ -21,11 +21,12 @@ const Contact = () => {
     return (
         <div className="ContactWrap">
             <LinkToRegsiter className='ContactBtn' to='/ContactToRegister' target='_blank'>
-                도입 문의
+                <div className='customP2'>
+                    도입문의
+                </div>
             </LinkToRegsiter>
             <Link className="ContactSliderBtn" to='/#home' spy={true} smooth={true} style={{ cursor: 'pointer', display: displayValue }}>
                 <h1>
-                    ^
                 </h1>
             </Link>
         </div>

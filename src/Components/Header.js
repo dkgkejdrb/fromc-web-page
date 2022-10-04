@@ -9,11 +9,11 @@ const Header = () => {
                 </Link>
             </div>
             <div className="right">
-                <Link to="/ProgramsPage" className="headerBtn">
+                <Link to="/ProgramsPage" className="headerBtn1">
                     <span>프로그램</span>
                 </Link>
-                <Link to="/ContactToRegister" className="headerBtn" target="_blank">
-                    <span>도입 문의</span>
+                <Link to="/ContactToRegister" className="headerBtn2" target="_blank">
+                    <span>도입문의</span>
                 </Link>
             </div>
         </div>

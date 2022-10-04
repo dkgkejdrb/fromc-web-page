@@ -1,6 +1,9 @@
 import Header from "./Header";
 import { useEffect, useState, useRef } from "react";
 import geojson from '../../src/Assets/TL_SCCO_SIG.json'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'
+import { formatDate } from "react-calendar/dist/umd/shared/dateFormatter";
 
 const { kakao } = window;
 
@@ -333,7 +336,7 @@ const Map = () => {
 
     return (
         <div>
-            <div id="map" style={{ width: "45%", height: "680px", marginLeft: '100px' }}></div>
+            <div id="map" style={{ width: "45%", height: "680px"}}></div>
         </div>
     );
 }
@@ -379,7 +382,23 @@ const Map = () => {
 
 
 
+
+
 const ContactToRegister = () => {
+    // 달력용 날짜 스테이트 관리
+    const [value, onChange] = useState(new Date());
+
+    // 선택한 날짜 보여주기
+    // 날짜.toDateString 반드시 붙일 것
+    const ShowDate = () => {
+        return (
+            <div className="show">
+                {value.toLocaleDateString()}
+            </div>
+        );
+    }
+
+
     const handleChange = (event) => {
         window.open(event.target.value);
     }
@@ -389,57 +408,13 @@ const ContactToRegister = () => {
             <Header />
             <div className="wrap">
                 <div className="introduction" >
-                    <div className="customH1">
-                        FROMC 프로그램<br></br>도입 문의
+                    {/* <div className="customH1"> */}
+                    <div className="title">
+                        <div className="customH1">
+                            FROMC 프로그램<br></br>도입 문의
+                        </div>
                         <div className="customP">
-                            관심있는 교육 프로그램 도입 문의를 주시면<br></br>메일or구두 상담을 통해 답변해 드립니다.
-                        </div>
-                    </div>
-                </div>
-                <div className="programsChoice">
-                    <div className="wrap">
-                        <div className="title">
-                            <div className="customH2">
-                                프로그램 선택
-                            </div>
-                        </div>
-                        <div className="listWrap">
-                            <div className='list' onChange={handleChange} style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '400px', height: '40px', border: 'solid 0.1px white' }}>
-                                    <option>선택해주세요.</option>
-                                    <option value='https://creverse.com/'>크레버스</option>
-                                    <option value='https://www.c3coding.com/'>씨큐브코딩</option>
-                                    <option value='https://www.chungdahm.com/'>LC</option>
-                                    <option value='https://vlc.chungdahm.com/'>VLC</option>
-                                    <option value='https://www.cmsedu.co.kr/html/#cms_k_p31.php'>CMS영재교육센터</option>
-                                    <option value='https://www.cmsedu.co.kr/html/index.php?mb=1#cms_k_p32.php'>영재관</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="numbersOfLesson">
-                    <div className="wrap">
-                        <div className="title">
-                            <div className="customH2">
-                                수업 횟수
-                            </div>
-                            <div className="customP">
-                                각 수업은 3~6시간 동안 진행됩니다
-                            </div>
-                        </div>
-                        <div className="listWrap">
-                            <div className='list' onChange={handleChange} style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '400px', height: '40px', border: 'solid 0.1px white' }}>
-                                    <option>선택해주세요.</option>
-                                    <option value='https://creverse.com/'>크레버스</option>
-                                    <option value='https://www.c3coding.com/'>씨큐브코딩</option>
-                                    <option value='https://www.chungdahm.com/'>LC</option>
-                                    <option value='https://vlc.chungdahm.com/'>VLC</option>
-                                    <option value='https://www.cmsedu.co.kr/html/#cms_k_p31.php'>CMS영재교육센터</option>
-                                    <option value='https://www.cmsedu.co.kr/html/index.php?mb=1#cms_k_p32.php'>영재관</option>
-                                </select>
-                            </div>
+                            관심있는 교육 프로그램 도입 문의를 주시면<br></br>담당자가 24시간 내에 연락드립니다.
                         </div>
                     </div>
                 </div>
@@ -447,7 +422,10 @@ const ContactToRegister = () => {
                     <div className="wrap">
                         <div className="title">
                             <div className="customH2">
-                                프로그램 운영지역
+                                서비스 가능지역
+                            </div>
+                            <div className="customP">
+                                서비스 가능 지역 확인 후 도입 신청을 이용해 주세요. 
                             </div>
                         </div>
                         <div className="mapWrap">
@@ -455,9 +433,227 @@ const ContactToRegister = () => {
                                 <Map />
                             </div>
                         </div>
-                        <div className="instruction"></div>
+                        <div className="information">
+                            <div className="wrap">
+                                <div className="centerName">
+                                    <div className="customH3">
+                                        문의처
+                                    </div>
+                                </div>
+                                <div className="centerAddress">
+                                    <div className="wrap">
+                                        <div className="left">
+                                            <div className="customH3">
+                                                센터 주소
+                                            </div>
+                                        </div>
+                                        <div className="right">
+                                            <div className="wrap">
+                                                <div className="customP">
+                                                    씨큐브코딩 서초코어센터
+                                                </div>
+                                                <div className="customP">
+                                                    서울시 서초구 고무래로 26 쌍동빌딩 동관 3층
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="centerPhoneNumber">
+                                    <div className="wrap">
+                                        <div className="left">
+                                            <div className="customH3">
+                                                전화번호
+                                            </div>
+                                        </div>
+                                        <div className="right">
+                                            <div className="customP">
+                                                02-537-2900
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div className="hopeRegion">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                도입희망지역
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
+                                    <option>시/도 선택</option>
+                                    <option value=''>서울</option>
+                                    <option value=''>경기</option>
+                                </select>
+                            </div>
+
+                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
+                                    <option>구/군 선택</option>
+                                    <option value=''>강남구</option>
+                                    <option value=''>노원구</option>
+                                    <option value=''>서초구</option>
+                                    <option value=''>송파구</option>
+                                    <option value=''>양천구</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="howManyClasses">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                학급 수
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
+                                    <option>선택해주세요.</option>
+                                    <option value=''>1</option>
+                                    <option value=''>2</option>
+                                    <option value=''>3</option>
+                                    <option value=''>4</option>
+                                    <option value=''>5</option>
+                                    <option value=''>6</option>
+                                    <option value=''>7</option>
+                                    <option value=''>8</option>
+                                    <option value=''>9</option>
+                                    <option value=''>10</option>
+                                    <option value=''>11</option>
+                                    <option value=''>12</option>
+                                    <option value=''>13</option>
+                                    <option value=''>14</option>
+                                    <option value=''>15</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="numberOfStudents">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                교육인원
+                            </div>
+                        </div>
+                        <div className="input">
+                            <input type="text" placeholder="총 도입 예상 인원" style={{width:'200px', height: '24px', textAlign: 'center'}}></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="selectProgram">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                프로그램 선택
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
+                                    <option>선택해주세요.</option>
+                                    <option value=''>항목1</option>
+                                    <option value=''>항목2</option>
+                                    <option value=''>항목3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="typeOfLesson">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="wrap"> 
+                                <div className="customH2">
+                                    수업 형태
+                                </div>
+                                <div className="customP">
+                                    수업 형태는 원데이 클래스 입니다.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className="customH4">
+                                원데이 클래스
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="numbersOfLessons">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="wrap"> 
+                                <div className="customH2">
+                                    수업 횟수
+                                </div>
+                                <div className="customP">
+                                    각 수업은 3~6시간 동안 진행됩니다
+                                </div>
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
+                                    <option>선택해주세요.</option>
+                                    <option value=''>3교시</option>
+                                    <option value=''>6교시</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="selectLessonDays">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                수업 일정
+                            </div>
+                            <div className="customP">
+                                해당 캘린더는 일정 확인용으로, 가일정 선택 단계입니다. <br></br>최종 수업 일정은 도입 신청이 완료된 후 상담을 통해 가능합니다.
+                            </div>
+                        </div>
+
+                        {/* 달력 셋팅 */}
+                        <div className="calendarWrap">
+                            <div className="calendar">
+                                <Calendar 
+                                    onChange={onChange}
+                                    onClickDay={(value, event) => 
+                                    {
+                                        <ShowDate  />
+                                    }}
+                                    calendarType="US"
+                                    value={value} 
+                                    minDate={new Date()}
+                                    maxDate={new Date("12-31-2022")}
+                                    />
+                                <ShowDate />
+                            </div>
+                        </div>
+
+                        <div className="bars">
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
