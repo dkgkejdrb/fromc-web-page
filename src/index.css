@@ -88,7 +88,6 @@ video {
 	vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -131,13 +130,8 @@ table {
 	border-spacing: 0;
 }
 
-.customP2 {
-	font-size: 21px;
-	font-weight: bold;
-	font-family: 'Inter', sans-serif;
-}
 
-
+/* ================ 커스텀 폰트 ================== */
 .customH1 {
 	font-size: 36px;
 	font-weight: bold;
@@ -166,11 +160,21 @@ table {
 	font-family: 'Inter', sans-serif;
 }
 
-.header {
+.customP2 {
+	font-size: 21px;
+	font-weight: bold;
+	font-family: 'Inter', sans-serif;
+}
+
+
+
+
+/* ================ 1. 메인 페이지 ================== */
+/* ================ 1. 헤더 ================== */
+.MainPage .header {
 	position: fixed;
 	display: flex;
 	flex-direction: row;
-	/* width: 100%; */
 	width: 100%;
 	height: 70px;
 	border-bottom: solid whitesmoke 0.2px;
@@ -227,6 +231,9 @@ table {
 	color: white;
 }
 
+
+/* ================ 2. 영상 ================== */
+/* 영상은 index.html 경로와 같은 곳에 위치  */
 .videoWrap {
 	width: 100%;
 	height: 950px;
@@ -247,12 +254,9 @@ table {
 	text-decoration: none;
 	color: #6F3AC1;
 
-
-
 	position: fixed;
 	bottom: 15%;
 	right: 2%;
-	/* width: 120px; */
 	width: 203px;
 	height: 70px;
 	background-image: url('./Assets/Group\ 204.png');
@@ -281,6 +285,7 @@ table {
 	background-position: center;
 }
 
+/* ================ 3. 프로그램 특징 ================== */
 .features {
 	margin-top: 100px;
 	width: 100%;
@@ -299,6 +304,7 @@ table {
 }
 
 /* firstLine */
+/* 특징 - 서론 */
 .leftPictureSection {
 	width: 100%;
 	height: 450px;
@@ -352,7 +358,8 @@ table {
 }
 
 
-/* secLine */
+/* secondLine */
+/* 특징 - 설명 */
 .rightPictureSection {
 	width: 100%;
 	height: 450px;
@@ -406,6 +413,7 @@ table {
 
 
 /* thirdLine */
+/* 특징 - 증명 */
 .leftPictureSection {
 	width: 100%;
 	height: 450px;
@@ -460,6 +468,7 @@ table {
 
 
 /* fourthLine */
+/* 특징 - 결론 */
 .rightPictureSection {
 	width: 100%;
 	height: 450px;
@@ -511,6 +520,8 @@ table {
 	background-color: darkcyan;
 }
 
+
+/* ================ 4. 프로그램 소개 ================== */
 .programs {
 	display: flex;
 	width: 100%;
@@ -526,25 +537,41 @@ table {
 }
 
 
-/* 도입문의 페이지 */
+
+
+/* ================ 2. 도입문의 상세 페이지 ================== */
+.contactToRegister .header {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 70px;
+	border-bottom: solid whitesmoke 0.2px;
+	background-color: #6F3AC1;
+	z-index: 2;
+}
+
+/* ================ 1. 도입문의 페이지 wrap ================== */
 .contactToRegister {
 	width: 100%;
-	height: 2800px;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	font-family: 'Inter', sans-serif;
 }
+
+
 
 .contactToRegister .wrap {
 	width: 1250px;
 	height: 100%;
 }
 
-/* 도입문의 소개 페이지 */
+
+/* ================ 2. 상단 소개글 ================== */
 .contactToRegister .wrap .introduction {
 	height: 200px;
+	margin-top: 70px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -565,10 +592,10 @@ table {
 	margin-top: 30px;
 }
 
-/* 프로그램 운영지역 */
+
+/* ================ 3.서비스 가능지역 ================== */
 .contactToRegister .wrap .selectRegion {
 	height: 920px;
-	background-color: aquamarine;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -588,7 +615,7 @@ table {
 	align-items: flex-start;
 }
 
-/* 프로그램 운영지역 - 맵 선택-직영 선택 */
+/* 서비스 가능지역 - 직영 선택 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap {
 	width: 100%;
 }
@@ -604,7 +631,7 @@ table {
 }
 
 
-/* 프로그램 운영지역 - 맵 선택-직영 정보 */
+/* 서비스 가능지역 - 직영 정보 */
 .information {
 	width: 100%;
 	height: 200px;
@@ -667,7 +694,7 @@ table {
 }
 
 
-/* 도입희망지역 */
+/* ================ 4. 도입희망지역 ================== */
 .contactToRegister .wrap .hopeRegion {
 	height: 250px;
 	display: flex;
@@ -702,7 +729,7 @@ table {
 }
 
 
-/* 학급수 */
+/* ================ 5. 학급 수 ================== */
 .contactToRegister .wrap .howManyClasses {
 	height: 250px;
 	display: flex;
@@ -737,7 +764,7 @@ table {
 }
 
 
-/* 교육인원 입력 */
+/* ================ 6. 교육인원 ================== */
 .contactToRegister .wrap .numberOfStudents {
 	width: 100%;
 	height: 250px;
@@ -768,7 +795,7 @@ table {
 }
 
 
-/* 프로그램 선택 */
+/* ================ 7. 프로그램 선택 ================== */
 .contactToRegister .wrap .selectProgram {
 	height: 250px;
 	display: flex;
@@ -803,7 +830,7 @@ table {
 }
 
 
-/* 수업 형태 선택 */
+/* ================ 8. 수업 형태 ================== */
 .contactToRegister .wrap .typeOfLesson {
 	height: 250px;
 	display: flex;
@@ -846,7 +873,7 @@ table {
 }
 
 
-/* 수업 횟수 선택 */
+/* ================ 9. 수업 횟수 ================== */
 .contactToRegister .wrap .numbersOfLessons {
 	height: 250px;
 	display: flex;
@@ -889,13 +916,13 @@ table {
 }
 
 
-/* 수업 일정 */
+/* ================ 10. 수업 일정 ================== */
 .contactToRegister .wrap .selectLessonDays {
-	height: 600px;
+	height: 500px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	background-color: aquamarine;
+	background-color: green;
 }
 
 .contactToRegister .wrap .selectLessonDays .wrap .title {
@@ -904,7 +931,164 @@ table {
 	width: 100%;
 }
 
-/* 달력 스타일 덮어씌우기 */
+/* 달력 전체 크기 지정 */
 .calendarWrap .calendar .react-calendar {
 	width: 80%;
+}
+
+/* 날짜 선택바 */
+.bars {
+	width: 100%;
+	height: 100%;
+}
+
+.bars .wrap {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.bars .wrap > .left{
+	width: 50%;
+}
+
+.bars .wrap .right{
+	width: 50%;
+}
+
+
+.react-calendar .highlight {
+	outline: 2px solid red;
+}
+
+.barWrap {
+	display: flex;
+	flex-direction: row;
+}
+
+.barWrap .circleNum {
+
+}
+
+
+/* ================ 11. 신청자 ================== */
+.contactToRegister .wrap .applicant {
+	width: 100%;
+	height: 250px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.contactToRegister .wrap .applicant .wrap {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.contactToRegister .wrap .applicant .wrap .title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .applicant .wrap .input {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+
+/* ================ 12. 이메일 ================== */
+.contactToRegister .wrap .email {
+	width: 100%;
+	height: 250px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.contactToRegister .wrap .email .wrap {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.contactToRegister .wrap .email .wrap .title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .email .wrap .input {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+
+/* ================ 13. 휴대번호 ================== */
+.contactToRegister .wrap .phoneNumber {
+	width: 100%;
+	height: 250px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.contactToRegister .wrap .phoneNumber .wrap {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.contactToRegister .wrap .phoneNumber .wrap .title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .phoneNumber .wrap .input {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+
+/* ================ 14. 기관 선택 ================== */
+.contactToRegister .wrap .selectOrg {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.contactToRegister .wrap .selectOrg .wrap {
+	display: flex;
+	width: 100%;
+}
+
+.contactToRegister .wrap .selectOrg .wrap .title {
+	display: flex;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .selectOrg .wrap .right {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
 }
