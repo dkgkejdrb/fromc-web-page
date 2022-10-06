@@ -1,18 +1,17 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useReducer, useCallback } from "react";
 import Header from "./Header";
 import MapKaKao from "./MapKakao";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
+import { useDaumPostcodePopup } from 'react-daum-postcode';
+import AgreeDescription from "./AgreeDescription";
 
 
 // react-calendar API 모음:
 // https://github.com/wojtekmaj/react-calendar
 
 
-
-
-
-// 사용자가 선택한 날짜 데이터
+// 수업 일정 - 사용자가 선택한 날짜 데이터
 const barInfo = [
     {
         id : 'bar0',
@@ -28,7 +27,162 @@ const barInfo = [
     },
 ];    
 
+// 도입 문의 페이지
 const ContactToRegister = () => {
+    // 제출할 유저 정보
+    const [userInfo, setUserInfo] = useState({
+        city : '',
+        town : '',
+        classesCount : '',
+        studentsCount : '',
+        program : '',
+        lessonsCount : '',
+        lessonDays : ['', '', ''],
+        name : '',
+        email : '',
+        orgType : '',
+        orgName : '',
+        orgAddress : '',
+        knowByrecommendation : false,
+        knowByproposal : false,
+        knowBywebSearch : false,
+        knowByEtc : false,
+        agree : false
+        }
+    );
+
+    // 유저 정보 변경
+    // 시/도 선택
+    const onChangeCityInfo = (e) => {
+        setUserInfo({
+            ...userInfo,
+            city: e.target.value
+        });
+    };
+
+    // 구/군 선택
+    const onChangeTownInfo = (e) => {
+        setUserInfo({
+            ...userInfo,
+            town: e.target.value
+        });
+    };
+
+    // 학급 수 선택
+    const onChangeClassesCount = (e) => {
+        setUserInfo({
+            ...userInfo,
+            classesCount: e.target.value
+        });
+    };
+
+    // 교육인원 입력
+    const onChangeStudentsCount = (e) => {
+        setUserInfo({
+            ...userInfo,
+            studentsCount : e.target.value
+        });
+    }
+    
+    // 프로그램 선택
+    const onChangeProgram = (e) => {
+        setUserInfo({
+            ...userInfo,
+            program : e.target.value
+        });
+    }
+
+    // 수업 횟수 선택
+    const onChangeLessonsCount = (e) => {
+        setUserInfo({
+            ...userInfo,
+            lessonsCount : e.target.value
+        });
+    }
+
+    // 수업 일정 선택
+    const onChangeLessonDays = () => {
+        setUserInfo({
+            ...userInfo,
+            lessonDays: [barInfo[0], barInfo[1], barInfo[2]],
+        });
+    }
+
+    // 신청자
+    const onChangeName = (e) => {
+        setUserInfo({
+            ...userInfo,
+            name : e.target.value
+        });
+    }
+
+    // 이메일
+    const onChangeEmail = (e) => {
+        setUserInfo({
+            ...userInfo,
+            email : e.target.value
+        });
+    }
+
+    // 휴대번호
+    const onChangePhonNumber = (e) => {
+        setUserInfo({
+            ...userInfo,
+            phoneNumber : e.target.value
+        });
+    }
+
+    // 학교 명 / 기관 명
+    const onChangeOrgName = (e) => {
+        setUserInfo({
+            ...userInfo,
+            orgName : e.target.value
+        });
+    }
+
+    // 수업 문의 경로
+    // 지인추천
+    const onChangeRecommendation = (e) => {
+        setUserInfo({
+            ...userInfo,
+            knowByrecommendation : e.target.checked
+        });
+    }
+
+    // 제안서
+    const onChangeProposal = (e) => {
+        setUserInfo({
+            ...userInfo,
+            knowByproposal : e.target.checked
+        });
+    }
+
+    // 검색
+    const onChangeWebSearch = (e) => {
+        setUserInfo({
+            ...userInfo,
+            knowBywebSearch : e.target.checked
+        });
+    }
+
+    // 기타
+    const onChangeEtc = (e) => {
+        setUserInfo({
+            ...userInfo,
+            knowByEtc : e.target.checked          
+        });
+    }
+
+    // 개인정보 수집 동의
+    const onChangeAgree = (e) => {
+        setUserInfo({
+            ...userInfo,
+            agree : e.target.checked           
+        });
+    }
+
+
+    // ☆☆☆☆☆☆☆☆ 수업 일정 ☆☆☆☆☆☆☆☆
     // 달력 날짜 스테이트 관리
     // value <- 날짜 저장
     const [value, onChange] = useState(new Date());
@@ -44,9 +198,11 @@ const ContactToRegister = () => {
         if (pointer === 2) {
             barInfo[2].date = value.toLocaleDateString();
         }
+        
+        onChangeLessonDays();
     }
 
-
+    
     // 날짜 표시바의 위치 지정
     const [pointer, setPointer] = useState(0);
 
@@ -56,18 +212,18 @@ const ContactToRegister = () => {
         if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx')) 
         {
             if ((barInfo[0].date === barInfo[1].date)) {
-                alert('동일한 날짜를 여러번 등록할 수 없습니다.1');
+                alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
         if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx') && (barInfo[2].date != 'xxxx.xx.xx') ) 
         {
             if ((barInfo[0].date === barInfo[2].date)) {
-                alert('동일한 날짜를 여러번 등록할 수 없습니다.2');
+                alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
             if ((barInfo[1].date === barInfo[2].date)) {
-                alert('동일한 날짜를 여러번 등록할 수 없습니다.3');
+                alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
@@ -175,6 +331,108 @@ const ContactToRegister = () => {
         );
     };
 
+
+
+    // 라디오버튼 클릭값(학교, 학교 외 기관)
+    const [orgType, selectOrgType] = useState("");
+    // 주소 입력창 표시 상태값
+    const [showInputAddress, setShowInputAddress] = useState("none");
+    // 주소창에서 선택한 주소 상태값
+    const [address, setAddress] = useState("");
+
+    // 라디오버튼 이벤트핸들러
+    const RadioHandler = (e) => {
+        let tmp = e.target.value;
+        selectOrgType(tmp);
+
+        // User Info에 학교 명/기관 명 전달
+        setUserInfo({
+            ...userInfo,
+            orgType : tmp
+        });
+    }
+
+    // useEffect로 라디오값 동기처리
+    useEffect (() => {
+        if(orgType === "학교" || orgType === "학교외기관") {
+            setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
+        }
+
+        if(address != "") 
+        {
+            console.log(address); // 여기서 학교 기관 주소 정보 넘겨야 함
+        }
+
+    }, [orgType, address]);
+
+    const Postcode = () => {
+        const open = useDaumPostcodePopup();
+      
+        const handleComplete = (data) => {
+          let fullAddress = data.address;
+          let extraAddress = '';
+      
+          if (data.addressType === 'R') {
+            if (data.bname !== '') {
+              extraAddress += data.bname;
+            }
+            if (data.buildingName !== '') {
+              extraAddress += extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+            }
+            fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+          }
+          
+          setAddress(fullAddress);
+
+          // UserInfo에 주소 정보 전달
+          setUserInfo({
+            ...userInfo,
+            orgAddress : fullAddress,
+        });
+        };
+      
+        const handleClick = () => {
+          open({ onComplete: handleComplete });
+        };
+      
+        return (
+            <input 
+            type="text" 
+            placeholder="학교/기관 주소" 
+            style={{width:'400px', height: '24px', textAlign: 'center'}}
+            onClick={handleClick}
+            value={address}
+            >
+            </input>
+        );
+    };
+
+    // 개인동의 설명 규칙 보이기 상태값
+    const [showAgreeDescription, setShowAgreeDescription] = useState('none');
+
+    // 개인동의 설명 규칙 버튼 핸들러
+    const AgreeDescriptionBtnHandler = () => {
+        
+        if(showAgreeDescription == 'none') {
+            setShowAgreeDescription('');
+        }
+        else {
+            setShowAgreeDescription('none');
+        }
+    }
+
+
+    // 제출버튼 핸들러
+    const submitHandler = () => {
+        let values = Object.values(userInfo);
+        if (values.includes('')) {
+            alert('빈칸을 꼭 채워주세요.')
+        } else if (userInfo.agree == false) {
+            alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+        }
+    }
+
+
     return (
         <div className="contactToRegister">
             <Header />
@@ -258,21 +516,31 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
-                                    <option>시/도 선택</option>
-                                    <option value=''>서울</option>
-                                    <option value=''>경기</option>
+                                <select 
+                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                                    onChange={onChangeCityInfo}
+                                    >
+
+                                    <option value=''>시/도 선택</option>
+                                    <option value='서울'>서울</option>
+                                    <option value='경기'>경기</option>
                                 </select>
                             </div>
 
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
-                                    <option>구/군 선택</option>
-                                    <option value=''>강남구</option>
-                                    <option value=''>노원구</option>
-                                    <option value=''>서초구</option>
-                                    <option value=''>송파구</option>
-                                    <option value=''>양천구</option>
+                                <select 
+                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                                    onChange={onChangeTownInfo}
+                                    >
+                                    <option value=''>구/군 선택</option>
+                                    <option value='강남구'>강남구</option>
+                                    <option value='노원구'>노원구</option>
+                                    <option value='서초구'>서초구</option>
+                                    <option value='송파구'>송파구</option>
+                                    <option value='양천구'>양천구</option>
+                                    <option value=''>--------------</option>
+                                    <option value='성남시'>성남시</option>
+                                    <option value='안양시'>안양시</option>
                                 </select>
                             </div>
                         </div>
@@ -288,23 +556,26 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
-                                    <option>선택해주세요.</option>
-                                    <option value=''>1</option>
-                                    <option value=''>2</option>
-                                    <option value=''>3</option>
-                                    <option value=''>4</option>
-                                    <option value=''>5</option>
-                                    <option value=''>6</option>
-                                    <option value=''>7</option>
-                                    <option value=''>8</option>
-                                    <option value=''>9</option>
-                                    <option value=''>10</option>
-                                    <option value=''>11</option>
-                                    <option value=''>12</option>
-                                    <option value=''>13</option>
-                                    <option value=''>14</option>
-                                    <option value=''>15</option>
+                                <select 
+                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                                    onChange={onChangeClassesCount}
+                                    >
+                                    <option value=''>선택해주세요.</option>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                    <option value='6'>6</option>
+                                    <option value='7'>7</option>
+                                    <option value='8'>8</option>
+                                    <option value='9'>9</option>
+                                    <option value='10'>10</option>
+                                    <option value='11'>11</option>
+                                    <option value='12'>12</option>
+                                    <option value='13'>13</option>
+                                    <option value='14'>14</option>
+                                    <option value='15'>15</option>
                                 </select>
                             </div>
                         </div>
@@ -319,11 +590,18 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input type="text" placeholder="총 도입 예상 인원" style={{width:'200px', height: '24px', textAlign: 'center'}}></input>
+                            <input 
+                                type="text" 
+                                placeholder="총 도입 예상 인원" 
+                                style={{width:'200px', height: '24px', textAlign: 'center'}}
+                                value={userInfo.studentsCount}
+                                onChange={onChangeStudentsCount}
+                                ></input>
                         </div>
                     </div>
                 </div>
 
+                {/* ☆☆☆☆☆☆☆☆ 실제 상품이 나오면, value 값 변경 */}
                 <div className="selectProgram">
                     <div className="wrap">
                         <div className="title">
@@ -333,11 +611,14 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
-                                    <option>선택해주세요.</option>
-                                    <option value=''>항목1</option>
-                                    <option value=''>항목2</option>
-                                    <option value=''>항목3</option>
+                                <select 
+                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                                    onChange={onChangeProgram}
+                                    >
+                                    <option value=''>선택해주세요.</option>
+                                    <option value='항목1'>항목1</option>
+                                    <option value='항목2'>항목2</option>
+                                    <option value='항목3'>항목3</option>
                                 </select>
                             </div>
                         </div>
@@ -378,10 +659,13 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}>
-                                    <option>선택해주세요.</option>
-                                    <option value=''>3교시</option>
-                                    <option value=''>6교시</option>
+                                <select 
+                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                                    onChange={onChangeLessonsCount}
+                                    >
+                                    <option value=''>선택해주세요.</option>
+                                    <option value='3교시'>3교시</option>
+                                    <option value='6교시'>6교시</option>
                                 </select>
                             </div>
                         </div>
@@ -444,7 +728,13 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input type="text" placeholder="신청자 이름" style={{width:'200px', height: '24px', textAlign: 'center'}}></input>
+                            <input 
+                            type="text" 
+                            placeholder="신청자 이름" 
+                            style={{width:'200px', height: '24px', textAlign: 'center'}}
+                            value={userInfo.name}
+                            onChange={onChangeName}
+                            ></input>
                         </div>
                     </div>
                 </div>
@@ -457,7 +747,13 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input type="text" placeholder="작성자 이메일" style={{width:'200px', height: '24px', textAlign: 'center'}}></input>
+                            <input 
+                            type="text" 
+                            placeholder="작성자 이메일" 
+                            style={{width:'200px', height: '24px', textAlign: 'center'}}
+                            value={userInfo.email}
+                            onChange={onChangeEmail}
+                            ></input>
                         </div>
                     </div>
                 </div>
@@ -470,7 +766,13 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input type="text" placeholder="휴대폰 번호" style={{width:'200px', height: '24px', textAlign: 'center'}}></input>
+                            <input 
+                            type="text" 
+                            placeholder="휴대폰 번호" 
+                            style={{width:'200px', height: '24px', textAlign: 'center'}}
+                            value={userInfo.phoneNumber}
+                            onChange={onChangePhonNumber}
+                            ></input>
                         </div>
                     </div>
                 </div>
@@ -486,15 +788,56 @@ const ContactToRegister = () => {
                         </div>
                         <div className="right">
                             <div className="wrap">
-                                <div className="selectType"></div>
-                                <div className="findOrgAddress">
+                                <div className="selectOrgType">
+                                    <div className="left" style={{width:'200px'}}>
+                                        <input 
+                                            type="radio" 
+                                            className="school" 
+                                            value="학교"
+                                            checked={orgType === "학교"}
+                                            // target 전달방식 참고
+                                            onChange={(e) => RadioHandler(e)}
+                                            ></input>
+                                            학교
+                                    </div>
+                                    <div className="right" style={{width:'200px'}}>
+                                        <input
+                                            type="radio" 
+                                            className="public"
+                                            value="학교외기관"
+                                            checked={orgType === "학교외기관"}
+                                            onChange={(e) => RadioHandler(e)}
+                                            ></input>
+                                            학교 외 기관
+                                    </div>        
+                                </div>
+                                <div className="findOrgAddress" style={{display : showInputAddress}}>
                                     <div className="top">
-                                        <div className="title"></div>
-                                        <input type="text"></input>
+                                        <div className="title">
+                                            <div className="customP2">
+                                                학교 명/기관 명
+                                            </div>
+                                        </div>
+                                        <div>
+                                        <input 
+                                            type="text" 
+                                            placeholder="학교 명/기관 명" 
+                                            style={{width:'400px', height: '24px', textAlign: 'center'}}
+                                            // value={userInfo.orgName}
+                                            value={userInfo.orgName}
+                                            onChange={onChangeOrgName}
+                                            ></input>
+                                        </div>
                                     </div>
                                     <div className="bottom">
-                                        <div className="title"></div>
-                                        <input type="text"></input>
+                                        <div className="title">
+                                            <div className="customP2">
+                                                학교명/기관 주소
+                                            </div>
+                                        </div>
+
+                                        <Postcode />
+
                                     </div>
                                 </div>
                             </div>
@@ -502,6 +845,77 @@ const ContactToRegister = () => {
                     </div>
                 </div>
 
+                <div className="howToKnowUs">
+                    <div className="wrap">
+                        <div className="title">
+                            <div className="customH2">
+                                수업 문의 경로
+                            </div>
+                        </div>
+                        <div className="boxesWrap">
+                            <div className="box1" style={{width:'100px', height: '24px'}}>
+                                <input 
+                                    type="checkbox" 
+                                    onChange={onChangeRecommendation}
+                                    ></input>
+                                <div className="customP">지인 추천</div>
+                            </div>
+                            <div className="box1" style={{width:'100px', height: '24px'}}>
+                                <input 
+                                    type="checkbox" 
+                                    onChange={onChangeProposal}
+                                    ></input>
+                                <div className="customP">제안서</div>
+                            </div>
+                            <div className="box1" style={{width:'100px', height: '24px'}}>
+                                <input 
+                                    type="checkbox" 
+                                    onChange={onChangeWebSearch}
+                                    ></input>
+                                <div className="customP">검색</div>
+                            </div>
+                            <div className="box1" style={{width:'100px', height: '24px'}}>
+                                <input 
+                                    type="checkbox" 
+                                    onChange={onChangeEtc}
+                                    ></input>
+                                <div className="customP">기타</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="Agree">
+                    <div className="wrap">
+                        <div className="top">
+                            <div className="customH2">
+                                *개인정보 수집, 이용에 대한 동의
+                            </div>
+                            <div className="boxesWrap">
+                                <div className="agreeBox" style={{width:'100px', height: '24px'}}>
+                                    <input 
+                                        type="checkbox"
+                                        onChange={onChangeAgree}
+                                        ></input>
+                                    <div className="customP">동의 함</div>
+                                </div>
+                                <a 
+                                    className="agreeDescriptionBtn" 
+                                    onClick={AgreeDescriptionBtnHandler}
+                                    style={{width:'24px', height: '24px'}}></a>
+                            </div>
+                        </div>
+                        <div className="bottom">
+                            <AgreeDescription display={showAgreeDescription}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="Submit">
+                    <button 
+                        onClick={submitHandler}
+                    >제출하기</button>
+                </div>
             </div>
         </div>
     );

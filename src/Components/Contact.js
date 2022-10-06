@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
-import { Link as LinkToRegsiter } from 'react-router-dom';
+import { Link as LinkToRegsiter } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     const [displayValue, setDisplayValue] = useState('none');
@@ -20,15 +20,15 @@ const Contact = () => {
     // LinkToRegister 도입 문의 새페이지로 이동
     return (
         <div className="ContactWrap">
-            <LinkToRegsiter className='ContactBtn' to='/ContactToRegister' target='_blank'>
+            <Link className='ContactBtn' to='/ContactToRegister' target='_blank'>
                 <div className='customP2'>
                     도입문의
                 </div>
-            </LinkToRegsiter>
-            <Link className="ContactSliderBtn" to='/#home' spy={true} smooth={true} style={{ cursor: 'pointer', display: displayValue }}>
+            </Link>
+            <LinkToRegsiter className="ContactSliderBtn" to='/#home' spy={true} smooth={true} style={{ cursor: 'pointer', display: displayValue }}>
                 <h1>
                 </h1>
-            </Link>
+            </LinkToRegsiter>
         </div>
     );
 }

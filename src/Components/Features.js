@@ -2,9 +2,9 @@ const Features = () => {
     return (
         <div className="features">
             <div className="wrap">
-                <div className="title">
+                {/* <div className="title">
                     <h1 className="customH1">FromC 교육 특징<br></br>"더 나은 미래로의 연결"</h1>
-                </div>
+                </div> */}
                 <div key="firstLine" className="firstLine leftPictureSection">
                     <div className="contents">
                         <div className="picture">

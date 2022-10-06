@@ -1079,6 +1079,32 @@ table {
 	width: 100%;
 }
 
+.contactToRegister .right .wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.contactToRegister .right .wrap .selectOrgType	{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.contactToRegister .right .wrap .selectOrgType	.left{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.contactToRegister .right .wrap .selectOrgType	{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
 .contactToRegister .wrap .selectOrg .wrap .title {
 	display: flex;
 	width: 100%;
@@ -1091,4 +1117,99 @@ table {
 	width: 100%;
 	background-color: brown;
 	flex-grow: 1;
+}
+
+
+/* ================ 15. 수업 문의 경로 ================== */
+.contactToRegister .wrap .howToKnowUs {
+	width: 100%;
+	height: 250px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.contactToRegister .wrap .howToKnowUs .wrap {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.contactToRegister .wrap .howToKnowUs .wrap .title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .howToKnowUs .wrap .boxesWrap {
+	display: flex;
+	width: 100%;
+	background-color: brown;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .howToKnowUs .wrap .boxesWrap .box1{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+
+/* ================ 16. 개인정보 수집, 이용에 대한 동의 ================== */
+.contactToRegister .wrap .Agree {
+	width: 100%;
+	height: 50px;
+	display: flex;
+}
+.contactToRegister .wrap .Agree .wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.contactToRegister .wrap .Agree .wrap .top {
+	display: flex;
+	height: 50px;
+	width: 100%;
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .Agree .wrap .top .customH2 {
+	width: 600px;
+	height: 100px;
+}
+
+.contactToRegister .wrap .Agree .wrap .boxesWrap {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	flex-grow: 1;
+}
+
+.contactToRegister .wrap .Agree .wrap .boxesWrap .agreeBox{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: brown;
+}
+
+.contactToRegister .wrap .Agree .wrap .boxesWrap .agreeDescriptionBtn{
+	background-color: white;
+	background-image: url(https://account.chungdahm.com/images/icon_accordion_close.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+/* ================ 17. 제출하기 ================== */
+.contactToRegister .wrap .Submit {
+	width: 100%;
+	margin-top: 100px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
