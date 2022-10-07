@@ -179,7 +179,7 @@ const InfiniteSlider = ({sliderWidth}) => {
     return (
         <div className='InfiniteSlider'>
             <div className='titleWrap'>
-                <h1 className='customH1'>
+                <h1 className='customH5'>
                     FromC 프로그램
                 </h1>
             </div>

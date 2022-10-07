@@ -7,12 +7,16 @@ import Programs from './Programs';
 
 const MainPage = () => {
     return (
-        <div className='MainPage'>
+        <div className='MainPage' id='/#home'>
             <Header />
             <Contact />
             <VideoWrap VideoWrapSrc='./video.mp4' />
             <Features />
             <Programs />
+
+            <div className='lineBanner'>
+                
+            </div>
         </div>
     );
 }

@@ -18,8 +18,6 @@ const Features = () => {
                             <div className="wrap">
                                 <h2 className="customH2">
                                     1. FromC 의 교육
-                                    <br></br>
-                                    <br></br>
                                 </h2>
                                 <p className="customP">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend
@@ -35,8 +33,6 @@ const Features = () => {
                             <div className="wrap">
                                 <h2 className="customH2">
                                     2. FromC 의 기업 가치관
-                                    <br></br>
-                                    <br></br>
                                 </h2>
                                 <p className="customP">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend
@@ -67,8 +63,6 @@ const Features = () => {
                             <div className="wrap">
                                 <h2 className="customH2">
                                     3. 전문적인 위탁 교육 솔루션
-                                    <br></br>
-                                    <br></br>
                                 </h2>
                                 <p className="customP">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend
@@ -83,9 +77,7 @@ const Features = () => {
                     <div className="text">
                             <div className="wrap">
                                 <h2 className="customH2">
-                                    2. FromC 의 기업 가치관
-                                    <br></br>
-                                    <br></br>
+                                    4.교육전문가의 독보적인 커리큘럼
                                 </h2>
                                 <p className="customP">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend
