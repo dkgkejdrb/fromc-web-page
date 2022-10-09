@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useReducer, useCallback } from "react";
-import Header from "./Header";
+import Header2 from "./Header2";
 import MapKaKao from "./MapKakao";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
@@ -14,41 +14,41 @@ import AgreeDescription from "./AgreeDescription";
 // 수업 일정 - 사용자가 선택한 날짜 데이터
 const barInfo = [
     {
-        id : 'bar0',
-        date : 'xxxx.xx.xx'
+        id: 'bar0',
+        date: 'xxxx.xx.xx'
     },
     {
-        id : 'bar1',
-        date : 'xxxx.xx.xx'
+        id: 'bar1',
+        date: 'xxxx.xx.xx'
     },
     {
-        id : 'bar2',
-        date : 'xxxx.xx.xx'
+        id: 'bar2',
+        date: 'xxxx.xx.xx'
     },
-];    
+];
 
 // 도입 문의 페이지
 const ContactToRegister = () => {
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
-        city : '',
-        town : '',
-        classesCount : '',
-        studentsCount : '',
-        program : '',
-        lessonsCount : '',
-        lessonDays : ['', '', ''],
-        name : '',
-        email : '',
-        orgType : '',
-        orgName : '',
-        orgAddress : '',
-        knowByrecommendation : false,
-        knowByproposal : false,
-        knowBywebSearch : false,
-        knowByEtc : false,
-        agree : false
-        }
+        city: '',
+        town: '',
+        classesCount: '',
+        studentsCount: '',
+        program: '',
+        lessonsCount: '',
+        lessonDays: ['', '', ''],
+        name: '',
+        email: '',
+        orgType: '',
+        orgName: '',
+        orgAddress: '',
+        knowByrecommendation: false,
+        knowByproposal: false,
+        knowBywebSearch: false,
+        knowByEtc: false,
+        agree: false
+    }
     );
 
     // 유저 정보 변경
@@ -80,15 +80,15 @@ const ContactToRegister = () => {
     const onChangeStudentsCount = (e) => {
         setUserInfo({
             ...userInfo,
-            studentsCount : e.target.value
+            studentsCount: e.target.value
         });
     }
-    
+
     // 프로그램 선택
     const onChangeProgram = (e) => {
         setUserInfo({
             ...userInfo,
-            program : e.target.value
+            program: e.target.value
         });
     }
 
@@ -96,7 +96,7 @@ const ContactToRegister = () => {
     const onChangeLessonsCount = (e) => {
         setUserInfo({
             ...userInfo,
-            lessonsCount : e.target.value
+            lessonsCount: e.target.value
         });
     }
 
@@ -112,7 +112,7 @@ const ContactToRegister = () => {
     const onChangeName = (e) => {
         setUserInfo({
             ...userInfo,
-            name : e.target.value
+            name: e.target.value
         });
     }
 
@@ -120,7 +120,7 @@ const ContactToRegister = () => {
     const onChangeEmail = (e) => {
         setUserInfo({
             ...userInfo,
-            email : e.target.value
+            email: e.target.value
         });
     }
 
@@ -128,7 +128,7 @@ const ContactToRegister = () => {
     const onChangePhonNumber = (e) => {
         setUserInfo({
             ...userInfo,
-            phoneNumber : e.target.value
+            phoneNumber: e.target.value
         });
     }
 
@@ -136,7 +136,7 @@ const ContactToRegister = () => {
     const onChangeOrgName = (e) => {
         setUserInfo({
             ...userInfo,
-            orgName : e.target.value
+            orgName: e.target.value
         });
     }
 
@@ -145,7 +145,7 @@ const ContactToRegister = () => {
     const onChangeRecommendation = (e) => {
         setUserInfo({
             ...userInfo,
-            knowByrecommendation : e.target.checked
+            knowByrecommendation: e.target.checked
         });
     }
 
@@ -153,7 +153,7 @@ const ContactToRegister = () => {
     const onChangeProposal = (e) => {
         setUserInfo({
             ...userInfo,
-            knowByproposal : e.target.checked
+            knowByproposal: e.target.checked
         });
     }
 
@@ -161,7 +161,7 @@ const ContactToRegister = () => {
     const onChangeWebSearch = (e) => {
         setUserInfo({
             ...userInfo,
-            knowBywebSearch : e.target.checked
+            knowBywebSearch: e.target.checked
         });
     }
 
@@ -169,7 +169,7 @@ const ContactToRegister = () => {
     const onChangeEtc = (e) => {
         setUserInfo({
             ...userInfo,
-            knowByEtc : e.target.checked          
+            knowByEtc: e.target.checked
         });
     }
 
@@ -177,7 +177,7 @@ const ContactToRegister = () => {
     const onChangeAgree = (e) => {
         setUserInfo({
             ...userInfo,
-            agree : e.target.checked           
+            agree: e.target.checked
         });
     }
 
@@ -198,26 +198,24 @@ const ContactToRegister = () => {
         if (pointer === 2) {
             barInfo[2].date = value.toLocaleDateString();
         }
-        
+
         onChangeLessonDays();
     }
 
-    
+
     // 날짜 표시바의 위치 지정
     const [pointer, setPointer] = useState(0);
 
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
         // 중복 등록 막기
-        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx')) 
-        {
+        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx')) {
             if ((barInfo[0].date === barInfo[1].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
-        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx') && (barInfo[2].date != 'xxxx.xx.xx') ) 
-        {
+        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx') && (barInfo[2].date != 'xxxx.xx.xx')) {
             if ((barInfo[0].date === barInfo[2].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
@@ -256,7 +254,7 @@ const ContactToRegister = () => {
         } else {
             setPointer(pointer - 1);
             barInfo[pointer].date = 'xxxx.xx.xx'
-        }        
+        }
     }
 
     // '' 화면 표시, 'none' 화면 미표시
@@ -264,14 +262,14 @@ const ContactToRegister = () => {
     const [bar2DisplayValue, bar2ShowDisplayValue] = useState('none');
     const [bar3DisplayValue, bar3ShowDisplayValue] = useState('none');
     // pointer 값에 따라 날짜 표시바를 보여줌
-    const ShowBar = () => {        
+    const ShowBar = () => {
         const Bar0 = () => {
             return (
                 <div className="barWrap">
-                    <div className="circleNum" style={{display: bar1DisplayValue}}>
+                    <div className="circleNum" style={{ display: bar1DisplayValue }}>
                         1
                     </div>
-                    <div id={barInfo[0].id} style={{width:'200px', height:'30px', backgroundColor:"white", border:"solid", display: bar1DisplayValue }}>
+                    <div id={barInfo[0].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar1DisplayValue }}>
                         {barInfo[0].date}
                     </div>
                 </div>
@@ -281,10 +279,10 @@ const ContactToRegister = () => {
         const Bar1 = () => {
             return (
                 <div className="barWrap">
-                    <div className="circleNum" style={{display: bar2DisplayValue}}>
+                    <div className="circleNum" style={{ display: bar2DisplayValue }}>
                         2
                     </div>
-                    <div id={barInfo[1].id} style={{width:'200px', height:'30px', backgroundColor:"white", border:"solid", display: bar2DisplayValue }}>
+                    <div id={barInfo[1].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar2DisplayValue }}>
                         {barInfo[1].date}
                     </div>
                 </div>
@@ -294,21 +292,21 @@ const ContactToRegister = () => {
         const Bar2 = () => {
             return (
                 <div className="barWrap">
-                    <div className="circleNum" style={{display: bar3DisplayValue}}>
+                    <div className="circleNum" style={{ display: bar3DisplayValue }}>
                         3
                     </div>
-                    <div id={barInfo[2].id} style={{width:'200px', height:'30px', backgroundColor:"white", border:"solid", display: bar3DisplayValue }}>
+                    <div id={barInfo[2].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar3DisplayValue }}>
                         {barInfo[2].date}
                     </div>
                 </div>
             );
         }
-        
+
         if (pointer === 0) {
             bar1ShowDisplayValue('');
             bar2ShowDisplayValue('none');
             bar3ShowDisplayValue('none');
-            
+
         }
         if (pointer === 1) {
             bar1ShowDisplayValue('');
@@ -321,7 +319,7 @@ const ContactToRegister = () => {
             bar3ShowDisplayValue('');
         }
 
-        
+
         return (
             <div className="left">
                 <Bar0 />
@@ -348,18 +346,17 @@ const ContactToRegister = () => {
         // User Info에 학교 명/기관 명 전달
         setUserInfo({
             ...userInfo,
-            orgType : tmp
+            orgType: tmp
         });
     }
 
     // useEffect로 라디오값 동기처리
-    useEffect (() => {
-        if(orgType === "학교" || orgType === "학교외기관") {
+    useEffect(() => {
+        if (orgType === "학교" || orgType === "학교외기관") {
             setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
         }
 
-        if(address != "") 
-        {
+        if (address != "") {
             console.log(address); // 여기서 학교 기관 주소 정보 넘겨야 함
         }
 
@@ -367,41 +364,41 @@ const ContactToRegister = () => {
 
     const Postcode = () => {
         const open = useDaumPostcodePopup();
-      
-        const handleComplete = (data) => {
-          let fullAddress = data.address;
-          let extraAddress = '';
-      
-          if (data.addressType === 'R') {
-            if (data.bname !== '') {
-              extraAddress += data.bname;
-            }
-            if (data.buildingName !== '') {
-              extraAddress += extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
-            }
-            fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
-          }
-          
-          setAddress(fullAddress);
 
-          // UserInfo에 주소 정보 전달
-          setUserInfo({
-            ...userInfo,
-            orgAddress : fullAddress,
-        });
+        const handleComplete = (data) => {
+            let fullAddress = data.address;
+            let extraAddress = '';
+
+            if (data.addressType === 'R') {
+                if (data.bname !== '') {
+                    extraAddress += data.bname;
+                }
+                if (data.buildingName !== '') {
+                    extraAddress += extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+                }
+                fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+            }
+
+            setAddress(fullAddress);
+
+            // UserInfo에 주소 정보 전달
+            setUserInfo({
+                ...userInfo,
+                orgAddress: fullAddress,
+            });
         };
-      
+
         const handleClick = () => {
-          open({ onComplete: handleComplete });
+            open({ onComplete: handleComplete });
         };
-      
+
         return (
-            <input 
-            type="text" 
-            placeholder="학교/기관 주소" 
-            style={{width:'400px', height: '24px', textAlign: 'center'}}
-            onClick={handleClick}
-            value={address}
+            <input
+                type="text"
+                placeholder="학교/기관 주소"
+                style={{ width: '400px', height: '24px', textAlign: 'center' }}
+                onClick={handleClick}
+                value={address}
             >
             </input>
         );
@@ -412,8 +409,8 @@ const ContactToRegister = () => {
 
     // 개인동의 설명 규칙 버튼 핸들러
     const AgreeDescriptionBtnHandler = () => {
-        
-        if(showAgreeDescription == 'none') {
+
+        if (showAgreeDescription == 'none') {
             setShowAgreeDescription('');
         }
         else {
@@ -435,14 +432,14 @@ const ContactToRegister = () => {
 
     return (
         <div className="contactToRegister">
-            <Header />
+            <Header2 />
             <div className="wrap">
                 <div className="introduction" >
                     <div className="title">
-                        <div className="customH1">
-                            FROMC 프로그램<br></br>도입 문의
+                        <div className="customH7">
+                            FROMC 프로그램 도입 문의
                         </div>
-                        <div className="customP">
+                        <div className="customP6">
                             관심있는 교육 프로그램 도입 문의를 주시면<br></br>담당자가 24시간 내에 연락드립니다.
                         </div>
                     </div>
@@ -454,7 +451,7 @@ const ContactToRegister = () => {
                                 서비스 가능지역
                             </div>
                             <div className="customP">
-                                서비스 가능 지역 확인 후 도입 신청을 이용해 주세요. 
+                                서비스 가능 지역 확인 후 도입 신청을 이용해 주세요.
                             </div>
                         </div>
                         <div className="mapWrap">
@@ -516,10 +513,10 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select 
+                                <select
                                     style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeCityInfo}
-                                    >
+                                >
 
                                     <option value=''>시/도 선택</option>
                                     <option value='서울'>서울</option>
@@ -528,10 +525,10 @@ const ContactToRegister = () => {
                             </div>
 
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select 
+                                <select
                                     style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeTownInfo}
-                                    >
+                                >
                                     <option value=''>구/군 선택</option>
                                     <option value='강남구'>강남구</option>
                                     <option value='노원구'>노원구</option>
@@ -556,10 +553,10 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select 
+                                <select
                                     style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeClassesCount}
-                                    >
+                                >
                                     <option value=''>선택해주세요.</option>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
@@ -590,13 +587,13 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input 
-                                type="text" 
-                                placeholder="총 도입 예상 인원" 
-                                style={{width:'200px', height: '24px', textAlign: 'center'}}
+                            <input
+                                type="text"
+                                placeholder="총 도입 예상 인원"
+                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
                                 value={userInfo.studentsCount}
                                 onChange={onChangeStudentsCount}
-                                ></input>
+                            ></input>
                         </div>
                     </div>
                 </div>
@@ -611,10 +608,10 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select 
+                                <select
                                     style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeProgram}
-                                    >
+                                >
                                     <option value=''>선택해주세요.</option>
                                     <option value='항목1'>항목1</option>
                                     <option value='항목2'>항목2</option>
@@ -628,7 +625,7 @@ const ContactToRegister = () => {
                 <div className="typeOfLesson">
                     <div className="wrap">
                         <div className="title">
-                            <div className="wrap"> 
+                            <div className="wrap">
                                 <div className="customH2">
                                     수업 형태
                                 </div>
@@ -648,7 +645,7 @@ const ContactToRegister = () => {
                 <div className="numbersOfLessons">
                     <div className="wrap">
                         <div className="title">
-                            <div className="wrap"> 
+                            <div className="wrap">
                                 <div className="customH2">
                                     수업 횟수
                                 </div>
@@ -659,10 +656,10 @@ const ContactToRegister = () => {
                         </div>
                         <div className="listWrap">
                             <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select 
+                                <select
                                     style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeLessonsCount}
-                                    >
+                                >
                                     <option value=''>선택해주세요.</option>
                                     <option value='3교시'>3교시</option>
                                     <option value='6교시'>6교시</option>
@@ -686,24 +683,23 @@ const ContactToRegister = () => {
                         {/* 달력 */}
                         <div className="calendarWrap">
                             <div className="calendar">
-                                <Calendar 
+                                <Calendar
                                     onChange={onChange}
-                                    onClickDay={(value, event) => 
-                                    {
+                                    onClickDay={(value, event) => {
                                         SaveDate(value);
                                     }}
                                     calendarType="US"
-                                    value={value} 
+                                    value={value}
                                     minDate={new Date()}
                                     // maxDate={new Date("12-31-2022")}
 
                                     // 하이라이트 처리
-                                    tileClassName={({ date, view }) =>  {
+                                    tileClassName={({ date, view }) => {
                                         if ((date.toLocaleDateString() === barInfo[0].date) || (date.toLocaleDateString() === barInfo[1].date) || (date.toLocaleDateString() === barInfo[2].date)) {
                                             return 'highlight'
                                         }
-                                    }}  
-                                    />
+                                    }}
+                                />
                             </div>
                         </div>
                         <div className="bars">
@@ -728,12 +724,12 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input 
-                            type="text" 
-                            placeholder="신청자 이름" 
-                            style={{width:'200px', height: '24px', textAlign: 'center'}}
-                            value={userInfo.name}
-                            onChange={onChangeName}
+                            <input
+                                type="text"
+                                placeholder="신청자 이름"
+                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
+                                value={userInfo.name}
+                                onChange={onChangeName}
                             ></input>
                         </div>
                     </div>
@@ -747,12 +743,12 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input 
-                            type="text" 
-                            placeholder="작성자 이메일" 
-                            style={{width:'200px', height: '24px', textAlign: 'center'}}
-                            value={userInfo.email}
-                            onChange={onChangeEmail}
+                            <input
+                                type="text"
+                                placeholder="작성자 이메일"
+                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
+                                value={userInfo.email}
+                                onChange={onChangeEmail}
                             ></input>
                         </div>
                     </div>
@@ -766,21 +762,21 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="input">
-                            <input 
-                            type="text" 
-                            placeholder="휴대폰 번호" 
-                            style={{width:'200px', height: '24px', textAlign: 'center'}}
-                            value={userInfo.phoneNumber}
-                            onChange={onChangePhonNumber}
+                            <input
+                                type="text"
+                                placeholder="휴대폰 번호"
+                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
+                                value={userInfo.phoneNumber}
+                                onChange={onChangePhonNumber}
                             ></input>
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="selectOrg">
                     <div className="wrap">
                         <div className="title">
-                            <div className="wrap"> 
+                            <div className="wrap">
                                 <div className="customH2">
                                     기관 선택
                                 </div>
@@ -789,29 +785,29 @@ const ContactToRegister = () => {
                         <div className="right">
                             <div className="wrap">
                                 <div className="selectOrgType">
-                                    <div className="left" style={{width:'200px'}}>
-                                        <input 
-                                            type="radio" 
-                                            className="school" 
+                                    <div className="left" style={{ width: '200px' }}>
+                                        <input
+                                            type="radio"
+                                            className="school"
                                             value="학교"
                                             checked={orgType === "학교"}
                                             // target 전달방식 참고
                                             onChange={(e) => RadioHandler(e)}
-                                            ></input>
-                                            학교
+                                        ></input>
+                                        학교
                                     </div>
-                                    <div className="right" style={{width:'200px'}}>
+                                    <div className="right" style={{ width: '200px' }}>
                                         <input
-                                            type="radio" 
+                                            type="radio"
                                             className="public"
                                             value="학교외기관"
                                             checked={orgType === "학교외기관"}
                                             onChange={(e) => RadioHandler(e)}
-                                            ></input>
-                                            학교 외 기관
-                                    </div>        
+                                        ></input>
+                                        학교 외 기관
+                                    </div>
                                 </div>
-                                <div className="findOrgAddress" style={{display : showInputAddress}}>
+                                <div className="findOrgAddress" style={{ display: showInputAddress }}>
                                     <div className="top">
                                         <div className="title">
                                             <div className="customP2">
@@ -819,13 +815,13 @@ const ContactToRegister = () => {
                                             </div>
                                         </div>
                                         <div>
-                                        <input 
-                                            type="text" 
-                                            placeholder="학교 명/기관 명" 
-                                            style={{width:'400px', height: '24px', textAlign: 'center'}}
-                                            // value={userInfo.orgName}
-                                            value={userInfo.orgName}
-                                            onChange={onChangeOrgName}
+                                            <input
+                                                type="text"
+                                                placeholder="학교 명/기관 명"
+                                                style={{ width: '400px', height: '24px', textAlign: 'center' }}
+                                                // value={userInfo.orgName}
+                                                value={userInfo.orgName}
+                                                onChange={onChangeOrgName}
                                             ></input>
                                         </div>
                                     </div>
@@ -853,32 +849,32 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="boxesWrap">
-                            <div className="box1" style={{width:'100px', height: '24px'}}>
-                                <input 
-                                    type="checkbox" 
+                            <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <input
+                                    type="checkbox"
                                     onChange={onChangeRecommendation}
-                                    ></input>
+                                ></input>
                                 <div className="customP">지인 추천</div>
                             </div>
-                            <div className="box1" style={{width:'100px', height: '24px'}}>
-                                <input 
-                                    type="checkbox" 
+                            <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <input
+                                    type="checkbox"
                                     onChange={onChangeProposal}
-                                    ></input>
+                                ></input>
                                 <div className="customP">제안서</div>
                             </div>
-                            <div className="box1" style={{width:'100px', height: '24px'}}>
-                                <input 
-                                    type="checkbox" 
+                            <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <input
+                                    type="checkbox"
                                     onChange={onChangeWebSearch}
-                                    ></input>
+                                ></input>
                                 <div className="customP">검색</div>
                             </div>
-                            <div className="box1" style={{width:'100px', height: '24px'}}>
-                                <input 
-                                    type="checkbox" 
+                            <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <input
+                                    type="checkbox"
                                     onChange={onChangeEtc}
-                                    ></input>
+                                ></input>
                                 <div className="customP">기타</div>
                             </div>
                         </div>
@@ -892,27 +888,27 @@ const ContactToRegister = () => {
                                 *개인정보 수집, 이용에 대한 동의
                             </div>
                             <div className="boxesWrap">
-                                <div className="agreeBox" style={{width:'100px', height: '24px'}}>
-                                    <input 
+                                <div className="agreeBox" style={{ width: '100px', height: '24px' }}>
+                                    <input
                                         type="checkbox"
                                         onChange={onChangeAgree}
-                                        ></input>
+                                    ></input>
                                     <div className="customP">동의 함</div>
                                 </div>
-                                <a 
-                                    className="agreeDescriptionBtn" 
+                                <a
+                                    className="agreeDescriptionBtn"
                                     onClick={AgreeDescriptionBtnHandler}
-                                    style={{width:'24px', height: '24px'}}></a>
+                                    style={{ width: '24px', height: '24px' }}></a>
                             </div>
                         </div>
                         <div className="bottom">
-                            <AgreeDescription display={showAgreeDescription}/>
+                            <AgreeDescription display={showAgreeDescription} />
                         </div>
                     </div>
                 </div>
 
                 <div className="Submit">
-                    <button 
+                    <button
                         onClick={submitHandler}
                     >제출하기</button>
                 </div>

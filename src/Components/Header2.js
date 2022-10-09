@@ -5,10 +5,10 @@ import React, { useEffect, useState } from 'react';
 import logo_dark from "../Assets/logo_dark.svg"
 import logo_light from "../Assets/logo.svg"
 
-const Header = () => {
-    const [changeLogo, setChangeLogo] = useState(`url(${logo_light})`);
-    const [changeColor, setChangeColor] = useState('');
-    const [changeFontColor, setChangeFontColor] = useState('#FFFFFF');
+const Header2 = () => {
+    const [changeLogo, setChangeLogo] = useState(`url(${logo_dark})`);
+    const [changeColor, setChangeColor] = useState('#FFFFFF');
+    const [changeFontColor, setChangeFontColor] = useState('#6F3AC1');
     const [changeHeaderShow, setChangeHeaderShow] = useState('');
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
 
@@ -39,14 +39,9 @@ const Header = () => {
 
 
         if (window.scrollY <= 0) {
-            setChangeLogo(`url(${logo_light})`);
-            setChangeColor('');
-            setChangeFontColor('#FFFFFF');
         }
 
         else {
-            setChangeLogo(`url(${logo_dark})`);
-            setChangeColor('#FFFFFF')
             setChangeFontColor('#6F3AC1');
         }
     }
@@ -60,6 +55,8 @@ const Header = () => {
                 backgroundColor: changeColor,
                 display: changeHeaderShow,
                 transform: changeHeaderTransfrom,
+                borderColor: '#232323',
+                borderBottom: '1px solid'
             }}
         >
             <div className="left">
@@ -94,4 +91,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default Header2;

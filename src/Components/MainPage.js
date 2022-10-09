@@ -3,7 +3,9 @@ import Contact from './Contact';
 import VideoWrap from './VideoWrap';
 import Features from './Features';
 import Programs from './Programs';
-
+import LineBanner from './lineBanner';
+import Footer from './Footer';
+import Copyright from './Copyright';
 
 const MainPage = () => {
     return (
@@ -13,10 +15,9 @@ const MainPage = () => {
             <VideoWrap VideoWrapSrc='./video.mp4' />
             <Features />
             <Programs />
-
-            <div className='lineBanner'>
-                
-            </div>
+            <LineBanner />
+            <Footer />
+            <Copyright />
         </div>
     );
 }
