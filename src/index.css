@@ -175,6 +175,13 @@ table {
 	font-family: 'Inter', sans-serif;
 }
 
+.customH8 {
+	font-weight: 600;
+	font-size: 38px;
+	line-height: 46px;
+	font-family: 'Inter', sans-serif;
+}
+
 .customP {
 	font-size: 20px;
 	font-family: 'Inter', sans-serif;
@@ -922,16 +929,22 @@ table {
 
 /* ================ 3.서비스 가능지역 ================== */
 .contactToRegister .wrap .selectRegion {
-	height: 920px;
+	height: 1355px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 51px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
+	border-radius: 55px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap {
+.contactToRegister .wrap .selectRegion>.wrap {
 	width: 100%;
 	height: 100%;
+	padding-top: 94px;
 }
 
 .contactToRegister .wrap .selectRegion .wrap .title {
@@ -942,12 +955,95 @@ table {
 	align-items: flex-start;
 }
 
+.contactToRegister .wrap .selectRegion .wrap .title .top {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title .top .icon {
+	margin-left: 475px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title .top .icon .src {
+	width: 67px;
+	height: 67px;
+
+	background-image: url(./Assets/Rectangle.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title .top .contents .customH2 {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 34px;
+	text-align: center;
+
+	color: #000000;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title .bottom {
+	display: flex;
+	flex-direction: row;
+
+	padding-top: 11px;
+	width: 100%;
+	justify-content: center;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .title .bottom .customH3 {
+	font-weight: 500;
+	line-height: 144.5%;
+
+	color: #626262;
+}
+
 /* 서비스 가능지역 - 직영 선택 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap {
 	width: 100%;
+	height: 600px;
+	margin-top: 58px;
 }
 
+/* ☆☆☆☆☆☆☆☆☆☆☆마커 공통 이미지 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong .marker {
+	width: 31.08px;
+	height: 41.03px;
+
+	/* position: absolute;
+	left: 577px;
+	top: 1080px; */
+
+	background-image: url(./Assets/marker.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	cursor: pointer;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdong {
+	position: absolute;
+	left: 577px;
+	top: 1080px;
+}
+
+
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
+	height: 100%;
+	background-image: url(./Assets/default_map.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* .contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
 	width: 100%;
 	height: 100%;
 }
@@ -955,68 +1051,86 @@ table {
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .source>div {
 	display: flex;
 	justify-content: center;
-}
+} */
 
 
 /* 서비스 가능지역 - 직영 정보 */
-.information {
+.contactToRegister .wrap .selectRegion .wrap .information {
 	width: 100%;
-	height: 200px;
-	background-color: brown;
+	height: 366px;
+	margin-top: 204px;
+	background-color: red;
 }
 
 .information .wrap {
-	height: 100%;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
+
+	margin-left: 72px;
 }
 
-.information .wrap .centerName {
+.information .wrap .left {
+	background-color: #6F3AC1;
+}
+
+.information .wrap .left .src {
+	width: 256px;
+	height: 256px;
+
+	background-image: url(./Assets/bigMarker.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.information .wrap .right {}
+
+.information .wrap .right .centerName {
+	display: flex;
+
+	flex-direction: column;
 	width: 100%;
-	height: 120px;
 	background-color: blue;
 }
 
-.information .wrap .centerAddress {
+.information .wrap .right .centerAddress {
 	width: 100%;
-	height: 120px;
 	background-color: bisque;
 }
 
-.information .wrap .centerAddress .wrap {
+.information .wrap .right .centerAddress .wrap {
 	display: flex;
 	flex-direction: row;
 }
 
-.information .wrap .centerAddress .wrap .left {
+.information .wrap .right .centerAddress .wrap .left {
 	width: 50%;
 }
 
-.information .wrap .centerAddress .wrap .right {
+.information .wrap .right .centerAddress .wrap .right {
 	width: 50%;
 }
 
-.information .wrap .centerAddress .wrap .right .wrap {
+.information .wrap .right .centerAddress .wrap .right .wrap {
 	display: flex;
 	flex-direction: column;
 }
 
-.information .wrap .centerPhoneNumber {
+.information .wrap .right .centerPhoneNumber {
 	width: 100%;
-	height: 120px;
 	background-color: cornflowerblue;
 }
 
-.information .wrap .centerPhoneNumber .wrap {
+.information .wrap .right .centerPhoneNumber .wrap {
 	display: flex;
 	flex-direction: row;
 }
 
-.information .wrap .centerPhoneNumber .wrap .left {
+.information .wrap .right .centerPhoneNumber .wrap .left {
 	width: 50%;
 }
 
-.information .wrap .centerPhoneNumber .wrap .right {
+.information .wrap .right .centerPhoneNumber .wrap .right {
 	width: 50%;
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useReducer, useCallback } from "react";
+import { useEffect, useState } from "react";
 import Header2 from "./Header2";
 import MapKaKao from "./MapKakao";
 import Calendar from 'react-calendar';
@@ -9,6 +9,16 @@ import AgreeDescription from "./AgreeDescription";
 
 // react-calendar API 모음:
 // https://github.com/wojtekmaj/react-calendar
+
+
+// 센터 정보
+const centerInfo = {
+    mokdong: {
+        name: '씨큐브코딩 서초코어센터',
+        address: '서울시 서초구 고무래로 26 쌍동빌딩 동관 3층',
+        contactNumber: '02-537-2900'
+    }
+}
 
 
 // 수업 일정 - 사용자가 선택한 날짜 데이터
@@ -429,6 +439,19 @@ const ContactToRegister = () => {
         }
     }
 
+    const [showCenterName, setShowCenterName] = useState('');
+    const [showCenterAddress, setShowCenterAddress] = useState('');
+    const [showCenterPhoneNumber, setShowCenterPhoneNumber] = useState('');
+    // 지도 마커버튼핸들러
+    const onMarkerHandler = (e) => {
+        if (e.target.className == "_mokdong marker") {
+            console.log(`${centerInfo.mokdong.name} / ${centerInfo.mokdong.address} / ${centerInfo.mokdong.contactNumber}`);
+            setShowCenterName(centerInfo.mokdong.name);
+            setShowCenterAddress(centerInfo.mokdong.address);
+            setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
+        }
+    }
+
 
     return (
         <div className="contactToRegister">
@@ -447,54 +470,77 @@ const ContactToRegister = () => {
                 <div className="selectRegion">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
-                                서비스 가능지역
+                            <div className="top">
+                                <div className="icon">
+                                    <div className="src"></div>
+                                </div>
+                                <div className="contents">
+                                    <div className="customH2">
+                                        서비스 가능지역
+                                    </div>
+                                </div>
                             </div>
-                            <div className="customP">
-                                서비스 가능 지역 확인 후 도입 신청을 이용해 주세요.
+                            <div className="bottom">
+                                <div className="customH3">
+                                    서비스 가능 지역 확인 후 도입 신청을 이용해 주세요.
+                                </div>
                             </div>
                         </div>
                         <div className="mapWrap">
+                            <div
+                                className="mokdong"
+                                name="mokdong"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_mokdong marker">
+
+                                </div>
+                            </div>
                             <div className="source">
-                                <MapKaKao />
+                                {/* <MapKaKao /> */}
                             </div>
                         </div>
                         <div className="information">
                             <div className="wrap">
-                                <div className="centerName">
-                                    <div className="customH3">
-                                        문의처
-                                    </div>
+                                <div className="left">
+                                    <div className="src"></div>
                                 </div>
-                                <div className="centerAddress">
-                                    <div className="wrap">
-                                        <div className="left">
-                                            <div className="customH3">
-                                                센터 주소
-                                            </div>
-                                        </div>
-                                        <div className="right">
-                                            <div className="wrap">
-                                                <div className="customP">
-                                                    씨큐브코딩 서초코어센터
-                                                </div>
-                                                <div className="customP">
-                                                    서울시 서초구 고무래로 26 쌍동빌딩 동관 3층
-                                                </div>
-                                            </div>
+                                <div className="right">
+                                    <div className="centerName">
+                                        <div className="customH8">
+                                            문의처
                                         </div>
                                     </div>
-                                </div>
-                                <div className="centerPhoneNumber">
-                                    <div className="wrap">
-                                        <div className="left">
-                                            <div className="customH3">
-                                                전화번호
+                                    <div className="centerAddress">
+                                        <div className="wrap">
+                                            <div className="left">
+                                                <div className="customH3">
+                                                    센터 주소
+                                                </div>
+                                            </div>
+                                            <div className="right">
+                                                <div className="wrap">
+                                                    <div className="customP">
+                                                        {showCenterName}
+                                                    </div>
+                                                    <div className="customP">
+                                                        {showCenterAddress}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="right">
-                                            <div className="customP">
-                                                02-537-2900
+                                    </div>
+                                    <div className="centerPhoneNumber">
+                                        <div className="wrap">
+                                            <div className="left">
+                                                <div className="customH3">
+                                                    전화번호
+                                                </div>
+                                            </div>
+                                            <div className="right">
+                                                <div className="customP">
+                                                    {showCenterPhoneNumber}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
