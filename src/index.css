@@ -331,8 +331,9 @@ table {
 .header .right .headerBtn1 .customP3 {
 	width: 80px;
 	font-weight: 600;
-}
 
+	transition: 0.3s;
+}
 
 /* 도입 문의 */
 .header .right .headerBtn2 {
@@ -346,7 +347,6 @@ table {
 
 .header .right .headerBtn2 .customP3 {
 	width: 80px;
-	font-weight: 500;
 }
 
 .ContactSliderBtn {
@@ -1081,11 +1081,12 @@ table {
 
 	cursor: pointer;
 }
+
 /* ☆☆☆☆☆☆☆☆☆☆서초 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seocho {
 	position: absolute;
-	left: 945px;
-	top: 990px;
+	left: 940px;
+	top: 1045px;
 }
 
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo {
@@ -1108,29 +1109,102 @@ table {
 	font-size: 20px;
 	line-height: 24px;
 	transition: 0.1s ease-in-out;
-	
+
 	color: #858585;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆대치 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechi {
 	position: absolute;
-	left: 1015px;
-	top: 990px;
+	left: 1027px;
+	top: 1026px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo {
+	position: absolute;
+	left: 1238px;
+	top: 1010px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆목동 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdong {
 	position: absolute;
-	left: 750px;
-	top: 920px;
+	left: 700px;
+	top: 950px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo {
+	position: absolute;
+	left: 500px;
+	top: 870px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆잠실 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsil {
 	position: absolute;
-	left: 1060px;
+	left: 1078px;
 	top: 975px;
+}
+
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo {
+	position: absolute;
+	left: 1270px;
+	top: 900px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆중계 마커 */
@@ -1140,11 +1214,59 @@ table {
 	top: 700px;
 }
 
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo {
+	position: absolute;
+	left: 1182px;
+	top: 662px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
+}
+
 /* ☆☆☆☆☆☆☆☆☆☆분당 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondang {
 	position: absolute;
 	left: 1170px;
 	top: 1140px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo {
+	position: absolute;
+	left: 1302px;
+	top: 1100px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆평촌 마커 */
@@ -1154,15 +1276,40 @@ table {
 	top: 1170px;
 }
 
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo {
+	position: absolute;
+	left: 580px;
+	top: 1170px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #858585;
+}
+
 
 
 /* 맵 커버 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
 	height: 100%;
-	
+
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: 0.8s;
 }
 
 
@@ -1474,7 +1621,7 @@ table {
 
 .contactToRegister .wrap .typeOfLesson .wrap .title {
 	display: flex;
-	width: 280px;
+	width: 310px;
 
 	padding-top: 3px;
 	margin-left: 190px;
@@ -1487,6 +1634,11 @@ table {
 	width: 100%;
 }
 
+.contactToRegister .wrap .typeOfLesson .wrap .title .wrap .customP {
+	margin-top: 13px;
+	font-size: 11px;
+}
+
 .contactToRegister .wrap .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
@@ -1495,7 +1647,20 @@ table {
 }
 
 .contactToRegister .wrap .typeOfLesson .wrap .listWrap .customP {
-	margin-left: 27px;
+	margin-left: 15px;
+	width: 289px;
+	height: 40px;
+
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 140.52%;
+	color: #FFFFFF;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #6F3AC1;
+	border-radius: 5px;
 }
 
 
@@ -1505,7 +1670,6 @@ table {
 	height: 100px;
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 }
 
 .contactToRegister .wrap .numbersOfLessons .wrap {
@@ -1527,6 +1691,11 @@ table {
 	align-items: flex-start;
 	width: 100%;
 	flex-grow: 1;
+}
+
+.contactToRegister .wrap .numbersOfLessons .wrap .title .wrap .customP {
+	margin-top: 13px;
+	font-size: 11px;
 }
 
 .contactToRegister .wrap .numbersOfLessons .wrap .listWrap {
@@ -1603,7 +1772,7 @@ table {
 }
 
 
-.bars .wrap .left .barWrap .circleNum{
+.bars .wrap .left .barWrap .circleNum {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1691,7 +1860,7 @@ table {
 	border-radius: 9px;
 }
 
-.bars .right .controlWrap{
+.bars .right .controlWrap {
 	margin-top: 90px;
 	display: flex;
 	align-items: center;
@@ -1702,7 +1871,7 @@ table {
 	width: 46px;
 	height: 46px;
 	font-size: 49px;
-	
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1710,6 +1879,7 @@ table {
 	border: none;
 	cursor: pointer;
 }
+
 .bars .right .controlWrap .addBtn:hover {
 	background-color: #F6F6F6
 }
@@ -1733,7 +1903,7 @@ table {
 
 
 /* 달력 전체 크기 지정 */
-.calendarWrap .calendar{
+.calendarWrap .calendar {
 	display: flex;
 	justify-content: center;
 }
@@ -1742,7 +1912,7 @@ table {
 	width: 946px;
 	height: 446px;
 	margin-top: 56px;
-	
+
 	border: none;
 }
 
@@ -1824,7 +1994,7 @@ abbr {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	
+
 
 	margin-left: 255px;
 	margin-right: 255px;
@@ -1839,7 +2009,7 @@ abbr {
 
 .contactToRegister .wrap .applicant .wrap .title {
 	width: 111px;
-	
+
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -1853,16 +2023,16 @@ abbr {
 .contactToRegister .wrap .applicant .wrap .input #input {
 	display: flex;
 
-		width: 280px;
-		height: 33px;
-		border-radius: 5px;
-	
-		font-weight: 500;
-		font-size: 17px;
-		line-height: 140.52%;
-	
-		margin-left: 272px;
-		font-family: 'Inter', sans-serif;
+	width: 280px;
+	height: 33px;
+	border-radius: 5px;
+
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 140.52%;
+
+	margin-left: 272px;
+	font-family: 'Inter', sans-serif;
 }
 
 

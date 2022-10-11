@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react';
 
 // 리액트에 background-image > url() 참고
 import logo_dark from "../Assets/logo_dark.svg"
-import logo_light from "../Assets/logo.svg"
 
 const Header2 = () => {
     const [changeLogo, setChangeLogo] = useState(`url(${logo_dark})`);
     const [changeColor, setChangeColor] = useState('#FFFFFF');
-    const [changeFontColor, setChangeFontColor] = useState('#6F3AC1');
+    const [changeFontColor, setChangeFontColor] = useState('#000000');
     const [changeHeaderShow, setChangeHeaderShow] = useState('');
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
 
@@ -36,14 +35,6 @@ const Header2 = () => {
             setChangeHeaderTransfrom('translateY(0px)');
         }
         prevScrollTop = nowScrollTop;
-
-
-        if (window.scrollY <= 0) {
-        }
-
-        else {
-            setChangeFontColor('#6F3AC1');
-        }
     }
 
     return (
@@ -82,12 +73,13 @@ const Header2 = () => {
                     <span
                         className='customP3'
                         style={{
-                            color: changeFontColor
+                            color: '#6F3AC1',
+                            fontWeight: 700
                         }}
                     >도입문의</span>
                 </Link>
             </div>
-        </div>
+        </div >
     );
 }
 
