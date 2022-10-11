@@ -28,7 +28,7 @@ const Header2 = () => {
     const changeHeader = () => {
         nowScrollTop = window.scrollY;
         if (wheelDelta() == 'down') {
-            if (window.scrollY >= 1000) {
+            if (window.scrollY >= 400) {
                 setChangeHeaderTransfrom('translateY(-100px)');
             }
         }
@@ -55,8 +55,8 @@ const Header2 = () => {
                 backgroundColor: changeColor,
                 display: changeHeaderShow,
                 transform: changeHeaderTransfrom,
-                borderColor: '#232323',
-                borderBottom: '1px solid'
+                borderColor: '#cccc',
+                borderBottom: '0.5px solid #cccc'
             }}
         >
             <div className="left">

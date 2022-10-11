@@ -139,7 +139,7 @@ table {
 }
 
 .customH2 {
-	font-size: 34px;
+	font-size: 30px;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -182,6 +182,37 @@ table {
 	font-family: 'Inter', sans-serif;
 }
 
+.customH9 {
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 30px;
+	font-family: 'Inter', sans-serif;
+}
+
+.customH10 {
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 31px;
+	font-family: 'Inter', sans-serif;
+	color: #000000;
+}
+
+.customH11 {
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 31px;
+	font-family: 'Inter', sans-serif;
+	color: #000000;
+}
+
+.customH12 {
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 31px;
+	font-family: 'Inter', sans-serif;
+	color: #000000;
+}
+
 .customP {
 	font-size: 20px;
 	font-family: 'Inter', sans-serif;
@@ -211,6 +242,7 @@ table {
 	font-weight: 400;
 	opacity: 0.7;
 	line-height: 28px;
+	font-family: 'Inter', sans-serif;
 }
 
 .customP6 {
@@ -218,7 +250,34 @@ table {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 144.5%;
+	font-family: 'Inter', sans-serif;
 }
+
+.customP7 {
+	font-size: 22px;
+	line-height: 187.5%;
+	color: #000000;
+	font-family: 'Inter', sans-serif;
+}
+
+.customP8 {
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 27px;
+
+	color: #000000;
+	font-family: 'Inter', sans-serif;
+}
+
+.customP9 {
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 140.52%;
+
+	color: rgba(98, 98, 98, 0.7);
+	font-family: 'Inter', sans-serif;
+}
+
 
 
 
@@ -371,9 +430,9 @@ table {
 /* 특징 - 서론 */
 .firstLine.leftPictureSection {
 	width: 100%;
-	padding-top: 155px;
 	padding-left: 192px;
 	padding-right: 192px;
+	padding-top: 155px;
 	padding-bottom: 155px;
 	box-sizing: border-box;
 }
@@ -415,7 +474,7 @@ table {
 }
 
 .features .wrap .firstLine.leftPictureSection .contents .text .wrap {
-	width: 473px;
+	width: 480px;
 	height: 222.81px;
 
 	display: flex;
@@ -424,7 +483,7 @@ table {
 }
 
 .features .wrap .firstLine.leftPictureSection .contents .text .wrap .customH2 {
-	width: 473px;
+	width: 100%;
 
 	font-weight: 700;
 	line-height: 41px;
@@ -436,9 +495,9 @@ table {
 }
 
 .features .wrap .firstLine.leftPictureSection .contents .text .wrap .customP {
-	width: 473px;
+	width: 100%;
 
-	margin-top: 13px;
+	margin-top: 27px;
 
 	font-weight: 300;
 	line-height: 28.1px;
@@ -497,7 +556,7 @@ table {
 	height: 297px;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .features .wrap .secondLine.rightPictureSection .contents .text .wrap {
@@ -524,7 +583,7 @@ table {
 .features .wrap .secondLine.rightPictureSection .contents .text .wrap .customP {
 	width: 473px;
 
-	margin-top: 13px;
+	margin-top: 27px;
 
 	font-weight: 300;
 	line-height: 28.1px;
@@ -607,7 +666,7 @@ table {
 .features .wrap .thirdLine.leftPictureSection .contents .text .wrap .customP {
 	width: 473px;
 
-	margin-top: 13px;
+	margin-top: 27px;
 
 	font-weight: 300;
 	line-height: 28.1px;
@@ -1011,13 +1070,9 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆☆마커 공통 이미지 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong .marker {
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .marker {
 	width: 31.08px;
 	height: 41.03px;
-
-	/* position: absolute;
-	left: 577px;
-	top: 1080px; */
 
 	background-image: url(./Assets/marker.svg);
 	background-size: contain;
@@ -1026,21 +1081,92 @@ table {
 
 	cursor: pointer;
 }
+/* ☆☆☆☆☆☆☆☆☆☆서초 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seocho {
+	position: absolute;
+	left: 945px;
+	top: 990px;
+}
 
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo {
+	position: absolute;
+	left: 1000px;
+	top: 1198px;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+
+	color: #7E5CC4;
+}
+
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterPhoneNumber {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	transition: 0.1s ease-in-out;
+	
+	color: #858585;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆대치 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechi {
+	position: absolute;
+	left: 1015px;
+	top: 990px;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆목동 마커 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdong {
 	position: absolute;
-	left: 577px;
-	top: 1080px;
+	left: 750px;
+	top: 920px;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆잠실 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsil {
+	position: absolute;
+	left: 1060px;
+	top: 975px;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆중계 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggae {
+	position: absolute;
+	left: 1043px;
+	top: 700px;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆분당 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondang {
+	position: absolute;
+	left: 1170px;
+	top: 1140px;
+}
+
+/* ☆☆☆☆☆☆☆☆☆☆평촌 마커 */
+.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchon {
+	position: absolute;
+	left: 770px;
+	top: 1170px;
 }
 
 
+
+/* 맵 커버 */
 .contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
 	height: 100%;
-	background-image: url(./Assets/default_map.svg);
+	
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+
+
 
 
 /* .contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
@@ -1059,7 +1185,6 @@ table {
 	width: 100%;
 	height: 366px;
 	margin-top: 204px;
-	background-color: red;
 }
 
 .information .wrap {
@@ -1069,11 +1194,8 @@ table {
 	margin-left: 72px;
 }
 
-.information .wrap .left {
-	background-color: #6F3AC1;
-}
-
 .information .wrap .left .src {
+	margin-top: 25px;
 	width: 256px;
 	height: 256px;
 
@@ -1083,33 +1205,52 @@ table {
 	background-position: center;
 }
 
-.information .wrap .right {}
+.information .wrap .right {
+	width: 900px;
+}
 
 .information .wrap .right .centerName {
 	display: flex;
-
 	flex-direction: column;
+
+	margin-left: 22px;
 	width: 100%;
-	background-color: blue;
 }
 
 .information .wrap .right .centerAddress {
 	width: 100%;
-	background-color: bisque;
+	height: 73px;
+	margin-top: 26px;
 }
 
 .information .wrap .right .centerAddress .wrap {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 }
 
+/* 문의처 > 주소 */
 .information .wrap .right .centerAddress .wrap .left {
-	width: 50%;
+	width: 57px;
+	margin-left: -42px;
 }
 
 .information .wrap .right .centerAddress .wrap .right {
-	width: 50%;
+	width: 700px;
+	margin-left: 24px;
 }
+
+.information .wrap .right .centerAddress .wrap .right .wrap .customP7:nth-of-type(1) {
+	font-weight: 600;
+	width: 100%;
+}
+
+.information .wrap .right .centerAddress .wrap .right .wrap .customP7:nth-of-type(2) {
+	font-weight: 400;
+	color: #6F3AC1;
+	width: 100%;
+}
+
 
 .information .wrap .right .centerAddress .wrap .right .wrap {
 	display: flex;
@@ -1118,30 +1259,44 @@ table {
 
 .information .wrap .right .centerPhoneNumber {
 	width: 100%;
-	background-color: cornflowerblue;
+
+	margin-top: 59px;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap {
 	display: flex;
 	flex-direction: row;
+
+	width: 100%;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap .left {
-	width: 50%;
+	width: 120px;
+
+	margin-left: -42px;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap .right {
-	width: 50%;
+	width: 700px;
+	margin-left: 34px;
 }
 
 
 /* ================ 4. 도입희망지역 ================== */
+.contactToRegister .wrap .Wrap {
+	background: #F6F6F6;
+	box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
+	border-radius: 55px;
+
+	margin-top: 54px;
+	padding-top: 83px;
+	padding-bottom: 83px;
+}
+
 .contactToRegister .wrap .hopeRegion {
-	height: 250px;
+	height: 40px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 }
 
@@ -1152,31 +1307,52 @@ table {
 
 .contactToRegister .wrap .hopeRegion .wrap .title {
 	display: flex;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 280px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
 .contactToRegister .wrap .hopeRegion .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap .listWrap .list {
-	display: flex;
-	width: 100%;
+.contactToRegister .wrap .hopeRegion .wrap .listWrap #list:nth-of-type(1) {
+	margin-left: 27px;
+}
+
+.contactToRegister .wrap .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
+	margin-left: 49px;
+}
+
+/* 리스트버튼 스타일 */
+#list {
+	width: 289px;
+	height: 39px;
+}
+
+#list select {
+	width: 289px;
+	height: 39px;
+	border-radius: 5px;
+
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 140.52%;
+
+	font-family: 'Inter', sans-serif;
 }
 
 
 /* ================ 5. 학급 수 ================== */
 .contactToRegister .wrap .howManyClasses {
-	height: 250px;
+	margin-top: 39px;
+	height: 40px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 }
 
@@ -1187,63 +1363,73 @@ table {
 
 .contactToRegister .wrap .howManyClasses .wrap .title {
 	display: flex;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 280px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
 .contactToRegister .wrap .howManyClasses .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
 }
 
-.contactToRegister .wrap .howManyClasses .wrap .listWrap .list {
-	display: flex;
-	width: 100%;
+.contactToRegister .wrap .howManyClasses .wrap .listWrap #list {
+	margin-left: 27px;
 }
 
 
 /* ================ 6. 교육인원 ================== */
 .contactToRegister .wrap .numberOfStudents {
-	width: 100%;
-	height: 250px;
+	margin-top: 39px;
+	height: 40px;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 .contactToRegister .wrap .numberOfStudents .wrap {
 	display: flex;
-	flex-direction: row;
 	width: 100%;
 }
 
 .contactToRegister .wrap .numberOfStudents .wrap .title {
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 280px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
+/* 입력버튼 스타일 */
 .contactToRegister .wrap .numberOfStudents .wrap .input {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
+}
+
+.contactToRegister .wrap .numberOfStudents .wrap .input #input {
+	width: 280px;
+	margin-left: 27px;
+	border-radius: 5px;
+
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 140.52%;
+
+	font-family: 'Inter', sans-serif;
 }
 
 
 /* ================ 7. 프로그램 선택 ================== */
 .contactToRegister .wrap .selectProgram {
-	height: 250px;
+	margin-top: 39px;
+	height: 40px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 }
 
@@ -1254,31 +1440,30 @@ table {
 
 .contactToRegister .wrap .selectProgram .wrap .title {
 	display: flex;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 300px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
 .contactToRegister .wrap .selectProgram .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
 }
 
-.contactToRegister .wrap .selectProgram .wrap .listWrap .list {
-	display: flex;
-	width: 100%;
+.contactToRegister .wrap .selectProgram .wrap .listWrap #list {
+	margin-left: 18px;
 }
 
 
 /* ================ 8. 수업 형태 ================== */
 .contactToRegister .wrap .typeOfLesson {
-	height: 250px;
+	margin-top: 39px;
+	height: 80px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 }
 
@@ -1289,9 +1474,10 @@ table {
 
 .contactToRegister .wrap .typeOfLesson .wrap .title {
 	display: flex;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 280px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
 .contactToRegister .wrap .typeOfLesson .wrap .title .wrap {
@@ -1299,29 +1485,26 @@ table {
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
-	flex-grow: 1;
 }
 
 .contactToRegister .wrap .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .listWrap .list {
-	display: flex;
-	width: 100%;
+.contactToRegister .wrap .typeOfLesson .wrap .listWrap .customP {
+	margin-left: 27px;
 }
 
 
 /* ================ 9. 수업 횟수 ================== */
 .contactToRegister .wrap .numbersOfLessons {
-	height: 250px;
+	margin-top: 39px;
+	height: 100px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 }
 
@@ -1332,9 +1515,10 @@ table {
 
 .contactToRegister .wrap .numbersOfLessons .wrap .title {
 	display: flex;
-	width: 100%;
-	background-color: orange;
-	flex-grow: 1;
+	width: 280px;
+
+	padding-top: 3px;
+	margin-left: 190px;
 }
 
 .contactToRegister .wrap .numbersOfLessons .wrap .title .wrap {
@@ -1348,23 +1532,24 @@ table {
 .contactToRegister .wrap .numbersOfLessons .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
+
+	margin-right: 190px;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .listWrap .list {
-	display: flex;
-	width: 100%;
+.contactToRegister .wrap .numbersOfLessons .wrap .listWrap #list {
+	margin-left: 27px;
 }
 
 
 /* ================ 10. 수업 일정 ================== */
 .contactToRegister .wrap .selectLessonDays {
-	height: 500px;
+	height: 1000px;
+	margin-top: 128px;
+}
+
+.contactToRegister .wrap .selectLessonDays .wrap {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	background-color: green;
 }
 
 .contactToRegister .wrap .selectLessonDays .wrap .title {
@@ -1373,34 +1558,255 @@ table {
 	width: 100%;
 }
 
-/* 달력 전체 크기 지정 */
-.calendarWrap .calendar .react-calendar {
-	width: 80%;
+.contactToRegister .wrap .selectLessonDays .wrap .title .top {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
+
+.contactToRegister .wrap .selectLessonDays .wrap .title .top .icon {
+	width: 51px;
+	height: 51px;
+}
+
+.contactToRegister .wrap .selectLessonDays .wrap .title .top .icon .source {
+	width: 100%;
+	height: 100%;
+
+	background-image: url(./Assets/calendar.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.contactToRegister .wrap .selectLessonDays .wrap .title .customP9 {
+	text-align: center;
+	margin-top: 16px;
+
+	display: flex;
+	justify-content: center;
+}
+
+
 
 /* 날짜 선택바 */
 .bars {
 	width: 100%;
 	height: 100%;
+	margin-left: 200px;
+	display: flex;
 }
 
 .bars .wrap {
+	width: 800px;
+}
+
+
+.bars .wrap .left .barWrap .circleNum{
 	display: flex;
-	width: 100%;
-	height: 100%;
+	align-items: center;
+	justify-content: center;
+	width: 54px;
+	height: 54px;
+	background-color: #FAFAFA;
+	border: 1px solid #A8A8A8;
+	border-radius: 50%;
+
+	font-weight: 500;
+	font-size: 27px;
+	line-height: 140.52%;
+	color: #747474;
 }
 
-.bars .wrap>.left {
-	width: 50%;
+.bars .wrap .left .barWrap:nth-of-type(1) {
+	margin-top: 90px;
 }
 
-.bars .wrap .right {
-	width: 50%;
+.bars .wrap .left .barWrap:nth-of-type(2) {
+	margin-top: 19px;
 }
 
+.bars .wrap .left .barWrap:nth-of-type(3) {
+	margin-top: 19px;
+}
+
+.bars .wrap .left .barWrap #bar0 {
+	width: 697px;
+	height: 54px;
+	margin-left: 39px;
+
+	font-weight: 500;
+	font-size: 27px;
+	line-height: 140.52%;
+	font-family: 'Inter', sans-serif;
+	color: #747474;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #FAFAFA;
+	border: 1px solid #A8A8A8;
+	border-radius: 9px;
+}
+
+.bars .wrap .left .barWrap #bar1 {
+	width: 697px;
+	height: 54px;
+	margin-left: 39px;
+
+	font-weight: 500;
+	font-size: 27px;
+	line-height: 140.52%;
+	font-family: 'Inter', sans-serif;
+	color: #747474;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #FAFAFA;
+	border: 1px solid #A8A8A8;
+	border-radius: 9px;
+}
+
+.bars .wrap .left .barWrap #bar2 {
+	width: 697px;
+	height: 54px;
+	margin-left: 50px;
+
+	font-weight: 500;
+	font-size: 27px;
+	line-height: 140.52%;
+	font-family: 'Inter', sans-serif;
+	color: #747474;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #FAFAFA;
+	border: 1px solid #A8A8A8;
+	border-radius: 9px;
+}
+
+.bars .right .controlWrap{
+	margin-top: 90px;
+	display: flex;
+	align-items: center;
+	height: 54px;
+}
+
+.bars .right .controlWrap .addBtn {
+	width: 46px;
+	height: 46px;
+	font-size: 49px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffff;
+	border: none;
+	cursor: pointer;
+}
+.bars .right .controlWrap .addBtn:hover {
+	background-color: #F6F6F6
+}
+
+.bars .right .controlWrap .discardBtn {
+	width: 46px;
+	height: 46px;
+	font-size: 49px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffff;
+	border: none;
+	cursor: pointer;
+}
+
+.bars .right .controlWrap .discardBtn:hover {
+	background-color: #F6F6F6
+}
+
+
+/* 달력 전체 크기 지정 */
+.calendarWrap .calendar{
+	display: flex;
+	justify-content: center;
+}
+
+.calendarWrap .calendar .react-calendar {
+	width: 946px;
+	height: 446px;
+	margin-top: 56px;
+	
+	border: none;
+}
+
+/* 달력 년도 배경색 */
+.react-calendar .react-calendar__navigation {
+	background-color: rgba(16, 16, 16, 0.05);
+	height: 60px;
+	border-radius: 15px;
+}
+
+.react-calendar__navigation__arrow {
+	border-radius: 15px;
+}
+
+/* 달력 년도 레이블 */
+.react-calendar__navigation__label {
+	font-size: 29px;
+	line-height: 35.1px;
+	font-family: 'Inter', sans-serif;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+	height: 50px;
+
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+}
+
+/* 달력 일자 타일 */
+.react-calendar__tile {
+	height: 50px;
+
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+}
+
+/* 요일 표시 데코레이션 */
+abbr {
+	text-decoration: none;
+}
+
+/* 날짜 타일 선택 효과 */
+.react-calendar .react-calendar__tile--active:enabled:hover,
+.react-calendar .react-calendar__tile--active:enabled:focus {
+	background-color: #6F3AC1;
+}
+
+.react-calendar .react-calendar__tile {
+	transition: 0.1s ease-in-out;
+}
+
+.react-calendar .react-calendar__tile--now {
+	border-radius: 15px;
+}
+
+.react-calendar .react-calendar__tile--active {
+	background-color: #6F3AC1;
+}
 
 .react-calendar .highlight {
-	outline: 2px solid red;
+	/* outline: 2px solid red; */
+	background-color: #6F3AC1;
+	color: white;
+	border-radius: 15px;
 }
 
 .barWrap {
@@ -1408,39 +1814,57 @@ table {
 	flex-direction: row;
 }
 
-.barWrap .circleNum {}
-
 
 /* ================ 11. 신청자 ================== */
+
+
 .contactToRegister .wrap .applicant {
 	width: 100%;
-	height: 250px;
+	height: 40px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	
+
+	margin-left: 255px;
+	margin-right: 255px;
 }
 
 .contactToRegister .wrap .applicant .wrap {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	width: 672px;
+	background-color: brown;
 }
 
 .contactToRegister .wrap .applicant .wrap .title {
+	width: 111px;
+	
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 100%;
 	background-color: orange;
-	flex-grow: 1;
 }
 
 .contactToRegister .wrap .applicant .wrap .input {
 	display: flex;
-	width: 100%;
-	background-color: brown;
-	flex-grow: 1;
 }
+
+.contactToRegister .wrap .applicant .wrap .input #input {
+	display: flex;
+
+		width: 280px;
+		height: 33px;
+		border-radius: 5px;
+	
+		font-weight: 500;
+		font-size: 17px;
+		line-height: 140.52%;
+	
+		margin-left: 272px;
+		font-family: 'Inter', sans-serif;
+}
+
 
 
 /* ================ 12. 이메일 ================== */

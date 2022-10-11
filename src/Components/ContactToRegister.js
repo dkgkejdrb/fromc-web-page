@@ -6,6 +6,14 @@ import 'react-calendar/dist/Calendar.css'
 import { useDaumPostcodePopup } from 'react-daum-postcode';
 import AgreeDescription from "./AgreeDescription";
 
+import mapDefault from "../Assets/default_map.svg"
+import mapBoondang from "../Assets/boondang.svg"
+import mapPyeongchon from "../Assets/pyeongchon.svg"
+import mapJamsil from "../Assets/jamsil.svg"
+import mapDaechi from "../Assets/daechi.svg"
+import mapSeocho from "../Assets/seocho.svg"
+import mapMokdong from "../Assets/mokdong.svg"
+import mapJoonggae from "../Assets/joonggae.svg"
 
 // react-calendar API 모음:
 // https://github.com/wojtekmaj/react-calendar
@@ -13,11 +21,48 @@ import AgreeDescription from "./AgreeDescription";
 
 // 센터 정보
 const centerInfo = {
-    mokdong: {
+    seocho: {
         name: '씨큐브코딩 서초코어센터',
         address: '서울시 서초구 고무래로 26 쌍동빌딩 동관 3층',
         contactNumber: '02-537-2900'
-    }
+    },
+
+    daechi: {
+        name: '씨큐브코딩 대치센터',
+        address: '서울시 강남구 삼성로71길 18 대치스터디타워 3,4층',
+        contactNumber: '02-537-3800'
+    },
+
+    mokdong: {
+        name: '씨큐브코딩 목동센터',
+        address: '서울시 양천구 목동서로 133 CMS W빌딩 1층',
+        contactNumber: '02-2645-2600'
+    },
+
+    jamsil: {
+        name: '씨큐브코딩 잠실센터',
+        address: '서울시 송파구 석촌호수로 88 대원빌딩 6층',
+        contactNumber: '02-3431-2100'
+    },
+
+    joonggae: {
+        name: '씨큐브코딩 중계센터',
+        address: '서울시 노원구 중계로 225 청구상가 4층',
+        contactNumber: '02-930-4200'
+    },
+
+    boondang: {
+        name: '씨큐브코딩 분당센터',
+        address: '경기도 성남시 분당구 느티로27 하나프라자 4층',
+        contactNumber: '031-726-4300'
+    },
+
+    pyeongchon: {
+        name: '씨큐브코딩 평촌센터',
+        address: '경기도 안양시 동안구 평촌대로 136 신세기타운 6층 601~3호',
+        contactNumber: '031-387-2600'
+    },
+
 }
 
 
@@ -276,10 +321,14 @@ const ContactToRegister = () => {
         const Bar0 = () => {
             return (
                 <div className="barWrap">
-                    <div className="circleNum" style={{ display: bar1DisplayValue }}>
-                        1
+                    <div 
+                        className="circleNum" 
+                        style={{ 
+                            display: bar1DisplayValue 
+                        }}>
+                            1
                     </div>
-                    <div id={barInfo[0].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar1DisplayValue }}>
+                    <div id={barInfo[0].id} style={{ display: bar1DisplayValue }}>
                         {barInfo[0].date}
                     </div>
                 </div>
@@ -292,7 +341,7 @@ const ContactToRegister = () => {
                     <div className="circleNum" style={{ display: bar2DisplayValue }}>
                         2
                     </div>
-                    <div id={barInfo[1].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar2DisplayValue }}>
+                    <div id={barInfo[1].id} style={{ display: bar2DisplayValue }}>
                         {barInfo[1].date}
                     </div>
                 </div>
@@ -305,7 +354,7 @@ const ContactToRegister = () => {
                     <div className="circleNum" style={{ display: bar3DisplayValue }}>
                         3
                     </div>
-                    <div id={barInfo[2].id} style={{ width: '200px', height: '30px', backgroundColor: "white", border: "solid", display: bar3DisplayValue }}>
+                    <div id={barInfo[2].id} style={{ display: bar3DisplayValue }}>
                         {barInfo[2].date}
                     </div>
                 </div>
@@ -442,13 +491,70 @@ const ContactToRegister = () => {
     const [showCenterName, setShowCenterName] = useState('');
     const [showCenterAddress, setShowCenterAddress] = useState('');
     const [showCenterPhoneNumber, setShowCenterPhoneNumber] = useState('');
+    const [showCenterMap, setShowCenterMap] = useState(`url(${mapDefault})`);
+    const [scaleUpSeocho, setScaleUpSeocho] = useState('20px');
+    const [scaleUpJamsil, setScaleUpJamsil] = useState('20px');
+useState();
     // 지도 마커버튼핸들러
     const onMarkerHandler = (e) => {
+        if (e.target.className == "_seocho marker") {
+            console.log(`${centerInfo.seocho.name} / ${centerInfo.seocho.address} / ${centerInfo.seocho.contactNumber}`);
+            setShowCenterName(centerInfo.seocho.name);
+            setShowCenterAddress(centerInfo.seocho.address);
+            setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
+            setShowCenterMap(`url(${mapSeocho})`)
+            setScaleUpSeocho('24px');
+            setScaleUpJamsil('20px');
+        }
+
+        if (e.target.className == "_daechi marker") {
+            console.log(`${centerInfo.daechi.name} / ${centerInfo.daechi.address} / ${centerInfo.daechi.contactNumber}`);
+            setShowCenterName(centerInfo.daechi.name);
+            setShowCenterAddress(centerInfo.daechi.address);
+            setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
+            setShowCenterMap(`url(${mapDaechi})`)
+        }
+
         if (e.target.className == "_mokdong marker") {
             console.log(`${centerInfo.mokdong.name} / ${centerInfo.mokdong.address} / ${centerInfo.mokdong.contactNumber}`);
             setShowCenterName(centerInfo.mokdong.name);
             setShowCenterAddress(centerInfo.mokdong.address);
             setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
+            setShowCenterMap(`url(${mapMokdong})`)
+        }
+
+        if (e.target.className == "_jamsil marker") {
+            console.log(`${centerInfo.jamsil.name} / ${centerInfo.jamsil.address} / ${centerInfo.jamsil.contactNumber}`);
+            setShowCenterName(centerInfo.jamsil.name);
+            setShowCenterAddress(centerInfo.jamsil.address);
+            setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
+            setShowCenterMap(`url(${mapJamsil})`);
+            setScaleUpJamsil('24px');
+            setScaleUpSeocho('20px');
+        }
+
+        if (e.target.className == "_joonggae marker") {
+            console.log(`${centerInfo.joonggae.name} / ${centerInfo.joonggae.address} / ${centerInfo.joonggae.contactNumber}`);
+            setShowCenterName(centerInfo.joonggae.name);
+            setShowCenterAddress(centerInfo.joonggae.address);
+            setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
+            setShowCenterMap(`url(${mapJoonggae})`)
+        }
+
+        if (e.target.className == "_boondang marker") {
+            console.log(`${centerInfo.boondang.name} / ${centerInfo.boondang.address} / ${centerInfo.boondang.contactNumber}`);
+            setShowCenterName(centerInfo.boondang.name);
+            setShowCenterAddress(centerInfo.boondang.address);
+            setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
+            setShowCenterMap(`url(${mapBoondang})`)
+        }
+
+        if (e.target.className == "_pyeongchon marker") {
+            console.log(`${centerInfo.pyeongchon.name} / ${centerInfo.pyeongchon.address} / ${centerInfo.pyeongchon.contactNumber}`);
+            setShowCenterName(centerInfo.pyeongchon.name);
+            setShowCenterAddress(centerInfo.pyeongchon.address);
+            setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
+            setShowCenterMap(`url(${mapPyeongchon})`)
         }
     }
 
@@ -488,6 +594,38 @@ const ContactToRegister = () => {
                         </div>
                         <div className="mapWrap">
                             <div
+                                className="seocho"
+                                name="seocho"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_seocho marker">
+                                    
+                                </div>
+                                <div className="_seochoCenterInfo">
+                                    <div className="_seochoCenterName"
+                                    style={{
+                                    fontSize: scaleUpSeocho
+                                    }}>
+                                        서초코어센터
+                                    </div>
+                                    <div className="_seochoCenterPhoneNumber"
+                                    style={{
+                                    fontSize: scaleUpSeocho
+                                    }}>
+                                        02-537-2900
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                className="daechi"
+                                name="daechi"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_daechi marker">
+
+                                </div>
+                            </div>
+                            <div
                                 className="mokdong"
                                 name="mokdong"
                                 onMouseOver={(e) => onMarkerHandler(e)}
@@ -496,7 +634,53 @@ const ContactToRegister = () => {
 
                                 </div>
                             </div>
-                            <div className="source">
+                            <div
+                                className="jamsil"
+                                name="jamsil"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_jamsil marker">
+
+                                </div>
+                            </div>
+                            <div
+                                className="joonggae"
+                                name="joonggae"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_joonggae marker">
+
+                                </div>
+                            </div>
+                            <div
+                                className="boondang"
+                                name="boondang"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_boondang marker">
+
+                                </div>
+                            </div>
+                            <div
+                                className="pyeongchon"
+                                name="pyeongchon"
+                                onMouseOver={(e) => onMarkerHandler(e)}
+                            >
+                                <div className="_pyeongchon marker">
+
+                                </div>
+                            </div>
+
+
+
+                            {/* 직영선택 지도  */}
+                            <div 
+                                className="source"
+                                style={{
+                                    backgroundImage: showCenterMap
+                                }}
+                                
+                                >
                                 {/* <MapKaKao /> */}
                             </div>
                         </div>
@@ -514,16 +698,16 @@ const ContactToRegister = () => {
                                     <div className="centerAddress">
                                         <div className="wrap">
                                             <div className="left">
-                                                <div className="customH3">
-                                                    센터 주소
+                                                <div className="customH9">
+                                                    주소
                                                 </div>
                                             </div>
                                             <div className="right">
                                                 <div className="wrap">
-                                                    <div className="customP">
+                                                    <div className="customP7">
                                                         {showCenterName}
                                                     </div>
-                                                    <div className="customP">
+                                                    <div className="customP7">
                                                         {showCenterAddress}
                                                     </div>
                                                 </div>
@@ -533,12 +717,12 @@ const ContactToRegister = () => {
                                     <div className="centerPhoneNumber">
                                         <div className="wrap">
                                             <div className="left">
-                                                <div className="customH3">
+                                                <div className="customH9">
                                                     전화번호
                                                 </div>
                                             </div>
                                             <div className="right">
-                                                <div className="customP">
+                                                <div className="customP8">
                                                     {showCenterPhoneNumber}
                                                 </div>
                                             </div>
@@ -550,17 +734,17 @@ const ContactToRegister = () => {
                     </div>
                 </div>
 
+                <div className="Wrap">
                 <div className="hopeRegion">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH10">
                                 도입희망지역
                             </div>
                         </div>
                         <div className="listWrap">
-                            <div className='list' style={{ width: '40%', height: '70%' }}>
-                                <select
-                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
+                            <div id='list'>
+                                <select      
                                     onChange={onChangeCityInfo}
                                 >
 
@@ -570,9 +754,8 @@ const ContactToRegister = () => {
                                 </select>
                             </div>
 
-                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                            <div id='list'>
                                 <select
-                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeTownInfo}
                                 >
                                     <option value=''>구/군 선택</option>
@@ -593,14 +776,13 @@ const ContactToRegister = () => {
                 <div className="howManyClasses">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH10">
                                 학급 수
                             </div>
                         </div>
                         <div className="listWrap">
-                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                            <div id='list'>
                                 <select
-                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeClassesCount}
                                 >
                                     <option value=''>선택해주세요.</option>
@@ -628,15 +810,15 @@ const ContactToRegister = () => {
                 <div className="numberOfStudents">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH10">
                                 교육인원
                             </div>
                         </div>
                         <div className="input">
                             <input
+                                id="input"
                                 type="text"
                                 placeholder="총 도입 예상 인원"
-                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
                                 value={userInfo.studentsCount}
                                 onChange={onChangeStudentsCount}
                             ></input>
@@ -648,14 +830,13 @@ const ContactToRegister = () => {
                 <div className="selectProgram">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH10">
                                 프로그램 선택
                             </div>
                         </div>
                         <div className="listWrap">
-                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                            <div id='list'>
                                 <select
-                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeProgram}
                                 >
                                     <option value=''>선택해주세요.</option>
@@ -672,7 +853,7 @@ const ContactToRegister = () => {
                     <div className="wrap">
                         <div className="title">
                             <div className="wrap">
-                                <div className="customH2">
+                                <div className="customH10">
                                     수업 형태
                                 </div>
                                 <div className="customP">
@@ -681,7 +862,7 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="listWrap">
-                            <div className="customH4">
+                            <div className="customP">
                                 원데이 클래스
                             </div>
                         </div>
@@ -692,7 +873,7 @@ const ContactToRegister = () => {
                     <div className="wrap">
                         <div className="title">
                             <div className="wrap">
-                                <div className="customH2">
+                                <div className="customH10">
                                     수업 횟수
                                 </div>
                                 <div className="customP">
@@ -701,9 +882,8 @@ const ContactToRegister = () => {
                             </div>
                         </div>
                         <div className="listWrap">
-                            <div className='list' style={{ width: '40%', height: '70%' }}>
+                            <div id='list'>
                                 <select
-                                    style={{ width: '200px', height: '24px', border: 'solid 0.1px white' }}
                                     onChange={onChangeLessonsCount}
                                 >
                                     <option value=''>선택해주세요.</option>
@@ -714,14 +894,23 @@ const ContactToRegister = () => {
                         </div>
                     </div>
                 </div>
+                </div>
+
 
                 <div className="selectLessonDays">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
-                                수업 일정
+                            <div className="top">
+                                <div className="icon">
+                                    <div className="source">
+                                        
+                                    </div>
+                                </div>
+                                <div className="customH11">
+                                    수업 일정
+                                </div>
                             </div>
-                            <div className="customP">
+                            <div className="customP9">
                                 해당 캘린더는 일정 확인용으로, 가일정 선택 단계입니다. <br></br>최종 수업 일정은 도입 신청이 완료된 후 상담을 통해 가능합니다.
                             </div>
                         </div>
@@ -751,29 +940,30 @@ const ContactToRegister = () => {
                         <div className="bars">
                             <div className="wrap">
                                 <ShowBar />
-                                <div className="right">
+                            </div>
+                            <div className="right">
                                     <div className="controlWrap">
                                         <button className="addBtn" onClick={AddBar} >+</button>
                                         <button className="discardBtn" onClick={DeleteBar}>-</button>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <div className="bottomWrap">
                 <div className="applicant">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH12">
                                 신청자
                             </div>
                         </div>
                         <div className="input">
                             <input
+                                id="input"
                                 type="text"
                                 placeholder="신청자 이름"
-                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
                                 value={userInfo.name}
                                 onChange={onChangeName}
                             ></input>
@@ -784,7 +974,7 @@ const ContactToRegister = () => {
                 <div className="email">
                     <div className="wrap">
                         <div className="title">
-                            <div className="customH2">
+                            <div className="customH12">
                                 이메일
                             </div>
                         </div>
@@ -792,7 +982,6 @@ const ContactToRegister = () => {
                             <input
                                 type="text"
                                 placeholder="작성자 이메일"
-                                style={{ width: '200px', height: '24px', textAlign: 'center' }}
                                 value={userInfo.email}
                                 onChange={onChangeEmail}
                             ></input>
@@ -957,6 +1146,7 @@ const ContactToRegister = () => {
                     <button
                         onClick={submitHandler}
                     >제출하기</button>
+                </div>
                 </div>
             </div>
         </div>
