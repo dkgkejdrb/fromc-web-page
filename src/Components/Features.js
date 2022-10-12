@@ -2,9 +2,6 @@ const Features = () => {
     return (
         <div className="features">
             <div className="wrap">
-                {/* <div className="title">
-                    <h1 className="customH1">FromC 교육 특징<br></br>"더 나은 미래로의 연결"</h1>
-                </div> */}
                 <div key="firstLine" className="firstLine leftPictureSection">
                     <div className="contents">
                         <div className="picture">
@@ -76,29 +73,6 @@ const Features = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div key="fourthLine" className="fourthLine rightPictureSection">
-                    <div className="contents">
-                    <div className="text">
-                            <div className="wrap">
-                                <h2 className="customH2">
-                                    4.교육전문가의 독보적인 커리큘럼
-                                </h2>
-                                <p className="customP">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat sem a consectetur eleifend
-                                </p>
-                            </div>
-                        </div>
-                        <div className="picture">
-                            <div className="wrap">
-                                <div className="source">
-
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 

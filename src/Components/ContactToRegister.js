@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header2 from "./Header2";
-import MapKaKao from "./MapKakao";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import { useDaumPostcodePopup } from 'react-daum-postcode';
@@ -65,9 +64,7 @@ const centerInfo = {
         address: '경기도 안양시 동안구 평촌대로 136 신세기타운 6층 601~3호',
         contactNumber: '031-387-2600'
     },
-
 }
-
 
 // 수업 일정 - 사용자가 선택한 날짜 데이터
 const barInfo = [
@@ -244,18 +241,18 @@ const ContactToRegister = () => {
     // ☆☆☆☆☆☆☆☆ 수업 일정 ☆☆☆☆☆☆☆☆
     // 달력 날짜 스테이트 관리
     // value <- 날짜 저장
-    const [value, onChange] = useState(new Date());
+    const [date, setDate] = useState(new Date());
 
     // 달력 날짜 클릭할 때마다, 날짜 저장
-    const SaveDate = (value) => {
+    const SaveDate = (date) => {
         if (pointer === 0) {
-            barInfo[0].date = value.toLocaleDateString();
+            barInfo[0].date = date.toLocaleDateString();
         }
         if (pointer === 1) {
-            barInfo[1].date = value.toLocaleDateString();
+            barInfo[1].date = date.toLocaleDateString();
         }
         if (pointer === 2) {
-            barInfo[2].date = value.toLocaleDateString();
+            barInfo[2].date = date.toLocaleDateString();
         }
 
         onChangeLessonDays();
@@ -264,7 +261,9 @@ const ContactToRegister = () => {
 
     // 날짜 표시바의 위치 지정
     const [pointer, setPointer] = useState(0);
-
+    const [bar1DisplayValue, bar1ShowDisplayValue] = useState('');
+    const [bar2DisplayValue, bar2ShowDisplayValue] = useState('none');
+    const [bar3DisplayValue, bar3ShowDisplayValue] = useState('none');
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
         // 중복 등록 막기
@@ -298,6 +297,7 @@ const ContactToRegister = () => {
             alert('날짜를 선택해주세요.');
             return;
         }
+
         if (pointer >= 2) {
             setPointer(2);
             alert('수업 일정은 최대 3개까지만 등록가능합니다.');
@@ -316,12 +316,9 @@ const ContactToRegister = () => {
         }
     }
 
-    // '' 화면 표시, 'none' 화면 미표시
-    const [bar1DisplayValue, bar1ShowDisplayValue] = useState('none');
-    const [bar2DisplayValue, bar2ShowDisplayValue] = useState('none');
-    const [bar3DisplayValue, bar3ShowDisplayValue] = useState('none');
     // pointer 값에 따라 날짜 표시바를 보여줌
     const ShowBar = () => {
+    // '' 화면 표시, 'none' 화면 미표시
         const Bar0 = () => {
             return (
                 <div className="barWrap">
@@ -365,22 +362,7 @@ const ContactToRegister = () => {
             );
         }
 
-        if (pointer === 0) {
-            bar1ShowDisplayValue('');
-            bar2ShowDisplayValue('none');
-            bar3ShowDisplayValue('none');
 
-        }
-        if (pointer === 1) {
-            bar1ShowDisplayValue('');
-            bar2ShowDisplayValue('');
-            bar3ShowDisplayValue('none');
-        }
-        if (pointer === 2) {
-            bar1ShowDisplayValue('');
-            bar2ShowDisplayValue('');
-            bar3ShowDisplayValue('');
-        }
 
 
         return (
@@ -391,6 +373,108 @@ const ContactToRegister = () => {
             </div>
         );
     };
+    // pointer 값에 따라 날짜 표시바를 보여줌
+    // const ShowBar = ({displayItems}) => {
+    //     const [dv, setDv] = useState([
+    //         {value: 1, display: 'none', date: '2342'},
+    //         {value: 2, display: 'none', date: '2342'},
+    //         {value: 3, display: 'none', date: '2342'},
+    //     ]);
+
+    //     setDv(prev => prev.map(item => {
+    //         if(item.value === 2){
+    //             item.dispay = 'show';
+    //         }
+    //         return item;
+    //     }));
+
+    //     setDv([
+    //         {value: 1, display: 'none', date: '2342'},
+    //         {value: 1, display: 'none', date: '2342'},
+    //         {value: 1, display: 'none', date: '2342'},
+    //     ])
+        
+    //     const Bar0 = () => {
+    //         return (
+    //             <div className="barWrap">
+    //                 <div
+    //                     className="circleNum"
+    //                     style={{
+    //                         display: bar1DisplayValue
+    //                     }}>
+    //                     1
+    //                 </div>
+    //                 <div id={barInfo[0].id} style={{ display: bar1DisplayValue }}>
+    //                     {barInfo[0].date}
+    //                 </div>
+    //             </div>
+    //         );
+    //     }
+
+    //     const Bar1 = ({displayValue, number, date}) => {
+    //         return (
+    //             <div className="barWrap">
+    //                 <div className="circleNum" style={{ display: bar2DisplayValue }}>
+    //                     2
+    //                 </div>
+    //                 <div id={barInfo[1].id} style={{ display: bar2DisplayValue }}>
+    //                     {barInfo[1].date}
+    //                 </div>
+    //             </div>
+    //         );
+    //     }
+
+    //     const Bar2 = () => {
+    //         return (
+    //             <div className="barWrap">
+    //                 <div className="circleNum" style={{ display: bar3DisplayValue }}>
+    //                     3
+    //                 </div>
+    //                 <div id={barInfo[2].id} style={{ display: bar3DisplayValue }}>
+    //                     {barInfo[2].date}
+    //                 </div>
+    //             </div>
+    //         );
+    //     }
+
+    //     if (pointer === 0) {
+    //         bar1ShowDisplayValue('');
+    //         bar2ShowDisplayValue('none');
+    //         bar3ShowDisplayValue('none');
+
+    //     }
+    //     if (pointer === 1) {
+    //         bar1ShowDisplayValue('');
+    //         bar2ShowDisplayValue('');
+    //         bar3ShowDisplayValue('none');
+    //     }
+    //     if (pointer === 2) {
+    //         bar1ShowDisplayValue('');
+    //         bar2ShowDisplayValue('');
+    //         bar3ShowDisplayValue('');
+    //     }
+
+
+    //     return (
+    //         <div className="left">
+    //             {
+    //                 dv.map(item => (
+    //                     <div key="item.value" className="barWrap">
+    //                         <div className="circleNum" style={{ display: item.display }}>
+    //                             item.value
+    //                         </div>
+    //                         <div id={barInfo[2].id} style={{ display: item.display }}>
+    //                             {barInfo[2].date}
+    //                         </div>
+    //                     </div>
+    //                 ))
+    //             }
+    //             <Bar0 />
+    //             <Bar1 />
+    //             <Bar2 />
+    //         </div>
+    //     );
+    // };
 
 
 
@@ -420,11 +504,29 @@ const ContactToRegister = () => {
         }
 
         if (address != "") {
-            console.log(address); // 여기서 학교 기관 주소 정보 넘겨야 함
-        }
-    }, [orgType, address]);
 
-    // 카카오 주소 팝업창
+        }
+
+        // 바 위치 체크
+        if (pointer === 0) {
+            bar1ShowDisplayValue('');
+            bar2ShowDisplayValue('none');
+            bar3ShowDisplayValue('none');
+        }
+        if (pointer === 1) {
+            bar1ShowDisplayValue('');
+            bar2ShowDisplayValue('');
+            bar3ShowDisplayValue('none');
+        }
+        if (pointer === 2) {
+            bar1ShowDisplayValue('');
+            bar2ShowDisplayValue('');
+            bar3ShowDisplayValue('');
+        }
+
+    }, [orgType, address, pointer]);
+
+    // 카카오 주소 팝업창 
     const Postcode = () => {
         const open = useDaumPostcodePopup();
 
@@ -462,7 +564,7 @@ const ContactToRegister = () => {
                 type="text"
                 placeholder="학교/기관 주소"
                 onClick={handleClick}
-                value={address}
+                defaultValue={address}
             >
             </input>
             </div>
@@ -486,12 +588,6 @@ const ContactToRegister = () => {
 
     // 제출버튼 핸들러
     const submitHandler = () => {
-        // let values = Object.values(userInfo);
-        // if (values.includes('')) {
-        //     alert('빈칸을 꼭 채워주세요.')
-        // } else if (userInfo.agree == false) {
-        //     alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
-        // }
         if (userInfo.city === '') {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
         } else if (userInfo.town === '') {
@@ -871,9 +967,7 @@ const ContactToRegister = () => {
                                     </div>
                                 </div>
                             </div>
-
-
-
+                            
                             {/* 직영선택 지도  */}
                             <div
                                 className="source"
@@ -882,7 +976,6 @@ const ContactToRegister = () => {
                                 }}
 
                             >
-                                {/* <MapKaKao /> */}
                             </div>
                         </div>
                         <div className="information">
@@ -1120,12 +1213,12 @@ const ContactToRegister = () => {
                         <div className="calendarWrap">
                             <div className="calendar">
                                 <Calendar
-                                    onChange={onChange}
-                                    onClickDay={(value, event) => {
-                                        SaveDate(value);
+                                    onChange={setDate}
+                                    onClickDay={(date, event) => {
+                                        SaveDate(date);
                                     }}
                                     calendarType="US"
-                                    value={value}
+                                    value={date}
                                     minDate={new Date()}
                                     // maxDate={new Date("12-31-2022")}
 

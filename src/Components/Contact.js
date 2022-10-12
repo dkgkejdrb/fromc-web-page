@@ -8,7 +8,6 @@ const Contact = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', DisplayOn, { capture: true });
-        console.log(window.scrollY);
     }, []);
 
     const DisplayOn = () => {
