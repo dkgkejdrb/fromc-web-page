@@ -5,6 +5,9 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import { useDaumPostcodePopup } from 'react-daum-postcode';
 import AgreeDescription from "./AgreeDescription";
+import LineBanner from './lineBanner';
+import Footer from './Footer';
+import Copyright from './Copyright';
 
 import mapDefault from "../Assets/default_map.svg"
 import mapBoondang from "../Assets/boondang.svg"
@@ -95,6 +98,7 @@ const ContactToRegister = () => {
         lessonDays: ['', '', ''],
         name: '',
         email: '',
+        phoneNumber: '',
         orgType: '',
         orgName: '',
         orgAddress: '',
@@ -418,9 +422,9 @@ const ContactToRegister = () => {
         if (address != "") {
             console.log(address); // 여기서 학교 기관 주소 정보 넘겨야 함
         }
-
     }, [orgType, address]);
 
+    // 카카오 주소 팝업창
     const Postcode = () => {
         const open = useDaumPostcodePopup();
 
@@ -452,14 +456,16 @@ const ContactToRegister = () => {
         };
 
         return (
+            <div className="wrap">
             <input
+                className="orgInfoInput"
                 type="text"
                 placeholder="학교/기관 주소"
-                style={{ width: '400px', height: '24px', textAlign: 'center' }}
                 onClick={handleClick}
                 value={address}
             >
             </input>
+            </div>
         );
     };
 
@@ -480,11 +486,48 @@ const ContactToRegister = () => {
 
     // 제출버튼 핸들러
     const submitHandler = () => {
-        let values = Object.values(userInfo);
-        if (values.includes('')) {
-            alert('빈칸을 꼭 채워주세요.')
+        // let values = Object.values(userInfo);
+        // if (values.includes('')) {
+        //     alert('빈칸을 꼭 채워주세요.')
+        // } else if (userInfo.agree == false) {
+        //     alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+        // }
+        if (userInfo.city === '') {
+            alert("'도입희망지역(시/도)'을 선택해주세요.")
+        } else if (userInfo.town === '') {
+            alert("'도입희망지역(구/군)'을 선택해주세요.")
+        } else if (userInfo.classesCount === '') {
+            alert("'학급 수'를 작성해주세요.")
+        } else if (userInfo.studentsCount === '') {
+            alert("'교육인원'을 작성해주세요.")
+        } else if (userInfo.program === '') {
+            alert("'프로그램'을 선택해주세요.")
+        } else if (userInfo.lessonsCount === '') {
+            alert("'수업 횟수'를 선택해주세요.")
+        } else if (userInfo.lessonDays[0] === '') {
+            alert("'수업 일자'를 1개 이상 선택해주세요.")
+        } else if (userInfo.name === '') {
+            alert("'신청자의 성함'을 작성해주세요.")
+        } else if (userInfo.email === '') {
+            alert("'이메일 주소'를 작성해주세요.")
+        } else if (userInfo.phoneNumber === '') {
+            alert("'휴대번호'를 작성해주세요.")
+        } else if (userInfo.orgType === '') {
+            alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
+        } else if (userInfo.orgName === '') {
+            alert("'학교 명/ 기관 명'을 작성해주세요.")
+        } else if (userInfo.orgAddress === '') {
+            alert("'학교 명/ 기관 주소'를 작성해주세요.")
+        } else if (userInfo.knowByrecommendation === false && 
+        userInfo.knowByproposal === false &&
+        userInfo.knowBywebSearch === false &&
+        userInfo.knowByEtc === false
+        ) {
+            alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
         } else if (userInfo.agree == false) {
-            alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+                alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+        } else {
+            alert('제출되었습니다.')
         }
     }
 
@@ -503,10 +546,6 @@ const ContactToRegister = () => {
     // 지도 마커버튼핸들러
     const onMarkerHandler = (e) => {
         if (e.target.className == "_seocho marker") {
-            console.log(`${centerInfo.seocho.name} / ${centerInfo.seocho.address} / ${centerInfo.seocho.contactNumber}`);
-            setShowCenterName(centerInfo.seocho.name);
-            setShowCenterAddress(centerInfo.seocho.address);
-            setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
             setShowCenterMap(`url(${mapSeocho})`);
             setScaleUpSeocho('26px');
             setScaleUpDaechi('20px');
@@ -518,10 +557,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_daechi marker") {
-            console.log(`${centerInfo.daechi.name} / ${centerInfo.daechi.address} / ${centerInfo.daechi.contactNumber}`);
-            setShowCenterName(centerInfo.daechi.name);
-            setShowCenterAddress(centerInfo.daechi.address);
-            setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
             setShowCenterMap(`url(${mapDaechi})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('26px');
@@ -533,10 +568,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_mokdong marker") {
-            console.log(`${centerInfo.mokdong.name} / ${centerInfo.mokdong.address} / ${centerInfo.mokdong.contactNumber}`);
-            setShowCenterName(centerInfo.mokdong.name);
-            setShowCenterAddress(centerInfo.mokdong.address);
-            setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
             setShowCenterMap(`url(${mapMokdong})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -548,10 +579,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_jamsil marker") {
-            console.log(`${centerInfo.jamsil.name} / ${centerInfo.jamsil.address} / ${centerInfo.jamsil.contactNumber}`);
-            setShowCenterName(centerInfo.jamsil.name);
-            setShowCenterAddress(centerInfo.jamsil.address);
-            setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
             setShowCenterMap(`url(${mapJamsil})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -563,10 +590,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_joonggae marker") {
-            console.log(`${centerInfo.joonggae.name} / ${centerInfo.joonggae.address} / ${centerInfo.joonggae.contactNumber}`);
-            setShowCenterName(centerInfo.joonggae.name);
-            setShowCenterAddress(centerInfo.joonggae.address);
-            setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
             setShowCenterMap(`url(${mapJoonggae})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -578,10 +601,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_boondang marker") {
-            console.log(`${centerInfo.boondang.name} / ${centerInfo.boondang.address} / ${centerInfo.boondang.contactNumber}`);
-            setShowCenterName(centerInfo.boondang.name);
-            setShowCenterAddress(centerInfo.boondang.address);
-            setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
             setShowCenterMap(`url(${mapBoondang})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -593,10 +612,6 @@ const ContactToRegister = () => {
         }
 
         if (e.target.className == "_pyeongchon marker") {
-            console.log(`${centerInfo.pyeongchon.name} / ${centerInfo.pyeongchon.address} / ${centerInfo.pyeongchon.contactNumber}`);
-            setShowCenterName(centerInfo.pyeongchon.name);
-            setShowCenterAddress(centerInfo.pyeongchon.address);
-            setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
             setShowCenterMap(`url(${mapPyeongchon})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -605,6 +620,51 @@ const ContactToRegister = () => {
             setScaleUpJoonggae('20px');
             setScaleUpBoondang('20px');
             setScaleUpPyeongchon('26px');
+        }
+    }
+
+    // 지도 마커 클릭 핸들러
+    const onMarkerClickHandler = (e) => {
+        if (e.target.className == "_seocho marker") {
+            setShowCenterName(centerInfo.seocho.name);
+            setShowCenterAddress(centerInfo.seocho.address);
+            setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
+        }
+
+        if (e.target.className == "_daechi marker") {
+            setShowCenterName(centerInfo.daechi.name);
+            setShowCenterAddress(centerInfo.daechi.address);
+            setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
+        }
+
+        if (e.target.className == "_mokdong marker") {
+            setShowCenterName(centerInfo.mokdong.name);
+            setShowCenterAddress(centerInfo.mokdong.address);
+            setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
+        }
+
+        if (e.target.className == "_jamsil marker") {
+            setShowCenterName(centerInfo.jamsil.name);
+            setShowCenterAddress(centerInfo.jamsil.address);
+            setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
+        }
+
+        if (e.target.className == "_joonggae marker") {
+            setShowCenterName(centerInfo.joonggae.name);
+            setShowCenterAddress(centerInfo.joonggae.address);
+            setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
+        }
+
+        if (e.target.className == "_boondang marker") {
+            setShowCenterName(centerInfo.boondang.name);
+            setShowCenterAddress(centerInfo.boondang.address);
+            setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
+        }
+
+        if (e.target.className == "_pyeongchon marker") {
+            setShowCenterName(centerInfo.pyeongchon.name);
+            setShowCenterAddress(centerInfo.pyeongchon.address);
+            setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
         }
     }
 
@@ -647,6 +707,7 @@ const ContactToRegister = () => {
                                 className="seocho"
                                 name="seocho"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_seocho marker">
 
@@ -670,6 +731,7 @@ const ContactToRegister = () => {
                                 className="daechi"
                                 name="daechi"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_daechi marker">
 
@@ -693,6 +755,7 @@ const ContactToRegister = () => {
                                 className="mokdong"
                                 name="mokdong"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_mokdong marker">
 
@@ -716,6 +779,7 @@ const ContactToRegister = () => {
                                 className="jamsil"
                                 name="jamsil"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_jamsil marker">
 
@@ -739,6 +803,7 @@ const ContactToRegister = () => {
                                 className="joonggae"
                                 name="joonggae"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_joonggae marker">
 
@@ -762,6 +827,7 @@ const ContactToRegister = () => {
                                 className="boondang"
                                 name="boondang"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_boondang marker">
 
@@ -785,6 +851,7 @@ const ContactToRegister = () => {
                                 className="pyeongchon"
                                 name="pyeongchon"
                                 onMouseOver={(e) => onMarkerHandler(e)}
+                                onClick={(e) => onMarkerClickHandler(e)}
                             >
                                 <div className="_pyeongchon marker">
 
@@ -1085,6 +1152,7 @@ const ContactToRegister = () => {
                     </div>
                 </div>
 
+                {/* 신청자 ~ 제출하기까지 Wrap */}
                 <div className="bottomWrap">
                     <div className="applicant">
                         <div className="wrap">
@@ -1114,6 +1182,7 @@ const ContactToRegister = () => {
                             </div>
                             <div className="input">
                                 <input
+                                    id="input"
                                     type="text"
                                     placeholder="작성자 이메일"
                                     value={userInfo.email}
@@ -1126,15 +1195,15 @@ const ContactToRegister = () => {
                     <div className="phoneNumber">
                         <div className="wrap">
                             <div className="title">
-                                <div className="customH2">
+                                <div className="customH12">
                                     휴대번호
                                 </div>
                             </div>
                             <div className="input">
                                 <input
+                                    id="input"
                                     type="text"
                                     placeholder="휴대폰 번호"
-                                    style={{ width: '200px', height: '24px', textAlign: 'center' }}
                                     value={userInfo.phoneNumber}
                                     onChange={onChangePhonNumber}
                                 ></input>
@@ -1146,7 +1215,7 @@ const ContactToRegister = () => {
                         <div className="wrap">
                             <div className="title">
                                 <div className="wrap">
-                                    <div className="customH2">
+                                    <div className="customH12">
                                         기관 선택
                                     </div>
                                 </div>
@@ -1156,6 +1225,7 @@ const ContactToRegister = () => {
                                     <div className="selectOrgType">
                                         <div className="left" style={{ width: '200px' }}>
                                             <input
+                                                id="radioBtn"
                                                 type="radio"
                                                 className="school"
                                                 value="학교"
@@ -1167,6 +1237,7 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="right" style={{ width: '200px' }}>
                                             <input
+                                                id="radioBtn"
                                                 type="radio"
                                                 className="public"
                                                 value="학교외기관"
@@ -1179,16 +1250,15 @@ const ContactToRegister = () => {
                                     <div className="findOrgAddress" style={{ display: showInputAddress }}>
                                         <div className="top">
                                             <div className="title">
-                                                <div className="customP2">
+                                                <div className="customP10">
                                                     학교 명/기관 명
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div className="wrap">
                                                 <input
                                                     type="text"
+                                                    className="orgInfoInput"
                                                     placeholder="학교 명/기관 명"
-                                                    style={{ width: '400px', height: '24px', textAlign: 'center' }}
-                                                    // value={userInfo.orgName}
                                                     value={userInfo.orgName}
                                                     onChange={onChangeOrgName}
                                                 ></input>
@@ -1196,8 +1266,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="bottom">
                                             <div className="title">
-                                                <div className="customP2">
-                                                    학교명/기관 주소
+                                                <div className="customP10">
+                                                    학교 명/기관 주소
                                                 </div>
                                             </div>
 
@@ -1213,38 +1283,42 @@ const ContactToRegister = () => {
                     <div className="howToKnowUs">
                         <div className="wrap">
                             <div className="title">
-                                <div className="customH2">
+                                <div className="customH12">
                                     수업 문의 경로
                                 </div>
                             </div>
                             <div className="boxesWrap">
-                                <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <div className="box1" style={{ width: '130px', height: '24px' }}>
                                     <input
+                                        id="checkBox"
                                         type="checkbox"
                                         onChange={onChangeRecommendation}
                                     ></input>
-                                    <div className="customP">지인 추천</div>
+                                    <div className="customP11" style={{ marginLeft: '3px' }}>지인 추천</div>
                                 </div>
-                                <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <div className="box1" style={{ width: '110px', height: '24px' }}>
                                     <input
+                                        id="checkBox"
                                         type="checkbox"
                                         onChange={onChangeProposal}
                                     ></input>
-                                    <div className="customP">제안서</div>
+                                    <div className="customP11" style={{ marginLeft: '3px' }}>제안서</div>
                                 </div>
-                                <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <div className="box1" style={{ width: '90px', height: '24px' }}>
                                     <input
+                                        id="checkBox"
                                         type="checkbox"
                                         onChange={onChangeWebSearch}
                                     ></input>
-                                    <div className="customP">검색</div>
+                                    <div className="customP11" style={{ marginLeft: '3px' }}>검색</div>
                                 </div>
-                                <div className="box1" style={{ width: '100px', height: '24px' }}>
+                                <div className="box1" style={{ width: '90px', height: '24px' }}>
                                     <input
+                                        id="checkBox"
                                         type="checkbox"
                                         onChange={onChangeEtc}
                                     ></input>
-                                    <div className="customP">기타</div>
+                                    <div className="customP11" style={{ marginLeft: '3px' }}>기타</div>
                                 </div>
                             </div>
                         </div>
@@ -1253,16 +1327,17 @@ const ContactToRegister = () => {
                     <div className="Agree">
                         <div className="wrap">
                             <div className="top">
-                                <div className="customH2">
+                                <div className="customP11">
                                     *개인정보 수집, 이용에 대한 동의
                                 </div>
                                 <div className="boxesWrap">
-                                    <div className="agreeBox" style={{ width: '100px', height: '24px' }}>
+                                    <div className="agreeBox">
                                         <input
+                                            id="checkBox"
                                             type="checkbox"
                                             onChange={onChangeAgree}
                                         ></input>
-                                        <div className="customP">동의 함</div>
+                                        <div className="customP11">동의 함</div>
                                     </div>
                                     <a
                                         className="agreeDescriptionBtn"
@@ -1282,7 +1357,11 @@ const ContactToRegister = () => {
                         >제출하기</button>
                     </div>
                 </div>
+
             </div>
+            <LineBanner />
+            <Footer />
+            <Copyright />
         </div>
     );
 }
