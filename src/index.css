@@ -932,6 +932,7 @@ table {
 .programs>.wrap>.wrap {
 	margin-top: 39px;
 }
+
 .programs .wrap .wrap .program {
 	width: 383px;
 	height: 481px;
@@ -942,29 +943,29 @@ table {
 	transform: scale(1);
 }
 
-.programs .wrap .wrap .Row{
+.programs .wrap .wrap .Row {
 	display: flex;
 	width: 1440px;
-	justify-content:center;
+	justify-content: center;
 }
 
-.programs .wrap .wrap .third.Row{
+.programs .wrap .wrap .third.Row {
 	justify-content: flex-start;
 }
 
-.programs .wrap .wrap .third.Row .program:nth-of-type(1){
+.programs .wrap .wrap .third.Row .program:nth-of-type(1) {
 	margin-left: 94px;
-} 
+}
 
-.programs .wrap .wrap .Row:nth-of-type(2){
+.programs .wrap .wrap .Row:nth-of-type(2) {
 	margin-top: 40px;
-} 
+}
 
-.programs .wrap .wrap .Row:nth-of-type(3){
+.programs .wrap .wrap .Row:nth-of-type(3) {
 	margin-top: 40px;
-} 
+}
 
-.programs .wrap .wrap .Row .program:nth-of-type(2){
+.programs .wrap .wrap .Row .program:nth-of-type(2) {
 	margin-left: 50px;
 	margin-right: 50px;
 }
@@ -990,15 +991,15 @@ table {
 	background-position: center;
 }
 
-#_1_1 .image{
+#_1_1 .image {
 	background-image: url(./Assets/program1_1.svg);
 }
 
-#_1_2 .image{
+#_1_2 .image {
 	background-image: url(./Assets/program1_2.svg);
 }
 
-#_1_3 .image{
+#_1_3 .image {
 	background-image: url(./Assets/program1_3.svg);
 }
 
@@ -1021,14 +1022,14 @@ table {
 .programs .wrap .wrap .program .bottom {
 	display: flex;
 	flex-direction: column;
-	
+
 	width: 100%;
 	height: 50%;
 }
 
 .programTitle {
 	padding-top: 47.85px;
-	padding-left:37px;
+	padding-left: 37px;
 	font-weight: 600;
 	font-size: 27px;
 	line-height: 127%;
@@ -1042,7 +1043,7 @@ table {
 
 .programText {
 	width: 300px;
-	padding-left:37px;
+	padding-left: 37px;
 	padding-top: 33.5px;
 	font-size: 16px;
 	font-weight: 500;
@@ -1094,7 +1095,7 @@ table {
 	flex-direction: column;
 	align-items: center;
 
-	
+
 }
 
 .contactToRegister>.wrap {
@@ -2245,7 +2246,7 @@ abbr {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	
+
 	padding-top: 79px;
 	margin-left: 255px;
 	margin-right: 255px;
@@ -2455,7 +2456,7 @@ abbr {
 .findOrgAddress .top .wrap {
 	display: flex;
 	justify-content: flex-start;
-} 
+}
 
 .findOrgAddress .top .bottom {
 	display: flex;
@@ -2590,7 +2591,10 @@ tr {
 	justify-content: center;
 }
 
-.Submit>button {
+.Submit .submitBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 267px;
 	height: 53px;
 	background: #8161b1;

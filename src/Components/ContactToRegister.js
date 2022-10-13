@@ -1,12 +1,13 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Header2 from "./Header2";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import { useDaumPostcodePopup } from 'react-daum-postcode';
 
 import AgreeDescription from "./AgreeDescription";
-import LineBanner from './lineBanner';
 import Footer from './Footer';
+
+import { Link as LinkToRegsiter } from 'react-scroll';
 
 import mapDefault from "../Assets/default_map.svg"
 import mapBoondang from "../Assets/boondang.svg"
@@ -320,7 +321,7 @@ const ContactToRegister = () => {
 
     // pointer 값에 따라 날짜 표시바를 보여줌
     const ShowBar = () => {
-    // '' 화면 표시, 'none' 화면 미표시
+        // '' 화면 표시, 'none' 화면 미표시
         const Bar0 = () => {
             return (
                 <div className="barWrap">
@@ -395,7 +396,7 @@ const ContactToRegister = () => {
     //         {value: 1, display: 'none', date: '2342'},
     //         {value: 1, display: 'none', date: '2342'},
     //     ])
-        
+
     //     const Bar0 = () => {
     //         return (
     //             <div className="barWrap">
@@ -499,6 +500,8 @@ const ContactToRegister = () => {
         });
     }
 
+
+    const [ref, setRef] = useState('');
     // useEffect로 라디오값 동기처리
     useEffect(() => {
         if (orgType === "학교" || orgType === "학교외기관") {
@@ -561,14 +564,14 @@ const ContactToRegister = () => {
 
         return (
             <div className="wrap">
-            <input
-                className="orgInfoInput"
-                type="text"
-                placeholder="학교/기관 주소"
-                onClick={handleClick}
-                defaultValue={address}
-            >
-            </input>
+                <input
+                    className="orgInfoInput"
+                    type="text"
+                    placeholder="학교/기관 주소"
+                    onClick={handleClick}
+                    defaultValue={address}
+                >
+                </input>
             </div>
         );
     };
@@ -589,16 +592,15 @@ const ContactToRegister = () => {
             setAgreeBtnImage(`url(${arrowDown})`);
         }
     }
-    // 여기까지
-    const scrollRef = useRef<HTMLElement>(null);
-    const scrollToGo = () => {
-    }
 
     // 제출버튼 핸들러
     const submitHandler = () => {
+        // 여기까지
+
         if (userInfo.city === '') {
+            setRef('cityTown');
             alert("'도입희망지역(시/도)'을 선택해주세요.")
-            
+            console.log(ref);
         } else if (userInfo.town === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
         } else if (userInfo.classesCount === '') {
@@ -623,14 +625,14 @@ const ContactToRegister = () => {
             alert("'학교 명/ 기관 명'을 작성해주세요.")
         } else if (userInfo.orgAddress === '') {
             alert("'학교 명/ 기관 주소'를 작성해주세요.")
-        } else if (userInfo.knowByrecommendation === false && 
-        userInfo.knowByproposal === false &&
-        userInfo.knowBywebSearch === false &&
-        userInfo.knowByEtc === false
+        } else if (userInfo.knowByrecommendation === false &&
+            userInfo.knowByproposal === false &&
+            userInfo.knowBywebSearch === false &&
+            userInfo.knowByEtc === false
         ) {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
         } else if (userInfo.agree === false) {
-                alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+            alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
         } else {
             alert('제출되었습니다.')
         }
@@ -780,703 +782,710 @@ const ContactToRegister = () => {
             {/* <div className="firstLine"> */}
             <div className="wrap">
                 <div className="firstLine">
-                <div className="introduction" >
-                    <div className="title">
-                        <div className="customH7">
-                            FROMC 프로그램 도입 문의
+                    <div className="introduction" >
+                        <div className="title">
+                            <div className="customH7">
+                                FROMC 프로그램 도입 문의
+                            </div>
+                            <div className="customP6">
+                                관심있는 교육 프로그램 도입 문의를 주시면<br></br>담당자가 24시간 내에 연락드립니다.
+                            </div>
                         </div>
-                        <div className="customP6">
-                            관심있는 교육 프로그램 도입 문의를 주시면<br></br>담당자가 24시간 내에 연락드립니다.
+                    </div>
+                    <div className="selectRegion">
+                        <div className="wrap">
+                            <div className="title">
+                                <div className="top">
+                                    <div className="icon">
+                                        <div className="src"></div>
+                                    </div>
+                                    <div className="contents">
+                                        <div className="customH2">
+                                            서비스 가능지역
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                    <div className="customH3">
+                                        서비스 가능 지역 확인 후 도입 신청을 이용해 주세요.
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mapWrap">
+                                <div
+                                    className="seocho"
+                                    name="seocho"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_seocho marker">
+
+                                    </div>
+                                    <div className="_seochoCenterInfo">
+                                        <div className="_seochoCenterName"
+                                            style={{
+                                                fontSize: scaleUpSeocho
+                                            }}>
+                                            서초코어센터
+                                        </div>
+                                        <div className="_seochoCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpSeocho
+                                            }}>
+                                            02-537-2900
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="daechi"
+                                    name="daechi"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_daechi marker">
+
+                                    </div>
+                                    <div className="_daechiCenterInfo">
+                                        <div className="_daechiCenterName"
+                                            style={{
+                                                fontSize: scaleUpDaechi
+                                            }}>
+                                            대치센터
+                                        </div>
+                                        <div className="_daechiCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpDaechi
+                                            }}>
+                                            02-537-2900
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="mokdong"
+                                    name="mokdong"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_mokdong marker">
+
+                                    </div>
+                                    <div className="_mokdongCenterInfo">
+                                        <div className="_mokdongCenterName"
+                                            style={{
+                                                fontSize: scaleUpMokdong
+                                            }}>
+                                            목동센터
+                                        </div>
+                                        <div className="_mokdongCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpMokdong
+                                            }}>
+                                            02-2645-2600
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="jamsil"
+                                    name="jamsil"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_jamsil marker">
+
+                                    </div>
+                                    <div className="_jamsilCenterInfo">
+                                        <div className="_jamsilCenterName"
+                                            style={{
+                                                fontSize: scaleUpJamsil
+                                            }}>
+                                            잠실센터
+                                        </div>
+                                        <div className="_jamsilCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpJamsil
+                                            }}>
+                                            02-3431-2100
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="joonggae"
+                                    name="joonggae"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_joonggae marker">
+
+                                    </div>
+                                    <div className="_joonggaeCenterInfo">
+                                        <div className="_joonggaeCenterName"
+                                            style={{
+                                                fontSize: scaleUpJoonggae
+                                            }}>
+                                            중계센터
+                                        </div>
+                                        <div className="_joonggaeCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpJoonggae
+                                            }}>
+                                            02-930-4200
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="boondang"
+                                    name="boondang"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_boondang marker">
+
+                                    </div>
+                                    <div className="_boondangCenterInfo">
+                                        <div className="_boondangCenterName"
+                                            style={{
+                                                fontSize: scaleUpBoondang
+                                            }}>
+                                            분당센터
+                                        </div>
+                                        <div className="_boondangCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpBoondang
+                                            }}>
+                                            031-726-4300
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="pyeongchon"
+                                    name="pyeongchon"
+                                    onMouseOver={(e) => onMarkerHandler(e)}
+                                    onClick={(e) => onMarkerClickHandler(e)}
+                                >
+                                    <div className="_pyeongchon marker">
+
+                                    </div>
+                                    <div className="_pyeongchonCenterInfo">
+                                        <div className="_pyeongchonCenterName"
+                                            style={{
+                                                fontSize: scaleUpPyeongchon
+                                            }}>
+                                            평촌센터
+                                        </div>
+                                        <div className="_pyeongchonCenterPhoneNumber"
+                                            style={{
+                                                fontSize: scaleUpPyeongchon
+                                            }}>
+                                            031-387-2600
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* 직영선택 지도  */}
+                                <div
+                                    className="source"
+                                    style={{
+                                        backgroundImage: showCenterMap
+                                    }}
+
+                                >
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="selectRegion">
+                {/* 바로 위가 firstline */}
+
+                <div className="information">
                     <div className="wrap">
-                        <div className="title">
-                            <div className="top">
-                                <div className="icon">
-                                    <div className="src"></div>
-                                </div>
-                                <div className="contents">
-                                    <div className="customH2">
-                                        서비스 가능지역
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bottom">
-                                <div className="customH3">
-                                    서비스 가능 지역 확인 후 도입 신청을 이용해 주세요.
-                                </div>
-                            </div>
+                        <div className="left">
+                            <div className="src"></div>
                         </div>
-                        <div className="mapWrap">
-                            <div
-                                className="seocho"
-                                name="seocho"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_seocho marker">
-
-                                </div>
-                                <div className="_seochoCenterInfo">
-                                    <div className="_seochoCenterName"
-                                        style={{
-                                            fontSize: scaleUpSeocho
-                                        }}>
-                                        서초코어센터
-                                    </div>
-                                    <div className="_seochoCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpSeocho
-                                        }}>
-                                        02-537-2900
-                                    </div>
+                        <div className="right">
+                            <div className="centerName">
+                                <div className="customH8">
+                                    문의처
                                 </div>
                             </div>
-                            <div
-                                className="daechi"
-                                name="daechi"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_daechi marker">
-
-                                </div>
-                                <div className="_daechiCenterInfo">
-                                    <div className="_daechiCenterName"
-                                        style={{
-                                            fontSize: scaleUpDaechi
-                                        }}>
-                                        대치센터
-                                    </div>
-                                    <div className="_daechiCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpDaechi
-                                        }}>
-                                        02-537-2900
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="mokdong"
-                                name="mokdong"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_mokdong marker">
-
-                                </div>
-                                <div className="_mokdongCenterInfo">
-                                    <div className="_mokdongCenterName"
-                                        style={{
-                                            fontSize: scaleUpMokdong
-                                        }}>
-                                        목동센터
-                                    </div>
-                                    <div className="_mokdongCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpMokdong
-                                        }}>
-                                        02-2645-2600
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="jamsil"
-                                name="jamsil"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_jamsil marker">
-
-                                </div>
-                                <div className="_jamsilCenterInfo">
-                                    <div className="_jamsilCenterName"
-                                        style={{
-                                            fontSize: scaleUpJamsil
-                                        }}>
-                                        잠실센터
-                                    </div>
-                                    <div className="_jamsilCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpJamsil
-                                        }}>
-                                        02-3431-2100
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="joonggae"
-                                name="joonggae"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_joonggae marker">
-
-                                </div>
-                                <div className="_joonggaeCenterInfo">
-                                    <div className="_joonggaeCenterName"
-                                        style={{
-                                            fontSize: scaleUpJoonggae
-                                        }}>
-                                        중계센터
-                                    </div>
-                                    <div className="_joonggaeCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpJoonggae
-                                        }}>
-                                        02-930-4200
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="boondang"
-                                name="boondang"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_boondang marker">
-
-                                </div>
-                                <div className="_boondangCenterInfo">
-                                    <div className="_boondangCenterName"
-                                        style={{
-                                            fontSize: scaleUpBoondang
-                                        }}>
-                                        분당센터
-                                    </div>
-                                    <div className="_boondangCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpBoondang
-                                        }}>
-                                        031-726-4300
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="pyeongchon"
-                                name="pyeongchon"
-                                onMouseOver={(e) => onMarkerHandler(e)}
-                                onClick={(e) => onMarkerClickHandler(e)}
-                            >
-                                <div className="_pyeongchon marker">
-
-                                </div>
-                                <div className="_pyeongchonCenterInfo">
-                                    <div className="_pyeongchonCenterName"
-                                        style={{
-                                            fontSize: scaleUpPyeongchon
-                                        }}>
-                                        평촌센터
-                                    </div>
-                                    <div className="_pyeongchonCenterPhoneNumber"
-                                        style={{
-                                            fontSize: scaleUpPyeongchon
-                                        }}>
-                                        031-387-2600
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            {/* 직영선택 지도  */}
-                            <div
-                                className="source"
-                                style={{
-                                    backgroundImage: showCenterMap
-                                }}
-
-                            >
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        {/* 바로 위가 firstline */}
-
-                        <div className="information">
-                            <div className="wrap">
-                                <div className="left">
-                                    <div className="src"></div>
-                                </div>
-                                <div className="right">
-                                    <div className="centerName">
-                                        <div className="customH8">
-                                            문의처
+                            <div className="centerAddress">
+                                <div className="wrap">
+                                    <div className="left">
+                                        <div className="customH9">
+                                            주소
                                         </div>
                                     </div>
-                                    <div className="centerAddress">
+                                    <hr style={{
+                                        height: '70px',
+                                        border: '1px solid rgba(255, 255, 255, 0.7)'
+                                    }} />
+                                    <div className="right">
                                         <div className="wrap">
-                                            <div className="left">
-                                                <div className="customH9">
-                                                    주소
-                                                </div>
+                                            <div className="customP7">
+                                                {showCenterName}
                                             </div>
-                                            <hr style={{
-                                                height: '70px',
-                                                border: '1px solid rgba(255, 255, 255, 0.7)'
-                                            }} />
-                                            <div className="right">
-                                                <div className="wrap">
-                                                    <div className="customP7">
-                                                        {showCenterName}
-                                                    </div>
-                                                    <div className="customP7">
-                                                        {showCenterAddress}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="centerPhoneNumber">
-                                        <div className="wrap">
-                                            <div className="left">
-                                                <div className="customH9">
-                                                    전화번호
-                                                </div>
-                                            </div>
-                                            <hr style={{
-                                                height: '70px',
-                                                border: '1px solid rgba(255, 255, 255, 0.7)'
-                                            }} />
-                                            <div className="right">
-                                                <div className="customP8">
-                                                    {showCenterPhoneNumber}
-                                                </div>
+                                            <div className="customP7">
+                                                {showCenterAddress}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                        {/* 문의처 포함한 wrap */}
-                    {/* </div> */}
+                            <div className="centerPhoneNumber">
+                                <div className="wrap">
+                                    <div className="left">
+                                        <div className="customH9">
+                                            전화번호
+                                        </div>
+                                    </div>
+                                    <hr style={{
+                                        height: '70px',
+                                        border: '1px solid rgba(255, 255, 255, 0.7)'
+                                    }} />
+                                    <div className="right">
+                                        <div className="customP8">
+                                            {showCenterPhoneNumber}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* 문의처 포함한 wrap */}
+                {/* </div> */}
 
                 <div className="thirdLine">
-                <div className="Wrap">
-                    <div className="hopeRegion">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH10">
-                                    도입희망지역
-                                </div>
-                            </div>
-                            <div className="listWrap">
-                                <div id='list'>
-                                    <select
-                                        onChange={onChangeCityInfo}
-                                    >
-
-                                        <option value=''>시/도 선택</option>
-                                        <option value='서울'>서울</option>
-                                        <option value='경기'>경기</option>
-                                    </select>
-                                </div>
-
-                                <div id='list'>
-                                    <select
-                                        onChange={onChangeTownInfo}
-                                    >
-                                        <option value=''>구/군 선택</option>
-                                        <option value='강남구'>강남구</option>
-                                        <option value='노원구'>노원구</option>
-                                        <option value='서초구'>서초구</option>
-                                        <option value='송파구'>송파구</option>
-                                        <option value='양천구'>양천구</option>
-                                        <option value=''>--------------</option>
-                                        <option value='성남시'>성남시</option>
-                                        <option value='안양시'>안양시</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="howManyClasses">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH10">
-                                    학급 수
-                                </div>
-                            </div>
-                            <div className="listWrap">
-                                <div id='list'>
-                                    <select
-                                        onChange={onChangeClassesCount}
-                                    >
-                                        <option value=''>선택해주세요.</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                        <option value='6'>6</option>
-                                        <option value='7'>7</option>
-                                        <option value='8'>8</option>
-                                        <option value='9'>9</option>
-                                        <option value='10'>10</option>
-                                        <option value='11'>11</option>
-                                        <option value='12'>12</option>
-                                        <option value='13'>13</option>
-                                        <option value='14'>14</option>
-                                        <option value='15'>15</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="numberOfStudents">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH10">
-                                    교육인원
-                                </div>
-                            </div>
-                            <div className="input">
-                                <input
-                                    id="input"
-                                    type="text"
-                                    placeholder="총 도입 예상 인원"
-                                    value={userInfo.studentsCount}
-                                    onChange={onChangeStudentsCount}
-                                ></input>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ☆☆☆☆☆☆☆☆ 실제 상품이 나오면, value 값 변경 */}
-                    <div className="selectProgram">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH10">
-                                    프로그램 선택
-                                </div>
-                            </div>
-                            <div className="listWrap">
-                                <div id='list'>
-                                    <select
-                                        onChange={onChangeProgram}
-                                    >
-                                        <option value=''>선택해주세요.</option>
-                                        <option value='항목1'>항목1</option>
-                                        <option value='항목2'>항목2</option>
-                                        <option value='항목3'>항목3</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="typeOfLesson">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="wrap">
-                                    <div className="customH10">
-                                        수업 형태
-                                    </div>
-                                    <div className="customP">
-                                        수업 형태는 원데이 클래스 입니다.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="listWrap">
-                                <div className="customP">
-                                    원데이 클래스
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="numbersOfLessons">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="wrap">
-                                    <div className="customH10">
-                                        수업 횟수
-                                    </div>
-                                    <div className="customP">
-                                        각 수업은 3~6시간 동안 진행<br></br>됩니다.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="listWrap">
-                                <div id='list'>
-                                    <select
-                                        onChange={onChangeLessonsCount}
-                                    >
-                                        <option value=''>선택해주세요.</option>
-                                        <option value='3교시'>3교시</option>
-                                        <option value='6교시'>6교시</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="selectLessonDays">
-                    <div className="wrap">
-                        <div className="title">
-                            <div className="top">
-                                <div className="icon">
-                                    <div className="source">
-
-                                    </div>
-                                </div>
-                                <div className="customH11">
-                                    수업 일정
-                                </div>
-                            </div>
-                            <div className="customP9">
-                                해당 캘린더는 일정 확인용으로, 가일정 선택 단계입니다. <br></br>최종 수업 일정은 도입 신청이 완료된 후 상담을 통해 가능합니다.
-                            </div>
-                        </div>
-
-                        {/* 달력 */}
-                        <div className="calendarWrap">
-                            <div className="calendar">
-                                <Calendar
-                                    onChange={setDate}
-                                    onClickDay={(date, event) => {
-                                        SaveDate(date);
-                                    }}
-                                    calendarType="US"
-                                    value={date}
-                                    minDate={new Date()}
-                                    // maxDate={new Date("12-31-2022")}
-
-                                    // 하이라이트 처리
-                                    tileClassName={({ date, view }) => {
-                                        if ((date.toLocaleDateString() === barInfo[0].date) || (date.toLocaleDateString() === barInfo[1].date) || (date.toLocaleDateString() === barInfo[2].date)) {
-                                            return 'highlight'
-                                        }
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div className="bars">
+                    <div className="Wrap">
+                        <div className="hopeRegion">
                             <div className="wrap">
-                                <ShowBar />
+                                <div className="title">
+                                    <div
+                                        className="customH10"
+                                        id="cityTown"
+                                    >
+                                        도입희망지역
+                                    </div>
+                                </div>
+                                <div className="listWrap">
+                                    <div id='list'>
+                                        <select
+                                            onChange={onChangeCityInfo}
+                                        >
+
+                                            <option value=''>시/도 선택</option>
+                                            <option value='서울'>서울</option>
+                                            <option value='경기'>경기</option>
+                                        </select>
+                                    </div>
+
+                                    <div id='list'>
+                                        <select
+                                            onChange={onChangeTownInfo}
+                                        >
+                                            <option value=''>구/군 선택</option>
+                                            <option value='강남구'>강남구</option>
+                                            <option value='노원구'>노원구</option>
+                                            <option value='서초구'>서초구</option>
+                                            <option value='송파구'>송파구</option>
+                                            <option value='양천구'>양천구</option>
+                                            <option value=''>--------------</option>
+                                            <option value='성남시'>성남시</option>
+                                            <option value='안양시'>안양시</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="right">
-                                <div className="controlWrap">
-                                    <button className="addBtn" onClick={AddBar} >+</button>
-                                    <button className="discardBtn" onClick={DeleteBar}>-</button>
+                        </div>
+
+                        <div className="howManyClasses">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH10">
+                                        학급 수
+                                    </div>
+                                </div>
+                                <div className="listWrap">
+                                    <div id='list'>
+                                        <select
+                                            onChange={onChangeClassesCount}
+                                        >
+                                            <option value=''>선택해주세요.</option>
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                            <option value='5'>5</option>
+                                            <option value='6'>6</option>
+                                            <option value='7'>7</option>
+                                            <option value='8'>8</option>
+                                            <option value='9'>9</option>
+                                            <option value='10'>10</option>
+                                            <option value='11'>11</option>
+                                            <option value='12'>12</option>
+                                            <option value='13'>13</option>
+                                            <option value='14'>14</option>
+                                            <option value='15'>15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="numberOfStudents">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH10">
+                                        교육인원
+                                    </div>
+                                </div>
+                                <div className="input">
+                                    <input
+                                        id="input"
+                                        type="text"
+                                        placeholder="총 도입 예상 인원"
+                                        value={userInfo.studentsCount}
+                                        onChange={onChangeStudentsCount}
+                                    ></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* ☆☆☆☆☆☆☆☆ 실제 상품이 나오면, value 값 변경 */}
+                        <div className="selectProgram">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH10">
+                                        프로그램 선택
+                                    </div>
+                                </div>
+                                <div className="listWrap">
+                                    <div id='list'>
+                                        <select
+                                            onChange={onChangeProgram}
+                                        >
+                                            <option value=''>선택해주세요.</option>
+                                            <option value='항목1'>항목1</option>
+                                            <option value='항목2'>항목2</option>
+                                            <option value='항목3'>항목3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="typeOfLesson">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="wrap">
+                                        <div className="customH10">
+                                            수업 형태
+                                        </div>
+                                        <div className="customP">
+                                            수업 형태는 원데이 클래스 입니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="listWrap">
+                                    <div className="customP">
+                                        원데이 클래스
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="numbersOfLessons">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="wrap">
+                                        <div className="customH10">
+                                            수업 횟수
+                                        </div>
+                                        <div className="customP">
+                                            각 수업은 3~6시간 동안 진행<br></br>됩니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="listWrap">
+                                    <div id='list'>
+                                        <select
+                                            onChange={onChangeLessonsCount}
+                                        >
+                                            <option value=''>선택해주세요.</option>
+                                            <option value='3교시'>3교시</option>
+                                            <option value='6교시'>6교시</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* 신청자 ~ 제출하기까지 Wrap */}
-                <div className="bottomWrap">
-                    <div className="applicant">
+
+                    <div className="selectLessonDays">
                         <div className="wrap">
                             <div className="title">
-                                <div className="customH12">
-                                    신청자
+                                <div className="top">
+                                    <div className="icon">
+                                        <div className="source">
+
+                                        </div>
+                                    </div>
+                                    <div className="customH11">
+                                        수업 일정
+                                    </div>
+                                </div>
+                                <div className="customP9">
+                                    해당 캘린더는 일정 확인용으로, 가일정 선택 단계입니다. <br></br>최종 수업 일정은 도입 신청이 완료된 후 상담을 통해 가능합니다.
                                 </div>
                             </div>
-                            <div className="input">
-                                <input
-                                    id="input"
-                                    type="text"
-                                    placeholder="신청자 이름"
-                                    value={userInfo.name}
-                                    onChange={onChangeName}
-                                ></input>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="email">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH12">
-                                    이메일
+                            {/* 달력 */}
+                            <div className="calendarWrap">
+                                <div className="calendar">
+                                    <Calendar
+                                        onChange={setDate}
+                                        onClickDay={(date, event) => {
+                                            SaveDate(date);
+                                        }}
+                                        calendarType="US"
+                                        value={date}
+                                        minDate={new Date()}
+                                        // maxDate={new Date("12-31-2022")}
+
+                                        // 하이라이트 처리
+                                        tileClassName={({ date, view }) => {
+                                            if ((date.toLocaleDateString() === barInfo[0].date) || (date.toLocaleDateString() === barInfo[1].date) || (date.toLocaleDateString() === barInfo[2].date)) {
+                                                return 'highlight'
+                                            }
+                                        }}
+                                    />
                                 </div>
                             </div>
-                            <div className="input">
-                                <input
-                                    id="input"
-                                    type="text"
-                                    placeholder="작성자 이메일"
-                                    value={userInfo.email}
-                                    onChange={onChangeEmail}
-                                ></input>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="phoneNumber">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH12">
-                                    휴대번호
-                                </div>
-                            </div>
-                            <div className="input">
-                                <input
-                                    id="input"
-                                    type="text"
-                                    placeholder="휴대폰 번호"
-                                    value={userInfo.phoneNumber}
-                                    onChange={onChangePhonNumber}
-                                ></input>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="selectOrg">
-                        <div className="wrap">
-                            <div className="title">
+                            <div className="bars">
                                 <div className="wrap">
+                                    <ShowBar />
+                                </div>
+                                <div className="right">
+                                    <div className="controlWrap">
+                                        <button className="addBtn" onClick={AddBar} >+</button>
+                                        <button className="discardBtn" onClick={DeleteBar}>-</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 신청자 ~ 제출하기까지 Wrap */}
+                    <div className="bottomWrap">
+                        <div className="applicant">
+                            <div className="wrap">
+                                <div className="title">
                                     <div className="customH12">
-                                        기관 선택
+                                        신청자
                                     </div>
                                 </div>
+                                <div className="input">
+                                    <input
+                                        id="input"
+                                        type="text"
+                                        placeholder="신청자 이름"
+                                        value={userInfo.name}
+                                        onChange={onChangeName}
+                                    ></input>
+                                </div>
                             </div>
-                            <div className="right">
-                                <div className="wrap">
-                                    <div className="selectOrgType">
-                                        <div className="left" style={{ width: '200px' }}>
-                                            <input
-                                                id="radioBtn"
-                                                type="radio"
-                                                className="school"
-                                                value="학교"
-                                                checked={orgType === "학교"}
-                                                // target 전달방식 참고
-                                                onChange={(e) => RadioHandler(e)}
-                                            ></input>
-                                            학교
-                                        </div>
-                                        <div className="right" style={{ width: '200px' }}>
-                                            <input
-                                                id="radioBtn"
-                                                type="radio"
-                                                className="public"
-                                                value="학교외기관"
-                                                checked={orgType === "학교외기관"}
-                                                onChange={(e) => RadioHandler(e)}
-                                            ></input>
-                                            학교 외 기관
+                        </div>
+
+                        <div className="email">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH12">
+                                        이메일
+                                    </div>
+                                </div>
+                                <div className="input">
+                                    <input
+                                        id="input"
+                                        type="text"
+                                        placeholder="작성자 이메일"
+                                        value={userInfo.email}
+                                        onChange={onChangeEmail}
+                                    ></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="phoneNumber">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH12">
+                                        휴대번호
+                                    </div>
+                                </div>
+                                <div className="input">
+                                    <input
+                                        id="input"
+                                        type="text"
+                                        placeholder="휴대폰 번호"
+                                        value={userInfo.phoneNumber}
+                                        onChange={onChangePhonNumber}
+                                    ></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="selectOrg">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="wrap">
+                                        <div className="customH12">
+                                            기관 선택
                                         </div>
                                     </div>
-                                    <div className="findOrgAddress" style={{ display: showInputAddress }}>
-                                        <div className="top">
-                                            <div className="title">
-                                                <div className="customP10">
-                                                    학교 명/기관 명
-                                                </div>
-                                            </div>
-                                            <div className="wrap">
+                                </div>
+                                <div className="right">
+                                    <div className="wrap">
+                                        <div className="selectOrgType">
+                                            <div className="left" style={{ width: '200px' }}>
                                                 <input
-                                                    type="text"
-                                                    className="orgInfoInput"
-                                                    placeholder="학교 명/기관 명"
-                                                    value={userInfo.orgName}
-                                                    onChange={onChangeOrgName}
+                                                    id="radioBtn"
+                                                    type="radio"
+                                                    className="school"
+                                                    value="학교"
+                                                    checked={orgType === "학교"}
+                                                    // target 전달방식 참고
+                                                    onChange={(e) => RadioHandler(e)}
                                                 ></input>
+                                                학교
+                                            </div>
+                                            <div className="right" style={{ width: '200px' }}>
+                                                <input
+                                                    id="radioBtn"
+                                                    type="radio"
+                                                    className="public"
+                                                    value="학교외기관"
+                                                    checked={orgType === "학교외기관"}
+                                                    onChange={(e) => RadioHandler(e)}
+                                                ></input>
+                                                학교 외 기관
                                             </div>
                                         </div>
-                                        <div className="bottom">
-                                            <div className="title">
-                                                <div className="customP10">
-                                                    학교 명/기관 주소
+                                        <div className="findOrgAddress" style={{ display: showInputAddress }}>
+                                            <div className="top">
+                                                <div className="title">
+                                                    <div className="customP10">
+                                                        학교 명/기관 명
+                                                    </div>
+                                                </div>
+                                                <div className="wrap">
+                                                    <input
+                                                        type="text"
+                                                        className="orgInfoInput"
+                                                        placeholder="학교 명/기관 명"
+                                                        value={userInfo.orgName}
+                                                        onChange={onChangeOrgName}
+                                                    ></input>
                                                 </div>
                                             </div>
+                                            <div className="bottom">
+                                                <div className="title">
+                                                    <div className="customP10">
+                                                        학교 명/기관 주소
+                                                    </div>
+                                                </div>
 
-                                            <Postcode />
+                                                <Postcode />
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="howToKnowUs">
-                        <div className="wrap">
-                            <div className="title">
-                                <div className="customH12">
-                                    수업 문의 경로
-                                </div>
-                            </div>
-                            <div className="boxesWrap">
-                                <div className="box1" style={{ width: '130px', height: '24px' }}>
-                                    <input
-                                        id="checkBox"
-                                        type="checkbox"
-                                        onChange={onChangeRecommendation}
-                                    ></input>
-                                    <div className="customP11" style={{ marginLeft: '3px' }}>지인 추천</div>
-                                </div>
-                                <div className="box1" style={{ width: '110px', height: '24px' }}>
-                                    <input
-                                        id="checkBox"
-                                        type="checkbox"
-                                        onChange={onChangeProposal}
-                                    ></input>
-                                    <div className="customP11" style={{ marginLeft: '3px' }}>제안서</div>
-                                </div>
-                                <div className="box1" style={{ width: '90px', height: '24px' }}>
-                                    <input
-                                        id="checkBox"
-                                        type="checkbox"
-                                        onChange={onChangeWebSearch}
-                                    ></input>
-                                    <div className="customP11" style={{ marginLeft: '3px' }}>검색</div>
-                                </div>
-                                <div className="box1" style={{ width: '90px', height: '24px' }}>
-                                    <input
-                                        id="checkBox"
-                                        type="checkbox"
-                                        onChange={onChangeEtc}
-                                    ></input>
-                                    <div className="customP11" style={{ marginLeft: '3px' }}>기타</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="Agree">
-                        <div className="wrap">
-                            <div className="top">
-                                <div className="customP11">
-                                    *개인정보 수집, 이용에 대한 동의
+                        <div className="howToKnowUs">
+                            <div className="wrap">
+                                <div className="title">
+                                    <div className="customH12">
+                                        수업 문의 경로
+                                    </div>
                                 </div>
                                 <div className="boxesWrap">
-                                    <div className="agreeBox">
+                                    <div className="box1" style={{ width: '130px', height: '24px' }}>
                                         <input
                                             id="checkBox"
                                             type="checkbox"
-                                            onChange={onChangeAgree}
+                                            onChange={onChangeRecommendation}
                                         ></input>
-                                        <div className="customP11">동의 함</div>
+                                        <div className="customP11" style={{ marginLeft: '3px' }}>지인 추천</div>
                                     </div>
-                                    <div
-                                        className="agreeDescriptionBtn"
-                                        onClick={AgreeDescriptionBtnHandler}
-                                        style={{ 
-                                            backgroundImage: agreeBtnImage
-                                        }}></div>
+                                    <div className="box1" style={{ width: '110px', height: '24px' }}>
+                                        <input
+                                            id="checkBox"
+                                            type="checkbox"
+                                            onChange={onChangeProposal}
+                                        ></input>
+                                        <div className="customP11" style={{ marginLeft: '3px' }}>제안서</div>
+                                    </div>
+                                    <div className="box1" style={{ width: '90px', height: '24px' }}>
+                                        <input
+                                            id="checkBox"
+                                            type="checkbox"
+                                            onChange={onChangeWebSearch}
+                                        ></input>
+                                        <div className="customP11" style={{ marginLeft: '3px' }}>검색</div>
+                                    </div>
+                                    <div className="box1" style={{ width: '90px', height: '24px' }}>
+                                        <input
+                                            id="checkBox"
+                                            type="checkbox"
+                                            onChange={onChangeEtc}
+                                        ></input>
+                                        <div className="customP11" style={{ marginLeft: '3px' }}>기타</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="bottom">
-                                <AgreeDescription display={showAgreeDescription} />
+                        </div>
+
+                        <div className="Agree">
+                            <div className="wrap">
+                                <div className="top">
+                                    <div className="customP11">
+                                        *개인정보 수집, 이용에 대한 동의
+                                    </div>
+                                    <div className="boxesWrap">
+                                        <div className="agreeBox">
+                                            <input
+                                                id="checkBox"
+                                                type="checkbox"
+                                                onChange={onChangeAgree}
+                                            ></input>
+                                            <div className="customP11">동의 함</div>
+                                        </div>
+                                        <div
+                                            className="agreeDescriptionBtn"
+                                            onClick={AgreeDescriptionBtnHandler}
+                                            style={{
+                                                backgroundImage: agreeBtnImage
+                                            }}></div>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                    <AgreeDescription display={showAgreeDescription} />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="Submit">
-                        <button
-                            onClick={submitHandler}
-                        >도입 문의 하기</button>
+                        <div className="Submit">
+                            <LinkToRegsiter
+                                className="submitBtn"
+                                onClick={submitHandler}
+                                to={ref}
+                                smooth={true}
+
+                            >도입 문의 하기</LinkToRegsiter>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             {/* <LineBanner /> */}

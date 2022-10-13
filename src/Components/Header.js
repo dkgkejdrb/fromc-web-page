@@ -56,11 +56,10 @@ const Header = () => {
     }
 
     const headerBtnOverHandler = (e) => {
-        console.log(e.target.className);
-        if(e.target.className === 'customP3 btn1') { 
+        if (e.target.className === 'customP3 btn1') {
             setChangeHeaderBtn1Highlight('2.5px solid #6F3AC1');
             setChangeHeaderBtn1Weight('600');
-        } else if(e.target.className === 'customP3 btn2') { 
+        } else if (e.target.className === 'customP3 btn2') {
             setChangeHeaderBtn2Highlight('2.5px solid #6F3AC1');
             setChangeHeaderBtn2Weight('600');
         }
