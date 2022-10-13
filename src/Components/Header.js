@@ -9,8 +9,12 @@ const Header = () => {
     const [changeLogo, setChangeLogo] = useState(`url(${logo_light})`);
     const [changeColor, setChangeColor] = useState('');
     const [changeFontColor, setChangeFontColor] = useState('#FFFFFF');
-    const [changeHeaderShow, setChangeHeaderShow] = useState('');
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
+    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('0');
+    const [changeHeaderBtn1Highlight, setChangeHeaderBtn1Highlight] = useState('0');
+    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('0');
+    const [changeHeaderBtn2Highlight, setChangeHeaderBtn2Highlight] = useState('0');
+
 
     useEffect(() => {
         window.addEventListener('scroll', changeHeader, { capture: true });
@@ -27,12 +31,12 @@ const Header = () => {
 
     const changeHeader = () => {
         nowScrollTop = window.scrollY;
-        if (wheelDelta() == 'down') {
+        if (wheelDelta() === 'down') {
             if (window.scrollY >= 1000) {
                 setChangeHeaderTransfrom('translateY(-100px)');
             }
         }
-        if (wheelDelta() == 'up') {
+        if (wheelDelta() === 'up') {
             setChangeHeaderTransfrom('translateY(0px)');
         }
         prevScrollTop = nowScrollTop;
@@ -51,6 +55,24 @@ const Header = () => {
         }
     }
 
+    const headerBtnOverHandler = (e) => {
+        console.log(e.target.className);
+        if(e.target.className === 'customP3 btn1') { 
+            setChangeHeaderBtn1Highlight('2.5px solid #6F3AC1');
+            setChangeHeaderBtn1Weight('600');
+        } else if(e.target.className === 'customP3 btn2') { 
+            setChangeHeaderBtn2Highlight('2.5px solid #6F3AC1');
+            setChangeHeaderBtn2Weight('600');
+        }
+    }
+
+    const headerBtnOutHandler = (e) => {
+        setChangeHeaderBtn1Highlight('0');
+        setChangeHeaderBtn1Weight('');
+        setChangeHeaderBtn2Highlight('0');
+        setChangeHeaderBtn2Weight('');
+    }
+
     return (
         <div
             className="header"
@@ -58,7 +80,6 @@ const Header = () => {
 
             style={{
                 backgroundColor: changeColor,
-                display: changeHeaderShow,
                 transform: changeHeaderTransfrom,
             }}
         >
@@ -75,19 +96,44 @@ const Header = () => {
             <div className="right">
                 <Link to="/ProgramsPage" className="headerBtn1">
                     <span
-                        className='customP3'
+                        className='customP3 btn1'
+                        onMouseOver={
+                            (e) => headerBtnOverHandler(e)
+                        }
+                        onMouseOut={
+                            (e) => headerBtnOutHandler(e)
+                        }
+
                         style={{
-                            color: changeFontColor
+                            color: changeFontColor,
+                            fontWeight: changeHeaderBtn1Weight,
                         }}
                     >프로그램</span>
+                    <hr className='bottomHighlight'
+                        style={{
+                            border: changeHeaderBtn1Highlight
+                        }}
+                    />
                 </Link>
                 <Link to="/ContactToRegister" className="headerBtn2" target="_blank">
                     <span
-                        className='customP3'
+                        className='customP3 btn2'
+                        onMouseOver={
+                            (e) => headerBtnOverHandler(e)
+                        }
+                        onMouseOut={
+                            (e) => headerBtnOutHandler(e)
+                        }
                         style={{
-                            color: changeFontColor
+                            color: changeFontColor,
+                            fontWeight: changeHeaderBtn2Weight,
                         }}
                     >도입문의</span>
+                    <hr className='bottomHighlight'
+                        style={{
+                            border: changeHeaderBtn2Highlight,
+                        }}
+                    />
                 </Link>
             </div>
         </div>

@@ -5,7 +5,6 @@ import Features from './Features';
 import Programs from './Programs';
 import LineBanner from './lineBanner';
 import Footer from './Footer';
-import Copyright from './Copyright';
 
 const MainPage = () => {
     return (
@@ -17,7 +16,6 @@ const MainPage = () => {
             <Programs />
             <LineBanner />
             <Footer />
-            <Copyright />
         </div>
     );
 }

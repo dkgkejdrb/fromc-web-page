@@ -177,16 +177,18 @@ table {
 
 .customH8 {
 	font-weight: 600;
-	font-size: 38px;
+	font-size: 32px;
 	line-height: 46px;
 	font-family: 'Inter', sans-serif;
+	color: #FFFFFF;
 }
 
 .customH9 {
 	font-weight: 600;
-	font-size: 25px;
+	font-size: 22px;
 	line-height: 30px;
 	font-family: 'Inter', sans-serif;
+	color: #FFFFFF;
 }
 
 .customH10 {
@@ -256,7 +258,7 @@ table {
 .customP7 {
 	font-size: 22px;
 	line-height: 187.5%;
-	color: #000000;
+	color: #FFFFFF;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -265,7 +267,7 @@ table {
 	font-size: 22px;
 	line-height: 27px;
 
-	color: #000000;
+	color: #FFFFFF;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -333,10 +335,12 @@ table {
 	width: 50%;
 }
 
-/* 프로그램 */
+/* 프로그램 버튼 */
 .header .right .headerBtn1 {
 	display: flex;
 	cursor: pointer;
+	flex-direction: column;
+	align-items: center;
 
 	padding: 33px 60px 33px 60px;
 	font-family: 'Inter', sans-serif;
@@ -345,15 +349,21 @@ table {
 
 .header .right .headerBtn1 .customP3 {
 	width: 80px;
-	font-weight: 600;
+}
 
-	transition: 0.3s;
+.header .right .headerBtn1 .bottomHighlight {
+	width: 76px;
+	margin-left: -3px;
+	margin-top: 33px;
+	background-color: #6F3AC1;
 }
 
 /* 도입 문의 */
 .header .right .headerBtn2 {
 	display: flex;
 	cursor: pointer;
+	flex-direction: column;
+	align-items: center;
 
 	padding: 33px 108px 33px 60px;
 	font-family: 'Inter', sans-serif;
@@ -362,6 +372,13 @@ table {
 
 .header .right .headerBtn2 .customP3 {
 	width: 80px;
+}
+
+.header .right .headerBtn2 .bottomHighlight {
+	width: 76px;
+	margin-left: -3px;
+	margin-top: 33px;
+	background-color: #6F3AC1;
 }
 
 .ContactSliderBtn {
@@ -921,12 +938,22 @@ table {
 	background: #FFFFFF;
 	box-shadow: 0px 4px 9px 6px rgba(0, 0, 0, 0.05);
 	border-radius: 28px;
+
+	transform: scale(1);
 }
 
 .programs .wrap .wrap .Row{
 	display: flex;
 	width: 1440px;
-	justify-content:center
+	justify-content:center;
+}
+
+.programs .wrap .wrap .third.Row{
+	justify-content: flex-start;
+}
+
+.programs .wrap .wrap .third.Row .program:nth-of-type(1){
+	margin-left: 94px;
 } 
 
 .programs .wrap .wrap .Row:nth-of-type(2){
@@ -957,10 +984,38 @@ table {
 .programs .wrap .wrap .program .top .image {
 	width: 100%;
 	height: 100%;
-	background-image: url(./Assets/program.svg);
+
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#_1_1 .image{
+	background-image: url(./Assets/program1_1.svg);
+}
+
+#_1_2 .image{
+	background-image: url(./Assets/program1_2.svg);
+}
+
+#_1_3 .image{
+	background-image: url(./Assets/program1_3.svg);
+}
+
+#_2_1 .image {
+	background-image: url(./Assets/program2_1.svg);
+}
+
+#_2_2 .image {
+	background-image: url(./Assets/program2_2.svg);
+}
+
+#_2_3 .image {
+	background-image: url(./Assets/program2_3.svg);
+}
+
+#_3_1 .image {
+	background-image: url(./Assets/program3_1.svg);
 }
 
 .programs .wrap .wrap .program .bottom {
@@ -989,15 +1044,47 @@ table {
 	width: 300px;
 	padding-left:37px;
 	padding-top: 33.5px;
-	font-size: 13px;
+	font-size: 16px;
 	font-weight: 500;
-	line-height: 20px;
+	line-height: 156.02%;
 	color: #000000CF;
 
 	font-family: 'Inter', sans-serif;
 }
 
 
+/* ================ 5. 푸터 페이지 ================== */
+.Footer {
+	width: 100%;
+	height: 418px;
+
+	background: #F1F1F1;
+}
+
+.Footer .Wrap .Logo {
+	width: 367px;
+	height: 72px;
+	margin-top: 103px;
+}
+
+.Footer .Wrap .Logo .source {
+	width: 100%;
+	height: 100%;
+	background-image: url(./Assets/creverse.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Footer .Wrap .IncWrap .IncInfo {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	margin-top: 34px;
+	color: #8C8C8C;
+
+	opacity: 0.7;
+}
 
 /* ================ 2. 도입문의 상세 페이지 ================== */
 /* ================ 1. 도입문의 페이지 wrap ================== */
@@ -1006,9 +1093,35 @@ table {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	
 }
 
-.contactToRegister .wrap {
+.contactToRegister>.wrap {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #9AB4FF33;
+}
+
+.contactToRegister>.wrap .firstLine {
+	width: 1250px;
+	height: 100%;
+}
+
+.contactToRegister>.wrap>.thirdLine {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #FFFFFF;
+}
+
+.contactToRegister>.wrap>.thirdLine.Wrap {
 	width: 1250px;
 	height: 100%;
 }
@@ -1061,7 +1174,6 @@ table {
 
 .contactToRegister .header .right .headerBtn1 .customP3 {
 	width: 80px;
-	font-weight: 600;
 }
 
 
@@ -1083,9 +1195,9 @@ table {
 
 
 /* ================ 2. 상단 소개글 ================== */
-.contactToRegister .wrap .introduction {
+.contactToRegister .introduction {
 	height: 200px;
-	margin-top: 169px;
+	margin-top: 130px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1093,7 +1205,7 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .introduction .title {
+.contactToRegister .introduction .title {
 	height: 400px;
 	display: flex;
 	flex-direction: column;
@@ -1102,32 +1214,31 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .introduction .customP6 {
+.contactToRegister .introduction .customP6 {
 	margin-top: 21px;
 }
 
 
 /* ================ 3.서비스 가능지역 ================== */
-.contactToRegister .wrap .selectRegion {
-	height: 1355px;
+.contactToRegister .selectRegion {
+	height: 980px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 51px;
 
 	background: #FFFFFF;
 	box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
 	border-radius: 55px;
 }
 
-.contactToRegister .wrap .selectRegion>.wrap {
+.contactToRegister .selectRegion>.wrap {
 	width: 100%;
 	height: 100%;
-	padding-top: 94px;
+	padding-top: 60px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title {
+.contactToRegister .selectRegion .wrap .title {
 	display: flex;
 	width: 100%;
 	flex-direction: column;
@@ -1135,7 +1246,7 @@ table {
 	align-items: flex-start;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .top {
+.contactToRegister .selectRegion .wrap .title .top {
 	display: flex;
 	flex-direction: row;
 
@@ -1144,11 +1255,11 @@ table {
 	align-items: center;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .top .icon {
+.contactToRegister .selectRegion .wrap .title .top .icon {
 	margin-left: 475px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .top .icon .src {
+.contactToRegister .selectRegion .wrap .title .top .icon .src {
 	width: 67px;
 	height: 67px;
 
@@ -1158,7 +1269,7 @@ table {
 	background-position: center;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .top .contents .customH2 {
+.contactToRegister .selectRegion .wrap .title .top .contents .customH2 {
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 34px;
@@ -1167,7 +1278,7 @@ table {
 	color: #000000;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .bottom {
+.contactToRegister .selectRegion .wrap .title .bottom {
 	display: flex;
 	flex-direction: row;
 
@@ -1176,7 +1287,7 @@ table {
 	justify-content: center;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .title .bottom .customH3 {
+.contactToRegister .selectRegion .wrap .title .bottom .customH3 {
 	font-weight: 500;
 	line-height: 144.5%;
 
@@ -1184,14 +1295,14 @@ table {
 }
 
 /* 서비스 가능지역 - 직영 선택 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap {
+.contactToRegister .selectRegion .wrap .mapWrap {
 	width: 100%;
 	height: 600px;
-	margin-top: 58px;
+	margin-top: 60px;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆☆마커 공통 이미지 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .marker {
+.contactToRegister .selectRegion .wrap .mapWrap .marker {
 	width: 31.08px;
 	height: 41.03px;
 
@@ -1204,19 +1315,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆서초 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seocho {
+.contactToRegister .selectRegion .wrap .mapWrap .seocho ._seocho {
 	position: absolute;
 	left: 940px;
-	top: 1045px;
+	top: 970px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo {
 	position: absolute;
 	left: 1000px;
-	top: 1198px;
+	top: 1114px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1225,7 +1336,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1235,19 +1346,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆대치 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechi {
+.contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechi {
 	position: absolute;
 	left: 1027px;
-	top: 1026px;
+	top: 946px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo {
 	position: absolute;
 	left: 1238px;
-	top: 1010px;
+	top: 925px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1256,7 +1367,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1266,19 +1377,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆목동 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdong {
+.contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdong {
 	position: absolute;
 	left: 700px;
-	top: 950px;
+	top: 860px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo {
 	position: absolute;
 	left: 500px;
-	top: 870px;
+	top: 791px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1287,7 +1398,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1297,20 +1408,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆잠실 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsil {
+.contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsil {
 	position: absolute;
 	left: 1078px;
-	top: 975px;
+	top: 875px;
 }
 
-
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo {
 	position: absolute;
 	left: 1270px;
-	top: 900px;
+	top: 801px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1319,7 +1429,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1329,19 +1439,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆중계 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggae {
+.contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggae {
 	position: absolute;
 	left: 1043px;
-	top: 700px;
+	top: 600px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo {
 	position: absolute;
 	left: 1182px;
-	top: 662px;
+	top: 565px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1350,7 +1460,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1360,19 +1470,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆분당 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondang {
+.contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondang {
 	position: absolute;
 	left: 1170px;
-	top: 1140px;
+	top: 1055px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo {
 	position: absolute;
 	left: 1302px;
-	top: 1100px;
+	top: 1021px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1381,7 +1491,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1391,19 +1501,19 @@ table {
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆평촌 마커 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchon {
+.contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchon {
 	position: absolute;
 	left: 770px;
-	top: 1170px;
+	top: 1093px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo {
+.contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo {
 	position: absolute;
-	left: 580px;
-	top: 1170px;
+	left: 582px;
+	top: 1092px;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterName {
+.contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterName {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
@@ -1412,7 +1522,7 @@ table {
 	color: #7E5CC4;
 }
 
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterPhoneNumber {
+.contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterPhoneNumber {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 24px;
@@ -1424,9 +1534,8 @@ table {
 
 
 /* 맵 커버 */
-.contactToRegister .wrap .selectRegion .wrap .mapWrap .source {
+.contactToRegister .selectRegion .wrap .mapWrap .source {
 	height: 100%;
-
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1447,23 +1556,24 @@ table {
 	justify-content: center;
 } */
 
-
 /* 서비스 가능지역 - 직영 정보 */
-.contactToRegister .wrap .selectRegion .wrap .information {
+.contactToRegister .information {
+	position: static;
 	width: 100%;
-	height: 366px;
-	margin-top: 204px;
+	height: 354px;
+	margin-top: 88px;
+	background-color: #6F3AC1;
 }
 
-.information .wrap {
-	width: 100%;
+.information>.wrap {
+	height: 100%;
 	display: flex;
 
-	margin-left: 72px;
+	margin-left: 465px;
 }
 
 .information .wrap .left .src {
-	margin-top: 25px;
+	margin-top: 63px;
 	width: 256px;
 	height: 256px;
 
@@ -1481,6 +1591,7 @@ table {
 	display: flex;
 	flex-direction: column;
 
+	margin-top: 43px;
 	margin-left: 22px;
 	width: 100%;
 }
@@ -1489,18 +1600,22 @@ table {
 	width: 100%;
 	height: 73px;
 	margin-top: 26px;
+	margin-left: 27px;
 }
 
-.information .wrap .right .centerAddress .wrap {
+.information .wrap .right .centerAddress>.wrap {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 /* 문의처 > 주소 */
 .information .wrap .right .centerAddress .wrap .left {
-	width: 57px;
-	margin-left: -42px;
+	width: 77px;
+	margin-left: 46px;
 }
 
 .information .wrap .right .centerAddress .wrap .right {
@@ -1515,65 +1630,66 @@ table {
 
 .information .wrap .right .centerAddress .wrap .right .wrap .customP7:nth-of-type(2) {
 	font-weight: 400;
-	color: #6F3AC1;
+	color: #FFFFFF;
 	width: 100%;
 }
-
 
 .information .wrap .right .centerAddress .wrap .right .wrap {
 	display: flex;
 	flex-direction: column;
+	margin-left: 24px;
 }
 
+/* 문의처 > 전화번호 */
 .information .wrap .right .centerPhoneNumber {
 	width: 100%;
-
-	margin-top: 59px;
+	margin-left: 20px;
+	margin-top: 40px;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap {
 	display: flex;
 	flex-direction: row;
-
+	align-items: center;
+	margin-left: 30px;
 	width: 100%;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap .left {
 	width: 120px;
-
-	margin-left: -42px;
 }
 
 .information .wrap .right .centerPhoneNumber .wrap .right {
 	width: 700px;
-	margin-left: 34px;
+	margin-left: 63px;
 }
 
 
 /* ================ 4. 도입희망지역 ================== */
-.contactToRegister .wrap .Wrap {
+.contactToRegister .wrap .thirdLine>.Wrap {
+	width: 1250px;
 	background: #F6F6F6;
 	box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
 	border-radius: 55px;
 
-	margin-top: 54px;
+	margin-top: 95px;
 	padding-top: 83px;
 	padding-bottom: 83px;
 }
 
-.contactToRegister .wrap .hopeRegion {
+.contactToRegister .hopeRegion {
 	height: 40px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap {
+.contactToRegister .hopeRegion .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap .title {
+.contactToRegister .hopeRegion .wrap .title {
 	display: flex;
 	width: 280px;
 
@@ -1581,18 +1697,18 @@ table {
 	margin-left: 190px;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap .listWrap {
+.contactToRegister .hopeRegion .wrap .listWrap {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap .listWrap #list:nth-of-type(1) {
+.contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(1) {
 	margin-left: 27px;
 }
 
-.contactToRegister .wrap .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
+.contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
 	margin-left: 49px;
 }
 
@@ -1616,7 +1732,7 @@ table {
 
 
 /* ================ 5. 학급 수 ================== */
-.contactToRegister .wrap .howManyClasses {
+.contactToRegister .howManyClasses {
 	margin-top: 39px;
 	height: 40px;
 	display: flex;
@@ -1624,12 +1740,12 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .howManyClasses .wrap {
+.contactToRegister .howManyClasses .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .howManyClasses .wrap .title {
+.contactToRegister .howManyClasses .wrap .title {
 	display: flex;
 	width: 280px;
 
@@ -1637,20 +1753,20 @@ table {
 	margin-left: 190px;
 }
 
-.contactToRegister .wrap .howManyClasses .wrap .listWrap {
+.contactToRegister .howManyClasses .wrap .listWrap {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .howManyClasses .wrap .listWrap #list {
+.contactToRegister .howManyClasses .wrap .listWrap #list {
 	margin-left: 27px;
 }
 
 
 /* ================ 6. 교육인원 ================== */
-.contactToRegister .wrap .numberOfStudents {
+.contactToRegister .numberOfStudents {
 	margin-top: 39px;
 	height: 40px;
 	display: flex;
@@ -1658,12 +1774,12 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .numberOfStudents .wrap {
+.contactToRegister .numberOfStudents .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .numberOfStudents .wrap .title {
+.contactToRegister .numberOfStudents .wrap .title {
 	display: flex;
 	width: 280px;
 
@@ -1672,14 +1788,14 @@ table {
 }
 
 /* 입력버튼 스타일 */
-.contactToRegister .wrap .numberOfStudents .wrap .input {
+.contactToRegister .numberOfStudents .wrap .input {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .numberOfStudents .wrap .input #input {
+.contactToRegister .numberOfStudents .wrap .input #input {
 	width: 280px;
 	margin-left: 27px;
 	border-radius: 5px;
@@ -1693,7 +1809,7 @@ table {
 
 
 /* ================ 7. 프로그램 선택 ================== */
-.contactToRegister .wrap .selectProgram {
+.contactToRegister .selectProgram {
 	margin-top: 39px;
 	height: 40px;
 	display: flex;
@@ -1701,12 +1817,12 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .selectProgram .wrap {
+.contactToRegister .selectProgram .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .selectProgram .wrap .title {
+.contactToRegister .selectProgram .wrap .title {
 	display: flex;
 	width: 300px;
 
@@ -1714,20 +1830,20 @@ table {
 	margin-left: 190px;
 }
 
-.contactToRegister .wrap .selectProgram .wrap .listWrap {
+.contactToRegister .selectProgram .wrap .listWrap {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .selectProgram .wrap .listWrap #list {
+.contactToRegister .selectProgram .wrap .listWrap #list {
 	margin-left: 18px;
 }
 
 
 /* ================ 8. 수업 형태 ================== */
-.contactToRegister .wrap .typeOfLesson {
+.contactToRegister .typeOfLesson {
 	margin-top: 39px;
 	height: 80px;
 	display: flex;
@@ -1735,12 +1851,12 @@ table {
 	text-align: center;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap {
+.contactToRegister .typeOfLesson .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .title {
+.contactToRegister .typeOfLesson .wrap .title {
 	display: flex;
 	width: 310px;
 
@@ -1748,26 +1864,26 @@ table {
 	margin-left: 190px;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .title .wrap {
+.contactToRegister .typeOfLesson .wrap .title .wrap {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .title .wrap .customP {
+.contactToRegister .typeOfLesson .wrap .title .wrap .customP {
 	margin-top: 13px;
 	font-size: 11px;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .listWrap {
+.contactToRegister .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .typeOfLesson .wrap .listWrap .customP {
+.contactToRegister .typeOfLesson .wrap .listWrap .customP {
 	margin-left: 15px;
 	width: 289px;
 	height: 40px;
@@ -1786,19 +1902,19 @@ table {
 
 
 /* ================ 9. 수업 횟수 ================== */
-.contactToRegister .wrap .numbersOfLessons {
+.contactToRegister .numbersOfLessons {
 	margin-top: 39px;
 	height: 100px;
 	display: flex;
 	flex-direction: column;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap {
+.contactToRegister .numbersOfLessons .wrap {
 	display: flex;
 	width: 100%;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .title {
+.contactToRegister .numbersOfLessons .wrap .title {
 	display: flex;
 	width: 280px;
 
@@ -1806,7 +1922,7 @@ table {
 	margin-left: 190px;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .title .wrap {
+.contactToRegister .numbersOfLessons .wrap .title .wrap {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -1814,53 +1930,53 @@ table {
 	flex-grow: 1;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .title .wrap .customP {
+.contactToRegister .numbersOfLessons .wrap .title .wrap .customP {
 	margin-top: 13px;
 	font-size: 11px;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .listWrap {
+.contactToRegister .numbersOfLessons .wrap .listWrap {
 	display: flex;
 	width: 100%;
 
 	margin-right: 190px;
 }
 
-.contactToRegister .wrap .numbersOfLessons .wrap .listWrap #list {
+.contactToRegister .numbersOfLessons .wrap .listWrap #list {
 	margin-left: 27px;
 }
 
 
 /* ================ 10. 수업 일정 ================== */
-.contactToRegister .wrap .selectLessonDays {
-	height: 1000px;
+.contactToRegister .selectLessonDays {
+	height: 970px;
 	margin-top: 128px;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap {
+.contactToRegister .selectLessonDays .wrap {
 	display: flex;
 	flex-direction: column;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap .title {
+.contactToRegister .selectLessonDays .wrap .title {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap .title .top {
+.contactToRegister .selectLessonDays .wrap .title .top {
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap .title .top .icon {
+.contactToRegister .selectLessonDays .wrap .title .top .icon {
 	width: 51px;
 	height: 51px;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap .title .top .icon .source {
+.contactToRegister .selectLessonDays .wrap .title .top .icon .source {
 	width: 100%;
 	height: 100%;
 
@@ -1870,7 +1986,7 @@ table {
 	background-position: center;
 }
 
-.contactToRegister .wrap .selectLessonDays .wrap .title .customP9 {
+.contactToRegister .selectLessonDays .wrap .title .customP9 {
 	text-align: center;
 	margin-top: 16px;
 
@@ -2115,6 +2231,7 @@ abbr {
 
 /* =============== 신청자 ~ 제출하기까지 랩 ===== */
 .contactToRegister .wrap .bottomWrap {
+	width: 1250px;
 	background: #F6F6F6;
 	height: 1100px;
 	border-radius: 55px;
@@ -2122,7 +2239,7 @@ abbr {
 
 
 /* ================ 11. 신청자 ================== */
-.contactToRegister .wrap .applicant {
+.contactToRegister .applicant {
 	width: 100%;
 	height: 40px;
 	display: flex;
@@ -2134,13 +2251,13 @@ abbr {
 	margin-right: 255px;
 }
 
-.contactToRegister .wrap .applicant .wrap {
+.contactToRegister .applicant .wrap {
 	display: flex;
 	flex-direction: row;
 	width: 672px;
 }
 
-.contactToRegister .wrap .applicant .wrap .title {
+.contactToRegister .applicant .wrap .title {
 	width: 111px;
 
 	display: flex;
@@ -2148,11 +2265,11 @@ abbr {
 	align-items: flex-start;
 }
 
-.contactToRegister .wrap .applicant .wrap .input {
+.contactToRegister .applicant .wrap .input {
 	display: flex;
 }
 
-.contactToRegister .wrap .applicant .wrap .input #input {
+.contactToRegister .applicant .wrap .input #input {
 	display: flex;
 
 	width: 280px;
@@ -2170,7 +2287,7 @@ abbr {
 
 
 /* ================ 12. 이메일 ================== */
-.contactToRegister .wrap .email {
+.contactToRegister .email {
 	width: 100%;
 	height: 40px;
 	display: flex;
@@ -2182,13 +2299,13 @@ abbr {
 	margin-right: 255px;
 }
 
-.contactToRegister .wrap .email .wrap {
+.contactToRegister .email .wrap {
 	display: flex;
 	flex-direction: row;
 	width: 672px;
 }
 
-.contactToRegister .wrap .email .wrap .title {
+.contactToRegister .email .wrap .title {
 	width: 111px;
 
 	display: flex;
@@ -2196,11 +2313,11 @@ abbr {
 	align-items: flex-start;
 }
 
-.contactToRegister .wrap .email .wrap .input {
+.contactToRegister .email .wrap .input {
 	display: flex;
 }
 
-.contactToRegister .wrap .email .wrap .input #input {
+.contactToRegister .email .wrap .input #input {
 	display: flex;
 
 	width: 280px;
@@ -2216,7 +2333,7 @@ abbr {
 }
 
 /* ================ 13. 휴대번호 ================== */
-.contactToRegister .wrap .phoneNumber {
+.contactToRegister .phoneNumber {
 	width: 100%;
 	height: 40px;
 	display: flex;
@@ -2228,13 +2345,13 @@ abbr {
 	margin-right: 255px;
 }
 
-.contactToRegister .wrap .phoneNumber .wrap {
+.contactToRegister .phoneNumber .wrap {
 	display: flex;
 	flex-direction: row;
 	width: 672px;
 }
 
-.contactToRegister .wrap .phoneNumber .wrap .title {
+.contactToRegister .phoneNumber .wrap .title {
 	width: 111px;
 
 	display: flex;
@@ -2242,11 +2359,11 @@ abbr {
 	align-items: flex-start;
 }
 
-.contactToRegister .wrap .phoneNumber .wrap .input {
+.contactToRegister .phoneNumber .wrap .input {
 	display: flex;
 }
 
-.contactToRegister .wrap .phoneNumber .wrap .input #input {
+.contactToRegister .phoneNumber .wrap .input #input {
 	display: flex;
 
 	width: 280px;
@@ -2262,29 +2379,28 @@ abbr {
 }
 
 /* ================ 14. 기관 선택 ================== */
-.contactToRegister .wrap .selectOrg {
+.contactToRegister .selectOrg {
 	height: 250px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	text-align: center;
 
 	margin-top: 43px;
 	margin-left: 137px;
 }
 
-.contactToRegister .wrap .selectOrg .wrap .title {
+.contactToRegister .selectOrg .wrap .title {
 	display: flex;
 	width: 383px;
 }
 
-.contactToRegister .wrap .selectOrg .wrap .right {
+.contactToRegister .selectOrg .wrap .right {
 	display: flex;
 	width: 490px;
 }
 
-.contactToRegister .wrap .selectOrg .wrap {
+.contactToRegister .selectOrg .wrap {
 	display: flex;
 	width: 100%;
 }
@@ -2318,7 +2434,7 @@ abbr {
 /* 주소창 */
 .findOrgAddress {
 	width: 479px;
-	height: 219px;
+	height: 170px;
 	margin-top: 11px;
 	background: #FAFAFA;
 	border: 1px solid #A8A8A8;
@@ -2354,7 +2470,7 @@ abbr {
 
 
 /* ================ 15. 수업 문의 경로 ================== */
-.contactToRegister .wrap .howToKnowUs {
+.contactToRegister .howToKnowUs {
 	width: 873px;
 	height: 40px;
 	display: flex;
@@ -2365,26 +2481,26 @@ abbr {
 	margin-left: 137px;
 }
 
-.contactToRegister .wrap .howToKnowUs .wrap {
+.contactToRegister .howToKnowUs .wrap {
 
 	display: flex;
 	flex-direction: row;
 }
 
-.contactToRegister .wrap .howToKnowUs .wrap .title {
+.contactToRegister .howToKnowUs .wrap .title {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 515px;
 }
 
-.contactToRegister .wrap .howToKnowUs .wrap .boxesWrap {
+.contactToRegister .howToKnowUs .wrap .boxesWrap {
 	display: flex;
 	width: 100%;
 	padding-top: 2px;
 }
 
-.contactToRegister .wrap .howToKnowUs .wrap .boxesWrap .box1 {
+.contactToRegister .howToKnowUs .wrap .boxesWrap .box1 {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -2397,7 +2513,7 @@ abbr {
 
 
 /* ================ 16. 개인정보 수집, 이용에 대한 동의 ================== */
-.contactToRegister .wrap .Agree {
+.contactToRegister .Agree {
 	width: 100%;
 
 	margin-top: 30px;
@@ -2405,7 +2521,7 @@ abbr {
 	justify-content: center;
 }
 
-.contactToRegister .wrap .Agree .wrap {
+.contactToRegister .Agree .wrap {
 	display: flex;
 	flex-direction: column;
 	padding-left: 30px;
@@ -2413,7 +2529,7 @@ abbr {
 	height: 40px;
 }
 
-.contactToRegister .wrap .Agree .wrap .top {
+.contactToRegister .Agree .wrap .top {
 	display: flex;
 	justify-content: center;
 	width: 520px;
@@ -2421,35 +2537,32 @@ abbr {
 	flex-grow: 1;
 }
 
-.contactToRegister .wrap .Agree .wrap .top .customP11 {
+.contactToRegister .Agree .wrap .top .customP11 {
 	padding-top: 4px;
 }
 
-.contactToRegister .wrap .Agree .wrap .boxesWrap {
+.contactToRegister .Agree .wrap .boxesWrap {
 	display: flex;
 	justify-content: flex-start;
 	width: 50px;
 	flex-grow: 1;
 }
 
-.contactToRegister .wrap .Agree .wrap .boxesWrap .agreeBox {
+.contactToRegister .Agree .wrap .boxesWrap .agreeBox {
 	display: flex;
 	flex-direction: row;
 	margin-left: 12px;
 }
 
-.contactToRegister .wrap .Agree .wrap .boxesWrap .agreeDescriptionBtn {
+.contactToRegister .Agree .wrap .boxesWrap .agreeDescriptionBtn {
+	width: 24px;
+	height: 24px;
 	margin-top: 3px;
 	margin-left: 12px;
-	background-color: white;
-	background-image: url(https://account.chungdahm.com/images/icon_accordion_close.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor: pointer;
-	padding: 1px;
-	border: 1px solid  #A8A8A8;;
-	border-radius: 3px;
 }
 
 th {
@@ -2467,7 +2580,7 @@ tr {
 
 
 /* ================ 17. 제출하기 ================== */
-.contactToRegister .wrap .Submit {
+.contactToRegister .Submit {
 	width: 100%;
 	margin-top: 200px;
 	height: 100px;
@@ -2478,9 +2591,9 @@ tr {
 }
 
 .Submit>button {
-	width: 217px;
+	width: 267px;
 	height: 53px;
-	background: #6F3AC1;
+	background: #8161b1;
 	border: 1px solid rgba(224, 224, 224, 0.7);
 	border-radius: 33px;
 	font-weight: 600;
@@ -2494,4 +2607,13 @@ tr {
 /* ================ 18. 라인배너 ================== */
 .contactToRegister .lineBanner {
 	margin-top: 34px;
+}
+
+/* ================ 19. 푸터 페이지 ================== */
+.contactToRegister .Footer {
+	width: 100%;
+	height: 418px;
+
+	margin-top: 100px;
+	background: #F1F1F1;
 }

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header2 from "./Header2";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import { useDaumPostcodePopup } from 'react-daum-postcode';
+
 import AgreeDescription from "./AgreeDescription";
 import LineBanner from './lineBanner';
 import Footer from './Footer';
-import Copyright from './Copyright';
 
 import mapDefault from "../Assets/default_map.svg"
 import mapBoondang from "../Assets/boondang.svg"
@@ -16,6 +16,8 @@ import mapDaechi from "../Assets/daechi.svg"
 import mapSeocho from "../Assets/seocho.svg"
 import mapMokdong from "../Assets/mokdong.svg"
 import mapJoonggae from "../Assets/joonggae.svg"
+import arrowUp from "../Assets/arrowUp.svg"
+import arrowDown from "../Assets/arrowDown.svg"
 
 // react-calendar API 모음:
 // https://github.com/wojtekmaj/react-calendar
@@ -267,13 +269,13 @@ const ContactToRegister = () => {
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
         // 중복 등록 막기
-        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx')) {
+        if ((barInfo[0].date !== 'xxxx.xx.xx') && (barInfo[1].date !== 'xxxx.xx.xx')) {
             if ((barInfo[0].date === barInfo[1].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
-        if ((barInfo[0].date != 'xxxx.xx.xx') && (barInfo[1].date != 'xxxx.xx.xx') && (barInfo[2].date != 'xxxx.xx.xx')) {
+        if ((barInfo[0].date !== 'xxxx.xx.xx') && (barInfo[1].date !== 'xxxx.xx.xx') && (barInfo[2].date !== 'xxxx.xx.xx')) {
             if ((barInfo[0].date === barInfo[2].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
@@ -503,7 +505,7 @@ const ContactToRegister = () => {
             setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
         }
 
-        if (address != "") {
+        if (address !== "") {
 
         }
 
@@ -573,23 +575,30 @@ const ContactToRegister = () => {
 
     // 개인동의 설명 규칙 보이기 상태값
     const [showAgreeDescription, setShowAgreeDescription] = useState('none');
+    // 개인동의 버튼 이미지(화살표 위아래) 교체
+    const [agreeBtnImage, setAgreeBtnImage] = useState(`url(${arrowDown})`);
 
     // 개인동의 설명 규칙 버튼 핸들러
     const AgreeDescriptionBtnHandler = () => {
-
-        if (showAgreeDescription == 'none') {
+        if (showAgreeDescription === 'none') {
             setShowAgreeDescription('');
+            setAgreeBtnImage(`url(${arrowUp})`);
         }
         else {
             setShowAgreeDescription('none');
+            setAgreeBtnImage(`url(${arrowDown})`);
         }
     }
-
+    // 여기까지
+    const scrollRef = useRef<HTMLElement>(null);
+    const scrollToGo = () => {
+    }
 
     // 제출버튼 핸들러
     const submitHandler = () => {
         if (userInfo.city === '') {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
+            
         } else if (userInfo.town === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
         } else if (userInfo.classesCount === '') {
@@ -620,7 +629,7 @@ const ContactToRegister = () => {
         userInfo.knowByEtc === false
         ) {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
-        } else if (userInfo.agree == false) {
+        } else if (userInfo.agree === false) {
                 alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
         } else {
             alert('제출되었습니다.')
@@ -641,7 +650,7 @@ const ContactToRegister = () => {
     useState();
     // 지도 마커버튼핸들러
     const onMarkerHandler = (e) => {
-        if (e.target.className == "_seocho marker") {
+        if (e.target.className === "_seocho marker") {
             setShowCenterMap(`url(${mapSeocho})`);
             setScaleUpSeocho('26px');
             setScaleUpDaechi('20px');
@@ -652,7 +661,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_daechi marker") {
+        if (e.target.className === "_daechi marker") {
             setShowCenterMap(`url(${mapDaechi})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('26px');
@@ -663,7 +672,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_mokdong marker") {
+        if (e.target.className === "_mokdong marker") {
             setShowCenterMap(`url(${mapMokdong})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -674,7 +683,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_jamsil marker") {
+        if (e.target.className === "_jamsil marker") {
             setShowCenterMap(`url(${mapJamsil})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -685,7 +694,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_joonggae marker") {
+        if (e.target.className === "_joonggae marker") {
             setShowCenterMap(`url(${mapJoonggae})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -696,7 +705,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_boondang marker") {
+        if (e.target.className === "_boondang marker") {
             setShowCenterMap(`url(${mapBoondang})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -707,7 +716,7 @@ const ContactToRegister = () => {
             setScaleUpPyeongchon('20px');
         }
 
-        if (e.target.className == "_pyeongchon marker") {
+        if (e.target.className === "_pyeongchon marker") {
             setShowCenterMap(`url(${mapPyeongchon})`);
             setScaleUpSeocho('20px');
             setScaleUpDaechi('20px');
@@ -721,43 +730,43 @@ const ContactToRegister = () => {
 
     // 지도 마커 클릭 핸들러
     const onMarkerClickHandler = (e) => {
-        if (e.target.className == "_seocho marker") {
+        if (e.target.className === "_seocho marker") {
             setShowCenterName(centerInfo.seocho.name);
             setShowCenterAddress(centerInfo.seocho.address);
             setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
         }
 
-        if (e.target.className == "_daechi marker") {
+        if (e.target.className === "_daechi marker") {
             setShowCenterName(centerInfo.daechi.name);
             setShowCenterAddress(centerInfo.daechi.address);
             setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
         }
 
-        if (e.target.className == "_mokdong marker") {
+        if (e.target.className === "_mokdong marker") {
             setShowCenterName(centerInfo.mokdong.name);
             setShowCenterAddress(centerInfo.mokdong.address);
             setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
         }
 
-        if (e.target.className == "_jamsil marker") {
+        if (e.target.className === "_jamsil marker") {
             setShowCenterName(centerInfo.jamsil.name);
             setShowCenterAddress(centerInfo.jamsil.address);
             setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
         }
 
-        if (e.target.className == "_joonggae marker") {
+        if (e.target.className === "_joonggae marker") {
             setShowCenterName(centerInfo.joonggae.name);
             setShowCenterAddress(centerInfo.joonggae.address);
             setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
         }
 
-        if (e.target.className == "_boondang marker") {
+        if (e.target.className === "_boondang marker") {
             setShowCenterName(centerInfo.boondang.name);
             setShowCenterAddress(centerInfo.boondang.address);
             setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
         }
 
-        if (e.target.className == "_pyeongchon marker") {
+        if (e.target.className === "_pyeongchon marker") {
             setShowCenterName(centerInfo.pyeongchon.name);
             setShowCenterAddress(centerInfo.pyeongchon.address);
             setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
@@ -768,7 +777,9 @@ const ContactToRegister = () => {
     return (
         <div className="contactToRegister">
             <Header2 />
+            {/* <div className="firstLine"> */}
             <div className="wrap">
+                <div className="firstLine">
                 <div className="introduction" >
                     <div className="title">
                         <div className="customH7">
@@ -978,6 +989,11 @@ const ContactToRegister = () => {
                             >
                             </div>
                         </div>
+                        </div>
+                        </div>
+                        </div>
+                        {/* 바로 위가 firstline */}
+
                         <div className="information">
                             <div className="wrap">
                                 <div className="left">
@@ -996,6 +1012,10 @@ const ContactToRegister = () => {
                                                     주소
                                                 </div>
                                             </div>
+                                            <hr style={{
+                                                height: '70px',
+                                                border: '1px solid rgba(255, 255, 255, 0.7)'
+                                            }} />
                                             <div className="right">
                                                 <div className="wrap">
                                                     <div className="customP7">
@@ -1015,6 +1035,10 @@ const ContactToRegister = () => {
                                                     전화번호
                                                 </div>
                                             </div>
+                                            <hr style={{
+                                                height: '70px',
+                                                border: '1px solid rgba(255, 255, 255, 0.7)'
+                                            }} />
                                             <div className="right">
                                                 <div className="customP8">
                                                     {showCenterPhoneNumber}
@@ -1024,10 +1048,11 @@ const ContactToRegister = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </div> 
+                        {/* 문의처 포함한 wrap */}
+                    {/* </div> */}
 
+                <div className="thirdLine">
                 <div className="Wrap">
                     <div className="hopeRegion">
                         <div className="wrap">
@@ -1432,10 +1457,12 @@ const ContactToRegister = () => {
                                         ></input>
                                         <div className="customP11">동의 함</div>
                                     </div>
-                                    <a
+                                    <div
                                         className="agreeDescriptionBtn"
                                         onClick={AgreeDescriptionBtnHandler}
-                                        style={{ width: '24px', height: '24px' }}></a>
+                                        style={{ 
+                                            backgroundImage: agreeBtnImage
+                                        }}></div>
                                 </div>
                             </div>
                             <div className="bottom">
@@ -1447,14 +1474,13 @@ const ContactToRegister = () => {
                     <div className="Submit">
                         <button
                             onClick={submitHandler}
-                        >제출하기</button>
+                        >도입 문의 하기</button>
                     </div>
                 </div>
-
+                </div>
             </div>
-            <LineBanner />
+            {/* <LineBanner /> */}
             <Footer />
-            <Copyright />
         </div>
     );
 }
