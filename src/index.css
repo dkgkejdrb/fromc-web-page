@@ -490,7 +490,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림2.svg);
+	background-image: url(Assets/그림2.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -576,7 +576,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림3.svg);
+	background-image: url(Assets/그림3.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -659,7 +659,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림4.svg);
+	background-image: url(Assets/그림4.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -741,17 +741,6 @@ table {
 	justify-content: flex-end;
 }
 
-.features .wrap .fourthLine.rightPictureSection .contents .picture .wrap .source {
-	width: 490px;
-	height: 297px;
-
-	background-image: url(Assets/그림5.svg);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-radius: 28px;
-}
-
 .features .wrap .fourthLine.rightPictureSection .contents .text {
 	width: 50%;
 	height: 297px;
@@ -795,9 +784,6 @@ table {
 	align-items: flex;
 }
 
-
-
-
 /* 띠배너 */
 .lineBanner {
 	width: 100%;
@@ -806,7 +792,7 @@ table {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	background-image: url(Assets/spacebackground.svg);
+	background-image: url(Assets/spacebackground.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -992,31 +978,31 @@ table {
 }
 
 #_1_1 .image {
-	background-image: url(./Assets/program1_1.svg);
+	background-image: url(./Assets/program1_1.png);
 }
 
 #_1_2 .image {
-	background-image: url(./Assets/program1_2.svg);
+	background-image: url(./Assets/program1_2.png);
 }
 
 #_1_3 .image {
-	background-image: url(./Assets/program1_3.svg);
+	background-image: url(./Assets/program1_3.png);
 }
 
 #_2_1 .image {
-	background-image: url(./Assets/program2_1.svg);
+	background-image: url(./Assets/program2_1.png);
 }
 
 #_2_2 .image {
-	background-image: url(./Assets/program2_2.svg);
+	background-image: url(./Assets/program2_2.png);
 }
 
 #_2_3 .image {
-	background-image: url(./Assets/program2_3.svg);
+	background-image: url(./Assets/program2_3.png);
 }
 
 #_3_1 .image {
-	background-image: url(./Assets/program3_1.svg);
+	background-image: url(./Assets/program3_1.png);
 }
 
 .programs .wrap .wrap .program .bottom {
@@ -1264,7 +1250,7 @@ table {
 	width: 67px;
 	height: 67px;
 
-	background-image: url(./Assets/Rectangle.svg);
+	background-image: url(./Assets/flag.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1578,7 +1564,7 @@ table {
 	width: 256px;
 	height: 256px;
 
-	background-image: url(./Assets/bigMarker.svg);
+	background-image: url(./Assets/bigMarker.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1981,7 +1967,7 @@ table {
 	width: 100%;
 	height: 100%;
 
-	background-image: url(./Assets/calendar.svg);
+	background-image: url(./Assets/calendar.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -2621,3 +2607,372 @@ tr {
 	margin-top: 100px;
 	background: #F1F1F1;
 }
+
+
+
+/* ☆☆☆☆☆☆☆☆☆프로그램소개 페이지 */
+/* 1-1. 헤더 */
+/* ================ 1. 헤더 ================== */
+.programsPage .header {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 89px;
+	border-bottom: solid rgba(255, 255, 255, 0.4) 0.2px;
+	z-index: 2;
+	transition: 0.15s ease-in-out;
+}
+
+.programsPage .header .left {
+	display: flex;
+	width: 50%;
+	height: 100%;
+}
+
+.programsPage .header .left .logo {
+	width: 163px;
+	height: 36px;
+
+	margin-top: 30px;
+	margin-left: 51px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.programsPage .header .right {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+/* 프로그램 */
+.programsPage .header .right .headerBtn1 {
+	display: flex;
+	cursor: pointer;
+
+	padding: 33px 60px 33px 60px;
+	font-family: 'Inter', sans-serif;
+	text-decoration: none;
+}
+
+.programsPage .header .right .headerBtn1 .customP3 {
+	width: 80px;
+}
+
+/* 도입 문의 */
+.programsPage .header .right .headerBtn2 {
+	display: flex;
+	cursor: pointer;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 33px 108px 33px 60px;
+	font-family: 'Inter', sans-serif;
+	text-decoration: none;
+}
+
+.programsPage .header .right .headerBtn2 .customP3 {
+	width: 80px;
+}
+
+.programsPage .header .right .headerBtn2 .bottomHighlight {
+	width: 76px;
+	margin-left: -3px;
+	margin-top: 33px;
+	background-color: #6F3AC1;
+}
+
+
+.programsPage {
+	width: 100%;
+	height: 100%;
+}
+/* ================ 왼쪽 내비게이션 ================== */
+
+.programsPage>.wrap {
+	padding-top: 147px;
+	padding-left: 42px;
+	display: flex;
+	flex-direction: row;
+}
+
+.programsPage .wrap .left {
+	width: 278px;
+	height: 640px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.07);
+	border-radius: 24px;
+}
+
+
+/* 첫째 카테고리 */
+.programsPage .wrap .left .firstSection {
+	width: 190px;
+	height: 150px;
+	margin-top: 54px;
+}
+
+.programsPage .wrap .left .firstSection .top {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(111, 58, 193, 0.4);
+	padding-bottom: 9px;
+}
+
+.programsPage .wrap .left .firstSection .top .icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/icon1.png);
+}
+
+.programsPage .wrap .left .category{
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 140.02%;
+
+	font-family: 'Inter', sans-serif;
+}
+
+
+.scratchAI {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+.appAI {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+.kaggleAI {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+/* 둘째 카테고리 */
+.programsPage .wrap .left .secondSection {
+	width: 190px;
+	height: 150px;
+	margin-top: 63px;
+}
+
+.programsPage .wrap .left .secondSection .top {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(111, 58, 193, 0.4);
+	padding-bottom: 9px;
+}
+
+.programsPage .wrap .left .secondSection .top .icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/icon2.png);
+}
+
+.metaverseArduino {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+.metaversePython {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+
+
+/* 셋째 카테고리 */
+.programsPage .wrap .left .thirdSection {
+	width: 190px;
+	height: 150px;
+	margin-top: 52px;
+}
+
+.programsPage .wrap .left .thirdSection .top {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(111, 58, 193, 0.4);
+	padding-bottom: 9px;
+}
+
+.programsPage .wrap .left .thirdSection .top .icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/icon3.png);
+}
+
+.scratchGame {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+.appGame {
+	display: flex;
+	align-items: center;
+	margin-top: 9px;
+	height: 26px;
+
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	line-height: 140.02%;
+	color: #5B437E;
+	text-decoration: none;
+
+	cursor: pointer;
+}
+
+
+/* 오른쪽 이미지 */
+.programsPage .wrap .right {
+	display: flex;
+	align-items: flex-start;
+	width : 1300px;
+	height: 3900px;
+
+	margin-left: 50px;
+}
+
+.programsPage .wrap .right .image_program1  {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchAI.svg);
+}
+
+
+/* 두번째 페이지 오른쪽 이미지 */
+.programsPage .wrap .right .image_program2  {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appAI.svg);
+}
+
+/* 세번째 페이지 오른쪽 이미지 */
+.programsPage .wrap .right .image_program3 {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/kaggleAI.svg);
+}
+
+
+
+
+/* 다섯번째 페이지 오른쪽 이미지 */
+.programsPage .wrap .right .image_program5 {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaversePython.svg);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 띠 배너 */
+.programsPage .lineBanner {
+	margin-top: 100px;
+}
+

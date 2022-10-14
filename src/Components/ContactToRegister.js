@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from 'react-router-dom';
 import Header2 from "./Header2";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
@@ -9,14 +10,14 @@ import Footer from './Footer';
 
 import { Link as LinkToRegsiter } from 'react-scroll';
 
-import mapDefault from "../Assets/default_map.svg"
-import mapBoondang from "../Assets/boondang.svg"
-import mapPyeongchon from "../Assets/pyeongchon.svg"
-import mapJamsil from "../Assets/jamsil.svg"
-import mapDaechi from "../Assets/daechi.svg"
-import mapSeocho from "../Assets/seocho.svg"
-import mapMokdong from "../Assets/mokdong.svg"
-import mapJoonggae from "../Assets/joonggae.svg"
+import mapDefault from "../Assets/default_map.png"
+import mapBoondang from "../Assets/boondang.png"
+import mapPyeongchon from "../Assets/pyeongchon.png"
+import mapJamsil from "../Assets/jamsil.png"
+import mapDaechi from "../Assets/daechi.png"
+import mapSeocho from "../Assets/seocho.png"
+import mapMokdong from "../Assets/mokdong.png"
+import mapJoonggae from "../Assets/joonggae.png"
 import arrowUp from "../Assets/arrowUp.svg"
 import arrowDown from "../Assets/arrowDown.svg"
 
@@ -488,6 +489,8 @@ const ContactToRegister = () => {
     // 주소창에서 선택한 주소 상태값
     const [address, setAddress] = useState("");
 
+    const [ref, setRef] = useState('cityTown');
+
     // 라디오버튼 이벤트핸들러
     const RadioHandler = (e) => {
         let tmp = e.target.value;
@@ -499,9 +502,7 @@ const ContactToRegister = () => {
             orgType: tmp
         });
     }
-
-
-    const [ref, setRef] = useState('');
+    
     // useEffect로 라디오값 동기처리
     useEffect(() => {
         if (orgType === "학교" || orgType === "학교외기관") {
@@ -528,8 +529,60 @@ const ContactToRegister = () => {
             bar2ShowDisplayValue('');
             bar3ShowDisplayValue('');
         }
-
-    }, [orgType, address, pointer]);
+        
+        if (userInfo.name === '') {   
+            // alert("'신청자의 성함'을 작성해주세요.")
+            setRef('applicant');
+        } if (userInfo.email === '') {
+            // alert("'이메일 주소'를 작성해주세요.")
+            setRef('applicant');
+        } if (userInfo.phoneNumber === '') {
+            // alert("'휴대번호'를 작성해주세요.")
+            setRef('applicant');
+        } if (userInfo.orgType === '') {
+            // alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
+            setRef('applicant');
+        } if (userInfo.orgName === '') {
+            // alert("'학교 명/ 기관 명'을 작성해주세요.")
+            setRef('applicant');
+        } if (userInfo.orgAddress === '') {
+            // alert("'학교 명/ 기관 주소'를 작성해주세요.")
+            setRef('applicant');
+        } if (userInfo.knowByrecommendation === false &&
+            userInfo.knowByproposal === false &&
+            userInfo.knowBywebSearch === false &&
+            userInfo.knowByEtc === false
+        ) {
+            // alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
+            setRef('applicant');
+        } 
+        if (userInfo.lessonDays[0] === '') {
+            setRef('calendar');
+            // alert("'수업 일자'를 1개 이상 선택해주세요.")
+        } 
+        
+        
+        if (userInfo.agree === false) {
+            // alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+        } if (userInfo.city === '') {
+            setRef('cityTown');
+        } if (userInfo.town === '') {
+            setRef('cityTown');
+        } if (userInfo.classesCount === '') {
+            setRef('cityTown');
+        } if (userInfo.studentsCount === '') {
+            // alert("'교육인원'을 작성해주세요.")
+            setRef('cityTown');
+        } if (userInfo.program === '') {
+            // alert("'프로그램'을 선택해주세요.")
+            setRef('cityTown');
+        } if (userInfo.lessonsCount === '') {
+            // alert("'수업 횟수'를 선택해주세요.")
+            setRef('cityTown');
+        } 
+    });
+    // useEffect 제약조건 변경 전
+    // }, [orgType, address, pointer]);
 
     // 카카오 주소 팝업창 
     const Postcode = () => {
@@ -592,15 +645,12 @@ const ContactToRegister = () => {
             setAgreeBtnImage(`url(${arrowDown})`);
         }
     }
-
+    // 메인페이지 이동 네비게이트
+    let navigate = useNavigate();
     // 제출버튼 핸들러
     const submitHandler = () => {
-        // 여기까지
-
         if (userInfo.city === '') {
-            setRef('cityTown');
             alert("'도입희망지역(시/도)'을 선택해주세요.")
-            console.log(ref);
         } else if (userInfo.town === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
         } else if (userInfo.classesCount === '') {
@@ -635,6 +685,7 @@ const ContactToRegister = () => {
             alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
         } else {
             alert('제출되었습니다.')
+            navigate("/");
         }
     }
 
@@ -1054,14 +1105,15 @@ const ContactToRegister = () => {
                 {/* 문의처 포함한 wrap */}
                 {/* </div> */}
 
-                <div className="thirdLine">
+                <div className="thirdLine"
+                id="cityTown">
                     <div className="Wrap">
                         <div className="hopeRegion">
                             <div className="wrap">
                                 <div className="title">
                                     <div
                                         className="customH10"
-                                        id="cityTown"
+                                        
                                     >
                                         도입희망지역
                                     </div>
@@ -1220,7 +1272,7 @@ const ContactToRegister = () => {
                         </div>
                     </div>
 
-
+                    <div id="calendar"></div>
                     <div className="selectLessonDays">
                         <div className="wrap">
                             <div className="title">
@@ -1238,6 +1290,7 @@ const ContactToRegister = () => {
                                     해당 캘린더는 일정 확인용으로, 가일정 선택 단계입니다. <br></br>최종 수업 일정은 도입 신청이 완료된 후 상담을 통해 가능합니다.
                                 </div>
                             </div>
+
 
                             {/* 달력 */}
                             <div className="calendarWrap">
@@ -1273,11 +1326,14 @@ const ContactToRegister = () => {
                                 </div>
                             </div>
                         </div>
+                        <div id="applicant"></div>
                     </div>
-
+                    
                     {/* 신청자 ~ 제출하기까지 Wrap */}
+                    
                     <div className="bottomWrap">
-                        <div className="applicant">
+                        <div className="applicant"
+                        >
                             <div className="wrap">
                                 <div className="title">
                                     <div className="customH12">
@@ -1447,7 +1503,9 @@ const ContactToRegister = () => {
                             </div>
                         </div>
 
-                        <div className="Agree">
+                        <div className="Agree"
+                            id="agree"
+                        >
                             <div className="wrap">
                                 <div className="top">
                                     <div className="customP11">
@@ -1488,7 +1546,6 @@ const ContactToRegister = () => {
                     </div>
                 </div>
             </div>
-            {/* <LineBanner /> */}
             <Footer />
         </div>
     );

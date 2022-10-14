@@ -68,7 +68,7 @@ const Header2 = () => {
         >
             <div className="left">
                 <Link
-                    to="/#home"
+                    to="/"
                     className="logo"
                     style={{
                         backgroundImage: `url(${logo_dark})`,
@@ -77,7 +77,7 @@ const Header2 = () => {
                 </Link>
             </div>
             <div className="right">
-                <Link to="/ProgramsPage" className="headerBtn1">
+                <Link to="/ProgramPage1" className="headerBtn1">
                     <span
                         className='customP3 btn1'
                         onMouseOver={
