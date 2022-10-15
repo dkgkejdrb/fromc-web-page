@@ -3,12 +3,14 @@ import Header from "./Header3";
 import './InfiniteSlider.css'
 import LineBanner from "./lineBanner";
 import { Link } from 'react-router-dom';
+import Contact1 from "./Contact1";
 
 const ProgramPage4 = () => {
 
     return (
         <div className="programsPage">
             <Header />
+            <Contact1 />
             <div className="wrap">
                 <div className="left">
                     <div className="firstSection">
@@ -25,7 +27,7 @@ const ProgramPage4 = () => {
                         </div>
                     </div>
                     <div className="secondSection">
-                    <div className="top">
+                        <div className="top">
                             <div className="icon">
                                 <div className="source"></div>
                             </div>
@@ -37,7 +39,7 @@ const ProgramPage4 = () => {
                         </div>
                     </div>
                     <div className="thirdSection">
-                    <div className="top">
+                        <div className="top">
                             <div className="icon">
                                 <div className="source"></div>
                             </div>
@@ -50,7 +52,7 @@ const ProgramPage4 = () => {
                     </div>
                 </div>
                 <div className="right">
-                    <div className="image">
+                    <div className="image_program4">
                         <div className="source">
 
                         </div>
