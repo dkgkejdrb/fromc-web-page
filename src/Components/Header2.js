@@ -97,7 +97,7 @@ const Header2 = () => {
                         }}
                     />
                 </Link>
-                <Link to="/ContactToRegister" className="headerBtn2" target="_blank">
+                <Link to="/ContactToRegister" className="headerBtn2">
                     <span
                         className='customP3 btn2'
                         onMouseOver={

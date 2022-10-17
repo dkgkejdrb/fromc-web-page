@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 const MainPage = () => {
     return (
-        <div className='MainPage' id='/#home'>
+        <div className='MainPage' id='/'>
             <Header />
             <Contact />
             <VideoWrap VideoWrapSrc='./video.mp4' />

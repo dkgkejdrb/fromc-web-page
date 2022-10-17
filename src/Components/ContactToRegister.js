@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header2 from "./Header2";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
@@ -73,14 +73,17 @@ const centerInfo = {
 // 수업 일정 - 사용자가 선택한 날짜 데이터
 const barInfo = [
     {
+        q: '0',
         id: 'bar0',
         date: 'xxxx.xx.xx'
     },
     {
+        q: '1',
         id: 'bar1',
         date: 'xxxx.xx.xx'
     },
     {
+        q: '2',
         id: 'bar2',
         date: 'xxxx.xx.xx'
     },
@@ -90,24 +93,38 @@ const barInfo = [
 const ContactToRegister = () => {
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
-        city: '',
-        town: '',
-        classesCount: '',
-        studentsCount: '',
+        classCount: '',
+        studentCount: '',
         program: '',
-        lessonsCount: '',
-        lessonDays: ['', '', ''],
-        name: '',
-        email: '',
-        phoneNumber: '',
-        orgType: '',
-        orgName: '',
-        orgAddress: '',
+        classType : '원데이 클래스',
+        willIntroductionSido: '',
+        willIntroductionGugun: '',
+
+        // 수업문의경로 API 수정 예정
         knowByrecommendation: false,
         knowByproposal: false,
         knowBywebSearch: false,
+
+        agreePersonalInfo: false,
+        operationOffice : {
+            name : "서초 코어 센터",
+            phoneNumber : "02-537-2900",
+            address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
+        },
+        inquirer : {
+            name : "",
+            email : "",
+            cellPhone : "",
+            organizationType : "",
+            organizationName : "",
+            organizationAddress : ""
+          },
+
+        lectureCount: '',
+        classSchedules: ['', '', ''],
+
         knowByEtc: false,
-        agree: false
+
     }
     );
 
@@ -116,7 +133,7 @@ const ContactToRegister = () => {
     const onChangeCityInfo = (e) => {
         setUserInfo({
             ...userInfo,
-            city: e.target.value
+            willIntroductionSido: e.target.value
         });
     };
 
@@ -124,7 +141,7 @@ const ContactToRegister = () => {
     const onChangeTownInfo = (e) => {
         setUserInfo({
             ...userInfo,
-            town: e.target.value
+            willIntroductionGugun: e.target.value
         });
     };
 
@@ -132,7 +149,7 @@ const ContactToRegister = () => {
     const onChangeClassesCount = (e) => {
         setUserInfo({
             ...userInfo,
-            classesCount: e.target.value
+            classCount: e.target.value
         });
     };
 
@@ -140,7 +157,7 @@ const ContactToRegister = () => {
     const onChangeStudentsCount = (e) => {
         setUserInfo({
             ...userInfo,
-            studentsCount: e.target.value
+            studentCount: e.target.value
         });
     }
 
@@ -156,7 +173,7 @@ const ContactToRegister = () => {
     const onChangeLessonsCount = (e) => {
         setUserInfo({
             ...userInfo,
-            lessonsCount: e.target.value
+            lectureCount: e.target.value
         });
     }
 
@@ -164,40 +181,52 @@ const ContactToRegister = () => {
     const onChangeLessonDays = () => {
         setUserInfo({
             ...userInfo,
-            lessonDays: [barInfo[0], barInfo[1], barInfo[2]],
+            classSchedules: [barInfo[0], barInfo[1], barInfo[2]],
         });
     }
 
-    // 신청자
+    // 신청자 (변경 후)
     const onChangeName = (e) => {
-        setUserInfo({
-            ...userInfo,
-            name: e.target.value
-        });
+        setUserInfo((prevState) => ({
+            ...prevState,
+            inquirer: {
+                ...prevState.inquirer,
+                name: e.target.value,
+            }
+        }));
     }
 
     // 이메일
     const onChangeEmail = (e) => {
-        setUserInfo({
-            ...userInfo,
-            email: e.target.value
-        });
+        setUserInfo((prevState) => ({
+            ...prevState,
+            inquirer: {
+                ...prevState.inquirer,
+                email: e.target.value,
+            }
+        }));
     }
 
     // 휴대번호
     const onChangePhonNumber = (e) => {
-        setUserInfo({
-            ...userInfo,
-            phoneNumber: e.target.value
-        });
+        setUserInfo((prevState) =>({
+            ...prevState,
+            inquirer: {
+                ...prevState.inquirer,
+                cellPhone: e.target.value,
+            }
+        }));
     }
 
     // 학교 명 / 기관 명
     const onChangeOrgName = (e) => {
-        setUserInfo({
-            ...userInfo,
-            orgName: e.target.value
-        });
+        setUserInfo((prevState) =>({
+            ...prevState,
+            inquirer: {
+                ...prevState.inquirer,
+                organizationName: e.target.value,
+            }
+        }));
     }
 
     // 수업 문의 경로
@@ -237,7 +266,7 @@ const ContactToRegister = () => {
     const onChangeAgree = (e) => {
         setUserInfo({
             ...userInfo,
-            agree: e.target.checked
+            agreePersonalInfo: e.target.checked
         });
     }
 
@@ -377,111 +406,7 @@ const ContactToRegister = () => {
             </div>
         );
     };
-    // pointer 값에 따라 날짜 표시바를 보여줌
-    // const ShowBar = ({displayItems}) => {
-    //     const [dv, setDv] = useState([
-    //         {value: 1, display: 'none', date: '2342'},
-    //         {value: 2, display: 'none', date: '2342'},
-    //         {value: 3, display: 'none', date: '2342'},
-    //     ]);
-
-    //     setDv(prev => prev.map(item => {
-    //         if(item.value === 2){
-    //             item.dispay = 'show';
-    //         }
-    //         return item;
-    //     }));
-
-    //     setDv([
-    //         {value: 1, display: 'none', date: '2342'},
-    //         {value: 1, display: 'none', date: '2342'},
-    //         {value: 1, display: 'none', date: '2342'},
-    //     ])
-
-    //     const Bar0 = () => {
-    //         return (
-    //             <div className="barWrap">
-    //                 <div
-    //                     className="circleNum"
-    //                     style={{
-    //                         display: bar1DisplayValue
-    //                     }}>
-    //                     1
-    //                 </div>
-    //                 <div id={barInfo[0].id} style={{ display: bar1DisplayValue }}>
-    //                     {barInfo[0].date}
-    //                 </div>
-    //             </div>
-    //         );
-    //     }
-
-    //     const Bar1 = ({displayValue, number, date}) => {
-    //         return (
-    //             <div className="barWrap">
-    //                 <div className="circleNum" style={{ display: bar2DisplayValue }}>
-    //                     2
-    //                 </div>
-    //                 <div id={barInfo[1].id} style={{ display: bar2DisplayValue }}>
-    //                     {barInfo[1].date}
-    //                 </div>
-    //             </div>
-    //         );
-    //     }
-
-    //     const Bar2 = () => {
-    //         return (
-    //             <div className="barWrap">
-    //                 <div className="circleNum" style={{ display: bar3DisplayValue }}>
-    //                     3
-    //                 </div>
-    //                 <div id={barInfo[2].id} style={{ display: bar3DisplayValue }}>
-    //                     {barInfo[2].date}
-    //                 </div>
-    //             </div>
-    //         );
-    //     }
-
-    //     if (pointer === 0) {
-    //         bar1ShowDisplayValue('');
-    //         bar2ShowDisplayValue('none');
-    //         bar3ShowDisplayValue('none');
-
-    //     }
-    //     if (pointer === 1) {
-    //         bar1ShowDisplayValue('');
-    //         bar2ShowDisplayValue('');
-    //         bar3ShowDisplayValue('none');
-    //     }
-    //     if (pointer === 2) {
-    //         bar1ShowDisplayValue('');
-    //         bar2ShowDisplayValue('');
-    //         bar3ShowDisplayValue('');
-    //     }
-
-
-    //     return (
-    //         <div className="left">
-    //             {
-    //                 dv.map(item => (
-    //                     <div key="item.value" className="barWrap">
-    //                         <div className="circleNum" style={{ display: item.display }}>
-    //                             item.value
-    //                         </div>
-    //                         <div id={barInfo[2].id} style={{ display: item.display }}>
-    //                             {barInfo[2].date}
-    //                         </div>
-    //                     </div>
-    //                 ))
-    //             }
-    //             <Bar0 />
-    //             <Bar1 />
-    //             <Bar2 />
-    //         </div>
-    //     );
-    // };
-
-
-
+    
     // 라디오버튼 클릭값(학교, 학교 외 기관)
     const [orgType, selectOrgType] = useState("");
     // 주소 입력창 표시 상태값
@@ -497,20 +422,19 @@ const ContactToRegister = () => {
         selectOrgType(tmp);
 
         // User Info에 학교 명/기관 명 전달
-        setUserInfo({
-            ...userInfo,
-            orgType: tmp
-        });
+        setUserInfo((prevState) =>({
+            ...prevState,
+            inquirer: {
+                ...prevState.inquirer,
+                organizationType: e.target.value,
+            }
+        }));
     }
     
     // useEffect로 라디오값 동기처리
     useEffect(() => {
         if (orgType === "학교" || orgType === "학교외기관") {
             setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
-        }
-
-        if (address !== "") {
-
         }
 
         // 바 위치 체크
@@ -530,22 +454,22 @@ const ContactToRegister = () => {
             bar3ShowDisplayValue('');
         }
         
-        if (userInfo.name === '') {   
-            // alert("'신청자의 성함'을 작성해주세요.")
+        if (userInfo.inquirer.name === '') {
             setRef('applicant');
-        } if (userInfo.email === '') {
+        } 
+        if (userInfo.inquirer.email === '') {
             // alert("'이메일 주소'를 작성해주세요.")
             setRef('applicant');
-        } if (userInfo.phoneNumber === '') {
+        } if (userInfo.inquirer.cellPhone === '') {
             // alert("'휴대번호'를 작성해주세요.")
             setRef('applicant');
-        } if (userInfo.orgType === '') {
+        } if (userInfo.inquirer.organizationType === '') {
             // alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
             setRef('applicant');
-        } if (userInfo.orgName === '') {
+        } if (userInfo.inquirer.organizationName === '') {
             // alert("'학교 명/ 기관 명'을 작성해주세요.")
             setRef('applicant');
-        } if (userInfo.orgAddress === '') {
+        } if (userInfo.inquirer.organizationAddress === '') {
             // alert("'학교 명/ 기관 주소'를 작성해주세요.")
             setRef('applicant');
         } if (userInfo.knowByrecommendation === false &&
@@ -556,31 +480,38 @@ const ContactToRegister = () => {
             // alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
             setRef('applicant');
         } 
-        if (userInfo.lessonDays[0] === '') {
+        if (userInfo.classSchedules[0] === '') {
             setRef('calendar');
             // alert("'수업 일자'를 1개 이상 선택해주세요.")
         } 
         
         
-        if (userInfo.agree === false) {
+        if (userInfo.agreePersonalInfo === false) {
             // alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
-        } if (userInfo.city === '') {
+        } if (userInfo.willIntroductionSido === '') {
             setRef('cityTown');
-        } if (userInfo.town === '') {
+        } if (userInfo.willIntroductionGugun === '') {
             setRef('cityTown');
-        } if (userInfo.classesCount === '') {
+        } if (userInfo.classCount === '') {
             setRef('cityTown');
-        } if (userInfo.studentsCount === '') {
+        } if (userInfo.studentCount === '') {
             // alert("'교육인원'을 작성해주세요.")
             setRef('cityTown');
         } if (userInfo.program === '') {
             // alert("'프로그램'을 선택해주세요.")
             setRef('cityTown');
-        } if (userInfo.lessonsCount === '') {
+        } if (userInfo.lectureCount === '') {
             // alert("'수업 횟수'를 선택해주세요.")
             setRef('cityTown');
-        } 
-    });
+        }  if (userInfo.inquirer.name !== '' && userInfo.inquirer.email !== '' && userInfo.inquirer.cellPhone !== ''
+        && userInfo.inquirer.organizationType !== '' && userInfo.inquirer.organizationName !== '' && userInfo.inquirer.organizationAddress !== '' && (
+        userInfo.knowByrecommendation === true || userInfo.knowByproposal === true ||
+        userInfo.knowBywebSearch === true || userInfo.knowByEtc === true ) && userInfo.classSchedules[0] !== '' &&
+        userInfo.agreePersonalInfo !== false && userInfo.willIntroductionSido !== '' && userInfo.willIntroductionGugun !== '' && userInfo.classCount !== '' &&
+        userInfo.studentCount !== '' && userInfo.program !== '' && userInfo.lectureCount !== '' ) {
+            setRef('');
+        }
+    }, [orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.knowByEtc, userInfo.knowByproposal, userInfo.knowByrecommendation, userInfo.knowBywebSearch,userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
     // useEffect 제약조건 변경 전
     // }, [orgType, address, pointer]);
 
@@ -605,10 +536,13 @@ const ContactToRegister = () => {
             setAddress(fullAddress);
 
             // UserInfo에 주소 정보 전달
-            setUserInfo({
-                ...userInfo,
-                orgAddress: fullAddress,
-            });
+            setUserInfo((prevState) => ({
+                ...prevState,
+                inquirer: {
+                    ...prevState.inquirer,
+                    organizationAddress: fullAddress,
+                }
+            }));
         };
 
         const handleClick = () => {
@@ -649,31 +583,32 @@ const ContactToRegister = () => {
     let navigate = useNavigate();
     // 제출버튼 핸들러
     const submitHandler = () => {
-        if (userInfo.city === '') {
+
+        if (userInfo.willIntroductionSido === '') {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
-        } else if (userInfo.town === '') {
+        } else if (userInfo.willIntroductionGugun === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
-        } else if (userInfo.classesCount === '') {
+        } else if (userInfo.classCount === '') {
             alert("'학급 수'를 작성해주세요.")
-        } else if (userInfo.studentsCount === '') {
+        } else if (userInfo.studentCount === '') {
             alert("'교육인원'을 작성해주세요.")
         } else if (userInfo.program === '') {
             alert("'프로그램'을 선택해주세요.")
-        } else if (userInfo.lessonsCount === '') {
+        } else if (userInfo.lectureCount === '') {
             alert("'수업 횟수'를 선택해주세요.")
-        } else if (userInfo.lessonDays[0] === '') {
+        } else if (userInfo.classSchedules[0] === '') {
             alert("'수업 일자'를 1개 이상 선택해주세요.")
-        } else if (userInfo.name === '') {
+        } else if (userInfo.inquirer.name === '') {
             alert("'신청자의 성함'을 작성해주세요.")
-        } else if (userInfo.email === '') {
+        } else if (userInfo.inquirer.email === '') {
             alert("'이메일 주소'를 작성해주세요.")
-        } else if (userInfo.phoneNumber === '') {
+        } else if (userInfo.inquirer.cellPhone === '') {
             alert("'휴대번호'를 작성해주세요.")
-        } else if (userInfo.orgType === '') {
+        } else if (userInfo.inquirer.organizationType === '') {
             alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
-        } else if (userInfo.orgName === '') {
+        } else if (userInfo.inquirer.organizationName === '') {
             alert("'학교 명/ 기관 명'을 작성해주세요.")
-        } else if (userInfo.orgAddress === '') {
+        } else if (userInfo.inquirer.organizationAddress === '') {
             alert("'학교 명/ 기관 주소'를 작성해주세요.")
         } else if (userInfo.knowByrecommendation === false &&
             userInfo.knowByproposal === false &&
@@ -681,10 +616,11 @@ const ContactToRegister = () => {
             userInfo.knowByEtc === false
         ) {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
-        } else if (userInfo.agree === false) {
+        } else if (userInfo.agreePersonalInfo === false) {
             alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
         } else {
-            alert('제출되었습니다.')
+            setRef('cityTown');
+            alert('도입 문의 신청 완료 되었습니다.')
             navigate("/");
         }
     }
@@ -1195,7 +1131,7 @@ const ContactToRegister = () => {
                                         id="input"
                                         type="text"
                                         placeholder="총 도입 예상 인원"
-                                        value={userInfo.studentsCount}
+                                        value={userInfo.studentCount}
                                         onChange={onChangeStudentsCount}
                                     ></input>
                                 </div>
@@ -1216,9 +1152,13 @@ const ContactToRegister = () => {
                                             onChange={onChangeProgram}
                                         >
                                             <option value=''>선택해주세요.</option>
-                                            <option value='항목1'>항목1</option>
-                                            <option value='항목2'>항목2</option>
-                                            <option value='항목3'>항목3</option>
+                                            <option value='스크래치 AI'>스크래치 AI</option>
+                                            <option value='인공지능 앱 만들기'>인공지능 앱 만들기</option>
+                                            <option value='캐글 머신러닝 프로젝트'>캐글 머신러닝 프로젝트</option>
+                                            <option value='메타버스 아두이노'>메타버스 아두이노</option>
+                                            <option value='메타버스 파이썬'>메타버스 파이썬</option>
+                                            <option value='스크래치 게임 메이킹'>스크래치 게임 메이킹</option>
+                                            <option value='앱인벤터 게임 메이킹'>앱인벤터 게임 메이킹</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1345,7 +1285,7 @@ const ContactToRegister = () => {
                                         id="input"
                                         type="text"
                                         placeholder="신청자 이름"
-                                        value={userInfo.name}
+                                        value={userInfo.inquirer.name}
                                         onChange={onChangeName}
                                     ></input>
                                 </div>
@@ -1364,7 +1304,7 @@ const ContactToRegister = () => {
                                         id="input"
                                         type="text"
                                         placeholder="작성자 이메일"
-                                        value={userInfo.email}
+                                        value={userInfo.inquirer.email}
                                         onChange={onChangeEmail}
                                     ></input>
                                 </div>
@@ -1383,7 +1323,7 @@ const ContactToRegister = () => {
                                         id="input"
                                         type="text"
                                         placeholder="휴대폰 번호"
-                                        value={userInfo.phoneNumber}
+                                        value={userInfo.inquirer.cellPhone}
                                         onChange={onChangePhonNumber}
                                     ></input>
                                 </div>
@@ -1438,7 +1378,7 @@ const ContactToRegister = () => {
                                                         type="text"
                                                         className="orgInfoInput"
                                                         placeholder="학교 명/기관 명"
-                                                        value={userInfo.orgName}
+                                                        value={userInfo.inquirer.orgName}
                                                         onChange={onChangeOrgName}
                                                     ></input>
                                                 </div>

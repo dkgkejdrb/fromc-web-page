@@ -13,7 +13,6 @@ const Header3 = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', changeHeader, { capture: true });
-
     }, []);
 
     // 스크롤 작동 중 내리거나 올리는 중인지 체크
@@ -21,7 +20,7 @@ const Header3 = () => {
     let nowScrollTop = 0;
 
     let wheelDelta = () => {
-        return prevScrollTop - nowScrollTop > 0 ? 'up' : 'down';
+        return prevScrollTop - nowScrollTop >= 0 ? 'up' : 'down';
     }
 
     const changeHeader = () => {
@@ -95,7 +94,9 @@ const Header3 = () => {
                         }}
                     />
                 </Link>
-                <Link to="/ContactToRegister" className="headerBtn2" target="_blank">
+                {/* 새창에서 열리고 싶다면, target="_blank"
+                <Link to="/ContactToRegister" className="headerBtn2" target="_blank"></Link>  */}
+                <Link to="/ContactToRegister" className="headerBtn2">
                     <span
                         className='customP3 btn2'
                         onMouseOver={

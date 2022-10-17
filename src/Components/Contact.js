@@ -24,7 +24,6 @@ const Contact = () => {
             <Link
                 className='ContactBtn'
                 to='/ContactToRegister'
-                target='_blank'
                 style={{
                     backgroundImage: `url(${contactBtn})`,
                     display: displayValue
@@ -36,7 +35,7 @@ const Contact = () => {
             </Link>
             <LinkToRegsiter
                 className="ContactSliderBtn"
-                to='/#home'
+                to='/'
                 spy={true}
                 smooth={true}
                 style={{

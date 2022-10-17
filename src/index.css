@@ -2752,11 +2752,14 @@ tr {
 	font-family: 'Inter', sans-serif;
 }
 
-/* 여기까지 */
+
 .scratchAI {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
 	width: 90px;
 	height: 26px;
 
@@ -2766,15 +2769,18 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
-
-	border-bottom: #6F3AC1 solid 5px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 .appAI {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
+	width: 140px;
 	height: 26px;
 
 	font-weight: 400;
@@ -2783,14 +2789,18 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
 
 .kaggleAI {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
 	height: 26px;
 
 	font-weight: 400;
@@ -2799,6 +2809,7 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
@@ -2829,9 +2840,12 @@ tr {
 
 .metaverseArduino {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
 	height: 26px;
+	letter-spacing: -0.9px;
 
 	font-weight: 400;
 	font-size: 16px;
@@ -2839,14 +2853,19 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
 
 .metaversePython {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
+	width: 120px;
 	height: 26px;
 
 	font-weight: 400;
@@ -2855,11 +2874,10 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
-
-
 
 /* 셋째 카테고리 */
 .programsPage .wrap .left .thirdSection {
@@ -2887,8 +2905,12 @@ tr {
 
 .scratchGame {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
+	width: 105px;
 	height: 26px;
 
 	font-weight: 400;
@@ -2897,14 +2919,19 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
 
 .appGame {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin-top: 9px;
+	padding-left: 9px;
+	padding-right: 9px;
+	width: 105px;
 	height: 26px;
 
 	font-weight: 400;
@@ -2913,6 +2940,7 @@ tr {
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
+	border-radius: 5px;
 
 	cursor: pointer;
 }
@@ -2965,6 +2993,7 @@ tr {
 .programsPage .wrap .right .image_program5 {
 	width: 100%;
 	height: 100%;
+	margin-top: -50px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;

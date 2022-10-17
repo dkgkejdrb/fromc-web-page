@@ -75,7 +75,7 @@ const Header = () => {
     return (
         <div
             className="header"
-            id='/'
+            id='header'
 
             style={{
                 backgroundColor: changeColor,
@@ -114,7 +114,7 @@ const Header = () => {
                         }}
                     />
                 </Link>
-                <Link to="/ContactToRegister" className="headerBtn2" target="_blank">
+                <Link to="/ContactToRegister" className="headerBtn2">
                     <span
                         className='customP3 btn2'
                         onMouseOver={
