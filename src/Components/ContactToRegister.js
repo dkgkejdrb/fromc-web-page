@@ -21,6 +21,42 @@ import mapJoonggae from "../Assets/joonggae.png"
 import arrowUp from "../Assets/arrowUp.svg"
 import arrowDown from "../Assets/arrowDown.svg"
 
+// API 연동
+import axios from 'axios';
+let Host = ""; // 나중에 서버 구성되면 넣기(url, port 포함)
+// formData 스터디
+
+
+async function getData() {
+    // try {
+    //   //응답 성공
+    //   const response = await axios.get('http://localhost:8080/');
+    // //   const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+    //   console.log(response);
+    // } catch (error) {
+    //   //응답 실패
+    //   console.error(error);
+    // }
+
+    axios.get(Host).catch(function (error) {
+    if (error.response) {
+      // 서버에서 받은 응답의 상태코드(status) 2xx 아닌 경우.
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // 요청을 보냈지만 응답받지 못 한 경우.
+      // `error.request`는 브라우저에서 XMLHttpRequest, 노드에서 http.ClientRequest 객체
+      console.log(error.request);
+    } else {
+      // 요청 설정에서 생긴 에러.
+      console.log('Error', error.message);
+    }
+    console.log(error.config);
+  });
+  }
+
+
 // react-calendar API 모음:
 // https://github.com/wojtekmaj/react-calendar
 
@@ -395,9 +431,6 @@ const ContactToRegister = () => {
             );
         }
 
-
-
-
         return (
             <div className="left">
                 <Bar0 />
@@ -583,7 +616,7 @@ const ContactToRegister = () => {
     let navigate = useNavigate();
     // 제출버튼 핸들러
     const submitHandler = () => {
-
+        
         if (userInfo.willIntroductionSido === '') {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
         } else if (userInfo.willIntroductionGugun === '') {
@@ -618,10 +651,14 @@ const ContactToRegister = () => {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
         } else if (userInfo.agreePersonalInfo === false) {
             alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
-        } else {
+        } 
+        // 필수값 전부 확인, 전송
+        else {
             setRef('cityTown');
             alert('도입 문의 신청 완료 되었습니다.')
             navigate("/");
+
+            getData();
         }
     }
 
