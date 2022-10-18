@@ -48,7 +48,7 @@ const Programs = () => {
             
             style={{
                 transform: programScale,
-                textDecoration: 'none'
+                textDecoration: 'none',
             }}>
                 <div className='top'>
                     <div className='image'
@@ -74,7 +74,7 @@ const Programs = () => {
         <div className='programs'>
             <div className='wrap'>
                 <div className='title'>프로그램 소개</div>
-                <div className='subTitle'>씨큐브코딩의 우수한 연구진들의 전문적인 코딩 지식을 바탕으로 개발된 콘텐츠 프로그램을 소개 합니다.</div>
+                <div className='subTitle'>씨큐브코딩의 우수한 연구진들의 전문적인 코딩 지식을 <br></br>바탕으로 개발된 콘텐츠 프로그램을 소개 합니다.</div>
                 <div className='wrap'>
                     <div className='first Row'>
                         <Program title='스크래치 AI' text='티처블 머신과 스크래치로 재미있는 AI 프로그램을 만들어 봅니다.' id='_1_1' to='/ProgramPage1' programScale={programScale1_1} />

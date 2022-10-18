@@ -210,7 +210,7 @@ table {
 .customH12 {
 	font-weight: 400;
 	font-size: 26px;
-	line-height: 31px;
+	line-height: 31.47px;
 	font-family: 'Inter', sans-serif;
 	color: #000000;
 }
@@ -911,6 +911,7 @@ table {
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 144.52%;
+
 	font-family: 'Inter', sans-serif;
 	color: #5B5B5B;
 }
@@ -1692,7 +1693,7 @@ table {
 }
 
 .contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(1) {
-	margin-left: 27px;
+	margin-left: 67px;
 }
 
 .contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
@@ -1748,7 +1749,7 @@ table {
 }
 
 .contactToRegister .howManyClasses .wrap .listWrap #list {
-	margin-left: 27px;
+	margin-left: 67px;
 }
 
 
@@ -1784,7 +1785,7 @@ table {
 
 .contactToRegister .numberOfStudents .wrap .input #input {
 	width: 280px;
-	margin-left: 27px;
+	margin-left: 66px;
 	border-radius: 5px;
 
 	font-weight: 500;
@@ -1825,7 +1826,7 @@ table {
 }
 
 .contactToRegister .selectProgram .wrap .listWrap #list {
-	margin-left: 18px;
+	margin-left: 57px;
 }
 
 
@@ -1855,23 +1856,24 @@ table {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	text-align: left;
 	width: 100%;
 }
 
 .contactToRegister .typeOfLesson .wrap .title .wrap .customP {
-	margin-top: 13px;
+	margin-top: 16px;
 	font-size: 11px;
+	width: 200px
 }
 
 .contactToRegister .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
-
+	margin-left: 27px;
 	margin-right: 190px;
 }
 
 .contactToRegister .typeOfLesson .wrap .listWrap .customP {
-	margin-left: 15px;
 	width: 289px;
 	height: 40px;
 
@@ -1918,8 +1920,9 @@ table {
 }
 
 .contactToRegister .numbersOfLessons .wrap .title .wrap .customP {
-	margin-top: 13px;
+	margin-top: 16px;
 	font-size: 11px;
+	width: 180px;
 }
 
 .contactToRegister .numbersOfLessons .wrap .listWrap {
@@ -1930,7 +1933,7 @@ table {
 }
 
 .contactToRegister .numbersOfLessons .wrap .listWrap #list {
-	margin-left: 27px;
+	margin-left: 47px;
 }
 
 
@@ -2234,14 +2237,14 @@ abbr {
 	align-items: center;
 
 	padding-top: 79px;
-	margin-left: 255px;
+	margin-left: 137px;
 	margin-right: 255px;
 }
 
 .contactToRegister .applicant .wrap {
 	display: flex;
 	flex-direction: row;
-	width: 672px;
+	width: 972px;
 }
 
 .contactToRegister .applicant .wrap .title {
@@ -2258,6 +2261,7 @@ abbr {
 
 .contactToRegister .applicant .wrap .input #input {
 	display: flex;
+	text-align: center;
 
 	width: 280px;
 	height: 33px;
@@ -2267,7 +2271,7 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 272px;
+	margin-left: 432px;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -2282,14 +2286,14 @@ abbr {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 255px;
+	margin-left: 137px;
 	margin-right: 255px;
 }
 
 .contactToRegister .email .wrap {
 	display: flex;
 	flex-direction: row;
-	width: 672px;
+	width: 972px;
 }
 
 .contactToRegister .email .wrap .title {
@@ -2306,6 +2310,7 @@ abbr {
 
 .contactToRegister .email .wrap .input #input {
 	display: flex;
+	text-align: center;
 
 	width: 280px;
 	height: 33px;
@@ -2315,7 +2320,7 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 272px;
+	margin-left: 432px;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -2328,14 +2333,14 @@ abbr {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 255px;
+	margin-left: 137px;
 	margin-right: 255px;
 }
 
 .contactToRegister .phoneNumber .wrap {
 	display: flex;
 	flex-direction: row;
-	width: 672px;
+	width: 972px;
 }
 
 .contactToRegister .phoneNumber .wrap .title {
@@ -2352,6 +2357,7 @@ abbr {
 
 .contactToRegister .phoneNumber .wrap .input #input {
 	display: flex;
+	text-align: center;
 
 	width: 280px;
 	height: 33px;
@@ -2361,7 +2367,7 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 272px;
+	margin-left: 432px;
 	font-family: 'Inter', sans-serif;
 }
 

@@ -27,7 +27,7 @@ import arrowDown from "../Assets/arrowDown.svg"
 // API 연동
 import axios from 'axios';
 
-let hostUrl = "https:/****/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
+let hostUrl = "http://192.168.210.136:1620/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
 
 
 
@@ -105,7 +105,7 @@ const ContactToRegister = () => {
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
         classCount: 0,
-        studentCount: '',
+        studentCount: 0,
         program: '',
         classType : '원데이 클래스',
         willIntroductionSido: '',
@@ -132,25 +132,182 @@ const ContactToRegister = () => {
     }
     );
 
+        // 서비스 가능지역 > 센터 영역이미지, 확대/축소 폰트상태값
+        const [showCenterMap, setShowCenterMap] = useState(`url(${mapDefault})`); 
+        const [scaleUp, setScaleUp] = useState(
+            {
+                Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px',
+                Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+            }
+        )
+    
+        // 서비스 가능지역 > 지도 마커 호버 핸들러
+        let markerClassName = '';
+        const onMarkerHandler = (e) => {
+            markerClassName = e.target.className;
+            switch (markerClassName){
+                case "_seocho marker":
+                    setShowCenterMap(`url(${mapSeocho})`);
+                    setScaleUp(
+                        {
+                            Seocho: '26px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px', 
+                            Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;            
+                case "_daechi marker":
+                    setShowCenterMap(`url(${mapDaechi})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '26px', Mokdong: '20px', Jamsil: '20px', 
+                            Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;
+                case "_mokdong marker":
+                    setShowCenterMap(`url(${mapMokdong})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '20px', Mokdong: '26px', Jamsil: '20px', 
+                            Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;
+                case "_jamsil marker":
+                    setShowCenterMap(`url(${mapJamsil})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '26px', 
+                            Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;
+                case "_joonggae marker":
+                    setShowCenterMap(`url(${mapJoonggae})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px', 
+                            Joonggae: '26px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;
+                case "_boondang marker":
+                    setShowCenterMap(`url(${mapBoondang})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px', 
+                            Joonggae: '20px', Boondang: '26px', Pyeongchon: '20px',
+                        }
+                    )
+                    break;
+                case "_pyeongchon marker":
+                    setShowCenterMap(`url(${mapPyeongchon})`);
+                    setScaleUp(
+                        {
+                            Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px', 
+                            Joonggae: '20px', Boondang: '20px', Pyeongchon: '26px',
+                        }
+                    )
+                    break;
+            }
+        }
+    
+        // 문의처 > 센터명, 센터주소, 센터번호 상태값
+        const [showCenterName, setShowCenterName] = useState('');
+        const [showCenterAddress, setShowCenterAddress] = useState('');
+        const [showCenterPhoneNumber, setShowCenterPhoneNumber] = useState('');
+    
+        // 서비스 가능지역 > 지도 마커 클릭 핸들러
+        let _markerClassName ='';
+        const onMarkerClickHandler = (e) => {
+            _markerClassName = e.target.className;
+            switch(_markerClassName) {
+                case "_seocho marker":
+                    setShowCenterName(centerInfo.seocho.name);
+                    setShowCenterAddress(centerInfo.seocho.address);
+                    setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
+                    break;
+                case "_daechi marker":
+                    setShowCenterName(centerInfo.daechi.name);
+                    setShowCenterAddress(centerInfo.daechi.address);
+                    setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
+                    break;
+                case "_mokdong marker":
+                    setShowCenterName(centerInfo.mokdong.name);
+                    setShowCenterAddress(centerInfo.mokdong.address);
+                    setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
+                    break;
+                case "_jamsil marker": 
+                    setShowCenterName(centerInfo.jamsil.name);
+                    setShowCenterAddress(centerInfo.jamsil.address);
+                    setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
+                    break;
+                case "_joonggae marker":
+                    setShowCenterName(centerInfo.joonggae.name);
+                    setShowCenterAddress(centerInfo.joonggae.address);
+                    setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
+                    break;
+                case "_boondang marker": 
+                    setShowCenterName(centerInfo.boondang.name);
+                    setShowCenterAddress(centerInfo.boondang.address);
+                    setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
+                    break;
+                case "_pyeongchon marker": 
+                    setShowCenterName(centerInfo.pyeongchon.name);
+                    setShowCenterAddress(centerInfo.pyeongchon.address);
+                    setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
+                    break;
+            }
+        }
+
     // axios 제출 시, 데이터 송신
     const postData = () => {
-        const axios = require('axios');
-        const classCount = userInfo.classCount;
     
         axios.post(hostUrl, {
-            classCount: classCount,
-        })
+            classCount: userInfo.classCount,
+            studentCount: userInfo.studentCount,
+            classType: userInfo.classType,
+            lectureCount: userInfo.lectureCount,
+            willIntroductionSido: userInfo.willIntroductionSido,
+            willIntroductionGugun: userInfo.willIntroductionGugun,
+            obtainRoutes: userInfo.obtainRoutes,
+            agreePersonalInfo: userInfo.agreePersonalInfo,
+            operationOffice : {
+                name : "서초 코어 센터",
+                phoneNumber : "02-537-2900",
+                address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
+              },
+            inquirer : {
+                name : userInfo.inquirer.name,
+                email : userInfo.inquirer.email,
+                cellPhone : userInfo.inquirer.cellPhone,
+                organizationType : userInfo.inquirer.organizationType,
+                organizationName : userInfo.inquirer.organizationName,
+                organizationAddress : userInfo.inquirer.organizationAddress,
+            },
+            classSchedules : [{
+                seq : userInfo.classSchedules[0].q,
+                date : userInfo.classSchedules[0].date,
+            }, 
+            ]
+            }
+        )
         .then((response) => {
             console.log(response);
         })
         .catch((error) => {
             console.log(error);
         });
+
+        // axios.post(hostUrl, {
+        // }).then(() => {
+        //     alert('등록 완료');
+        // })
     }
 
 
     // 유저 정보 변경
-    // 시/도 선택
+    // 도입희망지역 > 시/도 선택
     const onChangeCityInfo = (e) => {
         setUserInfo({
             ...userInfo,
@@ -158,7 +315,7 @@ const ContactToRegister = () => {
         });
     };
 
-    // 구/군 선택
+    // 도입희망지역 > 구/군 선택
     const onChangeTownInfo = (e) => {
         setUserInfo({
             ...userInfo,
@@ -675,152 +832,13 @@ const ContactToRegister = () => {
             alert('도입 문의 신청 완료 되었습니다.')
             navigate("/");
 
-            // postData();
+            postData();
         }
     }
-
-    const [showCenterName, setShowCenterName] = useState('');
-    const [showCenterAddress, setShowCenterAddress] = useState('');
-    const [showCenterPhoneNumber, setShowCenterPhoneNumber] = useState('');
-    const [showCenterMap, setShowCenterMap] = useState(`url(${mapDefault})`);
-    const [scaleUpSeocho, setScaleUpSeocho] = useState('20px');
-    const [scaleUpDaechi, setScaleUpDaechi] = useState('20px');
-    const [scaleUpMokdong, setScaleUpMokdong] = useState('20px');
-    const [scaleUpJamsil, setScaleUpJamsil] = useState('20px');
-    const [scaleUpJoonggae, setScaleUpJoonggae] = useState('20px');
-    const [scaleUpBoondang, setScaleUpBoondang] = useState('20px');
-    const [scaleUpPyeongchon, setScaleUpPyeongchon] = useState('20px');
-    useState();
-    // 지도 마커버튼핸들러
-    const onMarkerHandler = (e) => {
-        if (e.target.className === "_seocho marker") {
-            setShowCenterMap(`url(${mapSeocho})`);
-            setScaleUpSeocho('26px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_daechi marker") {
-            setShowCenterMap(`url(${mapDaechi})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('26px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_mokdong marker") {
-            setShowCenterMap(`url(${mapMokdong})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('26px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_jamsil marker") {
-            setShowCenterMap(`url(${mapJamsil})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('26px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_joonggae marker") {
-            setShowCenterMap(`url(${mapJoonggae})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('26px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_boondang marker") {
-            setShowCenterMap(`url(${mapBoondang})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('26px');
-            setScaleUpPyeongchon('20px');
-        }
-
-        if (e.target.className === "_pyeongchon marker") {
-            setShowCenterMap(`url(${mapPyeongchon})`);
-            setScaleUpSeocho('20px');
-            setScaleUpDaechi('20px');
-            setScaleUpMokdong('20px');
-            setScaleUpJamsil('20px');
-            setScaleUpJoonggae('20px');
-            setScaleUpBoondang('20px');
-            setScaleUpPyeongchon('26px');
-        }
-    }
-
-    // 지도 마커 클릭 핸들러
-    const onMarkerClickHandler = (e) => {
-        if (e.target.className === "_seocho marker") {
-            setShowCenterName(centerInfo.seocho.name);
-            setShowCenterAddress(centerInfo.seocho.address);
-            setShowCenterPhoneNumber(centerInfo.seocho.contactNumber);
-        }
-
-        if (e.target.className === "_daechi marker") {
-            setShowCenterName(centerInfo.daechi.name);
-            setShowCenterAddress(centerInfo.daechi.address);
-            setShowCenterPhoneNumber(centerInfo.daechi.contactNumber);
-        }
-
-        if (e.target.className === "_mokdong marker") {
-            setShowCenterName(centerInfo.mokdong.name);
-            setShowCenterAddress(centerInfo.mokdong.address);
-            setShowCenterPhoneNumber(centerInfo.mokdong.contactNumber);
-        }
-
-        if (e.target.className === "_jamsil marker") {
-            setShowCenterName(centerInfo.jamsil.name);
-            setShowCenterAddress(centerInfo.jamsil.address);
-            setShowCenterPhoneNumber(centerInfo.jamsil.contactNumber);
-        }
-
-        if (e.target.className === "_joonggae marker") {
-            setShowCenterName(centerInfo.joonggae.name);
-            setShowCenterAddress(centerInfo.joonggae.address);
-            setShowCenterPhoneNumber(centerInfo.joonggae.contactNumber);
-        }
-
-        if (e.target.className === "_boondang marker") {
-            setShowCenterName(centerInfo.boondang.name);
-            setShowCenterAddress(centerInfo.boondang.address);
-            setShowCenterPhoneNumber(centerInfo.boondang.contactNumber);
-        }
-
-        if (e.target.className === "_pyeongchon marker") {
-            setShowCenterName(centerInfo.pyeongchon.name);
-            setShowCenterAddress(centerInfo.pyeongchon.address);
-            setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
-        }
-    }
-
 
     return (
         <div className="contactToRegister">
             <Header2 />
-            {/* <div className="firstLine"> */}
             <div className="wrap">
                 <div className="firstLine">
                     <div className="introduction" >
@@ -852,6 +870,7 @@ const ContactToRegister = () => {
                                     </div>
                                 </div>
                             </div>
+                            {/* 센터지도 */}
                             <div className="mapWrap">
                                 <div
                                     className="seocho"
@@ -865,13 +884,13 @@ const ContactToRegister = () => {
                                     <div className="_seochoCenterInfo">
                                         <div className="_seochoCenterName"
                                             style={{
-                                                fontSize: scaleUpSeocho
+                                                fontSize: scaleUp.Seocho
                                             }}>
                                             서초코어센터
                                         </div>
                                         <div className="_seochoCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpSeocho
+                                                fontSize: scaleUp.Seocho
                                             }}>
                                             02-537-2900
                                         </div>
@@ -889,13 +908,13 @@ const ContactToRegister = () => {
                                     <div className="_daechiCenterInfo">
                                         <div className="_daechiCenterName"
                                             style={{
-                                                fontSize: scaleUpDaechi
+                                                fontSize: scaleUp.Daechi
                                             }}>
                                             대치센터
                                         </div>
                                         <div className="_daechiCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpDaechi
+                                                fontSize: scaleUp.Daechi
                                             }}>
                                             02-537-2900
                                         </div>
@@ -913,13 +932,13 @@ const ContactToRegister = () => {
                                     <div className="_mokdongCenterInfo">
                                         <div className="_mokdongCenterName"
                                             style={{
-                                                fontSize: scaleUpMokdong
+                                                fontSize: scaleUp.Mokdong
                                             }}>
                                             목동센터
                                         </div>
                                         <div className="_mokdongCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpMokdong
+                                                fontSize: scaleUp.Mokdong
                                             }}>
                                             02-2645-2600
                                         </div>
@@ -937,13 +956,13 @@ const ContactToRegister = () => {
                                     <div className="_jamsilCenterInfo">
                                         <div className="_jamsilCenterName"
                                             style={{
-                                                fontSize: scaleUpJamsil
+                                                fontSize: scaleUp.Jamsil
                                             }}>
                                             잠실센터
                                         </div>
                                         <div className="_jamsilCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpJamsil
+                                                fontSize: scaleUp.Jamsil
                                             }}>
                                             02-3431-2100
                                         </div>
@@ -961,13 +980,13 @@ const ContactToRegister = () => {
                                     <div className="_joonggaeCenterInfo">
                                         <div className="_joonggaeCenterName"
                                             style={{
-                                                fontSize: scaleUpJoonggae
+                                                fontSize: scaleUp.Joonggae
                                             }}>
                                             중계센터
                                         </div>
                                         <div className="_joonggaeCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpJoonggae
+                                                fontSize: scaleUp.Joonggae
                                             }}>
                                             02-930-4200
                                         </div>
@@ -985,13 +1004,13 @@ const ContactToRegister = () => {
                                     <div className="_boondangCenterInfo">
                                         <div className="_boondangCenterName"
                                             style={{
-                                                fontSize: scaleUpBoondang
+                                                fontSize: scaleUp.Boondang
                                             }}>
                                             분당센터
                                         </div>
                                         <div className="_boondangCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpBoondang
+                                                fontSize: scaleUp.Boondang
                                             }}>
                                             031-726-4300
                                         </div>
@@ -1009,13 +1028,13 @@ const ContactToRegister = () => {
                                     <div className="_pyeongchonCenterInfo">
                                         <div className="_pyeongchonCenterName"
                                             style={{
-                                                fontSize: scaleUpPyeongchon
+                                                fontSize: scaleUp.Pyeongchon
                                             }}>
                                             평촌센터
                                         </div>
                                         <div className="_pyeongchonCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUpPyeongchon
+                                                fontSize: scaleUp.Pyeongchon
                                             }}>
                                             031-387-2600
                                         </div>
@@ -1035,7 +1054,6 @@ const ContactToRegister = () => {
                         </div>
                     </div>
                 </div>
-                {/* 바로 위가 firstline */}
 
                 <div className="information">
                     <div className="wrap">
@@ -1247,7 +1265,7 @@ const ContactToRegister = () => {
                                             수업 횟수
                                         </div>
                                         <div className="customP">
-                                            각 수업은 3~6시간 동안 진행<br></br>됩니다.
+                                            각 수업은 3~6시간 동안 진행됩니다.
                                         </div>
                                     </div>
                                 </div>
