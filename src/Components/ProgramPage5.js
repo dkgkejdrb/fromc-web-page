@@ -217,6 +217,11 @@ const ProgramPage5 = () => {
                 </div>
                 <div className="right">
                     <div className="image_program5">
+                        <div className="gifWrap">
+                            <div className="gif">
+
+                            </div>
+                        </div>
                         <div className="source">
     
                         </div>

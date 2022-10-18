@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Link as LinkToRegsiter } from 'react-scroll';
+
 import Header2 from "./Header2";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
@@ -8,7 +10,7 @@ import { useDaumPostcodePopup } from 'react-daum-postcode';
 import AgreeDescription from "./AgreeDescription";
 import Footer from './Footer';
 
-import { Link as LinkToRegsiter } from 'react-scroll';
+
 
 import mapDefault from "../Assets/default_map.png"
 import mapBoondang from "../Assets/boondang.png"
@@ -21,40 +23,12 @@ import mapJoonggae from "../Assets/joonggae.png"
 import arrowUp from "../Assets/arrowUp.svg"
 import arrowDown from "../Assets/arrowDown.svg"
 
+
 // API 연동
 import axios from 'axios';
-let Host = ""; // 나중에 서버 구성되면 넣기(url, port 포함)
-// formData 스터디
 
+let hostUrl = "https:/****/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
 
-async function getData() {
-    // try {
-    //   //응답 성공
-    //   const response = await axios.get('http://localhost:8080/');
-    // //   const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-    //   console.log(response);
-    // } catch (error) {
-    //   //응답 실패
-    //   console.error(error);
-    // }
-
-    axios.get(Host).catch(function (error) {
-    if (error.response) {
-      // 서버에서 받은 응답의 상태코드(status) 2xx 아닌 경우.
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      // 요청을 보냈지만 응답받지 못 한 경우.
-      // `error.request`는 브라우저에서 XMLHttpRequest, 노드에서 http.ClientRequest 객체
-      console.log(error.request);
-    } else {
-      // 요청 설정에서 생긴 에러.
-      console.log('Error', error.message);
-    }
-    console.log(error.config);
-  });
-  }
 
 
 // react-calendar API 모음:
@@ -127,19 +101,16 @@ const barInfo = [
 
 // 도입 문의 페이지
 const ContactToRegister = () => {
+
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
-        classCount: '',
+        classCount: 0,
         studentCount: '',
         program: '',
         classType : '원데이 클래스',
         willIntroductionSido: '',
         willIntroductionGugun: '',
-
-        // 수업문의경로 API 수정 예정
-        knowByrecommendation: false,
-        knowByproposal: false,
-        knowBywebSearch: false,
+        obtainRoutes: [],
 
         agreePersonalInfo: false,
         operationOffice : {
@@ -158,11 +129,25 @@ const ContactToRegister = () => {
 
         lectureCount: '',
         classSchedules: ['', '', ''],
-
-        knowByEtc: false,
-
     }
     );
+
+    // axios 제출 시, 데이터 송신
+    const postData = () => {
+        const axios = require('axios');
+        const classCount = userInfo.classCount;
+    
+        axios.post(hostUrl, {
+            classCount: classCount,
+        })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
 
     // 유저 정보 변경
     // 시/도 선택
@@ -183,17 +168,21 @@ const ContactToRegister = () => {
 
     // 학급 수 선택
     const onChangeClassesCount = (e) => {
+        let tmp = parseInt(e.target.value);
+
         setUserInfo({
             ...userInfo,
-            classCount: e.target.value
+            classCount: tmp
         });
     };
 
     // 교육인원 입력
     const onChangeStudentsCount = (e) => {
+        let tmp = parseInt(e.target.value);
+
         setUserInfo({
             ...userInfo,
-            studentCount: e.target.value
+            studentCount: tmp
         });
     }
 
@@ -245,6 +234,17 @@ const ContactToRegister = () => {
 
     // 휴대번호
     const onChangePhonNumber = (e) => {
+        // 13자리 이상 입력 불가
+        if(e.target.value.length > 13) {
+            return;
+        }
+        
+        // 휴대번호 정규식
+        e.target.value = e.target.value
+        .replace(/[^0-9]/g, '')
+        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(-{1,2})$/g, "");
+        
+
         setUserInfo((prevState) =>({
             ...prevState,
             inquirer: {
@@ -268,34 +268,67 @@ const ContactToRegister = () => {
     // 수업 문의 경로
     // 지인추천
     const onChangeRecommendation = (e) => {
-        setUserInfo({
-            ...userInfo,
-            knowByrecommendation: e.target.checked
-        });
+        if(e.target.checked) {
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: [...prevState.obtainRoutes, e.target.value]
+            }));
+        } else {
+            let filterArr = userInfo.obtainRoutes.filter((data) => {return data !== 'R'});
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: filterArr
+            }));
+        }
     }
 
     // 제안서
     const onChangeProposal = (e) => {
-        setUserInfo({
-            ...userInfo,
-            knowByproposal: e.target.checked
-        });
+        if(e.target.checked) {
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: [...prevState.obtainRoutes, e.target.value]
+            }));
+        } else {
+            let filterArr = userInfo.obtainRoutes.filter((data) => {return data !== 'F'});
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: filterArr
+            }));
+        }
     }
+
 
     // 검색
     const onChangeWebSearch = (e) => {
-        setUserInfo({
-            ...userInfo,
-            knowBywebSearch: e.target.checked
-        });
+        if(e.target.checked) {
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: [...prevState.obtainRoutes, e.target.value]
+            }));
+        } else {
+            let filterArr = userInfo.obtainRoutes.filter((data) => {return data !== 'S'});
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: filterArr
+            }));
+        }
     }
 
     // 기타
     const onChangeEtc = (e) => {
-        setUserInfo({
-            ...userInfo,
-            knowByEtc: e.target.checked
-        });
+        if(e.target.checked) {
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: [...prevState.obtainRoutes, e.target.value]
+            }));
+        } else {
+            let filterArr = userInfo.obtainRoutes.filter((data) => {return data !== 'O'});
+            setUserInfo((prevState) => ({
+                ...prevState,
+                obtainRoutes: filterArr
+            }));
+        }
     }
 
     // 개인정보 수집 동의
@@ -466,7 +499,8 @@ const ContactToRegister = () => {
     
     // useEffect로 라디오값 동기처리
     useEffect(() => {
-        if (orgType === "학교" || orgType === "학교외기관") {
+        // 기관 선택 시, 주소창 표시
+        if (orgType === "S" || orgType === "O") {
             setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
         }
 
@@ -487,40 +521,28 @@ const ContactToRegister = () => {
             bar3ShowDisplayValue('');
         }
         
+        // 제출 시, 입력 오류로 이동하는 Ref 설정
         if (userInfo.inquirer.name === '') {
             setRef('applicant');
-        } 
-        if (userInfo.inquirer.email === '') {
-            // alert("'이메일 주소'를 작성해주세요.")
+        } if (userInfo.inquirer.email === '') {
             setRef('applicant');
-        } if (userInfo.inquirer.cellPhone === '') {
-            // alert("'휴대번호'를 작성해주세요.")
+        } if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13) {
             setRef('applicant');
         } if (userInfo.inquirer.organizationType === '') {
-            // alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
             setRef('applicant');
         } if (userInfo.inquirer.organizationName === '') {
-            // alert("'학교 명/ 기관 명'을 작성해주세요.")
             setRef('applicant');
         } if (userInfo.inquirer.organizationAddress === '') {
-            // alert("'학교 명/ 기관 주소'를 작성해주세요.")
             setRef('applicant');
-        } if (userInfo.knowByrecommendation === false &&
-            userInfo.knowByproposal === false &&
-            userInfo.knowBywebSearch === false &&
-            userInfo.knowByEtc === false
+        } if (userInfo.obtainRoutes.indexOf('R') === -1 &&
+            userInfo.obtainRoutes.indexOf('F') === -1 &&
+            userInfo.obtainRoutes.indexOf('S') === -1 &&
+            userInfo.obtainRoutes.indexOf('O') === -1
         ) {
-            // alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
             setRef('applicant');
-        } 
-        if (userInfo.classSchedules[0] === '') {
+        } if (userInfo.classSchedules[0] === '') {
             setRef('calendar');
-            // alert("'수업 일자'를 1개 이상 선택해주세요.")
-        } 
-        
-        
-        if (userInfo.agreePersonalInfo === false) {
-            // alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+        } if (userInfo.agreePersonalInfo === false) {
         } if (userInfo.willIntroductionSido === '') {
             setRef('cityTown');
         } if (userInfo.willIntroductionGugun === '') {
@@ -528,25 +550,20 @@ const ContactToRegister = () => {
         } if (userInfo.classCount === '') {
             setRef('cityTown');
         } if (userInfo.studentCount === '') {
-            // alert("'교육인원'을 작성해주세요.")
             setRef('cityTown');
         } if (userInfo.program === '') {
-            // alert("'프로그램'을 선택해주세요.")
             setRef('cityTown');
         } if (userInfo.lectureCount === '') {
-            // alert("'수업 횟수'를 선택해주세요.")
             setRef('cityTown');
         }  if (userInfo.inquirer.name !== '' && userInfo.inquirer.email !== '' && userInfo.inquirer.cellPhone !== ''
         && userInfo.inquirer.organizationType !== '' && userInfo.inquirer.organizationName !== '' && userInfo.inquirer.organizationAddress !== '' && (
-        userInfo.knowByrecommendation === true || userInfo.knowByproposal === true ||
-        userInfo.knowBywebSearch === true || userInfo.knowByEtc === true ) && userInfo.classSchedules[0] !== '' &&
+        userInfo.obtainRoutes.indexOf('R') === -1 || userInfo.obtainRoutes.indexOf('F') === -1 ||
+        userInfo.obtainRoutes.indexOf('S') === -1 || userInfo.obtainRoutes.indexOf('O') === -1 ) && userInfo.classSchedules[0] !== '' &&
         userInfo.agreePersonalInfo !== false && userInfo.willIntroductionSido !== '' && userInfo.willIntroductionGugun !== '' && userInfo.classCount !== '' &&
         userInfo.studentCount !== '' && userInfo.program !== '' && userInfo.lectureCount !== '' ) {
             setRef('');
         }
-    }, [orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.knowByEtc, userInfo.knowByproposal, userInfo.knowByrecommendation, userInfo.knowBywebSearch,userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
-    // useEffect 제약조건 변경 전
-    // }, [orgType, address, pointer]);
+    }, [orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.obtainRoutes, userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
 
     // 카카오 주소 팝업창 
     const Postcode = () => {
@@ -635,7 +652,7 @@ const ContactToRegister = () => {
             alert("'신청자의 성함'을 작성해주세요.")
         } else if (userInfo.inquirer.email === '') {
             alert("'이메일 주소'를 작성해주세요.")
-        } else if (userInfo.inquirer.cellPhone === '') {
+        } else if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13) {
             alert("'휴대번호'를 작성해주세요.")
         } else if (userInfo.inquirer.organizationType === '') {
             alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
@@ -643,22 +660,22 @@ const ContactToRegister = () => {
             alert("'학교 명/ 기관 명'을 작성해주세요.")
         } else if (userInfo.inquirer.organizationAddress === '') {
             alert("'학교 명/ 기관 주소'를 작성해주세요.")
-        } else if (userInfo.knowByrecommendation === false &&
-            userInfo.knowByproposal === false &&
-            userInfo.knowBywebSearch === false &&
-            userInfo.knowByEtc === false
+        } else if (userInfo.obtainRoutes.indexOf('R') === -1 &&
+            userInfo.obtainRoutes.indexOf('F') === -1 &&
+            userInfo.obtainRoutes.indexOf('S') === -1 &&
+            userInfo.obtainRoutes.indexOf('O') === -1
         ) {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
         } else if (userInfo.agreePersonalInfo === false) {
             alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
         } 
-        // 필수값 전부 확인, 전송
+        // 필수값 전부 입력된 것이 확인되어 서버로 전송
         else {
             setRef('cityTown');
             alert('도입 문의 신청 완료 되었습니다.')
             navigate("/");
 
-            getData();
+            // postData();
         }
     }
 
@@ -1384,8 +1401,8 @@ const ContactToRegister = () => {
                                                     id="radioBtn"
                                                     type="radio"
                                                     className="school"
-                                                    value="학교"
-                                                    checked={orgType === "학교"}
+                                                    value="S"
+                                                    checked={orgType === "S"}
                                                     // target 전달방식 참고
                                                     onChange={(e) => RadioHandler(e)}
                                                 ></input>
@@ -1396,8 +1413,8 @@ const ContactToRegister = () => {
                                                     id="radioBtn"
                                                     type="radio"
                                                     className="public"
-                                                    value="학교외기관"
-                                                    checked={orgType === "학교외기관"}
+                                                    value="O"
+                                                    checked={orgType === "O"}
                                                     onChange={(e) => RadioHandler(e)}
                                                 ></input>
                                                 학교 외 기관
@@ -1448,6 +1465,7 @@ const ContactToRegister = () => {
                                         <input
                                             id="checkBox"
                                             type="checkbox"
+                                            value="R"
                                             onChange={onChangeRecommendation}
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>지인 추천</div>
@@ -1456,6 +1474,7 @@ const ContactToRegister = () => {
                                         <input
                                             id="checkBox"
                                             type="checkbox"
+                                            value="F"
                                             onChange={onChangeProposal}
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>제안서</div>
@@ -1464,6 +1483,7 @@ const ContactToRegister = () => {
                                         <input
                                             id="checkBox"
                                             type="checkbox"
+                                            value="S"
                                             onChange={onChangeWebSearch}
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>검색</div>
@@ -1472,6 +1492,7 @@ const ContactToRegister = () => {
                                         <input
                                             id="checkBox"
                                             type="checkbox"
+                                            value="O"
                                             onChange={onChangeEtc}
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>기타</div>
