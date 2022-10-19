@@ -490,7 +490,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림2.png);
+	background-image: url(Assets/그림2.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -575,8 +575,7 @@ table {
 .features .wrap .secondLine.rightPictureSection .contents .picture .wrap .source {
 	width: 490px;
 	height: 297px;
-
-	background-image: url(Assets/그림3.png);
+	background-image: url(Assets/그림3.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -659,7 +658,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림4.png);
+	background-image: url(Assets/그림4.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -977,6 +976,7 @@ table {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 
 #_1_1 .image {
 	background-image: url(./Assets/program1_1.png);
@@ -1696,8 +1696,9 @@ table {
 	margin-left: 67px;
 }
 
+/* 시 & 구/군 간격 */
 .contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
-	margin-left: 49px;
+	margin-left: 39px;
 }
 
 /* 리스트버튼 스타일 */
@@ -1711,9 +1712,11 @@ table {
 	height: 39px;
 	border-radius: 5px;
 
+	padding-left: 20px;
 	font-weight: 500;
 	font-size: 17px;
-	line-height: 140.52%;
+	line-height: 23.89px;
+	color: #626262;
 
 	font-family: 'Inter', sans-serif;
 }
@@ -1779,6 +1782,7 @@ table {
 .contactToRegister .numberOfStudents .wrap .input {
 	display: flex;
 	width: 100%;
+	height: 39px;
 
 	margin-right: 190px;
 }
@@ -1786,6 +1790,7 @@ table {
 .contactToRegister .numberOfStudents .wrap .input #input {
 	width: 280px;
 	margin-left: 66px;
+	text-align: center;
 	border-radius: 5px;
 
 	font-weight: 500;
@@ -1827,6 +1832,10 @@ table {
 
 .contactToRegister .selectProgram .wrap .listWrap #list {
 	margin-left: 57px;
+}
+
+.contactToRegister .selectProgram .wrap .listWrap #list select {
+	padding-left: 20px;
 }
 
 
@@ -1934,6 +1943,10 @@ table {
 
 .contactToRegister .numbersOfLessons .wrap .listWrap #list {
 	margin-left: 47px;
+}
+
+.contactToRegister .numbersOfLessons .wrap .listWrap #list select {
+	padding-left: 20px
 }
 
 
@@ -2070,7 +2083,7 @@ table {
 .bars .wrap .left .barWrap #bar2 {
 	width: 697px;
 	height: 54px;
-	margin-left: 50px;
+	margin-left: 39px;
 
 	font-weight: 500;
 	font-size: 27px;
@@ -2114,7 +2127,8 @@ table {
 .bars .right .controlWrap .discardBtn {
 	width: 46px;
 	height: 46px;
-	font-size: 49px;
+	font-size: 60px;
+	padding-bottom: 8px;
 
 	display: flex;
 	justify-content: center;
@@ -2219,12 +2233,16 @@ abbr {
 
 
 
-/* =============== 신청자 ~ 제출하기까지 랩 ===== */
+/* =============== 신청자 ~ 기관 선택까지 랩 ===== */
 .contactToRegister .wrap .bottomWrap {
 	width: 1250px;
 	background: #F6F6F6;
-	height: 1100px;
-	border-radius: 55px;
+	overflow: hidden;
+	border-top-left-radius: 55px;
+	border-top-right-radius: 55px;
+
+	/* 애니메이션 */
+	transition: 0.5s;
 }
 
 
@@ -2422,13 +2440,33 @@ abbr {
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: flex-start;
+
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 23.89px;
+	color: #000000;
+}
+
+.contactToRegister .right .wrap .selectOrgType .left>span {
+	margin-left: 7px;
+}
+
+.contactToRegister .right .wrap .selectOrgType .right {
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 23.89px;
+	color: #000000;
+}
+
+.contactToRegister .right .wrap .selectOrgType .right>span {
+	margin-left: 7px;
 }
 
 /* 주소창 */
 .findOrgAddress {
 	width: 479px;
 	height: 170px;
-	margin-top: 11px;
+	margin-top: 30px;
 	background: #FAFAFA;
 	border: 1px solid #A8A8A8;
 
@@ -2436,9 +2474,12 @@ abbr {
 }
 
 .orgInfoInput {
+	font-size: 17px;
 	margin-top: 6px;
 	width: 425px;
 	height: 33px;
+
+	text-align: center;
 }
 
 .findOrgAddress .bottom .title {
@@ -2461,6 +2502,17 @@ abbr {
 }
 
 
+/* =============== 수업 문의 랩 ===== */
+.contactToRegister .wrap .bottomWrap1 {
+	width: 1250px;
+	height: 380px;
+	height: 135px;
+	overflow: hidden;
+	background-color: #F6F6F6;
+
+	/* 애니메이션 */
+	transition: 0.5s;
+}
 
 /* ================ 15. 수업 문의 경로 ================== */
 .contactToRegister .howToKnowUs {
@@ -2470,7 +2522,7 @@ abbr {
 	flex-direction: row;
 	align-items: center;
 
-	margin-top: 89px;
+	margin-top: 19px;
 	margin-left: 137px;
 }
 
@@ -2574,13 +2626,17 @@ tr {
 
 /* ================ 17. 제출하기 ================== */
 .contactToRegister .Submit {
-	width: 100%;
-	margin-top: 200px;
+	width: 1250px;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	border-bottom-left-radius: 55px;
+	border-bottom-right-radius: 55px;
 	height: 100px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	background-color: #F6F6F6;
 }
 
 .Submit .submitBtn {
@@ -2764,6 +2820,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	width: 90px;
@@ -2784,6 +2841,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	width: 140px;
@@ -2805,6 +2863,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	height: 26px;
@@ -2849,6 +2908,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	height: 26px;
 	letter-spacing: -0.9px;
@@ -2869,6 +2929,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	width: 120px;
@@ -2914,6 +2975,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	width: 105px;
@@ -2935,6 +2997,7 @@ tr {
 	flex-direction: column;
 	justify-content: center;
 	margin-top: 9px;
+	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
 	width: 105px;
@@ -2983,16 +3046,25 @@ tr {
 }
 
 /* 세번째 페이지 오른쪽 이미지 */
-.programsPage .wrap .right .image_program4 {
+.programsPage .wrap .right .image_program3 {
 	width: 100%;
 	height: 100%;
+	margin-top: -60px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-image: url(./Assets/kaggleAI.svg);
 }
 
-
+/* 네번째 페이지 오른쪽 이미지 */
+.programsPage .wrap .right .image_program4 {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaverseArduino.svg);
+}
 
 
 /* 다섯번째 페이지 오른쪽 이미지 */

@@ -73,7 +73,7 @@ const Programs = () => {
     return (
         <div className='programs'>
             <div className='wrap'>
-                <div className='title'>프로그램 소개</div>
+                <div className='title'>FromC 프로그램</div>
                 <div className='subTitle'>씨큐브코딩의 우수한 연구진들의 전문적인 코딩 지식을 <br></br>바탕으로 개발된 콘텐츠 프로그램을 소개 합니다.</div>
                 <div className='wrap'>
                     <div className='first Row'>

@@ -4,6 +4,7 @@ const AgreeDescription = ({display}) => {
         style={{
             width:'730px', 
             height: '200px',
+            marginTop: '15px',
             paddingTop: '5px',
             overflowY : "scroll",
             display: display,

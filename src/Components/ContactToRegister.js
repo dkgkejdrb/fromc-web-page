@@ -26,9 +26,11 @@ import arrowDown from "../Assets/arrowDown.svg"
 
 // API 연동
 import axios from 'axios';
-
 let hostUrl = "http://192.168.210.136:1620/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
 
+
+//email 정규식
+const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
 
 
 // react-calendar API 모음:
@@ -83,21 +85,22 @@ const centerInfo = {
 // 수업 일정 - 사용자가 선택한 날짜 데이터
 const barInfo = [
     {
-        q: '0',
+        q: 0,
         id: 'bar0',
-        date: 'xxxx.xx.xx'
+        date: 'xxxx-xx-xx'
     },
     {
-        q: '1',
+        q: 1,
         id: 'bar1',
-        date: 'xxxx.xx.xx'
+        date: 'xxxx-xx-xx'
     },
     {
-        q: '2',
+        q: 2,
         id: 'bar2',
-        date: 'xxxx.xx.xx'
+        date: 'xxxx-xx-xx'
     },
 ];
+
 
 // 도입 문의 페이지
 const ContactToRegister = () => {
@@ -105,7 +108,7 @@ const ContactToRegister = () => {
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
         classCount: 0,
-        studentCount: 0,
+        studentCount: "",
         program: '',
         classType : '원데이 클래스',
         willIntroductionSido: '',
@@ -209,6 +212,8 @@ const ContactToRegister = () => {
                         }
                     )
                     break;
+                default:
+                    break;
             }
         }
     
@@ -257,52 +262,144 @@ const ContactToRegister = () => {
                     setShowCenterAddress(centerInfo.pyeongchon.address);
                     setShowCenterPhoneNumber(centerInfo.pyeongchon.contactNumber);
                     break;
+                default:
+                    break;
             }
         }
 
     // axios 제출 시, 데이터 송신
     const postData = () => {
-    
-        axios.post(hostUrl, {
-            classCount: userInfo.classCount,
-            studentCount: userInfo.studentCount,
-            classType: userInfo.classType,
-            lectureCount: userInfo.lectureCount,
-            willIntroductionSido: userInfo.willIntroductionSido,
-            willIntroductionGugun: userInfo.willIntroductionGugun,
-            obtainRoutes: userInfo.obtainRoutes,
-            agreePersonalInfo: userInfo.agreePersonalInfo,
-            operationOffice : {
-                name : "서초 코어 센터",
-                phoneNumber : "02-537-2900",
-                address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
-              },
-            inquirer : {
-                name : userInfo.inquirer.name,
-                email : userInfo.inquirer.email,
-                cellPhone : userInfo.inquirer.cellPhone,
-                organizationType : userInfo.inquirer.organizationType,
-                organizationName : userInfo.inquirer.organizationName,
-                organizationAddress : userInfo.inquirer.organizationAddress,
-            },
-            classSchedules : [{
-                seq : userInfo.classSchedules[0].q,
-                date : userInfo.classSchedules[0].date,
-            }, 
-            ]
-            }
-        )
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+        // 수업일정을 한개만 선택한 경우
+        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date === 'xxxx-xx-xx' && barInfo[2].date === 'xxxx-xx-xx') {
+            axios.post(hostUrl, {
+                classCount: userInfo.classCount,
+                studentCount: userInfo.studentCount,
+                program: userInfo.program,
+                classType: userInfo.classType,
+                lectureCount: userInfo.lectureCount,
+                willIntroductionSido: userInfo.willIntroductionSido,
+                willIntroductionGugun: userInfo.willIntroductionGugun,
+                obtainRoutes: userInfo.obtainRoutes,
+                agreePersonalInfo: userInfo.agreePersonalInfo,
+                operationOffice : {
+                    name : "서초 코어 센터",
+                    phoneNumber : "02-537-2900",
+                    address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
+                  },
+                inquirer : {
+                    name : userInfo.inquirer.name,
+                    email : userInfo.inquirer.email,
+                    cellPhone : userInfo.inquirer.cellPhone,
+                    organizationType : userInfo.inquirer.organizationType,
+                    organizationName : userInfo.inquirer.organizationName,
+                    organizationAddress : userInfo.inquirer.organizationAddress,
+                },
+                classSchedules : [{
+                    seq : userInfo.classSchedules[0].q,
+                    date : userInfo.classSchedules[0].date
+                }, 
+                ]
+                }
+            )
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+            });
+        }
 
-        // axios.post(hostUrl, {
-        // }).then(() => {
-        //     alert('등록 완료');
-        // })
+        // 수업일정을 두개만 선택한 경우
+        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date !== 'xxxx-xx-xx' && barInfo[2].date === 'xxxx-xx-xx') {
+            axios.post(hostUrl, {
+                classCount: userInfo.classCount,
+                studentCount: userInfo.studentCount,
+                program: userInfo.program,
+                classType: userInfo.classType,
+                lectureCount: userInfo.lectureCount,
+                willIntroductionSido: userInfo.willIntroductionSido,
+                willIntroductionGugun: userInfo.willIntroductionGugun,
+                obtainRoutes: userInfo.obtainRoutes,
+                agreePersonalInfo: userInfo.agreePersonalInfo,
+                operationOffice : {
+                    name : "서초 코어 센터",
+                    phoneNumber : "02-537-2900",
+                    address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
+                  },
+                inquirer : {
+                    name : userInfo.inquirer.name,
+                    email : userInfo.inquirer.email,
+                    cellPhone : userInfo.inquirer.cellPhone,
+                    organizationType : userInfo.inquirer.organizationType,
+                    organizationName : userInfo.inquirer.organizationName,
+                    organizationAddress : userInfo.inquirer.organizationAddress,
+                },
+                classSchedules : [{
+                    seq : userInfo.classSchedules[0].q,
+                    date : userInfo.classSchedules[0].date
+                }, {
+                    seq : userInfo.classSchedules[1].q,
+                    date : userInfo.classSchedules[1].date
+                },
+                ]
+                }
+            )
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+            });
+        }
+
+        // 수업일정을 세개 선택한 경우
+        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date !== 'xxxx-xx-xx' && barInfo[2].date !== 'xxxx-xx-xx') {
+            axios.post(hostUrl, {
+                classCount: userInfo.classCount,
+                studentCount: userInfo.studentCount,
+                program: userInfo.program,
+                classType: userInfo.classType,
+                lectureCount: userInfo.lectureCount,
+                willIntroductionSido: userInfo.willIntroductionSido,
+                willIntroductionGugun: userInfo.willIntroductionGugun,
+                obtainRoutes: userInfo.obtainRoutes,
+                agreePersonalInfo: userInfo.agreePersonalInfo,
+                operationOffice : {
+                    name : "서초 코어 센터",
+                    phoneNumber : "02-537-2900",
+                    address : "서울시 서초구 고무래로 26 쌍동빌딩 동관 3층"
+                  },
+                inquirer : {
+                    name : userInfo.inquirer.name,
+                    email : userInfo.inquirer.email,
+                    cellPhone : userInfo.inquirer.cellPhone,
+                    organizationType : userInfo.inquirer.organizationType,
+                    organizationName : userInfo.inquirer.organizationName,
+                    organizationAddress : userInfo.inquirer.organizationAddress,
+                },
+                classSchedules : [{
+                    seq : userInfo.classSchedules[0].q,
+                    date : userInfo.classSchedules[0].date
+                }, {
+                    seq : userInfo.classSchedules[1].q,
+                    date : userInfo.classSchedules[1].date
+                }, {
+                    seq : userInfo.classSchedules[2].q,
+                    date : userInfo.classSchedules[2].date
+                }, 
+                ]
+                }
+            )
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+            });
+        }
     }
 
 
@@ -316,12 +413,45 @@ const ContactToRegister = () => {
     };
 
     // 도입희망지역 > 구/군 선택
-    const onChangeTownInfo = (e) => {
+    const onChangeTownInfo = (e) => { 
         setUserInfo({
             ...userInfo,
             willIntroductionGugun: e.target.value
         });
     };
+        
+
+    const SelectGugun = () => {
+        if(userInfo.willIntroductionSido === '서울') {
+            return (
+                <select
+                onChange={onChangeTownInfo}
+                value={userInfo.willIntroductionGugun}
+                >
+                <option key='' value=''>구/군 선택</option>
+                <option key='2' value='강남구' >강남구</option>
+                <option key='3'value='노원구' >노원구</option>
+                <option key='4'value='서초구' >서초구</option>
+                <option key='5'value='송파구' >송파구</option>
+                <option key='6'value='양천구' >양천구</option>
+            </select>
+            );
+        }
+        if(userInfo.willIntroductionSido === '경기') {
+            return (
+                <select
+                onChange={onChangeTownInfo}
+                value={userInfo.willIntroductionGugun}
+                >
+                <option key='' value='' >구/군 선택</option>
+                <option key='1' value='성남시'>성남시</option>
+                <option key='2' value='안양시'>안양시</option>
+            </select>
+            );
+        }
+
+    }
+
 
     // 학급 수 선택
     const onChangeClassesCount = (e) => {
@@ -335,7 +465,12 @@ const ContactToRegister = () => {
 
     // 교육인원 입력
     const onChangeStudentsCount = (e) => {
-        let tmp = parseInt(e.target.value);
+        // 4자리 이상 입력 불가
+        if(e.target.value.length >= 4) {
+            return;
+        }
+
+        let tmp = e.target.value;
 
         setUserInfo({
             ...userInfo,
@@ -369,6 +504,10 @@ const ContactToRegister = () => {
 
     // 신청자 (변경 후)
     const onChangeName = (e) => {
+        if(e.target.value.length > 10) {
+            return;
+        }
+
         setUserInfo((prevState) => ({
             ...prevState,
             inquirer: {
@@ -380,6 +519,10 @@ const ContactToRegister = () => {
 
     // 이메일
     const onChangeEmail = (e) => {
+        if(e.target.value.length > 30) {
+            return;
+        }
+
         setUserInfo((prevState) => ({
             ...prevState,
             inquirer: {
@@ -504,14 +647,17 @@ const ContactToRegister = () => {
 
     // 달력 날짜 클릭할 때마다, 날짜 저장
     const SaveDate = (date) => {
+        let _date = date.toLocaleDateString().replace('. ', '-');
+        let __date = _date.replace('. ', '-');
+        let ___date = __date.replace('.', '');
         if (pointer === 0) {
-            barInfo[0].date = date.toLocaleDateString();
+            barInfo[0].date = ___date;
         }
         if (pointer === 1) {
-            barInfo[1].date = date.toLocaleDateString();
+            barInfo[1].date = ___date;
         }
         if (pointer === 2) {
-            barInfo[2].date = date.toLocaleDateString();
+            barInfo[2].date = ___date;
         }
 
         onChangeLessonDays();
@@ -526,13 +672,13 @@ const ContactToRegister = () => {
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
         // 중복 등록 막기
-        if ((barInfo[0].date !== 'xxxx.xx.xx') && (barInfo[1].date !== 'xxxx.xx.xx')) {
+        if ((barInfo[0].date !== 'xxxx-xx-xx') && (barInfo[1].date !== 'xxxx-xx-xx')) {
             if ((barInfo[0].date === barInfo[1].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
-        if ((barInfo[0].date !== 'xxxx.xx.xx') && (barInfo[1].date !== 'xxxx.xx.xx') && (barInfo[2].date !== 'xxxx.xx.xx')) {
+        if ((barInfo[0].date !== 'xxxx-xx-xx') && (barInfo[1].date !== 'xxxx-xx-xx') && (barInfo[2].date !== 'xxxx-xx-xx')) {
             if ((barInfo[0].date === barInfo[2].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
@@ -544,15 +690,15 @@ const ContactToRegister = () => {
         }
 
         // 날짜 미입력 또는 3개 이상 바 추가시 에러창 표시
-        if ((pointer === 0 && barInfo[0].date === 'xxxx.xx.xx')) {
+        if ((pointer === 0 && barInfo[0].date === 'xxxx-xx-xx')) {
             alert('날짜를 선택해주세요.');
             return;
         }
-        if ((pointer === 1 && barInfo[1].date === 'xxxx.xx.xx')) {
+        if ((pointer === 1 && barInfo[1].date === 'xxxx-xx-xx')) {
             alert('날짜를 선택해주세요.');
             return;
         }
-        if ((pointer === 2 && barInfo[2].date === 'xxxx.xx.xx')) {
+        if ((pointer === 2 && barInfo[2].date === 'xxxx-xx-xx')) {
             alert('날짜를 선택해주세요.');
             return;
         }
@@ -571,7 +717,7 @@ const ContactToRegister = () => {
             setPointer(0);
         } else {
             setPointer(pointer - 1);
-            barInfo[pointer].date = 'xxxx.xx.xx'
+            barInfo[pointer].date = 'xxxx-xx-xx'
         }
     }
 
@@ -633,7 +779,7 @@ const ContactToRegister = () => {
     // 라디오버튼 클릭값(학교, 학교 외 기관)
     const [orgType, selectOrgType] = useState("");
     // 주소 입력창 표시 상태값
-    const [showInputAddress, setShowInputAddress] = useState("none");
+    const [scaleOrgAddressHeight, setScaleOrgAddressHeight] = useState("364px");
     // 주소창에서 선택한 주소 상태값
     const [address, setAddress] = useState("");
 
@@ -658,7 +804,7 @@ const ContactToRegister = () => {
     useEffect(() => {
         // 기관 선택 시, 주소창 표시
         if (orgType === "S" || orgType === "O") {
-            setShowInputAddress(""); // 여기서 학교 기관 정보 넘겨야 함
+            setScaleOrgAddressHeight("650px"); // 여기서 학교 기관 정보 넘겨야 함
         }
 
         // 바 위치 체크
@@ -681,9 +827,9 @@ const ContactToRegister = () => {
         // 제출 시, 입력 오류로 이동하는 Ref 설정
         if (userInfo.inquirer.name === '') {
             setRef('applicant');
-        } if (userInfo.inquirer.email === '') {
+        } if (userInfo.inquirer.email === '' || (emailRegEx.test(userInfo.inquirer.email) === false) ) {
             setRef('applicant');
-        } if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13) {
+        } if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13 || userInfo.inquirer.cellPhone[0] !== '0') {
             setRef('applicant');
         } if (userInfo.inquirer.organizationType === '') {
             setRef('applicant');
@@ -704,7 +850,7 @@ const ContactToRegister = () => {
             setRef('cityTown');
         } if (userInfo.willIntroductionGugun === '') {
             setRef('cityTown');
-        } if (userInfo.classCount === '') {
+        } if (userInfo.classCount === '' || userInfo.classCount === 0) {
             setRef('cityTown');
         } if (userInfo.studentCount === '') {
             setRef('cityTown');
@@ -771,18 +917,18 @@ const ContactToRegister = () => {
     };
 
     // 개인동의 설명 규칙 보이기 상태값
-    const [showAgreeDescription, setShowAgreeDescription] = useState('none');
+    const [showAgreeDescription, setShowAgreeDescription] = useState('135px');
     // 개인동의 버튼 이미지(화살표 위아래) 교체
     const [agreeBtnImage, setAgreeBtnImage] = useState(`url(${arrowDown})`);
 
     // 개인동의 설명 규칙 버튼 핸들러
     const AgreeDescriptionBtnHandler = () => {
-        if (showAgreeDescription === 'none') {
-            setShowAgreeDescription('');
+        if (showAgreeDescription === '135px') {
+            setShowAgreeDescription('380px');
             setAgreeBtnImage(`url(${arrowUp})`);
         }
         else {
-            setShowAgreeDescription('none');
+            setShowAgreeDescription('135px');
             setAgreeBtnImage(`url(${arrowDown})`);
         }
     }
@@ -790,7 +936,6 @@ const ContactToRegister = () => {
     let navigate = useNavigate();
     // 제출버튼 핸들러
     const submitHandler = () => {
-        
         if (userInfo.willIntroductionSido === '') {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
         } else if (userInfo.willIntroductionGugun === '') {
@@ -807,10 +952,10 @@ const ContactToRegister = () => {
             alert("'수업 일자'를 1개 이상 선택해주세요.")
         } else if (userInfo.inquirer.name === '') {
             alert("'신청자의 성함'을 작성해주세요.")
-        } else if (userInfo.inquirer.email === '') {
+        } else if (userInfo.inquirer.email === '' || (emailRegEx.test(userInfo.inquirer.email) === false) ) {
             alert("'이메일 주소'를 작성해주세요.")
-        } else if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13) {
-            alert("'휴대번호'를 작성해주세요.")
+        } else if (userInfo.inquirer.cellPhone === '' || userInfo.inquirer.cellPhone.length !== 13  || userInfo.inquirer.cellPhone[0] !== '0') {
+            alert("'휴대번호(010-XXXX-XXXX)'를 작성해주세요.")
         } else if (userInfo.inquirer.organizationType === '') {
             alert("'기관 선택(학교/학교외기관)'을 선택해주세요.")
         } else if (userInfo.inquirer.organizationName === '') {
@@ -1139,19 +1284,7 @@ const ContactToRegister = () => {
                                     </div>
 
                                     <div id='list'>
-                                        <select
-                                            onChange={onChangeTownInfo}
-                                        >
-                                            <option value=''>구/군 선택</option>
-                                            <option value='강남구'>강남구</option>
-                                            <option value='노원구'>노원구</option>
-                                            <option value='서초구'>서초구</option>
-                                            <option value='송파구'>송파구</option>
-                                            <option value='양천구'>양천구</option>
-                                            <option value=''>--------------</option>
-                                            <option value='성남시'>성남시</option>
-                                            <option value='안양시'>안양시</option>
-                                        </select>
+                                        <SelectGugun />
                                     </div>
                                 </div>
                             </div>
@@ -1319,7 +1452,10 @@ const ContactToRegister = () => {
 
                                         // 하이라이트 처리
                                         tileClassName={({ date, view }) => {
-                                            if ((date.toLocaleDateString() === barInfo[0].date) || (date.toLocaleDateString() === barInfo[1].date) || (date.toLocaleDateString() === barInfo[2].date)) {
+                                            let _date = date.toLocaleDateString().replace('. ', '-');
+                                            let __date = _date.replace('. ', '-');
+                                            let ___date = __date.replace('.', '');
+                                            if ((___date === barInfo[0].date) || (___date === barInfo[1].date) || (___date === barInfo[2].date)) {
                                                 return 'highlight'
                                             }
                                         }}
@@ -1343,7 +1479,11 @@ const ContactToRegister = () => {
                     
                     {/* 신청자 ~ 제출하기까지 Wrap */}
                     
-                    <div className="bottomWrap">
+                    <div className="bottomWrap" 
+                        style={{
+                            height: scaleOrgAddressHeight
+                        }}
+                        >
                         <div className="applicant"
                         >
                             <div className="wrap">
@@ -1374,7 +1514,7 @@ const ContactToRegister = () => {
                                 <div className="input">
                                     <input
                                         id="input"
-                                        type="text"
+                                        type="email"
                                         placeholder="작성자 이메일"
                                         value={userInfo.inquirer.email}
                                         onChange={onChangeEmail}
@@ -1424,7 +1564,9 @@ const ContactToRegister = () => {
                                                     // target 전달방식 참고
                                                     onChange={(e) => RadioHandler(e)}
                                                 ></input>
+                                                <span>
                                                 학교
+                                                </span>
                                             </div>
                                             <div className="right" style={{ width: '200px' }}>
                                                 <input
@@ -1435,10 +1577,15 @@ const ContactToRegister = () => {
                                                     checked={orgType === "O"}
                                                     onChange={(e) => RadioHandler(e)}
                                                 ></input>
+                                                <span>
                                                 학교 외 기관
+                                                </span>
                                             </div>
                                         </div>
-                                        <div className="findOrgAddress" style={{ display: showInputAddress }}>
+
+                                                            
+                                        {/* <div className="findOrgAddress" style={{ display: showInputAddress }}> */}
+                                        <div className="findOrgAddress">
                                             <div className="top">
                                                 <div className="title">
                                                     <div className="customP10">
@@ -1466,11 +1613,19 @@ const ContactToRegister = () => {
 
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                                                            
+                    </div> 
+                    { /* 바뀐 bottomWrap */ }
+                    <div className="bottomWrap1"
+                        style={{
+                            height: showAgreeDescription
+                        }}
+                    >
                         <div className="howToKnowUs">
                             <div className="wrap">
                                 <div className="title">
@@ -1545,10 +1700,11 @@ const ContactToRegister = () => {
                                     </div>
                                 </div>
                                 <div className="bottom">
-                                    <AgreeDescription display={showAgreeDescription} />
+                                    <AgreeDescription />
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                         <div className="Submit">
                             <LinkToRegsiter
@@ -1559,7 +1715,10 @@ const ContactToRegister = () => {
 
                             >도입 문의 하기</LinkToRegsiter>
                         </div>
-                    </div>
+                    { /* </div> */ }  
+                    {/* 이전 bottomWrap */}
+
+
                 </div>
             </div>
             <Footer />
