@@ -6,10 +6,8 @@ import logo_dark from "../Assets/logo_dark.svg"
 
 const Header2 = () => {
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
-    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('0');
+    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('500');
     const [changeHeaderBtn1Highlight, setChangeHeaderBtn1Highlight] = useState('0');
-    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('0');
-    const [changeHeaderBtn2Highlight, setChangeHeaderBtn2Highlight] = useState('0');
 
     useEffect(() => {
         window.addEventListener('scroll', changeHeader, { capture: true });
@@ -40,18 +38,13 @@ const Header2 = () => {
     const headerBtnOverHandler = (e) => {
         if(e.target.className === 'customP3 btn1') { 
             setChangeHeaderBtn1Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn1Weight('600');
-        } else if(e.target.className === 'customP3 btn2') { 
-            setChangeHeaderBtn2Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn2Weight('600');
+            setChangeHeaderBtn1Weight('700');
         }
     }
 
     const headerBtnOutHandler = (e) => {
         setChangeHeaderBtn1Highlight('0');
-        setChangeHeaderBtn1Weight('');
-        setChangeHeaderBtn2Highlight('0');
-        setChangeHeaderBtn2Weight('');
+        setChangeHeaderBtn1Weight('500');
     }
 
     return (
@@ -87,7 +80,7 @@ const Header2 = () => {
                             (e) => headerBtnOutHandler(e)
                         }
                         style={{
-                            color: '#000000',
+                            color: '#6F3AC1',
                             fontWeight: changeHeaderBtn1Weight,
                         }}
                     >프로그램</span>
@@ -100,20 +93,14 @@ const Header2 = () => {
                 <Link to="/ContactToRegister" className="headerBtn2">
                     <span
                         className='customP3 btn2'
-                        onMouseOver={
-                            (e) => headerBtnOverHandler(e)
-                        }
-                        onMouseOut={
-                            (e) => headerBtnOutHandler(e)
-                        }
                         style={{
                             color: '#6F3AC1',
-                            fontWeight: changeHeaderBtn2Weight,
+                            fontWeight: '700'
                         }}
                     >도입문의</span>
                     <hr className='bottomHighlight'
                         style={{
-                            border: changeHeaderBtn2Highlight,
+                            border: '2.5px solid #6F3AC1'
                         }}
                     />
                 </Link>

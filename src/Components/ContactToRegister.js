@@ -26,7 +26,7 @@ import arrowDown from "../Assets/arrowDown.svg"
 
 // API 연동
 import axios from 'axios';
-let hostUrl = "http://192.168.210.136:1620/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
+let hostUrl = "http://49.247.24.46:1620/api/inquiry"; // 나중에 서버 구성되면 넣기(url, port 포함)
 
 
 //email 정규식
@@ -87,23 +87,29 @@ const barInfo = [
     {
         q: 0,
         id: 'bar0',
-        date: 'xxxx-xx-xx'
+        date: '2022-OO-OO'
     },
     {
         q: 1,
         id: 'bar1',
-        date: 'xxxx-xx-xx'
+        date: '2022-OO-OO'
     },
     {
         q: 2,
         id: 'bar2',
-        date: 'xxxx-xx-xx'
+        date: '2022-OO-OO'
     },
 ];
+
+// 수업 일정 > 내일 날짜
+const date = new Date();
+const tomorrow = new Date(date.getFullYear(), date.getMonth(), (date.getDate() + 1));
 
 
 // 도입 문의 페이지
 const ContactToRegister = () => {
+    // 내일
+
 
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
@@ -221,7 +227,10 @@ const ContactToRegister = () => {
         const [showCenterName, setShowCenterName] = useState('');
         const [showCenterAddress, setShowCenterAddress] = useState('');
         const [showCenterPhoneNumber, setShowCenterPhoneNumber] = useState('');
-    
+        // 문의처 > 마커 클릭 상태값
+        const [isMarkerClicked, setIsMarkerClicked] = useState(false);
+        const [informationHeight, setInformationHeight] = useState('0px');
+        
         // 서비스 가능지역 > 지도 마커 클릭 핸들러
         let _markerClassName ='';
         const onMarkerClickHandler = (e) => {
@@ -265,12 +274,16 @@ const ContactToRegister = () => {
                 default:
                     break;
             }
+
+            // 지도 마커 클릭 상태값 변경
+            setIsMarkerClicked(true);
+            isMarkerClicked ? setInformationHeight('354px') : setInformationHeight('0px')
         }
 
     // axios 제출 시, 데이터 송신
     const postData = () => {
         // 수업일정을 한개만 선택한 경우
-        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date === 'xxxx-xx-xx' && barInfo[2].date === 'xxxx-xx-xx') {
+        if(barInfo[0].date !== '2022-OO-OO' && barInfo[1].date === '2022-OO-OO' && barInfo[2].date === '2022-OO-OO') {
             axios.post(hostUrl, {
                 classCount: userInfo.classCount,
                 studentCount: userInfo.studentCount,
@@ -311,7 +324,7 @@ const ContactToRegister = () => {
         }
 
         // 수업일정을 두개만 선택한 경우
-        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date !== 'xxxx-xx-xx' && barInfo[2].date === 'xxxx-xx-xx') {
+        if(barInfo[0].date !== '2022-OO-OO' && barInfo[1].date !== '2022-OO-OO' && barInfo[2].date === '2022-OO-OO') {
             axios.post(hostUrl, {
                 classCount: userInfo.classCount,
                 studentCount: userInfo.studentCount,
@@ -355,7 +368,7 @@ const ContactToRegister = () => {
         }
 
         // 수업일정을 세개 선택한 경우
-        if(barInfo[0].date !== 'xxxx-xx-xx' && barInfo[1].date !== 'xxxx-xx-xx' && barInfo[2].date !== 'xxxx-xx-xx') {
+        if(barInfo[0].date !== '2022-OO-OO' && barInfo[1].date !== '2022-OO-OO' && barInfo[2].date !== '2022-OO-OO') {
             axios.post(hostUrl, {
                 classCount: userInfo.classCount,
                 studentCount: userInfo.studentCount,
@@ -476,6 +489,12 @@ const ContactToRegister = () => {
             ...userInfo,
             studentCount: tmp
         });
+    }
+
+    const [showPlaceholder1, setShowPlaceholder1] = useState('총 도입 예상인원');
+    // 플레이스홀드 보이기 안보이기
+    const onChangePlaceholder1 = (e) => {
+        setShowPlaceholder1('');
     }
 
     // 프로그램 선택
@@ -672,13 +691,13 @@ const ContactToRegister = () => {
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
         // 중복 등록 막기
-        if ((barInfo[0].date !== 'xxxx-xx-xx') && (barInfo[1].date !== 'xxxx-xx-xx')) {
+        if ((barInfo[0].date !== '2022-OO-OO') && (barInfo[1].date !== '2022-OO-OO')) {
             if ((barInfo[0].date === barInfo[1].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
             }
         }
-        if ((barInfo[0].date !== 'xxxx-xx-xx') && (barInfo[1].date !== 'xxxx-xx-xx') && (barInfo[2].date !== 'xxxx-xx-xx')) {
+        if ((barInfo[0].date !== '2022-OO-OO') && (barInfo[1].date !== '2022-OO-OO') && (barInfo[2].date !== '2022-OO-OO')) {
             if ((barInfo[0].date === barInfo[2].date)) {
                 alert('동일한 날짜를 여러번 등록할 수 없습니다.');
                 return;
@@ -690,15 +709,15 @@ const ContactToRegister = () => {
         }
 
         // 날짜 미입력 또는 3개 이상 바 추가시 에러창 표시
-        if ((pointer === 0 && barInfo[0].date === 'xxxx-xx-xx')) {
+        if ((pointer === 0 && barInfo[0].date === '2022-OO-OO')) {
             alert('날짜를 선택해주세요.');
             return;
         }
-        if ((pointer === 1 && barInfo[1].date === 'xxxx-xx-xx')) {
+        if ((pointer === 1 && barInfo[1].date === '2022-OO-OO')) {
             alert('날짜를 선택해주세요.');
             return;
         }
-        if ((pointer === 2 && barInfo[2].date === 'xxxx-xx-xx')) {
+        if ((pointer === 2 && barInfo[2].date === '2022-OO-OO')) {
             alert('날짜를 선택해주세요.');
             return;
         }
@@ -717,7 +736,7 @@ const ContactToRegister = () => {
             setPointer(0);
         } else {
             setPointer(pointer - 1);
-            barInfo[pointer].date = 'xxxx-xx-xx'
+            barInfo[pointer].date = '2022-OO-OO'
         }
     }
 
@@ -802,6 +821,10 @@ const ContactToRegister = () => {
     
     // useEffect로 라디오값 동기처리
     useEffect(() => {
+        // 마커 클릭 상태 변경 동기처리
+        isMarkerClicked ? setInformationHeight('354px') : setInformationHeight('0px')
+
+
         // 기관 선택 시, 주소창 표시
         if (orgType === "S" || orgType === "O") {
             setScaleOrgAddressHeight("650px"); // 여기서 학교 기관 정보 넘겨야 함
@@ -850,9 +873,9 @@ const ContactToRegister = () => {
             setRef('cityTown');
         } if (userInfo.willIntroductionGugun === '') {
             setRef('cityTown');
-        } if (userInfo.classCount === '' || userInfo.classCount === 0) {
+        } if (userInfo.classCount === '' || userInfo.classCount === 0 || userInfo.classCount === NaN) {
             setRef('cityTown');
-        } if (userInfo.studentCount === '') {
+        } if (userInfo.studentCount === 0) {
             setRef('cityTown');
         } if (userInfo.program === '') {
             setRef('cityTown');
@@ -863,10 +886,11 @@ const ContactToRegister = () => {
         userInfo.obtainRoutes.indexOf('R') === -1 || userInfo.obtainRoutes.indexOf('F') === -1 ||
         userInfo.obtainRoutes.indexOf('S') === -1 || userInfo.obtainRoutes.indexOf('O') === -1 ) && userInfo.classSchedules[0] !== '' &&
         userInfo.agreePersonalInfo !== false && userInfo.willIntroductionSido !== '' && userInfo.willIntroductionGugun !== '' && userInfo.classCount !== '' &&
+        userInfo.classCount !== 0 && userInfo.classCount !== NaN &&
         userInfo.studentCount !== '' && userInfo.program !== '' && userInfo.lectureCount !== '' ) {
             setRef('');
         }
-    }, [orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.obtainRoutes, userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
+    }, [isMarkerClicked, orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.obtainRoutes, userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
 
     // 카카오 주소 팝업창 
     const Postcode = () => {
@@ -940,7 +964,7 @@ const ContactToRegister = () => {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
         } else if (userInfo.willIntroductionGugun === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
-        } else if (userInfo.classCount === '') {
+        } else if (userInfo.classCount === 0 || userInfo.classCount === NaN ) {
             alert("'학급 수'를 작성해주세요.")
         } else if (userInfo.studentCount === '') {
             alert("'교육인원'을 작성해주세요.")
@@ -969,7 +993,7 @@ const ContactToRegister = () => {
         ) {
             alert("'수업 문의 경로'를 1개 이상 선택해주세요.")
         } else if (userInfo.agreePersonalInfo === false) {
-            alert('개인정보 수집 이용에 동의하지 않으시면, 신청하실 수 없습니다.')
+            alert('개인정보 수집 미동의 시 신청 불가능합니다.')
         } 
         // 필수값 전부 입력된 것이 확인되어 서버로 전송
         else {
@@ -989,7 +1013,7 @@ const ContactToRegister = () => {
                     <div className="introduction" >
                         <div className="title">
                             <div className="customH7">
-                                FROMC 프로그램 도입 문의
+                                From.C 프로그램 도입 문의
                             </div>
                             <div className="customP6">
                                 관심있는 교육 프로그램 도입 문의를 주시면<br></br>담당자가 24시간 내에 연락드립니다.
@@ -1117,7 +1141,8 @@ const ContactToRegister = () => {
                                     className="joonggae"
                                     name="joonggae"
                                     onMouseOver={(e) => onMarkerHandler(e)}
-                                    onClick={(e) => onMarkerClickHandler(e)}
+                                    onClick={(e) => {onMarkerClickHandler(e)
+                                    }}
                                 >
                                     <div className="_joonggae marker">
 
@@ -1200,7 +1225,11 @@ const ContactToRegister = () => {
                     </div>
                 </div>
 
-                <div className="information">
+                <div className="information"
+                style={{
+                    height: informationHeight 
+                }}
+                >
                     <div className="wrap">
                         <div className="left">
                             <div className="src"></div>
@@ -1302,7 +1331,7 @@ const ContactToRegister = () => {
                                         <select
                                             onChange={onChangeClassesCount}
                                         >
-                                            <option value=''>선택해주세요.</option>
+                                            <option value='0'>선택해주세요.</option>
                                             <option value='1'>1</option>
                                             <option value='2'>2</option>
                                             <option value='3'>3</option>
@@ -1336,6 +1365,9 @@ const ContactToRegister = () => {
                                         id="input"
                                         type="text"
                                         placeholder="총 도입 예상 인원"
+                                        onFocus={e => (e.target.placeholder = "")}
+                                        onBlur={e => (e.target.placeholder = "총 도입 예상 인원")}
+                                        
                                         value={userInfo.studentCount}
                                         onChange={onChangeStudentsCount}
                                     ></input>
@@ -1357,8 +1389,8 @@ const ContactToRegister = () => {
                                             onChange={onChangeProgram}
                                         >
                                             <option value=''>선택해주세요.</option>
-                                            <option value='스크래치 AI'>스크래치 AI</option>
-                                            <option value='인공지능 앱 만들기'>인공지능 앱 만들기</option>
+                                            <option value='스크래치 AI 프로젝트'>스크래치 AI 프로젝트</option>
+                                            <option value='앱인벤터 AI 프로젝트'>앱인벤터 AI 프로젝트</option>
                                             <option value='캐글 머신러닝 프로젝트'>캐글 머신러닝 프로젝트</option>
                                             <option value='메타버스 아두이노'>메타버스 아두이노</option>
                                             <option value='메타버스 파이썬'>메타버스 파이썬</option>
@@ -1441,14 +1473,16 @@ const ContactToRegister = () => {
                             <div className="calendarWrap">
                                 <div className="calendar">
                                     <Calendar
-                                        onChange={setDate}
+                                        onChange={
+                                            setDate
+                                        }
                                         onClickDay={(date, event) => {
                                             SaveDate(date);
                                         }}
                                         calendarType="US"
                                         value={date}
-                                        minDate={new Date()}
-                                        // maxDate={new Date("12-31-2022")}
+                                        minDate={tomorrow}
+                                        
 
                                         // 하이라이트 처리
                                         tileClassName={({ date, view }) => {
@@ -1498,6 +1532,8 @@ const ContactToRegister = () => {
                                         type="text"
                                         placeholder="신청자 이름"
                                         value={userInfo.inquirer.name}
+                                        onFocus={e => (e.target.placeholder = "")}
+                                        onBlur={e => (e.target.placeholder = "신청자 이름")}
                                         onChange={onChangeName}
                                     ></input>
                                 </div>
@@ -1517,6 +1553,8 @@ const ContactToRegister = () => {
                                         type="email"
                                         placeholder="작성자 이메일"
                                         value={userInfo.inquirer.email}
+                                        onFocus={e => (e.target.placeholder = "")}
+                                        onBlur={e => (e.target.placeholder = "작성자 이메일")}
                                         onChange={onChangeEmail}
                                     ></input>
                                 </div>
@@ -1536,6 +1574,8 @@ const ContactToRegister = () => {
                                         type="text"
                                         placeholder="휴대폰 번호"
                                         value={userInfo.inquirer.cellPhone}
+                                        onFocus={e => (e.target.placeholder = "")}
+                                        onBlur={e => (e.target.placeholder = "휴대폰 번호")}
                                         onChange={onChangePhonNumber}
                                     ></input>
                                 </div>
@@ -1556,8 +1596,8 @@ const ContactToRegister = () => {
                                         <div className="selectOrgType">
                                             <div className="left" style={{ width: '200px' }}>
                                                 <input
-                                                    id="radioBtn"
-                                                    type="radio"
+                                                    id="checkBox"
+                                                    type="checkBox"
                                                     className="school"
                                                     value="S"
                                                     checked={orgType === "S"}
@@ -1570,8 +1610,8 @@ const ContactToRegister = () => {
                                             </div>
                                             <div className="right" style={{ width: '200px' }}>
                                                 <input
-                                                    id="radioBtn"
-                                                    type="radio"
+                                                    id="checkBox"
+                                                    type="checkBox"
                                                     className="public"
                                                     value="O"
                                                     checked={orgType === "O"}
@@ -1584,7 +1624,6 @@ const ContactToRegister = () => {
                                         </div>
 
                                                             
-                                        {/* <div className="findOrgAddress" style={{ display: showInputAddress }}> */}
                                         <div className="findOrgAddress">
                                             <div className="top">
                                                 <div className="title">

@@ -90,7 +90,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._1,
                                 backgroundColor: showDisplay._1
                             }}
-                            >스크래치 AI
+                            >스크래치 AI 프로젝트
                                 <div className="bottomLine1"
                                 ></div>
                             </Link>
@@ -107,7 +107,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._2,
                                 backgroundColor: showDisplay._2
                             }}
-                            >인공지능 앱 만들기
+                            >앱인벤터 AI 프로젝트
                                 <div className="bottomLine2"
                                 ></div>
                             </Link>
@@ -124,7 +124,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._3,
                                 backgroundColor: showDisplay._3
                             }}
-                            >머신러닝 캐글 타이타닉
+                            >캐글 머신러닝 프로젝트
                                 <div className="bottomLine3"
                                 ></div>
                             </Link>
@@ -150,7 +150,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._4,
                                 backgroundColor: showDisplay._4
                             }}
-                            >메타버스 아두이노 컴퓨팅
+                            >메타버스 아두이노
                                 <div className="bottomLine4"
                                 ></div>
                             </Link>
@@ -192,7 +192,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._6,
                                 backgroundColor: showDisplay._6
                             }}
-                            >스크래치 게임
+                            >스크래치 게임 메이킹
                                 <div className="bottomLine6"
                                 ></div>
                             </Link>
@@ -208,7 +208,7 @@ const ProgramPage5 = () => {
                                 fontWeight: fontWeight._7,
                                 backgroundColor: showDisplay._7
                             }}
-                            >앱인벤터 게임
+                            >앱인벤터 게임 메이킹
                                 <div className="bottomLine7"
                                 ></div>
                             </Link>
@@ -219,6 +219,11 @@ const ProgramPage5 = () => {
                     <div className="image_program5">
                         <div className="gifWrap">
                             <div className="gif">
+
+                            </div>
+                        </div>
+                        <div className="gifWrap1">
+                            <div className="gif1">
 
                             </div>
                         </div>

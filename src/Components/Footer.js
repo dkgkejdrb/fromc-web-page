@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className='Footer'>
+        <div className='Footer' style={{ height: '300px'}}>
             <div className='Wrap'>
                 <div className='Logo'>
                     <div className='source'>

@@ -10,9 +10,9 @@ const Header = () => {
     const [changeColor, setChangeColor] = useState('');
     const [changeFontColor, setChangeFontColor] = useState('#FFFFFF');
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
-    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('0');
+    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('500');
     const [changeHeaderBtn1Highlight, setChangeHeaderBtn1Highlight] = useState('0');
-    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('0');
+    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('500');
     const [changeHeaderBtn2Highlight, setChangeHeaderBtn2Highlight] = useState('0');
 
 
@@ -58,18 +58,18 @@ const Header = () => {
     const headerBtnOverHandler = (e) => {
         if (e.target.className === 'customP3 btn1') {
             setChangeHeaderBtn1Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn1Weight('600');
+            setChangeHeaderBtn1Weight('700');
         } else if (e.target.className === 'customP3 btn2') {
             setChangeHeaderBtn2Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn2Weight('600');
+            setChangeHeaderBtn2Weight('700');
         }
     }
 
     const headerBtnOutHandler = (e) => {
         setChangeHeaderBtn1Highlight('0');
-        setChangeHeaderBtn1Weight('');
+        setChangeHeaderBtn1Weight('500');
         setChangeHeaderBtn2Highlight('0');
-        setChangeHeaderBtn2Weight('');
+        setChangeHeaderBtn2Weight('500');
     }
 
     return (

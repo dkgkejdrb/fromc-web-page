@@ -5,7 +5,7 @@ const LineBanner = () => {
         <div className='lineBanner'>
             <div className='top'>
                 <div className='customH6'>
-                    아이들의 변화를 이끌어내는 프롬C
+                우리 학교에 딱 맞는 SW교육<br></br>씨큐브코딩과 함께 새로운 여정을 시작해 보세요
                 </div>
             </div>
             <div className='bottom'>

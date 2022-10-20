@@ -135,51 +135,51 @@ table {
 .customH1 {
 	font-size: 36px;
 	font-weight: bold;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH2 {
 	font-size: 30px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH3 {
 	font-size: 20px;
 	font-weight: bold;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH4 {
 	font-size: 18px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH5 {
 	font-size: 40px;
 	font-weight: 600;
 	line-height: 48.41px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH6 {
 	font-size: 39px;
 	font-weight: 600;
-	line-height: 47.2px;
-	font-family: 'Inter', sans-serif;
+	line-height: 126.52%;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH7 {
 	font-size: 33px;
 	font-weight: 600;
 	line-height: 40px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customH8 {
 	font-weight: 600;
 	font-size: 32px;
 	line-height: 46px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #FFFFFF;
 }
 
@@ -187,7 +187,7 @@ table {
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #FFFFFF;
 }
 
@@ -195,7 +195,7 @@ table {
 	font-weight: 600;
 	font-size: 26px;
 	line-height: 31px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
 
@@ -203,39 +203,39 @@ table {
 	font-weight: 600;
 	font-size: 26px;
 	line-height: 31px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
 
 .customH12 {
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 26px;
 	line-height: 31.47px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
 
 .customP {
 	font-size: 20px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP2 {
 	font-size: 21px;
 	font-weight: bold;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP3 {
-	font-size: 19px;
-	font-family: 'Inter', sans-serif;
+	font-size: 22px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP4 {
 	font-size: 23px;
 	font-weight: 500;
 	line-height: 27.84px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP5 {
@@ -244,22 +244,22 @@ table {
 	font-weight: 400;
 	opacity: 0.7;
 	line-height: 28px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP6 {
 	color: #929292;
 	font-weight: 500;
 	font-size: 20px;
-	line-height: 144.5%;
-	font-family: 'Inter', sans-serif;
+	line-height: 28.9px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP7 {
 	font-size: 22px;
 	line-height: 187.5%;
 	color: #FFFFFF;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP8 {
@@ -268,7 +268,7 @@ table {
 	line-height: 27px;
 
 	color: #FFFFFF;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP9 {
@@ -277,14 +277,14 @@ table {
 	line-height: 140.52%;
 
 	color: rgba(98, 98, 98, 0.7);
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .customP10 {
 	font-weight: 500;
 	font-size: 17px;
-	line-height: 140.52%;
-	font-family: 'Inter', sans-serif;
+	line-height: 23.90px;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
 
@@ -292,7 +292,7 @@ table {
 	font-weight: 300;
 	font-size: 20px;
 	line-height: 24px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
 
@@ -342,19 +342,24 @@ table {
 	flex-direction: column;
 	align-items: center;
 
-	padding: 33px 60px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* 위 오 아 왼 */
+	/* padding: 33px 60px 33px 60px; */
+	padding-left: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
+	font-weight: 400;
 }
 
 .header .right .headerBtn1 .customP3 {
-	width: 80px;
+	width: 120px;
 }
 
 .header .right .headerBtn1 .bottomHighlight {
-	width: 76px;
-	margin-left: -3px;
-	margin-top: 33px;
+	width: 96px;
+	margin-left: -8px;
+	margin-top: 30px;
 	background-color: #6F3AC1;
 }
 
@@ -365,19 +370,22 @@ table {
 	flex-direction: column;
 	align-items: center;
 
-	padding: 33px 108px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* padding: 33px 108px 33px 60px; */
+	padding-right: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
 }
 
 .header .right .headerBtn2 .customP3 {
-	width: 80px;
+	width: 120px;
 }
 
 .header .right .headerBtn2 .bottomHighlight {
-	width: 76px;
-	margin-left: -3px;
-	margin-top: 33px;
+	width: 96px;
+	margin-left: -8px;
+	margin-top: 30px;
 	background-color: #6F3AC1;
 }
 
@@ -390,13 +398,14 @@ table {
 /* 영상은 index.html 경로와 같은 곳에 위치  */
 .videoWrap {
 	width: 100%;
-	height: 950px;
+	/* height: 950px; */
+	height: auto;
 	z-index: 1;
 }
 
 .videoWrap>video {
 	width: 100%;
-	height: 100%;
+	margin-top: -50px;
 	object-fit: cover;
 }
 
@@ -421,6 +430,7 @@ table {
 .ContactWrap .ContactBtn .customP3 {
 	padding-left: 28px;
 	font-weight: 600;
+	margin-bottom: 3px;
 	color: #6F3AC1;
 }
 
@@ -490,7 +500,7 @@ table {
 	width: 490px;
 	height: 297px;
 
-	background-image: url(Assets/그림2.svg);
+	background-image: url(Assets/그림2_1.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -574,8 +584,8 @@ table {
 
 .features .wrap .secondLine.rightPictureSection .contents .picture .wrap .source {
 	width: 490px;
-	height: 297px;
-	background-image: url(Assets/그림3.svg);
+	height: 100%;
+	background-image: url(Assets/그림3.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -786,12 +796,13 @@ table {
 /* 띠배너 */
 .lineBanner {
 	width: 100%;
-	height: 310px;
+	height: 360px;
+	text-align: center;
 
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	background-image: url(Assets/spacebackground.png);
+	background-image: url(Assets/background.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -803,10 +814,12 @@ table {
 
 .lineBanner .top .customH6 {
 	color: #ffff;
+	line-height: 126.52%;
+
 }
 
 .lineBanner .bottom {
-	padding-top: 24.71px;
+	padding-top: 30px;
 }
 
 .lineBanner .bottom .wrap {
@@ -887,7 +900,7 @@ table {
 	flex-direction: column;
 	align-items: center;
 	width: 1440px;
-	height: 1897px;
+	height: 1777px;
 	background: rgba(238, 238, 238, 0.4);
 }
 
@@ -898,8 +911,23 @@ table {
 	font-weight: 600;
 	font-size: 36px;
 	line-height: 44px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
+	display: flex;
+	flex-direction: row;
+}
+
+/* .programs .wrap .title .fromcLogo {
+	width: 163px;
+	height: 36px;
+	background-image: url(./Assets/logo_fromc.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+} */
+
+.programs .wrap .title .fromcText {
+	margin-left: 5px;
 }
 
 .programs .wrap .subTitle {
@@ -911,7 +939,7 @@ table {
 	font-size: 18px;
 	line-height: 144.52%;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #5B5B5B;
 }
 
@@ -977,6 +1005,9 @@ table {
 	background-position: center;
 }
 
+.programs .second .program:nth-of-type(2) .bottom .programText{
+	letter-spacing: -0.5px
+}
 
 #_1_1 .image {
 	background-image: url(./Assets/program1_1.png);
@@ -1003,7 +1034,7 @@ table {
 }
 
 #_3_1 .image {
-	background-image: url(./Assets/program3_1.png);
+	background-image: url(./Assets/program3_2.png);
 }
 
 .programs .wrap .wrap .program .bottom {
@@ -1025,7 +1056,7 @@ table {
 	align-items: center;
 
 	color: #000000;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .programText {
@@ -1037,22 +1068,26 @@ table {
 	line-height: 156.02%;
 	color: #000000CF;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 
 /* ================ 5. 푸터 페이지 ================== */
 .Footer {
 	width: 100%;
-	height: 418px;
+	height: 300px;
 
 	background: #F1F1F1;
 }
 
+.Footer .Wrap {
+	background: #F1F1F1;
+}
+
 .Footer .Wrap .Logo {
-	width: 367px;
+	width: 224px;
 	height: 72px;
-	margin-top: 103px;
+	margin-top: 91px;
 }
 
 .Footer .Wrap .Logo .source {
@@ -1066,11 +1101,10 @@ table {
 
 .Footer .Wrap .IncWrap .IncInfo {
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 14px;
 	line-height: 24px;
-	margin-top: 34px;
+	margin-top: 10px;
 	color: #8C8C8C;
-
 	opacity: 0.7;
 }
 
@@ -1155,13 +1189,17 @@ table {
 	display: flex;
 	cursor: pointer;
 
-	padding: 33px 60px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* padding: 33px 60px 33px 60px; */
+	padding-left: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
 }
 
 .contactToRegister .header .right .headerBtn1 .customP3 {
-	width: 80px;
+	width: 120px;
+
 }
 
 
@@ -1170,13 +1208,16 @@ table {
 	display: flex;
 	cursor: pointer;
 
-	padding: 33px 108px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* padding: 33px 108px 33px 60px; */
+	padding-right: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
 }
 
 .contactToRegister .header .right .headerBtn2 .customP3 {
-	width: 80px;
+	width: 120px;
 	font-weight: 500;
 	color: hsla(0, 0%, 14%, 0.4);
 }
@@ -1204,6 +1245,7 @@ table {
 
 .contactToRegister .introduction .customP6 {
 	margin-top: 21px;
+	font-weight: 400;
 }
 
 
@@ -1270,7 +1312,7 @@ table {
 	display: flex;
 	flex-direction: row;
 
-	padding-top: 11px;
+	padding-top: 3px;
 	width: 100%;
 	justify-content: center;
 }
@@ -1283,10 +1325,12 @@ table {
 }
 
 /* 서비스 가능지역 - 직영 선택 */
+/* 마커들의 위치 기준 */
 .contactToRegister .selectRegion .wrap .mapWrap {
 	width: 100%;
 	height: 600px;
 	margin-top: 60px;
+	position: relative;
 }
 
 /* ☆☆☆☆☆☆☆☆☆☆☆마커 공통 이미지 */
@@ -1305,14 +1349,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆서초 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .seocho ._seocho {
 	position: absolute;
-	left: 940px;
-	top: 970px;
+	left: 611px;
+	top: 405px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo {
 	position: absolute;
-	left: 1000px;
-	top: 1114px;
+	left: 672px;
+	top: 545px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .seocho ._seochoCenterInfo ._seochoCenterName {
@@ -1320,6 +1364,7 @@ table {
 	font-size: 20px;
 	line-height: 24px;
 	transition: 0.1s ease-in-out;
+	letter-spacing: -1px;
 
 	color: #7E5CC4;
 }
@@ -1336,14 +1381,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆대치 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechi {
 	position: absolute;
-	left: 1027px;
-	top: 946px;
+	left: 695px;
+	top: 390px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo {
 	position: absolute;
-	left: 1238px;
-	top: 925px;
+	left: 910px;
+	top: 352px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .daechi ._daechiCenterInfo ._daechiCenterName {
@@ -1367,14 +1412,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆목동 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdong {
 	position: absolute;
-	left: 700px;
-	top: 860px;
+	left: 370px;
+	top: 310px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo {
 	position: absolute;
-	left: 500px;
-	top: 791px;
+	left: 170px;
+	top: 235px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .mokdong ._mokdongCenterInfo ._mokdongCenterName {
@@ -1398,14 +1443,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆잠실 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsil {
 	position: absolute;
-	left: 1078px;
-	top: 875px;
+	left: 749px;
+	top: 330px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo {
 	position: absolute;
-	left: 1270px;
-	top: 801px;
+	left: 946px;
+	top: 245px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .jamsil ._jamsilCenterInfo ._jamsilCenterName {
@@ -1429,14 +1474,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆중계 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggae {
 	position: absolute;
-	left: 1043px;
-	top: 600px;
+	left: 706px;
+	top: 60px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo {
 	position: absolute;
-	left: 1182px;
-	top: 565px;
+	left: 856px;
+	top: 9px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .joonggae ._joonggaeCenterInfo ._joonggaeCenterName {
@@ -1460,14 +1505,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆분당 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondang {
 	position: absolute;
-	left: 1170px;
-	top: 1055px;
+	left: 842px;
+	top: 495px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo {
 	position: absolute;
-	left: 1302px;
-	top: 1021px;
+	left: 975px;
+	top: 465px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .boondang ._boondangCenterInfo ._boondangCenterName {
@@ -1491,14 +1536,14 @@ table {
 /* ☆☆☆☆☆☆☆☆☆☆평촌 마커 */
 .contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchon {
 	position: absolute;
-	left: 770px;
-	top: 1093px;
+	left: 454px;
+	top: 542px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo {
 	position: absolute;
-	left: 582px;
-	top: 1092px;
+	left: 258px;
+	top: 537px;
 }
 
 .contactToRegister .selectRegion .wrap .mapWrap .pyeongchon ._pyeongchonCenterInfo ._pyeongchonCenterName {
@@ -1551,13 +1596,17 @@ table {
 	height: 354px;
 	margin-top: 88px;
 	background-color: #6F3AC1;
+
+	transition: 0.5s;
 }
 
 .information>.wrap {
 	height: 100%;
 	display: flex;
 
-	margin-left: 465px;
+	justify-content: center;
+
+	/* margin-left: 465px; */
 }
 
 .information .wrap .left .src {
@@ -1666,7 +1715,7 @@ table {
 }
 
 .contactToRegister .hopeRegion {
-	height: 40px;
+	height: 100px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -1679,15 +1728,17 @@ table {
 
 .contactToRegister .hopeRegion .wrap .title {
 	display: flex;
-	width: 280px;
+	width: 350px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px;
 }
+
 
 .contactToRegister .hopeRegion .wrap .listWrap {
 	display: flex;
 	width: 100%;
+	flex-direction: column;
 
 	margin-right: 190px;
 }
@@ -1698,7 +1749,8 @@ table {
 
 /* 시 & 구/군 간격 */
 .contactToRegister .hopeRegion .wrap .listWrap #list:nth-of-type(2) {
-	margin-left: 39px;
+	margin-top: 20px;
+	margin-left: 67px;
 }
 
 /* 리스트버튼 스타일 */
@@ -1712,13 +1764,14 @@ table {
 	height: 39px;
 	border-radius: 5px;
 
-	padding-left: 20px;
+	/* padding-left: 20px; */
+	text-align: center;
 	font-weight: 500;
 	font-size: 17px;
 	line-height: 23.89px;
 	color: #626262;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -1738,10 +1791,10 @@ table {
 
 .contactToRegister .howManyClasses .wrap .title {
 	display: flex;
-	width: 280px;
+	width: 350px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px
 }
 
 .contactToRegister .howManyClasses .wrap .listWrap {
@@ -1772,10 +1825,10 @@ table {
 
 .contactToRegister .numberOfStudents .wrap .title {
 	display: flex;
-	width: 280px;
+	width: 350px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px
 }
 
 /* 입력버튼 스타일 */
@@ -1797,7 +1850,7 @@ table {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -1817,10 +1870,10 @@ table {
 
 .contactToRegister .selectProgram .wrap .title {
 	display: flex;
-	width: 300px;
+	width: 380px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px
 }
 
 .contactToRegister .selectProgram .wrap .listWrap {
@@ -1858,7 +1911,7 @@ table {
 	width: 310px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px
 }
 
 .contactToRegister .typeOfLesson .wrap .title .wrap {
@@ -1878,7 +1931,7 @@ table {
 .contactToRegister .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	margin-left: 27px;
+	margin-left: 10px;
 	margin-right: 190px;
 }
 
@@ -1914,10 +1967,10 @@ table {
 
 .contactToRegister .numbersOfLessons .wrap .title {
 	display: flex;
-	width: 280px;
+	width: 380px;
 
 	padding-top: 3px;
-	margin-left: 190px;
+	margin-left: 380px
 }
 
 .contactToRegister .numbersOfLessons .wrap .title .wrap {
@@ -1942,7 +1995,7 @@ table {
 }
 
 .contactToRegister .numbersOfLessons .wrap .listWrap #list {
-	margin-left: 47px;
+	margin-left: 29px;
 }
 
 .contactToRegister .numbersOfLessons .wrap .listWrap #list select {
@@ -2003,7 +2056,7 @@ table {
 .bars {
 	width: 100%;
 	height: 100%;
-	margin-left: 200px;
+	margin-left: 80px;
 	display: flex;
 }
 
@@ -2048,7 +2101,7 @@ table {
 	font-weight: 500;
 	font-size: 27px;
 	line-height: 140.52%;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #747474;
 
 	display: flex;
@@ -2068,7 +2121,7 @@ table {
 	font-weight: 500;
 	font-size: 27px;
 	line-height: 140.52%;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #747474;
 
 	display: flex;
@@ -2088,7 +2141,7 @@ table {
 	font-weight: 500;
 	font-size: 27px;
 	line-height: 140.52%;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #747474;
 
 	display: flex;
@@ -2172,14 +2225,14 @@ table {
 .react-calendar__navigation__label {
 	font-size: 29px;
 	line-height: 35.1px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .react-calendar__month-view__weekdays__weekday {
 	height: 50px;
 
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 달력 일자 타일 */
@@ -2187,7 +2240,12 @@ table {
 	height: 50px;
 
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 년,월 선택 화살표 버튼 */
+.react-calendar__navigation__arrow {
+	font-size: 40px;
 }
 
 /* 요일 표시 데코레이션 */
@@ -2207,6 +2265,7 @@ abbr {
 
 .react-calendar .react-calendar__tile--now:enabled:hover {
 	background-color: #f0f0f0;
+	color: rgba(16, 16, 16, 0.3);
 }
 
 .react-calendar .react-calendar__tile--now {
@@ -2215,7 +2274,8 @@ abbr {
 
 /* 마지막으로 선택한 타일 */
 .react-calendar .react-calendar__tile--active {
-	color: black;
+	/* color: black; */
+	color: rgba(16, 16, 16, 0.3);
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -2255,7 +2315,7 @@ abbr {
 	align-items: center;
 
 	padding-top: 79px;
-	margin-left: 137px;
+	margin-left: 380px;
 	margin-right: 255px;
 }
 
@@ -2273,6 +2333,10 @@ abbr {
 	align-items: flex-start;
 }
 
+input:focus {
+	outline: none;
+}
+
 .contactToRegister .applicant .wrap .input {
 	display: flex;
 }
@@ -2280,6 +2344,8 @@ abbr {
 .contactToRegister .applicant .wrap .input #input {
 	display: flex;
 	text-align: center;
+
+	
 
 	width: 280px;
 	height: 33px;
@@ -2289,8 +2355,8 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 432px;
-	font-family: 'Inter', sans-serif;
+	margin-left: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -2304,7 +2370,7 @@ abbr {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 137px;
+	margin-left: 380px;
 	margin-right: 255px;
 }
 
@@ -2338,8 +2404,8 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 432px;
-	font-family: 'Inter', sans-serif;
+	margin-left: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* ================ 13. 휴대번호 ================== */
@@ -2351,7 +2417,7 @@ abbr {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 137px;
+	margin-left: 380px;
 	margin-right: 255px;
 }
 
@@ -2385,8 +2451,8 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 432px;
-	font-family: 'Inter', sans-serif;
+	margin-left: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* ================ 14. 기관 선택 ================== */
@@ -2398,12 +2464,12 @@ abbr {
 	text-align: center;
 
 	margin-top: 43px;
-	margin-left: 137px;
+	margin-left: 380px;
 }
 
 .contactToRegister .selectOrg .wrap .title {
 	display: flex;
-	width: 383px;
+	width: 210px;
 }
 
 .contactToRegister .selectOrg .wrap .right {
@@ -2432,7 +2498,7 @@ abbr {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .contactToRegister .right .wrap .selectOrgType .left {
@@ -2469,6 +2535,7 @@ abbr {
 	margin-top: 30px;
 	background: #FAFAFA;
 	border: 1px solid #A8A8A8;
+	border-radius: 10px;
 
 	padding: 32px 0px 31px 40px;
 }
@@ -2478,8 +2545,10 @@ abbr {
 	margin-top: 6px;
 	width: 425px;
 	height: 33px;
+	
 
 	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .findOrgAddress .bottom .title {
@@ -2523,7 +2592,7 @@ abbr {
 	align-items: center;
 
 	margin-top: 19px;
-	margin-left: 137px;
+	margin-left: 380px;
 }
 
 .contactToRegister .howToKnowUs .wrap {
@@ -2536,7 +2605,7 @@ abbr {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 515px;
+	width: 291px;
 }
 
 .contactToRegister .howToKnowUs .wrap .boxesWrap {
@@ -2551,10 +2620,23 @@ abbr {
 	align-items: center;
 }
 
+.contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(2) {
+	margin-left: 20px;
+}
+
+.contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(3) {
+	margin-left: 20px;
+}
+
+.contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(4) {
+	margin-left: 20px;
+}
+
 #checkBox {
 	width: 26px;
 	height: 26px;
 }
+
 
 
 /* ================ 16. 개인정보 수집, 이용에 대한 동의 ================== */
@@ -2577,17 +2659,19 @@ abbr {
 .contactToRegister .Agree .wrap .top {
 	display: flex;
 	justify-content: center;
-	width: 520px;
+	width: 820px;
 	height: 50px;
 	flex-grow: 1;
 }
 
 .contactToRegister .Agree .wrap .top .customP11 {
 	padding-top: 4px;
+	margin-left: 140px;
 }
 
 .contactToRegister .Agree .wrap .boxesWrap {
 	display: flex;
+	margin-left: 15px;
 	justify-content: flex-start;
 	width: 50px;
 	flex-grow: 1;
@@ -2596,14 +2680,18 @@ abbr {
 .contactToRegister .Agree .wrap .boxesWrap .agreeBox {
 	display: flex;
 	flex-direction: row;
-	margin-left: 12px;
+	margin-left: 26px;
+}
+
+.contactToRegister .Agree .wrap .boxesWrap .agreeBox>.customP11{
+	margin-left: 3px;
 }
 
 .contactToRegister .Agree .wrap .boxesWrap .agreeDescriptionBtn {
 	width: 24px;
 	height: 24px;
 	margin-top: 3px;
-	margin-left: 12px;
+	margin-left: 34px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -2652,7 +2740,7 @@ tr {
 	font-size: 23px;
 	line-height: 28px;
 	color: #FFFFFF;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	cursor: pointer;
 }
 
@@ -2714,13 +2802,16 @@ tr {
 	display: flex;
 	cursor: pointer;
 
-	padding: 33px 60px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* padding: 33px 60px 33px 60px; */
+	padding-left: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
 }
 
 .programsPage .header .right .headerBtn1 .customP3 {
-	width: 80px;
+	width: 120px;
 }
 
 /* 도입 문의 */
@@ -2730,19 +2821,22 @@ tr {
 	flex-direction: column;
 	align-items: center;
 
-	padding: 33px 108px 33px 60px;
-	font-family: 'Inter', sans-serif;
+	/* padding: 33px 108px 33px 60px; */
+	padding-right: 60px;
+	padding-bottom: 33px;
+	padding-top: 33px;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
 }
 
 .programsPage .header .right .headerBtn2 .customP3 {
-	width: 80px;
+	width: 120px;
 }
 
 .programsPage .header .right .headerBtn2 .bottomHighlight {
-	width: 76px;
-	margin-left: -3px;
-	margin-top: 33px;
+	width: 96px;
+	margin-left: -8px;
+	margin-top: 30px;
 	background-color: #6F3AC1;
 }
 
@@ -2811,7 +2905,7 @@ tr {
 	font-weight: 500;
 	line-height: 140.02%;
 
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -2823,12 +2917,12 @@ tr {
 	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
-	width: 90px;
+	width: 145px;
 	height: 26px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -2844,12 +2938,12 @@ tr {
 	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
-	width: 140px;
+	width: 145px;
 	height: 26px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -2867,10 +2961,11 @@ tr {
 	padding-left: 9px;
 	padding-right: 9px;
 	height: 26px;
+	width: 160px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -2910,12 +3005,14 @@ tr {
 	margin-top: 9px;
 	margin-left: -10px;
 	padding-left: 9px;
+	padding-right: 9px;
+	width: 115px;
 	height: 26px;
 	letter-spacing: -0.9px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -2932,12 +3029,12 @@ tr {
 	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
-	width: 120px;
+	width: 110px;
 	height: 26px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -2978,12 +3075,12 @@ tr {
 	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
-	width: 105px;
+	width: 142px;
 	height: 26px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -3000,12 +3097,12 @@ tr {
 	margin-left: -10px;
 	padding-left: 9px;
 	padding-right: 9px;
-	width: 105px;
+	width: 142px;
 	height: 26px;
 
 	font-weight: 400;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	line-height: 140.02%;
 	color: #5B437E;
 	text-decoration: none;
@@ -3042,7 +3139,7 @@ tr {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(./Assets/appAI.svg);
+	background-image: url(./Assets/appAI2.svg);
 }
 
 /* 세번째 페이지 오른쪽 이미지 */
@@ -3085,7 +3182,6 @@ tr {
 	width: 469px;
 	height: 398px;
 	
-	background-color: red;
 	border-radius: 21px;
 	overflow: hidden;
 }
@@ -3104,6 +3200,31 @@ tr {
 }
 
 
+
+.programsPage .wrap .right .image_program5 .gifWrap1 {
+	position: relative;
+	left : 660px;
+	top: 1110px;
+	width: 500px;
+	height: 398px;
+	
+	background-color: red;
+	border-radius: 21px;
+	overflow: hidden;
+}
+
+
+/* 다섯번째 페이지 오른쪽 GIF 이미지 */
+.programsPage .wrap .right .image_program5 .gif1 {
+	/* gif 사이즈 */
+	width: 100%;
+	height: 100%;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaversePythonGIF11.gif);
+}
 
 
 

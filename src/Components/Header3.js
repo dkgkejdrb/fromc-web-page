@@ -6,9 +6,7 @@ import logo_dark from "../Assets/logo_dark.svg"
 
 const Header3 = () => {
     const [changeHeaderTransfrom, setChangeHeaderTransfrom] = useState('translateY(0px)');
-    const [changeHeaderBtn1Weight, setChangeHeaderBtn1Weight] = useState('0');
-    const [changeHeaderBtn1Highlight, setChangeHeaderBtn1Highlight] = useState('0');
-    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('0');
+    const [changeHeaderBtn2Weight, setChangeHeaderBtn2Weight] = useState('500');
     const [changeHeaderBtn2Highlight, setChangeHeaderBtn2Highlight] = useState('0');
 
     useEffect(() => {
@@ -35,20 +33,15 @@ const Header3 = () => {
     }
 
     const headerBtnOverHandler = (e) => {
-        if(e.target.className === 'customP3 btn1') { 
-            setChangeHeaderBtn1Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn1Weight('600');
-        } else if(e.target.className === 'customP3 btn2') { 
+        if(e.target.className === 'customP3 btn2') { 
             setChangeHeaderBtn2Highlight('2.5px solid #6F3AC1');
-            setChangeHeaderBtn2Weight('600');
+            setChangeHeaderBtn2Weight('700');
         }
     }
 
     const headerBtnOutHandler = (e) => {
-        setChangeHeaderBtn1Highlight('0');
-        setChangeHeaderBtn1Weight('');
         setChangeHeaderBtn2Highlight('0');
-        setChangeHeaderBtn2Weight('');
+        setChangeHeaderBtn2Weight('500');
     }
 
     return (
@@ -84,13 +77,13 @@ const Header3 = () => {
                             (e) => headerBtnOutHandler(e)
                         }
                         style={{
-                            color: '#000000',
-                            fontWeight: changeHeaderBtn1Weight,
+                            color: '#6F3AC1',
+                            fontWeight: '700'
                         }}
                     >프로그램</span>
                     <hr className='bottomHighlight'
                         style={{
-                            border: changeHeaderBtn1Highlight,
+                            border: '2.5px solid #6F3AC1'
                         }}
                     />
                 </Link>
