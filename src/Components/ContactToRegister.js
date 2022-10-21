@@ -934,6 +934,7 @@ const ContactToRegister = () => {
                     placeholder="학교/기관 주소"
                     onClick={handleClick}
                     defaultValue={address}
+                    onFocus={e => (e.target.placeholder = "")}
                 >
                 </input>
             </div>
@@ -941,18 +942,18 @@ const ContactToRegister = () => {
     };
 
     // 개인동의 설명 규칙 보이기 상태값
-    const [showAgreeDescription, setShowAgreeDescription] = useState('135px');
+    const [showAgreeDescription, setShowAgreeDescription] = useState('155px');
     // 개인동의 버튼 이미지(화살표 위아래) 교체
     const [agreeBtnImage, setAgreeBtnImage] = useState(`url(${arrowDown})`);
 
     // 개인동의 설명 규칙 버튼 핸들러
     const AgreeDescriptionBtnHandler = () => {
-        if (showAgreeDescription === '135px') {
+        if (showAgreeDescription === '155px') {
             setShowAgreeDescription('380px');
             setAgreeBtnImage(`url(${arrowUp})`);
         }
         else {
-            setShowAgreeDescription('135px');
+            setShowAgreeDescription('155px');
             setAgreeBtnImage(`url(${arrowDown})`);
         }
     }
@@ -1367,6 +1368,9 @@ const ContactToRegister = () => {
                                         placeholder="총 도입 예상 인원"
                                         onFocus={e => (e.target.placeholder = "")}
                                         onBlur={e => (e.target.placeholder = "총 도입 예상 인원")}
+                                        style = {{
+                                            border: '0.5px solid rgb(118, 118, 118)'
+                                        }}
                                         
                                         value={userInfo.studentCount}
                                         onChange={onChangeStudentsCount}
@@ -1416,7 +1420,12 @@ const ContactToRegister = () => {
                                 </div>
                                 <div className="listWrap">
                                     <div className="customP">
+                                        <div className="logoWrap">
+                                            <div className="source"></div>
+                                        </div>
+                                        <span>
                                         원데이 클래스
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -1482,7 +1491,8 @@ const ContactToRegister = () => {
                                         calendarType="US"
                                         value={date}
                                         minDate={tomorrow}
-                                        
+                                        // 해가 바뀌면 변경해야 함
+                                        maxDate={new Date(2023, 11, 31)}
 
                                         // 하이라이트 처리
                                         tileClassName={({ date, view }) => {
@@ -1535,6 +1545,9 @@ const ContactToRegister = () => {
                                         onFocus={e => (e.target.placeholder = "")}
                                         onBlur={e => (e.target.placeholder = "신청자 이름")}
                                         onChange={onChangeName}
+                                        style = {{
+                                            border: '0.5px solid rgb(118, 118, 118)'
+                                        }}
                                     ></input>
                                 </div>
                             </div>
@@ -1556,6 +1569,9 @@ const ContactToRegister = () => {
                                         onFocus={e => (e.target.placeholder = "")}
                                         onBlur={e => (e.target.placeholder = "작성자 이메일")}
                                         onChange={onChangeEmail}
+                                        style = {{
+                                            border: '0.5px solid rgb(118, 118, 118)'
+                                        }}
                                     ></input>
                                 </div>
                             </div>
@@ -1565,7 +1581,7 @@ const ContactToRegister = () => {
                             <div className="wrap">
                                 <div className="title">
                                     <div className="customH12">
-                                        휴대번호
+                                        휴대폰 번호
                                     </div>
                                 </div>
                                 <div className="input">
@@ -1577,6 +1593,9 @@ const ContactToRegister = () => {
                                         onFocus={e => (e.target.placeholder = "")}
                                         onBlur={e => (e.target.placeholder = "휴대폰 번호")}
                                         onChange={onChangePhonNumber}
+                                        style = {{
+                                            border: '0.5px solid rgb(118, 118, 118)'
+                                        }}
                                     ></input>
                                 </div>
                             </div>
@@ -1637,6 +1656,8 @@ const ContactToRegister = () => {
                                                         className="orgInfoInput"
                                                         placeholder="학교 명/기관 명"
                                                         value={userInfo.inquirer.orgName}
+                                                        onFocus={e => (e.target.placeholder = "")}
+                                                        onBlur={e => (e.target.placeholder = "학교 명/기관 명")}
                                                         onChange={onChangeOrgName}
                                                     ></input>
                                                 </div>
@@ -1673,7 +1694,7 @@ const ContactToRegister = () => {
                                     </div>
                                 </div>
                                 <div className="boxesWrap">
-                                    <div className="box1" style={{ width: '130px', height: '24px' }}>
+                                    <div className="box1" style={{ width: '115px', height: '24px' }}>
                                         <input
                                             id="checkBox"
                                             type="checkbox"
@@ -1682,7 +1703,7 @@ const ContactToRegister = () => {
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>지인 추천</div>
                                     </div>
-                                    <div className="box1" style={{ width: '110px', height: '24px' }}>
+                                    <div className="box1" style={{ width: '94px', height: '24px' }}>
                                         <input
                                             id="checkBox"
                                             type="checkbox"
@@ -1691,7 +1712,7 @@ const ContactToRegister = () => {
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>제안서</div>
                                     </div>
-                                    <div className="box1" style={{ width: '90px', height: '24px' }}>
+                                    <div className="box1" style={{ width: '75px', height: '24px' }}>
                                         <input
                                             id="checkBox"
                                             type="checkbox"
@@ -1700,7 +1721,7 @@ const ContactToRegister = () => {
                                         ></input>
                                         <div className="customP11" style={{ marginLeft: '3px' }}>검색</div>
                                     </div>
-                                    <div className="box1" style={{ width: '90px', height: '24px' }}>
+                                    <div className="box1" style={{ width: '75px', height: '24px' }}>
                                         <input
                                             id="checkBox"
                                             type="checkbox"
@@ -1710,6 +1731,9 @@ const ContactToRegister = () => {
                                         <div className="customP11" style={{ marginLeft: '3px' }}>기타</div>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="bottomLine">
+                                
                             </div>
                         </div>
 
@@ -1728,7 +1752,7 @@ const ContactToRegister = () => {
                                                 type="checkbox"
                                                 onChange={onChangeAgree}
                                             ></input>
-                                            <div className="customP11">동의 함</div>
+                                            <div className="customP11">동의함</div>
                                         </div>
                                         <div
                                             className="agreeDescriptionBtn"
@@ -1752,7 +1776,9 @@ const ContactToRegister = () => {
                                 to={ref}
                                 smooth={true}
 
-                            >도입 문의 하기</LinkToRegsiter>
+                            >
+                                <span>도입 문의 하기</span>
+                                </LinkToRegsiter>
                         </div>
                     { /* </div> */ }  
                     {/* 이전 bottomWrap */}

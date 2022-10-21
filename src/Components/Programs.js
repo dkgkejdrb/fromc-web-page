@@ -82,7 +82,7 @@ const Programs = () => {
                     <div className='first Row'>
                         <Program title='스크래치 AI 프로젝트' text='티처블 머신과 스크래치로 재미있는 <br/>AI 프로그램을 만들어 봅니다.' id='_1_1' to='/ProgramPage1' programScale={programScale1_1} />
                         <Program title='앱인벤터 AI 프로젝트' text='AI 기능을 가진 모바일 앱을 만들면서<br/>머신러닝을 배웁니다.' id='_1_2' to='/ProgramPage2' programScale={programScale1_2} />
-                        <Program title='캐글 머신러닝 프로젝트' text='‘다양한 캐글 예제를 통해 데이터 분석과<br/>머신러닝 기초부터 차근차근 배웁니다.' id='_1_3' to='/ProgramPage3' programScale={programScale1_3} />
+                        <Program title='캐글 머신러닝 프로젝트' text='다양한 캐글 예제를 통해 데이터 분석과<br/>머신러닝 기초부터 차근차근 배웁니다.' id='_1_3' to='/ProgramPage3' programScale={programScale1_3} />
                     </div>
                     <div className='second Row'>
                         <Program title='메타버스 아두이노' text='가상 아두이노 코딩으로<br/>피지컬 컴퓨팅을 배웁니다.' id='_2_1' to='/ProgramPage4' programScale={programScale2_1} />

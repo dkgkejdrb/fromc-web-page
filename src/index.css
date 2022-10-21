@@ -192,7 +192,7 @@ table {
 }
 
 .customH10 {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 26px;
 	line-height: 31px;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -208,9 +208,9 @@ table {
 }
 
 .customH12 {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 26px;
-	line-height: 31.47px;
+	line-height: 31px;
 	font-family: 'Noto Sans KR', sans-serif;
 	color: #000000;
 }
@@ -475,7 +475,7 @@ table {
 	padding-left: 192px;
 	padding-right: 192px;
 	padding-top: 155px;
-	padding-bottom: 155px;
+	padding-bottom: 51.34px;
 	box-sizing: border-box;
 }
 
@@ -555,10 +555,10 @@ table {
 /* 특징 - 설명 */
 .secondLine.rightPictureSection {
 	width: 100%;
-	padding-top: 100px;
+	padding-top: 51.34px;
 	padding-left: 192px;
 	padding-right: 192px;
-	padding-bottom: 100px;
+	padding-bottom: 51.34px;
 	box-sizing: border-box;
 }
 
@@ -640,10 +640,10 @@ table {
 /* 특징 - 증명 */
 .thirdLine.leftPictureSection {
 	width: 100%;
-	padding-top: 100px;
+	padding-top: 51.34px;
 	padding-left: 192px;
 	padding-right: 192px;
-	padding-bottom: 100px;
+	padding-bottom: 150px;
 	box-sizing: border-box;
 }
 
@@ -893,6 +893,7 @@ table {
 .programs {
 	display: flex;
 	justify-content: center;
+	background: rgba(238, 238, 238, 0.4);
 }
 
 .programs>.wrap {
@@ -900,12 +901,13 @@ table {
 	flex-direction: column;
 	align-items: center;
 	width: 1440px;
-	height: 1777px;
-	background: rgba(238, 238, 238, 0.4);
+	height: 1817px;
+	
 }
 
 .programs .wrap .title {
-	margin-top: 70px;
+	margin-top: 80px;
+	margin-bottom: 80px;
 
 	text-align: center;
 	font-weight: 600;
@@ -943,9 +945,6 @@ table {
 	color: #5B5B5B;
 }
 
-.programs>.wrap>.wrap {
-	margin-top: 39px;
-}
 
 .programs .wrap .wrap .program {
 	width: 383px;
@@ -1075,19 +1074,19 @@ table {
 /* ================ 5. 푸터 페이지 ================== */
 .Footer {
 	width: 100%;
-	height: 300px;
+	height: 294px;
 
 	background: #F1F1F1;
 }
 
 .Footer .Wrap {
+	margin-top: 71px;
 	background: #F1F1F1;
 }
 
 .Footer .Wrap .Logo {
 	width: 224px;
 	height: 72px;
-	margin-top: 91px;
 }
 
 .Footer .Wrap .Logo .source {
@@ -1837,11 +1836,14 @@ table {
 	width: 100%;
 	height: 39px;
 
+	border: none;
+	outline: none;
+
 	margin-right: 190px;
 }
 
 .contactToRegister .numberOfStudents .wrap .input #input {
-	width: 280px;
+	width: 284px;
 	margin-left: 66px;
 	text-align: center;
 	border-radius: 5px;
@@ -1849,6 +1851,8 @@ table {
 	font-weight: 500;
 	font-size: 17px;
 	line-height: 140.52%;
+
+	outline: none;
 
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -1931,7 +1935,7 @@ table {
 .contactToRegister .typeOfLesson .wrap .listWrap {
 	display: flex;
 	width: 100%;
-	margin-left: 10px;
+	margin-left: 14px;
 	margin-right: 190px;
 }
 
@@ -1950,6 +1954,24 @@ table {
 	background-color: #6F3AC1;
 	border-radius: 5px;
 }
+
+.contactToRegister .typeOfLesson .wrap .listWrap .customP>span{
+	margin-right: 18px;
+}
+
+.contactToRegister .typeOfLesson .wrap .listWrap .logoWrap{
+	width: 33px;
+	height: 33px;
+}
+
+.contactToRegister .typeOfLesson .wrap .listWrap .logoWrap>.source{
+	width: 100%;
+	height: 100%;
+	background-image: url(./Assets/typeofLesson_Icon.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}	
 
 
 /* ================ 9. 수업 횟수 ================== */
@@ -2056,7 +2078,7 @@ table {
 .bars {
 	width: 100%;
 	height: 100%;
-	margin-left: 80px;
+	margin-left: 25px;
 	display: flex;
 }
 
@@ -2315,7 +2337,8 @@ abbr {
 	align-items: center;
 
 	padding-top: 79px;
-	margin-left: 380px;
+	/* margin-left: 380px; */
+	margin-left: 257px;
 	margin-right: 255px;
 }
 
@@ -2345,9 +2368,9 @@ input:focus {
 	display: flex;
 	text-align: center;
 
-	
+	outline: none;
 
-	width: 280px;
+	width: 284px;
 	height: 33px;
 	border-radius: 5px;
 
@@ -2370,7 +2393,8 @@ input:focus {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 380px;
+	/* margin-left: 380px; */
+	margin-left: 257px;
 	margin-right: 255px;
 }
 
@@ -2396,7 +2420,7 @@ input:focus {
 	display: flex;
 	text-align: center;
 
-	width: 280px;
+	width: 284px;
 	height: 33px;
 	border-radius: 5px;
 
@@ -2417,7 +2441,8 @@ input:focus {
 	align-items: center;
 
 	margin-top: 34px;
-	margin-left: 380px;
+	/* margin-left: 380px; */
+	margin-left: 257px;
 	margin-right: 255px;
 }
 
@@ -2428,11 +2453,15 @@ input:focus {
 }
 
 .contactToRegister .phoneNumber .wrap .title {
-	width: 111px;
+	width: 131px;
 
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
+}
+
+.contactToRegister .phoneNumber .wrap .title .customH12{
+	width: 151px;
 }
 
 .contactToRegister .phoneNumber .wrap .input {
@@ -2443,7 +2472,7 @@ input:focus {
 	display: flex;
 	text-align: center;
 
-	width: 280px;
+	width: 284px;
 	height: 33px;
 	border-radius: 5px;
 
@@ -2451,7 +2480,7 @@ input:focus {
 	font-size: 17px;
 	line-height: 140.52%;
 
-	margin-left: 100px;
+	margin-left: 80px;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -2464,12 +2493,13 @@ input:focus {
 	text-align: center;
 
 	margin-top: 43px;
-	margin-left: 380px;
+	/* margin-left: 380px; */
+	margin-left: 257px;
 }
 
 .contactToRegister .selectOrg .wrap .title {
 	display: flex;
-	width: 210px;
+	width: 207px;
 }
 
 .contactToRegister .selectOrg .wrap .right {
@@ -2504,13 +2534,14 @@ input:focus {
 .contactToRegister .right .wrap .selectOrgType .left {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: flex-start;
 
-	font-size: 17px;
-	font-weight: 500;
-	line-height: 23.89px;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 24px;
 	color: #000000;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .contactToRegister .right .wrap .selectOrgType .left>span {
@@ -2518,10 +2549,14 @@ input:focus {
 }
 
 .contactToRegister .right .wrap .selectOrgType .right {
-	font-size: 17px;
-	font-weight: 500;
-	line-height: 23.89px;
+	display: flex;
+	align-items: center;
+
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 24px;
 	color: #000000;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .contactToRegister .right .wrap .selectOrgType .right>span {
@@ -2574,8 +2609,7 @@ input:focus {
 /* =============== 수업 문의 랩 ===== */
 .contactToRegister .wrap .bottomWrap1 {
 	width: 1250px;
-	height: 380px;
-	height: 135px;
+	height: 154px;
 	overflow: hidden;
 	background-color: #F6F6F6;
 
@@ -2585,19 +2619,29 @@ input:focus {
 
 /* ================ 15. 수업 문의 경로 ================== */
 .contactToRegister .howToKnowUs {
-	width: 873px;
-	height: 40px;
+	width: 100%;
+	height: 70px;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
 
 	margin-top: 19px;
-	margin-left: 380px;
+}
+
+.contactToRegister .howToKnowUs .bottomLine {
+
+	margin-left: 140px;
+	width: 973px;
+	height: 35px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.27);
 }
 
 .contactToRegister .howToKnowUs .wrap {
 
 	display: flex;
+
+	justify-content: center;
 	flex-direction: row;
 }
 
@@ -2605,12 +2649,15 @@ input:focus {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 291px;
+	width: 207px;
+
+	margin-left: 257px;
 }
 
 .contactToRegister .howToKnowUs .wrap .boxesWrap {
 	display: flex;
-	width: 100%;
+	align-items: center;
+	width: 446px;
 	padding-top: 2px;
 }
 
@@ -2621,15 +2668,15 @@ input:focus {
 }
 
 .contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(2) {
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 .contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(3) {
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 .contactToRegister .howToKnowUs .wrap .boxesWrap .box1:nth-of-type(4) {
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 #checkBox {
@@ -2638,12 +2685,11 @@ input:focus {
 }
 
 
-
 /* ================ 16. 개인정보 수집, 이용에 대한 동의 ================== */
 .contactToRegister .Agree {
 	width: 100%;
 
-	margin-top: 30px;
+	margin-top: 26px;
 	display: flex;
 	justify-content: center;
 }
@@ -2666,7 +2712,7 @@ input:focus {
 
 .contactToRegister .Agree .wrap .top .customP11 {
 	padding-top: 4px;
-	margin-left: 140px;
+	margin-left: 105px;
 }
 
 .contactToRegister .Agree .wrap .boxesWrap {
@@ -2680,11 +2726,14 @@ input:focus {
 .contactToRegister .Agree .wrap .boxesWrap .agreeBox {
 	display: flex;
 	flex-direction: row;
-	margin-left: 26px;
+	margin-left: 14px;
 }
 
 .contactToRegister .Agree .wrap .boxesWrap .agreeBox>.customP11{
 	margin-left: 3px;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 24px;
 }
 
 .contactToRegister .Agree .wrap .boxesWrap .agreeDescriptionBtn {
@@ -2731,7 +2780,7 @@ tr {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 267px;
+	width: 230px;
 	height: 53px;
 	background: #8161b1;
 	border: 1px solid rgba(224, 224, 224, 0.7);
@@ -2742,6 +2791,10 @@ tr {
 	color: #FFFFFF;
 	font-family: 'Noto Sans KR', sans-serif;
 	cursor: pointer;
+}
+
+.Submit span {
+	margin-bottom: 2.5px;
 }
 
 /* ================ 18. 라인배너 ================== */
@@ -3117,18 +3170,348 @@ tr {
 	display: flex;
 	align-items: flex-start;
 	width: 1300px;
-	height: 3900px;
+	height: 3360px;
 
 	margin-left: 100px;
 }
 
-.programsPage .wrap .right .image_program1 {
+.programsPage .wrap .right .image_program {
+	width: 100%;
+	height: 100%;
+}
+
+.programsPage .wrap .right .image_program .Wrap {
+	width: 100%;
+	height: 100%;
+	background: #F5F5F5;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 24px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+	background-color: #373737;
+	border-radius: 24px 24px 0px 0px;;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Left{
+	width: 55%;
+	height: 100%;
+	border-radius: none;
+	border-top-left-radius: 24px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Left .title{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 700;
+	font-size: 38px;
+	line-height: 140.02%;
+	
+	color: #FFFFFF;
+
+	margin-left: 270px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Left .subTitle{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 148.5%;
+	
+	color: #FFFFFF;
+
+	margin-left: 270px;
+	margin-top: 22px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Right{
+	width: 45%;
+	height: 100%;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Right .wrap {
+	width: 424px;
+	height: 100%;
+	margin-left: -45px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .firstLine .Right .wrap .source {
 	width: 100%;
 	height: 100%;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(./Assets/scratchAI.svg);
+	background-image: url(./Assets/scratchAI1.png);
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine{
+
+	width: 100%;
+	height: 328px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 추천 대상, 제공 차시 */
+/* 왼쪽 박스 */
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left{
+	width: 369px;
+	height: 176px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
+	border-radius: 24px;
+	
+	margin-right: 10.5px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left .top{
+	display: flex;
+	align-items: center;
+	margin-left: 44px;
+	width: 100%;
+	height: 41px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left .top .icon{
+	width: 41px;
+	height: 41px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left .top .icon .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/icon_recommendation.png);
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left .top .title{
+	font-weight: 600;
+	font-size: 21px;
+	line-height: 140.52%;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	margin-left: 16px;
+	color: #313C5C;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Left .bottom{
+	margin-left: 44px;
+	margin-top: 17px;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 146.5%;
+
+	color: #575757;
+}
+
+/* 오른쪽 박스 */
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right{
+	width: 369px;
+	height: 176px;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
+	border-radius: 24px;
+
+	margin-left: 10.5px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right .top{
+	margin-top: 38px;
+	display: flex;
+	align-items: center;
+	margin-left: 44px;
+	width: 100%;
+	height: 41px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right .top .icon{
+	width: 41px;
+	height: 41px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right .top .icon .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/icon_clock.png);
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right .top .title{
+	font-weight: 600;
+	font-size: 21px;
+	line-height: 140.52%;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	margin-left: 16px;
+	color: #313C5C;
+}
+
+.programsPage .wrap .right .image_program .Wrap .secondLine .Right .bottom{
+	margin-left: 44px;
+	margin-top: 15px;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 146.5%;
+
+	color: #575757;
+}
+
+/* 프로그램 소개 1 */
+.programsPage .wrap .right .image_program .Wrap .thirdLine {
+	width: 100%;
+	height: 475px;
+	display: flex;
+	background: #FFFFFF;
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Left{
+	width: 50%;
+	height: 100%;
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Left .image{
+	padding-top: 96px;
+	padding-left: 271px;
+	width: 377px;
+	height: 298px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchAI2.png);
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Right{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding-left: 65px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Right .top{
+	width : 320px;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 140.02%;
+	color: #1F1F1F;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.programsPage .wrap .right .image_program .Wrap .thirdLine .Right .bottom{
+	width: 320px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 138%;
+
+	margin-top: 7px;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 프로그램 소개 2 */
+.programsPage .wrap .right .image_program .Wrap .fourthLine {
+	width: 100%;
+	height: 475px;
+	display: flex;
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Right{
+	width: 50%;
+	height: 100%;
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Right .image{
+	padding-top: 96px;
+	padding-right: 275px;
+	width: 377px;
+	height: 298px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchAI3.png);
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Left{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding-left: 271px;
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Left .top{
+	width : 320px;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 140.02%;
+	color: #1F1F1F;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.programsPage .wrap .right .image_program .Wrap .fourthLine .Left .bottom{
+	width: 320px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 138%;
+
+	margin-top: 7px;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 3교시 커리큘럼 */
+.programsPage .wrap .right .image_program .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #E5E7FD;
+
+	display: flex;
+	justify-content: center;
+}
+
+.programsPage .fifthLine .firstSection .table {
+	width: 782px;
+	height: 447px;
+
+	background: #F4F5FF;
+	border-radius: 13px;
+
 }
 
 
