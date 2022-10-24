@@ -69,7 +69,7 @@ const Navigation = ({higlightLine}) => {
                         </div>
                         <div className="bottom" >
                             <Link className="scratchAI" 
-                            to="/ProgramPage1"
+                            to="/scratch_ai"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -93,7 +93,7 @@ const Navigation = ({higlightLine}) => {
                             </Link>
 
                             <Link className="appAI" 
-                            to="/ProgramPage2"
+                            to="/appinventor_ai"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -117,7 +117,7 @@ const Navigation = ({higlightLine}) => {
                             </Link>
 
                             <Link className="kaggleAI" 
-                            to="/ProgramPage3"
+                            to="/kaggle_ai"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -150,7 +150,7 @@ const Navigation = ({higlightLine}) => {
                         </div>
                         <div className="bottom">
                             <Link className="metaverseArduino" 
-                            to="/ProgramPage4"
+                            to="/arduino_metaverse"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -173,7 +173,7 @@ const Navigation = ({higlightLine}) => {
                                 ></div>
                             </Link>
                             <Link className="metaversePython" 
-                            to="/ProgramPage5"
+                            to="/python_metaverse"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -206,7 +206,7 @@ const Navigation = ({higlightLine}) => {
                         </div>
                         <div className="bottom">
                             <Link className="scratchGame" 
-                            to="/ProgramPage6"
+                            to="/scratch_gamemaking"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }
@@ -229,7 +229,7 @@ const Navigation = ({higlightLine}) => {
                                 ></div>
                             </Link>
                             <Link className="appGame" 
-                            to="/ProgramPage7"
+                            to="/appinventor_gamemaking"
                             onMouseOver={
                                 (e) => bottomLineShow(e) 
                             }

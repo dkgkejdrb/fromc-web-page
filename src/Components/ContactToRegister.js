@@ -433,7 +433,7 @@ const ContactToRegister = () => {
         });
     };
         
-
+    const [guGunScaleUp, setguGunScaleUp] = useState('40px');
     const SelectGugun = () => {
         if(userInfo.willIntroductionSido === '서울') {
             return (
@@ -688,8 +688,19 @@ const ContactToRegister = () => {
     const [bar1DisplayValue, bar1ShowDisplayValue] = useState('');
     const [bar2DisplayValue, bar2ShowDisplayValue] = useState('none');
     const [bar3DisplayValue, bar3ShowDisplayValue] = useState('none');
+    
+    // 달력 높이
+    const [calendarHeight, setCalendarHeight] = useState('970px');
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
+        if (pointer === 0) {
+            
+        } else if (pointer === 1) {
+            setCalendarHeight('882px');
+        } else {
+            setCalendarHeight('970px');
+        }
+
         // 중복 등록 막기
         if ((barInfo[0].date !== '2022-OO-OO') && (barInfo[1].date !== '2022-OO-OO')) {
             if ((barInfo[0].date === barInfo[1].date)) {
@@ -722,11 +733,18 @@ const ContactToRegister = () => {
             return;
         }
 
+        // // 여기까지
         if (pointer >= 2) {
             setPointer(2);
+            // setCalendarHeight('970px');
             alert('수업 일정은 최대 3개까지만 등록가능합니다.');
         } else {
             setPointer(pointer + 1);
+            // if(pointer === 0) {
+            //     setCalendarHeight('780px');
+            // } else if(pointer === 1) {
+            //     setCalendarHeight('882px');
+            // }
         }
     }
 
@@ -1291,7 +1309,12 @@ const ContactToRegister = () => {
                 <div className="thirdLine"
                 id="cityTown">
                     <div className="Wrap">
-                        <div className="hopeRegion">
+                        <div className="hopeRegion"
+                            style={
+                            {
+                                height: guGunScaleUp
+                            }
+                        }>
                             <div className="wrap">
                                 <div className="title">
                                     <div
@@ -1304,7 +1327,13 @@ const ContactToRegister = () => {
                                 <div className="listWrap">
                                     <div id='list'>
                                         <select
-                                            onChange={onChangeCityInfo}
+                                            onChange={onChangeCityInfo
+                                            }
+                                            onClick={()=> {
+                                                if(userInfo.willIntroductionSido === '서울' || userInfo.willIntroductionSido === '경기') {
+                                                    setguGunScaleUp('100px');
+                                                }
+                                            }}
                                         >
 
                                             <option value=''>시/도 선택</option>
@@ -1317,7 +1346,11 @@ const ContactToRegister = () => {
                                         <SelectGugun />
                                     </div>
                                 </div>
+                                
                             </div>
+                            {/* <div id='list'>
+                                <SelectGugun />
+                            </div>  */}
                         </div>
 
                         <div className="howManyClasses">
@@ -1459,7 +1492,13 @@ const ContactToRegister = () => {
                     </div>
 
                     <div id="calendar"></div>
-                    <div className="selectLessonDays">
+                    <div className="selectLessonDays"
+                        onChange={{
+                        }}
+                        style={{
+                            height: '970px'
+                        }}
+                    >
                         <div className="wrap">
                             <div className="title">
                                 <div className="top">

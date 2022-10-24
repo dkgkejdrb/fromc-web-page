@@ -1714,10 +1714,13 @@ table {
 }
 
 .contactToRegister .hopeRegion {
+	height: 20px;
 	height: 100px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+
+	transition: 0.5s;
 }
 
 .contactToRegister .hopeRegion .wrap {
@@ -2029,6 +2032,7 @@ table {
 .contactToRegister .selectLessonDays {
 	height: 970px;
 	margin-top: 128px;
+	transition: 0.5s;
 }
 
 .contactToRegister .selectLessonDays .wrap {
@@ -3165,7 +3169,7 @@ tr {
 }
 
 
-/* 오른쪽 이미지 */
+/* 프로그램 페이지 - 우측 상세 (공통) */
 .programsPage .wrap .right {
 	display: flex;
 	align-items: flex-start;
@@ -3188,16 +3192,6 @@ tr {
 	border-radius: 24px;
 }
 
-.programsPage .wrap .right .image_program .Wrap .firstLine{
-	width: 100%;
-	height: 412px;
-	background-color: #373737;
-	border-radius: 24px 24px 0px 0px;;
-
-	display: flex;
-	flex-direction: row;
-}
-
 .programsPage .wrap .right .image_program .Wrap .firstLine .Left{
 	width: 55%;
 	height: 100%;
@@ -3212,7 +3206,7 @@ tr {
 .programsPage .wrap .right .image_program .Wrap .firstLine .Left .title{
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 700;
-	font-size: 38px;
+	font-size: 35px;
 	line-height: 140.02%;
 	
 	color: #FFFFFF;
@@ -3223,7 +3217,7 @@ tr {
 .programsPage .wrap .right .image_program .Wrap .firstLine .Left .subTitle{
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
-	font-size: 24px;
+	font-size: 18px;
 	line-height: 148.5%;
 	
 	color: #FFFFFF;
@@ -3243,7 +3237,19 @@ tr {
 	margin-left: -45px;
 }
 
-.programsPage .wrap .right .image_program .Wrap .firstLine .Right .wrap .source {
+/* 프로그램페이지 - 스크래치AI프로젝트 - 첫번째줄*/
+.programsPage .wrap .right .image_program.first .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+	background-color: #373737;
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+/* 프로그램페이지 - 스크래치AI프로젝트 - 첫번째줄 오른쪽 이미지 */
+.programsPage .wrap .right .image_program.first .Wrap .firstLine .Right .wrap .source {
 	width: 100%;
 	height: 100%;
 	background-size: contain;
@@ -3251,6 +3257,368 @@ tr {
 	background-position: center;
 	background-image: url(./Assets/scratchAI1.png);
 }
+
+.programsPage .wrap .right .image_program.first .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchAI2.png);
+}
+
+.programsPage .wrap .right .image_program.first .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchAI3.png);
+}
+
+/* 프로그램페이지 - 스크래치AI프로젝트 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.first .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #E5E7FD;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 앱인벤터AI프로젝트 - 첫번째줄*/
+.programsPage .wrap .right .image_program.second .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+	background: #365CE0;
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+/* 프로그램페이지 - 앱인벤터AI프로젝트 - 둘째줄 오른쪽 이미지 프레임 */
+.programsPage .wrap .right .image_program.second .Wrap .firstLine .Right .wrap {
+	display: flex;
+	align-items: center;
+}
+
+/* 프로그램페이지 - 앱인벤터AI프로젝트 - 둘째줄 오른쪽 이미지 */
+.programsPage .wrap .right .image_program.second .Wrap .firstLine .Right .wrap .source {
+	width: 100%;
+	height: 342px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appinventerAI.png);
+}
+
+.programsPage .wrap .right .image_program.second .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appInventerAI22.svg);
+}
+
+.programsPage .wrap .right .image_program.second .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appinventerAI3.png);
+}
+
+/* 프로그램페이지 - 앱인벤터AI프로젝트 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.second .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #A9B8ED;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 메타버스아두이노 - 첫번째줄*/
+.programsPage .wrap .right .image_program.fourth .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaverseArduino.png);
+
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.programsPage .wrap .right .image_program.fourth .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaverseArduino2.png);
+}
+
+.programsPage .wrap .right .image_program.fourth .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaverseArduino3.png);
+}
+
+/* 프로그램페이지 - 메타버스아두이노 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.fourth .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #CEEBFF;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 메타버스파이썬 - 첫번째줄*/
+.programsPage .wrap .right .image_program.fifth .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/metaversePython.png);
+
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.programsPage .wrap .right .image_program.fifth .Wrap .thirdLine .Left .image {
+	width: 369px;
+	height: 298px;
+}
+
+.programsPage .wrap .right .image_program.fifth .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-image: url(./Assets/metaversePythonGIF1.gif);
+	border-radius: 21px;
+}
+
+.programsPage .wrap .right .image_program.fifth .Wrap .thirdLine .Right .image {
+	width: 369px;
+	height: 298px;
+}
+
+.programsPage .wrap .right .image_program.fifth .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-image: url(./Assets/metaversePythonGIF11.gif);
+	border-radius: 21px;
+}
+
+/* 프로그램페이지 - 메타버스파이썬 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.fifth .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #F8CCBD;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 캐글머신러닝프로젝트 - 첫번째줄*/
+.programsPage .wrap .right .image_program.third .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/kaggleAI.png);
+
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+/* 프로그램페이지 - 캐글머신러닝프로젝트 - 둘째줄 오른쪽 이미지 프레임 */
+.programsPage .wrap .right .image_program.third .Wrap .firstLine .Right .wrap {
+	display: flex;
+	align-items: center;
+}
+
+.programsPage .wrap .right .image_program.third .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/kaggleAI3.png);
+}
+
+.programsPage .wrap .right .image_program.third .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/kaggleAI2.png);
+}
+
+/* 프로그램페이지 - 캐글머신러닝프로젝트 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.third .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #D4D8FD;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 앱인벤터 게임 메이킹 - 첫번째줄*/
+.programsPage .wrap .right .image_program.seventh .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appinventorGame.png);
+
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+/* 프로그램페이지 - 앱인벤터 게임 메이킹 - 둘째줄 오른쪽 이미지 프레임 */
+.programsPage .wrap .right .image_program.seventh .Wrap .firstLine .Right .wrap {
+	display: flex;
+	align-items: center;
+}
+
+/* 여기까지 */
+.programsPage .wrap .right .image_program.seventh .Wrap .thirdLine .Left {
+	width: 50%;
+}
+
+.programsPage .wrap .right .image_program.seventh .Wrap .thirdLine .Left .image{
+	width: 327px;
+}
+
+.programsPage .wrap .right .image_program.seventh .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appInventerAI22.svg);
+}
+.programsPage .wrap .right .image_program.seventh .Wrap .fourthLine{
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/appInventor3.png);
+}
+
+/* 프로그램페이지 - 앱인벤터 게임 메이킹 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.seventh .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #DCF2F2;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 프로그램페이지 - 스크래치 게임 메이킹 - 첫번째줄*/
+.programsPage .wrap .right .image_program.sixth .Wrap .firstLine{
+	width: 100%;
+	height: 412px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchGame1.png);
+
+	border-radius: 24px 24px 0px 24px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+/* 프로그램페이지 - 스크래치 게임 메이킹 - 둘째줄 오른쪽 이미지 프레임 */
+.programsPage .wrap .right .image_program.sixth .Wrap .firstLine .Right .wrap {
+	display: flex;
+	align-items: center;
+}
+
+.programsPage .wrap .right .image_program.sixth .Wrap .thirdLine .Left .image {
+	width: 361px;
+	height: 275px;
+}
+
+.programsPage .wrap .right .image_program.sixth .Wrap .thirdLine .Left .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchGame2.png);
+}
+
+.programsPage .wrap .right .image_program.sixth .Wrap .fourthLine .Right .image .source{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(./Assets/scratchGame3.png);
+}
+
+/* 프로그램페이지 - 스크래치 게임 메이킹 - 3교시, 6교시 배경*/
+.programsPage .wrap .right .image_program.sixth .Wrap .fifthLine {
+	width: 100%;
+	height: 1720px;
+	background: #F5CCCC;
+
+	display: flex;
+	justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .programsPage .wrap .right .image_program .Wrap .secondLine{
 
@@ -3297,7 +3665,7 @@ tr {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(./Assets/icon_recommendation.png);
+	background-image: url(./Assets/recommendation1.png);
 }
 
 .programsPage .wrap .right .image_program .Wrap .secondLine .Left .top .title{
@@ -3354,7 +3722,7 @@ tr {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url(./Assets/icon_clock.png);
+	background-image: url(./Assets/icon_clock1.svg);
 }
 
 .programsPage .wrap .right .image_program .Wrap .secondLine .Right .top .title{
@@ -3495,67 +3863,38 @@ tr {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 테이블 */
 /* 3교시 커리큘럼 */
-.programsPage .wrap .right .image_program .Wrap .fifthLine {
+.cellStyle1 {
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 140.02%;
+	color: #424242;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cellStyle2 {
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 140.02%;
+	color: #424242;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cellStyle3 {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 140.02%;
+	color: #424242;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 13px;
 	width: 100%;
-	height: 1720px;
-	background: #E5E7FD;
+	height: 100%;
 
 	display: flex;
-	justify-content: center;
-}
-
-.programsPage .fifthLine .firstSection .table {
-	width: 782px;
-	height: 447px;
-
-	background: #F4F5FF;
-	border-radius: 13px;
-
-}
-
-
-/* 두번째 페이지 오른쪽 이미지 */
-.programsPage .wrap .right .image_program2 {
-	width: 100%;
-	height: 100%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/appAI2.svg);
-}
-
-/* 세번째 페이지 오른쪽 이미지 */
-.programsPage .wrap .right .image_program3 {
-	width: 100%;
-	height: 100%;
-	margin-top: -60px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/kaggleAI.svg);
-}
-
-/* 네번째 페이지 오른쪽 이미지 */
-.programsPage .wrap .right .image_program4 {
-	width: 100%;
-	height: 100%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/metaverseArduino.svg);
-}
-
-
-/* 다섯번째 페이지 오른쪽 이미지 */
-.programsPage .wrap .right .image_program5 {
-	width: 100%;
-	height: 100%;
-	margin-top: -50px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/metaversePython.svg);
+	align-items: center;
 }
 
 .programsPage .wrap .right .image_program5 .gifWrap {
@@ -3569,21 +3908,6 @@ tr {
 	overflow: hidden;
 }
 
-
-/* 다섯번째 페이지 오른쪽 GIF 이미지 */
-.programsPage .wrap .right .image_program5 .gif {
-	/* gif 사이즈 */
-	width: 100%;
-	height: 100%;
-
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/metaversePythonGIF1.gif);
-}
-
-
-
 .programsPage .wrap .right .image_program5 .gifWrap1 {
 	position: relative;
 	left : 660px;
@@ -3595,24 +3919,6 @@ tr {
 	border-radius: 21px;
 	overflow: hidden;
 }
-
-
-/* 다섯번째 페이지 오른쪽 GIF 이미지 */
-.programsPage .wrap .right .image_program5 .gif1 {
-	/* gif 사이즈 */
-	width: 100%;
-	height: 100%;
-
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./Assets/metaversePythonGIF11.gif);
-}
-
-
-
-
-
 
 
 /* 띠 배너 */

@@ -6,11 +6,11 @@ import contactBtn from "../Assets/contactBtn.svg"
 const Contact1 = () => {
     // LinkToRegister 도입 문의 새페이지로 이동
     return (
-        <div className="ContactWrap">
+        <div className="ContactWrap"
+        >
             <Link
                 className='ContactBtn'
-                to='/ContactToRegister'
-                target='_blank'
+                to='/contact'
                 style={{
                     backgroundImage: `url(${contactBtn})`,
                     display: ''
@@ -22,7 +22,7 @@ const Contact1 = () => {
             </Link>
             <LinkToRegsiter
                 className="ContactSliderBtn"
-                to='/#home'
+                to='/home'
                 spy={true}
                 smooth={true}
                 style={{

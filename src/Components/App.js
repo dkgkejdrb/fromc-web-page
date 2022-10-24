@@ -13,14 +13,14 @@ const App = () => {
     return (
         <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/ProgramPage1" element={<ProgramPage1 />} />
-            <Route path="/ProgramPage2" element={<ProgramPage2 />} />
-            <Route path="/ProgramPage3" element={<ProgramPage3 />} />
-            <Route path="/ProgramPage4" element={<ProgramPage4 />} />
-            <Route path="/ProgramPage5" element={<ProgramPage5 />} />
-            <Route path="/ProgramPage6" element={<ProgramPage6 />} />
-            <Route path="/ProgramPage7" element={<ProgramPage7 />} />
-            <Route path="/ContactToRegister" element={<ContactToRegister />} />
+            <Route path="/scratch_ai" element={<ProgramPage1 />} />
+            <Route path="/appinventor_ai" element={<ProgramPage2 />} />
+            <Route path="/kaggle_ai" element={<ProgramPage3 />} />
+            <Route path="/arduino_metaverse" element={<ProgramPage4 />} />
+            <Route path="/python_metaverse" element={<ProgramPage5 />} />
+            <Route path="/scratch_gamemaking" element={<ProgramPage6 />} />
+            <Route path="/appinventor_gamemaking" element={<ProgramPage7 />} />
+            <Route path="/contact" element={<ContactToRegister />} />
         </Routes>
     );
 }

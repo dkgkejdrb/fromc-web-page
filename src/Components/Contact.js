@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="ContactWrap">
             <Link
                 className='ContactBtn'
-                to='/ContactToRegister'
+                to='/contact'
                 style={{
                     backgroundImage: `url(${contactBtn})`,
                     display: displayValue

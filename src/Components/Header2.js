@@ -70,7 +70,7 @@ const Header2 = () => {
                 </Link>
             </div>
             <div className="right">
-                <Link to="/ProgramPage1" className="headerBtn1">
+                <Link to="/scratch_ai" className="headerBtn1">
                     <span
                         className='customP3 btn1'
                         onMouseOver={
@@ -90,7 +90,7 @@ const Header2 = () => {
                         }}
                     />
                 </Link>
-                <Link to="/ContactToRegister" className="headerBtn2">
+                <Link to="/contact" className="headerBtn2">
                     <span
                         className='customP3 btn2'
                         style={{

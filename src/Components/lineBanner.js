@@ -11,9 +11,8 @@ const LineBanner = () => {
             <div className='bottom'>
                 <div className='wrap'>
                     <Link
-                        to="/ContactToRegister"
+                        to="/contact"
                         className="headerBtn2"
-                        target="_blank"
                     >
                         <div
                             className='customP4'
