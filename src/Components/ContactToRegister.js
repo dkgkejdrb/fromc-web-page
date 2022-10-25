@@ -108,9 +108,6 @@ const tomorrow = new Date(date.getFullYear(), date.getMonth(), (date.getDate() +
 
 // 도입 문의 페이지
 const ContactToRegister = () => {
-    // 내일
-
-
     // 제출할 유저 정보
     const [userInfo, setUserInfo] = useState({
         classCount: 0,
@@ -141,12 +138,18 @@ const ContactToRegister = () => {
     }
     );
 
-        // 서비스 가능지역 > 센터 영역이미지, 확대/축소 폰트상태값
+        // 서비스 가능지역 > 센터 영역이미지, 확대/축소 폰트상태값, 센터명과 센터번호 자간값
         const [showCenterMap, setShowCenterMap] = useState(`url(${mapDefault})`); 
         const [scaleUp, setScaleUp] = useState(
             {
                 Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px',
                 Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+            }
+        )
+        const [paddingUp, setPaddingUp] = useState(
+            {
+                Seocho: '0px', Daechi: '0px', Mokdong: '0px', Jamsil: '0px',
+                Joonggae: '0px', Boondang: '0px', Pyeongchon: '0px',
             }
         )
     
@@ -163,6 +166,12 @@ const ContactToRegister = () => {
                             Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
                         }
                     )
+                    setPaddingUp(
+                        {
+                            Seocho: '5px', Daechi: '0px', Mokdong: '0px', Jamsil: '0px',
+                            Joonggae: '0px', Boondang: '0px', Pyeongchon: '0px',
+                        }
+                    )
                     break;            
                 case "_daechi marker":
                     setShowCenterMap(`url(${mapDaechi})`);
@@ -170,6 +179,12 @@ const ContactToRegister = () => {
                         {
                             Seocho: '20px', Daechi: '26px', Mokdong: '20px', Jamsil: '20px', 
                             Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '5px', Mokdong: '0px', Jamsil: '0px',
+                            Joonggae: '0px', Boondang: '0px', Pyeongchon: '0px',
                         }
                     )
                     break;
@@ -181,6 +196,12 @@ const ContactToRegister = () => {
                             Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
                         }
                     )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '0px', Mokdong: '5px', Jamsil: '0px',
+                            Joonggae: '0px', Boondang: '0px', Pyeongchon: '0px',
+                        }
+                    )
                     break;
                 case "_jamsil marker":
                     setShowCenterMap(`url(${mapJamsil})`);
@@ -188,6 +209,12 @@ const ContactToRegister = () => {
                         {
                             Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '26px', 
                             Joonggae: '20px', Boondang: '20px', Pyeongchon: '20px',
+                        }
+                    )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '0px', Mokdong: '0px', Jamsil: '5px',
+                            Joonggae: '0px', Boondang: '0px', Pyeongchon: '0px',
                         }
                     )
                     break;
@@ -199,6 +226,12 @@ const ContactToRegister = () => {
                             Joonggae: '26px', Boondang: '20px', Pyeongchon: '20px',
                         }
                     )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '0px', Mokdong: '0px', Jamsil: '0px',
+                            Joonggae: '5px', Boondang: '0px', Pyeongchon: '0px',
+                        }
+                    )
                     break;
                 case "_boondang marker":
                     setShowCenterMap(`url(${mapBoondang})`);
@@ -208,6 +241,12 @@ const ContactToRegister = () => {
                             Joonggae: '20px', Boondang: '26px', Pyeongchon: '20px',
                         }
                     )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '0px', Mokdong: '0px', Jamsil: '0px',
+                            Joonggae: '0px', Boondang: '5px', Pyeongchon: '0px',
+                        }
+                    )
                     break;
                 case "_pyeongchon marker":
                     setShowCenterMap(`url(${mapPyeongchon})`);
@@ -215,6 +254,12 @@ const ContactToRegister = () => {
                         {
                             Seocho: '20px', Daechi: '20px', Mokdong: '20px', Jamsil: '20px', 
                             Joonggae: '20px', Boondang: '20px', Pyeongchon: '26px',
+                        }
+                    )
+                    setPaddingUp(
+                        {
+                            Seocho: '0px', Daechi: '0px', Mokdong: '0px', Jamsil: '0px',
+                            Joonggae: '0px', Boondang: '0px', Pyeongchon: '5px',
                         }
                     )
                     break;
@@ -315,10 +360,10 @@ const ContactToRegister = () => {
                 }
             )
             .then((response) => {
-                console.log(response);
+                // console.log(response);
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 alert(error);
             });
         }
@@ -359,10 +404,10 @@ const ContactToRegister = () => {
                 }
             )
             .then((response) => {
-                console.log(response);
+                // console.log(response);
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 alert(error);
             });
         }
@@ -406,10 +451,10 @@ const ContactToRegister = () => {
                 }
             )
             .then((response) => {
-                console.log(response);
+                // console.log(response);
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 alert(error);
             });
         }
@@ -489,12 +534,6 @@ const ContactToRegister = () => {
             ...userInfo,
             studentCount: tmp
         });
-    }
-
-    const [showPlaceholder1, setShowPlaceholder1] = useState('총 도입 예상인원');
-    // 플레이스홀드 보이기 안보이기
-    const onChangePlaceholder1 = (e) => {
-        setShowPlaceholder1('');
     }
 
     // 프로그램 선택
@@ -689,18 +728,8 @@ const ContactToRegister = () => {
     const [bar2DisplayValue, bar2ShowDisplayValue] = useState('none');
     const [bar3DisplayValue, bar3ShowDisplayValue] = useState('none');
     
-    // 달력 높이
-    const [calendarHeight, setCalendarHeight] = useState('970px');
     // 더하기 버튼 클릭 시, 바 보이기
     const AddBar = () => {
-        if (pointer === 0) {
-            
-        } else if (pointer === 1) {
-            setCalendarHeight('882px');
-        } else {
-            setCalendarHeight('970px');
-        }
-
         // 중복 등록 막기
         if ((barInfo[0].date !== '2022-OO-OO') && (barInfo[1].date !== '2022-OO-OO')) {
             if ((barInfo[0].date === barInfo[1].date)) {
@@ -733,18 +762,11 @@ const ContactToRegister = () => {
             return;
         }
 
-        // // 여기까지
         if (pointer >= 2) {
             setPointer(2);
-            // setCalendarHeight('970px');
             alert('수업 일정은 최대 3개까지만 등록가능합니다.');
         } else {
             setPointer(pointer + 1);
-            // if(pointer === 0) {
-            //     setCalendarHeight('780px');
-            // } else if(pointer === 1) {
-            //     setCalendarHeight('882px');
-            // }
         }
     }
 
@@ -758,6 +780,8 @@ const ContactToRegister = () => {
         }
     }
 
+    // 달력 높이
+    const [calendarHeight, setCalendarHeight] = useState('750px');
     // pointer 값에 따라 날짜 표시바를 보여줌
     const ShowBar = () => {
         // '' 화면 표시, 'none' 화면 미표시
@@ -891,7 +915,7 @@ const ContactToRegister = () => {
             setRef('cityTown');
         } if (userInfo.willIntroductionGugun === '') {
             setRef('cityTown');
-        } if (userInfo.classCount === '' || userInfo.classCount === 0 || userInfo.classCount === NaN) {
+        } if (userInfo.classCount === '' || userInfo.classCount === 0 || isNaN(userInfo.classCount)) {
             setRef('cityTown');
         } if (userInfo.studentCount === 0) {
             setRef('cityTown');
@@ -904,10 +928,28 @@ const ContactToRegister = () => {
         userInfo.obtainRoutes.indexOf('R') === -1 || userInfo.obtainRoutes.indexOf('F') === -1 ||
         userInfo.obtainRoutes.indexOf('S') === -1 || userInfo.obtainRoutes.indexOf('O') === -1 ) && userInfo.classSchedules[0] !== '' &&
         userInfo.agreePersonalInfo !== false && userInfo.willIntroductionSido !== '' && userInfo.willIntroductionGugun !== '' && userInfo.classCount !== '' &&
-        userInfo.classCount !== 0 && userInfo.classCount !== NaN &&
+        userInfo.classCount !== 0 && isNaN(userInfo.classCount) &&
         userInfo.studentCount !== '' && userInfo.program !== '' && userInfo.lectureCount !== '' ) {
             setRef('');
         }
+
+        // 달력 날짜 선택에 따라 펼쳤다 접기 값
+        // if(pointer === 0) {
+        //     setCalendarHeight('800px');
+        // } else if(pointer === 1) {
+        //     setCalendarHeight('882px');
+        // } else {
+        //     setCalendarHeight('970px');
+        // }
+
+        if(pointer === 0) {
+            setCalendarHeight('750px');
+        } else if(pointer === 1) {
+            setCalendarHeight('822px');
+        } else {
+            setCalendarHeight('890px');
+        }
+
     }, [isMarkerClicked, orgType, pointer, userInfo.agreePersonalInfo, userInfo.classCount, userInfo.classSchedules, userInfo.inquirer.cellPhone, userInfo.inquirer.email, userInfo.inquirer.name, userInfo.inquirer.organizationAddress, userInfo.inquirer.organizationName, userInfo.inquirer.organizationType, userInfo.obtainRoutes, userInfo.lectureCount, userInfo.program, userInfo.studentCount, userInfo.willIntroductionGugun, userInfo.willIntroductionSido]);
 
     // 카카오 주소 팝업창 
@@ -983,7 +1025,7 @@ const ContactToRegister = () => {
             alert("'도입희망지역(시/도)'을 선택해주세요.")
         } else if (userInfo.willIntroductionGugun === '') {
             alert("'도입희망지역(구/군)'을 선택해주세요.")
-        } else if (userInfo.classCount === 0 || userInfo.classCount === NaN ) {
+        } else if (userInfo.classCount === 0 || isNaN(userInfo.classCount) ) {
             alert("'학급 수'를 작성해주세요.")
         } else if (userInfo.studentCount === '') {
             alert("'교육인원'을 작성해주세요.")
@@ -1078,7 +1120,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_seochoCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Seocho
+                                                fontSize: scaleUp.Seocho,
+                                                paddingTop: paddingUp.Seocho
                                             }}>
                                             02-537-2900
                                         </div>
@@ -1102,7 +1145,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_daechiCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Daechi
+                                                fontSize: scaleUp.Daechi,
+                                                paddingTop: paddingUp.Daechi
                                             }}>
                                             02-537-2900
                                         </div>
@@ -1126,7 +1170,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_mokdongCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Mokdong
+                                                fontSize: scaleUp.Mokdong,
+                                                paddingTop: paddingUp.Mokdong
                                             }}>
                                             02-2645-2600
                                         </div>
@@ -1150,7 +1195,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_jamsilCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Jamsil
+                                                fontSize: scaleUp.Jamsil,
+                                                paddingTop: paddingUp.Jamsil
                                             }}>
                                             02-3431-2100
                                         </div>
@@ -1175,7 +1221,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_joonggaeCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Joonggae
+                                                fontSize: scaleUp.Joonggae,
+                                                paddingTop: paddingUp.Joonggae
                                             }}>
                                             02-930-4200
                                         </div>
@@ -1199,7 +1246,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_boondangCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Boondang
+                                                fontSize: scaleUp.Boondang,
+                                                paddingTop: paddingUp.Boondang
                                             }}>
                                             031-726-4300
                                         </div>
@@ -1223,7 +1271,8 @@ const ContactToRegister = () => {
                                         </div>
                                         <div className="_pyeongchonCenterPhoneNumber"
                                             style={{
-                                                fontSize: scaleUp.Pyeongchon
+                                                fontSize: scaleUp.Pyeongchon,
+                                                paddingTop: paddingUp.Pyeongchon
                                             }}>
                                             031-387-2600
                                         </div>
@@ -1308,7 +1357,8 @@ const ContactToRegister = () => {
 
                 <div className="thirdLine"
                 id="cityTown">
-                    <div className="Wrap">
+                    <div className="Wrap"
+                    >
                         <div className="hopeRegion"
                             style={
                             {
@@ -1493,11 +1543,11 @@ const ContactToRegister = () => {
 
                     <div id="calendar"></div>
                     <div className="selectLessonDays"
-                        onChange={{
-                        }}
-                        style={{
-                            height: '970px'
-                        }}
+                        style={
+
+                            { height: calendarHeight}
+      
+                    }
                     >
                         <div className="wrap">
                             <div className="title">

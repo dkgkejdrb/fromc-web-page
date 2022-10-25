@@ -105,7 +105,7 @@ const ProgramPage6 = () => {
                                     <div className="title"
                                     style={{
                                         height: '47.44px',
-                                        background: '#F29999',
+                                        background: '#4D58BE',
                                         borderRadius: '24px',
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -124,7 +124,7 @@ const ProgramPage6 = () => {
                                         style={{
                                             width: '782px',
                                             height: '447px',
-                                            background: '#FBE6E6',
+                                            background: '#CACFFF',
                                             borderRadius: '13px'
                                         }}
                                     >
@@ -323,7 +323,7 @@ const ProgramPage6 = () => {
                                 <div className="title"
                                     style={{
                                         height: '47.44px',
-                                        background: '#F29999',
+                                        background: '#4D58BE',
                                         borderRadius: '24px',
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -340,7 +340,7 @@ const ProgramPage6 = () => {
                                         style={{
                                             width: '782px',
                                             height: '790.45px',
-                                            background: '#FBE6E6',
+                                            background: '#CACFFF',
                                             borderRadius: '13px'
                                         }}>
                                         {/* 첫번째 줄 */}

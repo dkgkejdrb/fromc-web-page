@@ -1,4 +1,18 @@
+// import { useEffect, useState } from 'react';
+
 const Features = () => {
+    // const [positionY, setPositionY] = useState('translateY(250px)');
+    // const featurePositionY = () => {
+    //     if(window.scrollY >= 400) {
+    //         setPositionY('translateY(0px)');
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', featurePositionY, { capture: true });
+
+    // }, []);
+
     return (
         <div className="features">
             <div className="wrap">
@@ -6,7 +20,12 @@ const Features = () => {
                     <div className="contents">
                         <div className="picture">
                             <div className="wrap">
-                                <div className="source">
+                                <div className="source"
+                                // style={{
+                                //     transform : positionY,
+                                //     transition: '0.5s'
+                                // }}
+                                >
                                 </div>
                             </div>
                         </div>
