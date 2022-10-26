@@ -1544,10 +1544,7 @@ const ContactToRegister = () => {
                     <div id="calendar"></div>
                     <div className="selectLessonDays"
                         style={
-
-                            { height: calendarHeight}
-      
-                    }
+                            { height: calendarHeight}}
                     >
                         <div className="wrap">
                             <div className="title">
