@@ -130,6 +130,15 @@ table {
 	border-spacing: 0;
 }
 
+/* select 버튼 스타일 */
+.Footer select {
+	box-sizing: border-box;
+	/* background: url(./Assets/list1.png); */
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* appearance: none; */
+}
 
 /* ================ 커스텀 폰트 ================== */
 .customH1 {
@@ -324,7 +333,7 @@ table {
 
 	margin-top: 30px;
 	margin-left: 51px;
-	background-size: contain;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1172,7 +1181,7 @@ table {
 
 	margin-top: 30px;
 	margin-left: 51px;
-	background-size: contain;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2860,7 +2869,7 @@ tr {
 
 	margin-top: 30px;
 	margin-left: 51px;
-	background-size: contain;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }

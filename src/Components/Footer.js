@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='IncList' onChange={handleChange} style={{width:'40%', height : '70%'}}>
-                        <select style={{width: '200px', height : '50px', color : '#000', border : '1px solid #e0e0e0', fontFamily: `'Noto Sans KR', sans-serif`, borderRadius: '5px', padding: '12px 35px 14px 15px', fontSize: '15px'}}>
+                        <select style={{width: '200px', height : '50px', color : '#000', fontFamily: `'Noto Sans KR', sans-serif`, borderRadius: '5px', padding: '12px 35px 14px 15px', fontSize: '15px'}}>
                             <option>FAMILY SITE</option>  
                             <option value='https://creverse.com/'>크레버스</option>
                             <option value='https://www.c3coding.com/'>씨큐브코딩</option>

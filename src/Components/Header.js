@@ -87,7 +87,7 @@ const Header = () => {
                     to="/"
                     className="logo"
                     style={{
-                        backgroundImage: changeLogo,
+                        backgroundImage: changeLogo 
                     }}
                 >
                 </Link>
