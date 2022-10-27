@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='IncList' onChange={handleChange} style={{width:'40%', height : '70%'}}>
-                        <select style={{width: '200px', height : '50px', color : '#000', fontFamily: `'Noto Sans KR', sans-serif`, borderRadius: '5px', padding: '12px 35px 14px 15px', fontSize: '15px'}}>
+                        <select style={{width: '200px', height : '50px', color : '#000', fontFamily: `'Noto Sans KR', sans-serif`, padding: '12px 0px 14px 15px', fontSize: '15px', backgroundColor: 'white'}}>
                             <option>FAMILY SITE</option>  
                             <option value='https://creverse.com/'>크레버스</option>
                             <option value='https://www.c3coding.com/'>씨큐브코딩</option>
@@ -41,7 +41,7 @@ const Footer = () => {
                             <option value='https://vlc.chungdahm.com/'>VLC</option>
                             <option value='https://www.cmsedu.co.kr/html/#cms_k_p31.php'>CMS영재교육센터</option>
                             <option value='https://www.cmsedu.co.kr/html/index.php?mb=1#cms_k_p32.php'>영재관</option>
-                        </select>    
+                        </select>
                     </div>  
                 </div>
             </div>

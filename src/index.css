@@ -132,13 +132,15 @@ table {
 
 /* select 버튼 스타일 */
 .Footer select {
-	box-sizing: border-box;
-	/* background: url(./Assets/list1.png); */
-	background-size: 100%;
+	appearance: none;
+	/* border-top-left-radius: ; */
+	background: url(./Assets/inputArrow.png);
+	background-size: 8%;
 	background-repeat: no-repeat;
-	background-position: center;
-	/* appearance: none; */
+	background-position: right 15px center;
+	border-radius: 5px;
 }
+
 
 /* ================ 커스텀 폰트 ================== */
 .customH1 {
@@ -1771,6 +1773,7 @@ table {
 }
 
 #list select {
+	appearance: none;
 	width: 289px;
 	height: 39px;
 	border-radius: 5px;
@@ -1783,6 +1786,13 @@ table {
 	color: #626262;
 
 	font-family: 'Noto Sans KR', sans-serif;
+
+	/* border-top-left-radius: ; */
+	background: url(./Assets/inputArrow.png);
+	background-size: 5%;
+	background-repeat: no-repeat;
+	background-position: right 25px center;
+	border-radius: 5px;
 }
 
 

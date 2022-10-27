@@ -1377,6 +1377,9 @@ const ContactToRegister = () => {
                                 <div className="listWrap">
                                     <div id='list'>
                                         <select
+                                            style={{
+                                                backgroundColor: 'white'
+                                            }}
                                             onChange={onChangeCityInfo
                                             }
                                             onClick={()=> {
@@ -1413,6 +1416,9 @@ const ContactToRegister = () => {
                                 <div className="listWrap">
                                     <div id='list'>
                                         <select
+                                            style={{
+                                                backgroundColor: 'white'
+                                            }}
                                             onChange={onChangeClassesCount}
                                         >
                                             <option value='0'>선택해주세요.</option>
@@ -1473,6 +1479,9 @@ const ContactToRegister = () => {
                                 <div className="listWrap">
                                     <div id='list'>
                                         <select
+                                            style={{
+                                                backgroundColor: 'white'
+                                            }}
                                             onChange={onChangeProgram}
                                         >
                                             <option value=''>선택해주세요.</option>
@@ -1529,6 +1538,9 @@ const ContactToRegister = () => {
                                 <div className="listWrap">
                                     <div id='list'>
                                         <select
+                                            style={{
+                                                backgroundColor: 'white'
+                                            }}
                                             onChange={onChangeLessonsCount}
                                         >
                                             <option value=''>선택해주세요.</option>
