@@ -94,17 +94,17 @@ const Programs = () => {
                 </div>
                 <div className='wrap'>
                     <div className='first Row'>
-                        <Program title='스크래치 AI 프로젝트' text={ { firstLine : '티처블 머신과 스크래치로 재미있는', secondLine : 'AI 프로그램을 만들어 봅니다.' } } id='_1_1' to='/scratch_ai' programScale={programScale1_1} />
-                        <Program title='앱인벤터 AI 프로젝트' text={ { firstLine : 'AI 기능을 가진 모바일 앱을 만들면서', secondLine : '머신러닝을 배웁니다.' } } id='_1_2' to='/appinventor_ai' programScale={programScale1_2} />
-                        <Program title='캐글 머신러닝 프로젝트' text={ { firstLine : '다양한 캐글 예제를 통해 데이터 분석과', secondLine : '머신러닝 기초부터 차근차근 배웁니다.' } } id='_1_3' to='/kaggle_ai' programScale={programScale1_3} />
+                        <Program title='스크래치 AI 프로젝트' text={ { firstLine : '스크래치를 이용하여 인간처럼 반응하는', secondLine : 'AI 프로그램을 만들어 봅니다.' } } id='_1_1' to='/scratch_ai' programScale={programScale1_1} />
+                        <Program title='앱인벤터 AI 프로젝트' text={ { firstLine : '앱인벤터를 이용하여 스마트폰에서 동작하는', secondLine : 'AI 모바일 앱을 만들어 봅니다.' } } id='_1_2' to='/appinventor_ai' programScale={programScale1_2} />
+                        <Program title='캐글 머신러닝 프로젝트' text={ { firstLine : '캐글 대회 도전을 통해 데이터 분석과', secondLine : '머신러닝의 기본 원리를 배워 봅니다.' } } id='_1_3' to='/kaggle_ai' programScale={programScale1_3} />
                     </div>
                     <div className='second Row'>
-                        <Program title='메타버스 아두이노' text={ { firstLine : '가상 아두이노 코딩으로', secondLine : '피지컬 컴퓨팅을 배웁니다.' } } id='_2_1' to='/arduino_metaverse' programScale={programScale2_1} />
-                        <Program title='메타버스 파이썬' text={ { firstLine : '실시간 3D 인터랙티브 프로그래밍으로', secondLine : '코딩 초보자도 쉽게 파이썬을 배울 수 있습니다.' } } id='_2_2' to='/python_metaverse' programScale={programScale2_2}/>
-                        <Program title='스크래치 게임 메이킹' text={ { firstLine : '스크래치로 게임을 만들며 게임 프로그래밍에 필요한 핵심 블록과 코딩 개념을 배웁니다.' } } id='_2_3' to='/scratch_gamemaking' programScale={programScale2_3}/>
+                        <Program title='메타버스 아두이노' text={ { firstLine : '가상세계에서 사물을 제어하는', secondLine : '아두이노 프로그램을 만들어 봅니다.' } } id='_2_1' to='/arduino_metaverse' programScale={programScale2_1} />
+                        <Program title='메타버스 파이썬' text={ { firstLine : '가상세계에서 캐릭터와 사물을 동작시키며', secondLine : ' 파이썬을 배워 봅니다.' } } id='_2_2' to='/python_metaverse' programScale={programScale2_2}/>
+                        <Program title='스크래치 게임 메이킹' text={ { firstLine : '스크래치를 이용하여 대전 액션과 러닝 액션 장르의 게임 프로그램을 만들어 봅니다.' } } id='_2_3' to='/scratch_gamemaking' programScale={programScale2_3}/>
                     </div>
                     <div className='third Row'>
-                        <Program title='앱인벤터 게임 메이킹' text= { { firstLine : '누구나 쉽게 앱을 개발할 수 있는 앱인벤터를 활용해 간단한 모바일 게임을 만들어 봅니다.' } } id='_3_1' to='/appinventor_gamemaking' programScale={programScale3_1} />
+                        <Program title='앱인벤터 게임 메이킹' text= { { firstLine : '앱인벤터를 이용하여 스마트폰에서 동작하는', secondLine: '캐주얼 장르의 게임 모바일 앱을 만들어 봅니다.' } } id='_3_1' to='/appinventor_gamemaking' programScale={programScale3_1} />
                     </div>
                 </div>
             </div>

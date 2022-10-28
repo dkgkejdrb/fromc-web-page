@@ -23,7 +23,7 @@ const ProgramPage5 = () => {
                                     메타버스 파이썬
                                     </div>
                                     <div className="subTitle">
-                                    실시간 3D 인터랙티브 프로그래밍<br></br>으로 코딩 초보자도 쉽게 파이썬을<br></br> 배울 수 있습니다.
+                                    가상세계에서 캐릭터와 사물을<br></br>동작시키며 파이썬을 배워 봅니다.
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -42,7 +42,7 @@ const ProgramPage5 = () => {
                                         <div className="title">추천 대상</div>
                                     </div>
                                     <div className="bottom">
-                                    3D 가상세계에서 파이썬 프로그래밍을 체험<br></br>해 보고 싶은 중고등학교 또는 기관
+                                    메타버스 가상공간에서<br></br>실시간 인터랙티브 파이썬 실습
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -64,14 +64,18 @@ const ProgramPage5 = () => {
                                     </div>
                                 </div>
                                 <div className="Right">
-                                    <div className="top">파이썬 프로그램을 작성하기 위한 기초 개념 학습</div>
-                                    <div className="bottom">파이썬 프로그래밍이 어렵게 느껴지는 학생이라도 괜찮아요. 파이썬을 효율적으로 배울 수 있는 코드얼라이브에서 코드를 입력함에 따라 화면 속 캐릭터, 사물 등의 개체가 반응하는 과정을 경험함으로써, 마치 게임을 하듯 파이썬의 기초 문법과 활용법을 익힐 수 있습니다.</div>
+                                    <div className="top"
+                                        style={{letterSpacing: '-1px'}}
+                                    >메타버스 가상공간에서<br></br>실시간 인터랙티브 파이썬 실습</div>
+                                    <div className="bottom">메타버스 코딩교육 플랫폼인 코드얼라이브를<br></br>이용하면 실시간으로 상호작용하는 게임을<br></br>만드는 것처럼 재미있게 파이썬을 배울 수<br></br>있습니다.
+<br></br>가상세계 속의 캐릭터와 사물이 원하는 대로<br></br>움직이도록 파이썬 코드를 작성하는 연습을<br></br>하면서 자연스럽게 파이썬 기초 문법을<br></br>익히게 됩니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
-                                    <div className="top">메타버스에서 프로젝트<br></br>경험 제공</div>
-                                        <div className="bottom">유니티(Unity) 3D 엔진을 활용한 프로젝트 제작 경험을 통해 높은 학습 경험과 성취감을 느낄 수 있습니다.</div>
+                                    <div className="top">파이썬 기반의<br></br>3D 게임 프로그램 개발</div>
+                                        <div className="bottom">유니티의 실시간 인터랙티브 3D 게임 엔진을<br></br>이용하여 실감나게 구현한 가상세계 속의<br></br>캐릭터와 사물을 활용하여 파이썬 기반의<br></br>게임 프로그램을 만들어 봅니다.
+<br></br>다양한 분야에서 쓰이는 프로그래밍 언어인<br></br>파이썬을 활용하여 3D 게임을 제작해 보면서<br></br>파이썬을 응용하는 능력을 키우고 프로젝트<br></br>완성의 성취감을 얻게 될 것입니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

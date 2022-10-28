@@ -21,7 +21,7 @@ const ScratchAI = () => {
                                         스크래치 AI 프로젝트
                                     </div>
                                     <div className="subTitle">
-                                        티처블 머신과 스크래치로 재미있는<br></br>AI 프로그램을 만들어 봅니다.
+                                    스크래치를 이용하여 인간처럼 반응하는<br></br>AI 프로그램을 만들어 봅니다.
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -40,7 +40,7 @@ const ScratchAI = () => {
                                         <div className="title">추천 대상</div>
                                     </div>
                                     <div className="bottom">
-                                    AI 기술을 이용해서 AI 프로그램을<br></br>만들어 보고 싶은 초·중학교 또는 기관
+                                    이미지와 음성을 인식하여 동작하는<br></br>AI 프로그램을 만들어보고 싶은 초중등 학생
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -62,14 +62,14 @@ const ScratchAI = () => {
                                     </div>
                                 </div>
                                 <div className="Right">
-                                    <div className="top">티처블 머신 학습을 통해 쉽고<br></br>재미있게 AI 입문하기</div>
-                                    <div className="bottom">AI 모델링 학습 도구인 구글 '티처블 머신(Teachable Machine)'과 교육용 코딩 프로그램<br></br>'스크래치'를 사용하여 재미있는 AI 프로그램을<br></br>만들어 보면서, AI의 개념과 원리를 쉽게 경험해 볼 수 있습니다.</div>
+                                    <div className="top">구글의 티처블 머신을 이용한 머신러닝 개념 이해</div>
+                                    <div className="bottom">구글에서 만든 티처블 머신은 샘플 데이터를<br></br>학습하고 새로운 데이터를 분류해주는 머신러닝 모델을 간편하게 만들 수 있는 도구입니다.<br></br>코드 작성 없이 이미지와 음성 데이터로 직접<br></br>머신러닝 모델을 생성하고 활용해 보는 과정을<br></br>통해 머신러닝의 개념을 쉽게 이해할 수 있습니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
-                                    <div className="top">AI 프로그램 제작을 위한 머신러닝 모델 학습</div>
-                                        <div className="bottom">머신러닝을 쉽게 배우고 머신러닝 모델까지<br></br>만들어 보고 싶다면 이 과정에 주목하세요.<br></br>코드 작성 없이 이미지, 소리, 동작 등의 다양한<br></br>데이터로 직접 머신러닝 모델을 생성하고<br></br>활용해 보는 과정을 통해 머신러닝 모델 구성<br></br>원리를 쉽게 이해할 수 있습니다. </div>
+                                    <div className="top">스크래치를 이용한<br></br>AI 프로그램 개발</div>
+                                        <div className="bottom">스크래치는 모든 연령층에서 프로그래밍 입문을 위해 배울 수 있는 교육용 언어로서 블록을<br></br>연결하듯 명령어를 연결하면 프로그램이<br></br>완성되는 구조를 가지고 있습니다.<br></br>블록으로 된 명령어로 머신러닝 모델도 다룰 수<br></br>있어서 사람처럼 이미지와 음성을 인식하고<br></br>반응하는 AI 프로그램도 쉽게 만들 수 있습니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

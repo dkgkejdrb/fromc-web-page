@@ -21,7 +21,7 @@ return (
                                     캐글 머신러닝 프로젝트
                                     </div>
                                     <div className="subTitle">
-                                    글로벌 인공지능, 데이터사이언스 커뮤니티인<br></br>‘캐글’에서 타이타닉 탑승객의 생존여부를<br></br>예측하는 미션을 통해 머신러닝 모델의 원리를<br></br>이해 할수 있습니다.
+                                    캐글 대회 도전을 통해 데이터 분석과<br></br>머신러닝의 기본 원리를 배워 봅니다.
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -40,7 +40,7 @@ return (
                                         <div className="title">추천 대상</div>
                                     </div>
                                     <div className="bottom">
-                                    머신러닝 알고리즘 기반으로 데이터 분석을<br></br>실습해 보고 싶은 중고등학교 또는 기관
+                                    실제 문제 해결을 위한 데이터 분석과<br></br>머신러닝의 개념을 익히고 싶은 중고등 학생
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -67,14 +67,16 @@ return (
                                     </div>
                                 </div>
                                 <div className="Right">
-                                    <div className="top">머신러닝 모델 학습</div>
-                                    <div className="bottom">글로벌 인공지능, 데이터 사이언스 커뮤니티인 ‘캐글(Kaggle)’에서 타이타닉 탑승객의<br></br>생존 여부를 예측하는 미션을 통해 머신러닝<br></br>모델의 원리를 이해할 수 있습니다.</div>
+                                    <div className="top">캐글 대회의 문제 해결을<br></br>위한 데이터 분석 실습</div>
+                                    <div className="bottom">데이터 과학과 머신러닝 경진대회 플랫폼인<br></br>캐글에서 가장 유명한 타이타닉 생존자 예측 문제를 해결해 봅니다.
+<br></br>구글 스프레드 시트를 활용하여 데이터 전처리와 시각화 등 데이터 분석의 기본 과정을 익히고<br></br>탑승객의 특성에 따른 생존율 예측 모델을 만들어 봅니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
-                                    <div className="top">데이터 분석가로<br></br>나아가기 위한 한 걸음</div>
-                                        <div className="bottom">구글 스프레드 시트를 활용한 데이터에 대한<br></br>시각화와 전처리 과정 등 데이터 분석을 진행하는 과정에서 데이터 분석 알고리즘에 대한 기본적인 사고 과정을 자연스럽게 학습할 수 있습니다.</div>
+                                    <div className="top">머신러닝을 이용한<br></br>예측 프로그램 개발</div>
+                                        <div className="bottom">머신러닝 모델에 기반하여 타이타닉 탑승객의<br></br>생존율을 예측하는 프로그램을 만들고<br></br>캐글 대회에 도전해 봅니다.
+<br></br>대회 성적 향상을 목표로 모델의 예측 정확도를<br></br>높이기 위한 다양한 방법을 적용해 봄으로써<br></br>머신러닝 모델의 원리를 자연스럽게 이해할<br></br>수 있습니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

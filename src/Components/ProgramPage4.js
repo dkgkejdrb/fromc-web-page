@@ -21,7 +21,7 @@ return (
                                     메타버스 아두이노
                                     </div>
                                     <div className="subTitle">
-                                    가상 아두이노 코딩으로<br></br>피지컬 컴퓨팅을 배웁니다.
+                                    가상세계에서 사물을 제어하는<br></br>아두이노 프로그램을 만들어 봅니다.
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -40,7 +40,7 @@ return (
                                         <div className="title">추천 대상</div>
                                     </div>
                                     <div className="bottom">
-                                    메타버스 환경에서 피지컬 컴퓨팅을 체험해<br></br>보고 싶은 초중학교 또는 기관
+                                    가상 아두이노를 활용해<br></br>피지컬 컴퓨팅을 경험하고 싶은 초중등 학생
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -62,8 +62,9 @@ return (
                                     </div>
                                 </div>
                                 <div className="Right">
-                                    <div className="top">VCA를 통한 메타버스<br></br>공간에서의 아두이노 코딩</div>
-                                    <div className="bottom">VCA(가상의 아두이노 코딩)에서는 명령어 블록을 순서에 맞게 놓고 실행만 누르면 가상의 아두이노를 반응시킬 수 있어요.<br></br>실물 아두이노 없이 메타버스 세계의 물건들을<br></br>작동시킴으로써, 아두이노를 다루기 어려워하는 학생들도 아두이노를 사용한 피지컬 컴퓨팅을<br></br>쉽게 배울 수 있습니다.</div>
+                                    <div className="top">메타버스 가상공간에서<br></br>피지컬 컴퓨팅 원리 이해</div>
+                                    <div className="bottom">피지컬 컴퓨팅은 외부에서 입력된 정보를<br></br>처리하여 물리적인 장치가 동작하도록 하는<br></br>것으로써 처리를 담당하는 컴퓨터가 이해할<br></br>수 있는 프로그램을 만드는 것이 핵심입니다.
+<br></br>물리적인 하드웨어 없이 메타버스 공간의<br></br>사물들을 이용한 피지컬 컴퓨팅을 경험함으로써 컴퓨터와 프로그래밍의 기초를 쉽고 재미있게<br></br>익힐 수 있습니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
@@ -72,8 +73,9 @@ return (
                                         style={{
                                             letterSpacing: '.05px'
                                         }}
-                                    >VCA에 구현된 메타버스 세계에서 다양한 시뮬레이션 체험</div>
-                                        <div className="bottom">VCA에서는 신호등, 방, 도로 등 실생활과 비슷한 스테이지를 통해 코딩을 학습해요. 일상 생활과<br></br>밀접한 상황 제시를 통해 생활 속 알고리즘을<br></br>학습하고, 이를 통해 컴퓨팅 사고력, 문제해결력을 키울 수 있습니다.</div>
+                                    >가상의 아두이노 프로그램<br></br>개발</div>
+                                        <div className="bottom">피지컬 컴퓨팅 도구인 아두이노는 입출력 장치를 통해 현실세계와 상호작용하는 물리적인 시스템을 만들기 위해 사용하는 소형 컴퓨터입니다.
+<br></br>아두이노 하드웨어에 익숙하지 않더라도<br></br>메타버스 공간 속 사물을 제어하는 프로그램을<br></br>시뮬레이션하면서 아두이노를 이용한 피지컬<br></br>컴퓨팅에 익숙해 질 수 있습니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

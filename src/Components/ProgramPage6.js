@@ -23,7 +23,7 @@ const ProgramPage6 = () => {
                                     스크래치 게임 메이킹
                                     </div>
                                     <div className="subTitle">
-                                    스크래치로 게임을 만들며 게임 프로그래밍에<br></br>필요한 핵심 블록과 코딩 개념을 배웁니다.
+                                    스크래치를 이용하여 대전 액션과<br></br>러닝 액션 장르의 게임 프로그램을 만들어 봅니다.
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -42,7 +42,7 @@ const ProgramPage6 = () => {
                                         <div className="title">추천 대상</div>
                                     </div>
                                     <div className="bottom">
-                                    스크래치를 이용해서 게임을 만들어<br></br>보고 싶은 초중학교 또는 기관
+                                    게임 개발의 원리를 배우고 게임 프로그램을<br></br>만들어보고 싶은 초중등 학생
                                     </div>
                                 </div>
                                 <div className="Right">
@@ -72,18 +72,21 @@ const ProgramPage6 = () => {
                                     <div className="top"
                                     style={{
                                         color: '#fff'
-                                    }}>스크래치 핵심 블록과<br></br>코딩 개념 배우기</div>
+                                    }}>게임 분석표를 이용한<br></br>게임 개발 원리 이해</div>
                                     <div className="bottom"
                                     style={{
                                         color: '#fff'
                                     }}
-                                    >스크래치의 사용 방법을 학습하고 1:1 배틀 게임을 만들어보며 스크래치와 친숙해질 수 있어요.<br></br>게임 콘텐츠를 활용해 순차, 반복, 함수, 조건,<br></br>호출 등 컴퓨터 알고리즘을 학습하고 블록을<br></br>이용해 시각적으로 표현할 수 있습니다.</div>
+                                    >게임 분석표는 게임을 분해하고 마음대로<br></br>작성해보면서 게임의 핵심적인 구조를 스스로<br></br>이해할 수 있게 만들어주는 도구입니다.
+                                    <br></br>게임 분석표를 이용해 게임 프로젝트를 완성하고 자신이 원하는 대로 게임의 구조를 바꿔보는 과정을 통해 게임 개발의 원리를 익힐 수 있습니다.
+                                    <br></br>복습 퀴즈와 코딩 도전 문제를 풀어보면서 프로그래밍의 기초까지 쉽고 재미있게 익힐 수 있습니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
-                                    <div className="top">스크래치로 게임 만들기</div>
-                                        <div className="bottom">공룡 배틀 게임과 장애물을 피해 달리는 게임을<br></br>만들어 볼 수 있어요. 작품 난이도가 올라가면서 보다 확장된 알고리즘과 코딩 역량을 익힐 수<br></br>있습니다. 또한, 캐릭터나 배경을 그릴 때 필요한 미술 개념과 디자인 기법도 배워 봅니다.</div>
+                                    <div className="top">스크래치를 이용한<br></br>게임 프로그램 개발</div>
+                                        <div className="bottom">스크래치는 모든 연령층에서 프로그래밍 입문을 위해 배울 수 있는 교육용 언어로서 블록을<br></br>연결하듯 명령어를 연결하면 프로그램이<br></br>완성되는 구조를 가지고 있습니다.
+<br></br>다양한 분야에서 쓰이는 블록 코딩인 스크래치를 활용하여 대전 액션 게임과 러닝 액션 게임을<br></br>제작해 보면서 블록 코딩을 응용하는 능력을<br></br>키우고 프로젝트 완성의 성취감을 얻게<br></br>될 것입니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

@@ -1047,6 +1047,10 @@ table {
 	background-image: url(./Assets/program3_2.png);
 }
 
+#_3_1 .programText {
+	letter-spacing: -0.5px;
+}
+
 .programs .wrap .wrap .program .bottom {
 	display: flex;
 	flex-direction: column;
