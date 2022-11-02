@@ -142,14 +142,14 @@ const ProgramPage7 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -158,9 +158,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -178,14 +178,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -196,9 +196,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 앱인벤터 사이트 알아보기<br></br>
@@ -221,14 +221,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -239,9 +239,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 모바일 센서 알아보기<br></br>
@@ -264,14 +264,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -282,9 +282,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 좌표를 이해하고 컴포넌트를 움직이기<br></br>
@@ -358,14 +358,14 @@ const ProgramPage7 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -374,9 +374,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -394,14 +394,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -412,9 +412,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 앱인벤터 사이트 알아보기<br></br>
@@ -437,14 +437,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -455,9 +455,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 모바일 센서 알아보기<br></br>
@@ -480,14 +480,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -498,9 +498,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 좌표를 이해하고 컴포넌트를 움직이기<br></br>
@@ -523,14 +523,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -541,9 +541,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 게임을 설계하고 화면 디자인 구상하기<br></br>
@@ -566,14 +566,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -585,9 +585,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 장애물 코딩 완성하기<br></br>
@@ -609,14 +609,14 @@ const ProgramPage7 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -628,9 +628,9 @@ const ProgramPage7 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
 1. 나만의 게임 종료 조건을 설정하여 게임 완성하기<br></br>

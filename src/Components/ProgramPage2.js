@@ -64,14 +64,14 @@ const ProgramPage2 = () => {
                                 <div className="Right">
                                     <div className="top">MIT의 AI 학습 도구를<br></br>이용한 머신러닝 개념 이해</div>
                                     <div className="bottom">MIT에서 개발한 PIC와 PAC는 분류가 이루어진 이미지와 음성 데이터를 학습하고,<br></br>새로운 데이터를 분류해주는 머신러닝 모델을<br></br>만들어 줍니다.
-코드 작성 없이 머신러닝 모델을 생성하고 이미지 인식, 음성 인식에 활용해 보는 과정을 통해 머신러닝의 개념을 쉽게 이해할 수<br></br>있습니다.</div>
+<br></br>코드 작성 없이 머신러닝 모델을 생성하고 이미지 인식, 음성 인식에 활용해 보는 과정을 통해 머신러닝의 개념을 쉽게 이해할 수 있습니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
                                     <div className="top">앱인벤터를 이용한<br></br>AI 모바일 앱 개발</div>
-                                        <div className="bottom">M앱인벤터는 블록으로 된 명령어만으로 모바일 앱을 만들 수 있어서 초보자도 어려움없이<br></br>앱 개발의 기본 원리를 익힐 수 있는 최적의<br></br>도구입니다.
-<br></br>AI를 구현하는 핵심 부분인 머신러닝 모델도 다룰 수 있어 사람처럼 이미지와 음성을 인식하여<br></br>반응하는 AI 모바일 앱을 쉽게 만들 수 있습니다.</div>
+                                        <div className="bottom">앱인벤터는 블록으로 된 명령어만으로 모바일<br></br>앱을 만들 수 있어서 초보자도 어려움없이<br></br>앱 개발의 기본 원리를 익힐 수 있는 최적의<br></br>도구입니다.
+<br></br>AI를 구현하는 핵심 부분인 머신러닝 모델도<br></br>다룰 수 있어 사람처럼 이미지와 음성을 인식하여<br></br>반응하는 AI 모바일 앱을 쉽게 만들 수 있습니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">
@@ -130,14 +130,14 @@ const ProgramPage2 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -146,9 +146,9 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -166,14 +166,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -184,13 +184,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1. AI 이해하기<br></br>
-                                            2. AI 학습 방법 1
+1. AI에서 사용하는 용어들의 의미 알아보기<br></br>
+2. 주변에서 활용되는 다양한 AI 예시 찾아보기<br></br>
+3. AI를 활용한 서비스를 살펴보고 원리 알아보기
                                             </div>
                                         </div>
 
@@ -208,32 +209,32 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >고양이/강아지 구별하는 앱<br></br>만들기</div>
+                                            >강아지와 고양이를<br></br>구별하는 앱<br></br>만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	모델 입력 데이터 정하기<br></br>
-                                            2.	머신러닝 모델 만들기<br></br>
-                                            3.	앱 만들기
+1. 강아지와 고양이를 구별하는 머신러닝 모델 만들기<br></br>
+2. 이미지를 인식하는 명령 블록 알아보기<br></br>
+3. 강아지와 고양이 이미지를 구별하는 앱 만들기
                                             </div>
                                         </div>
 
@@ -251,14 +252,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -269,14 +270,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	위험 신호 설정하기<br></br>
-                                            2.	머신러닝 모델 만들기<br></br>
-                                            3.	앱 만들기
+1. 위험 신호를 구별하는 머신러닝 모델 만들기<br></br>
+2. 소리를 인식하는 명령 블록 알아보기<br></br>
+3. 위험 신호를 인식하여 SOS 메시지를 보내는 앱 만들기
                                             </div>
                                         </div>
                                     </div>
@@ -345,14 +346,14 @@ const ProgramPage2 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -361,9 +362,9 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -381,14 +382,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -399,13 +400,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1.	AI 이해하기<br></br>
-2.	AI 학습 방법 1
+1. AI에서 사용하는 용어들의 의미 알아보기<br></br>
+2. 주변에서 활용되는 다양한 AI 예시 찾아보기<br></br>
+3. AI를 활용한 서비스를 살펴보고 원리 알아보기
                                             </div>
                                         </div>
 
@@ -423,32 +425,32 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >고양이/강아지<br></br>구별하는 앱<br></br>만들기</div>
+                                            >강아지와 고양이를<br></br>구별하는 앱<br></br>만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 모델 입력 데이터 정하기<br></br>
-2. 머신러닝 모델 만들기<br></br>
-3. 앱 만들기
+1. 강아지와 고양이를 구별하는 머신러닝 모델 만들기<br></br>
+2. 이미지를 인식하는 명령 블록 알아보기<br></br>
+3. 강아지와 고양이 이미지를 구별하는 앱 만들기
                                             </div>
                                         </div>
 
@@ -466,14 +468,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -484,14 +486,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1.	위험 신호 설정하기<br></br>
-2.	머신러닝 모델 만들기<br></br>
-3.	앱 만들기
+1. 위험 신호를 구별하는 머신러닝 모델 만들기<br></br>
+2. 소리를 인식하는 명령 블록 알아보기<br></br>
+3. 위험 신호를 인식하여 SOS 메시지를 보내는 앱 만들기
                                             </div>
                                         </div>
 
@@ -509,14 +511,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -527,13 +529,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1.	AI 이해하기<br></br>
-2.	AI 학습 방법 2<br></br>
+1. 머신러닝 학습의 종류 알아보기<br></br>
+2. 머신러닝 모델의 정확도 개념에 대해 알아보기<br></br>
+3. 정확도를 높이는 방법에 대해 알아보기
                                             </div>
                                         </div>
 
@@ -551,14 +554,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -570,13 +573,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 모델 입력 데이터 정하기<br></br>
-2. 머신러닝 모델 만들기
+1. 손 그림을 인식하는 머신러닝 모델 만들기<br></br>
+2. 이미지응 인식하는 명령 블록 활용하기<br></br>
+3. AI 로봇과 내가 텔레파시 게임을 하는 앱 만들기
                                             </div>
                                         </div>
 
@@ -594,14 +598,14 @@ const ProgramPage2 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -613,15 +617,14 @@ const ProgramPage2 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 모델 입력 데이터 정하기<br></br>
-2. 머신러닝 모델 만들기<br></br>
-- 가위, 바위, 보 사진 찍어 데이터 입력하기<br></br>
-3. 앱 만들기
+1. 손 모양을 인식하는 머신러닝 모델 만들기<br></br>
+2. 이미지를 인식 명령 블록 활용하기<br></br>
+3. AI 로봇과 내가 가위바위보 게임을 하는 앱 만들기
                                             </div>
                                         </div>
 

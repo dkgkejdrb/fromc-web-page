@@ -134,14 +134,14 @@ const ProgramPage5 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -150,9 +150,9 @@ const ProgramPage5 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -170,31 +170,31 @@ const ProgramPage5 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>알아보기</div>
+                                            >파이썬<br></br>알아보기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 파이썬 이해하기<br></br>
-2. 객체와 명령어 알아보기 1
+1. 프로그래밍 언어와 파이썬 이해하기<br></br>
+2. 객체와 명령어 알아보기
                                             </div>
                                         </div>
 
@@ -212,31 +212,32 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 1</div>
+                                            >주사위 게임<br></br>만들기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 주사위 기능 넣기
+1. 모듈 불러오는 방법 알아보기<br></br>
+2. 난수 명령어 알아보기<br></br>
+3. 산술/관계 연산자 익히기
                                             </div>
                                         </div>
 
@@ -254,31 +255,32 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 2</div>
+                                            >주사위 게임<br></br>만들기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 조건문 익히기<br></br>
+2. 주사위 게임 알고리즘 설계하기<br></br>
+3. 주사 게임 코드 완성하기
                                             </div>
                                         </div>
                                     </div>
@@ -347,14 +349,14 @@ const ProgramPage5 = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -363,9 +365,9 @@ const ProgramPage5 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -383,31 +385,31 @@ const ProgramPage5 = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>알아보기</div>
+                                            >파이썬<br></br>알아보기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 파이썬 이해하기<br></br>
-2. 객체와 명령어 알아보기 1
+1. 프로그래밍 언어와 파이썬 이해하기<br></br>
+2. 객체와 명령어 알아보기
                                             </div>
                                         </div>
 
@@ -425,31 +427,32 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 1</div>
+                                            >주사위 게임<br></br>만들기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 주사위 기능 넣기
+1. 모듈 불러오는 방법 알아보기<br></br>
+2. 난수 명령어 알아보기<br></br>
+3. 산술/관계 연산자 익히기
                                             </div>
                                         </div>
 
@@ -467,31 +470,32 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 2</div>
+                                            >주사위 게임<br></br>만들기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 조건문 익히기<br></br>
+2. 주사위 게임 알고리즘 설계하기<br></br>
+3. 주사 게임 코드 완성하기
                                             </div>
                                         </div>
 
@@ -509,30 +513,31 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>더 알아보기</div>
+                                            >파이썬<br></br>더 알아보기</div>
 
                                             {/* 내용*/}
                                             <div className="cell4_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 객체와 명령어 알아보기 2
+1. 변수 알아보기<br></br>
+2. 데이터 입출력 명령어 익히기
                                             </div>
                                         </div>
 
@@ -550,14 +555,14 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -569,13 +574,14 @@ const ProgramPage5 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 숫자 입력 기능 넣기
+1. 파이썬 데이터 타입 알아보기<br></br>
+2. 데이터타입의 형태 변환 연습하기<br></br>
+3. 반복문 익히기
                                             </div>
                                         </div>
 
@@ -593,14 +599,14 @@ const ProgramPage5 = () => {
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -613,13 +619,14 @@ const ProgramPage5 = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 반복을 멈추는 코드 알아보기<br></br>
+2. Up & Down 게임 알고리즘 설계하기<br></br>
+3. Up & Down 게임 코드 완성하기
                                             </div>
                                         </div>
 

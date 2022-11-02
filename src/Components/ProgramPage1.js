@@ -128,14 +128,14 @@ const ScratchAI = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -144,9 +144,9 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -164,14 +164,14 @@ const ScratchAI = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -182,14 +182,14 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1. AI 알아보기<br></br>
-                                            2. AI 프로그램 구성 원리 알아보기<br></br>
-                                            3. 머신러닝 모델 이해하기
+1. AI에서 사용하는 용어들의 의미 알아보기<br></br>
+2. 주변에서 활용되는 다양한 AI 예시 찾아보기<br></br>
+3. AI 스피커의 원리 알아보기
                                             </div>
                                         </div>
 
@@ -207,33 +207,33 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 기분을<br></br>알아주는<br></br>AI 프로그램<br></br>만들기</div>
+                                            >내 표정을<br></br>따라하는<br></br>
+                                            AI 로봇 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	표정 데이터 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	내 표정을 따라하는 AI 프로그램 만들기
+1. 표정을 인식하는 머신러닝 모델 만들기<br></br>
+2. 이미지 인식 명령 블록 알아보기<br></br>
+3. 내 표정을 따라하는 AI 로봇 프로그램 만들기
                                             </div>
                                         </div>
 
@@ -251,33 +251,32 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 말을<br></br>알아듣는<br></br>AI 강아지<br></br>만들기</div>
+                                            >내 말을<br></br>알아듣는<br></br>AI 강아지 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	훈련 명령어 소리 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	강아지가 훈련 AI 프로그램 만들기
+1. 소리를 인식하는 머신러닝 모델 만들기<br></br>
+2. 소리 인식에 사용하는 명령 블록 알아보기<br></br>
+3. 내 말대로 행동하는 AI 강아지 프로그램 만들기
                                             </div>
                                         </div>
                                     </div>
@@ -346,14 +345,14 @@ const ScratchAI = () => {
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -362,9 +361,9 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -382,14 +381,14 @@ const ScratchAI = () => {
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -400,14 +399,14 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1. AI 알아보기<br></br>
-                                            2. AI 프로그램 구성 원리 알아보기<br></br>
-                                            3. 머신러닝 모델 이해하기
+1. AI에서 사용하는 용어들의 의미 알아보기<br></br>
+2. 주변에서 활용되는 다양한 AI 예시 찾아보기<br></br>
+3. AI 스피커의 원리 알아보기
                                             </div>
                                         </div>
 
@@ -425,33 +424,33 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 기분을<br></br>알아주는<br></br>AI 프로그램<br></br>만들기</div>
+                                            >내 표정을<br></br>따라하는<br></br>
+                                            AI 로봇 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	표정 데이터 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	내 표정을 따라하는 AI 프로그램 만들기
+1. 표정을 인식하는 머신러닝 모델 만들기<br></br>
+2. 이미지 인식에 사용하는 명령 블록 알아보기<br></br>
+3. 내 표정을 따라하는 AI 로봇 프로그램 만들기
                                             </div>
                                         </div>
 
@@ -469,33 +468,33 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 말을<br></br>알아듣는<br></br>AI 강아지<br></br>만들기</div>
+                                            >내 말을<br></br>알아듣는<br></br>
+                                            AI 강아지 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	훈련 명령어 소리 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	강아지가 훈련 AI 프로그램 만들기
+1. 소리를 인식하는 머신러닝 모델 만들기<br></br>
+2. 소리 인식에 사용하는 명령 블록 알아보기<br></br>
+3. 내 말대로 행동하는 AI 강아지 프로그램 만들기
                                             </div>
                                         </div>
 
@@ -513,14 +512,14 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
@@ -531,14 +530,14 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	AI 알아보기<br></br>
-                                            2.	AI 프로그램 구성 원리 2<br></br>
-                                            3.	머신러닝 모델 이해하기(텍스트, 숫자, 동작) 
+1. 머신러닝 모델 개발 과정 알아보기<br></br>
+2. AI가 인식하는 데이터 종류 알아보기<br></br>
+3. 동작을 인식하는 머신러닝 모델 만들기
                                             </div>
                                         </div>
 
@@ -556,18 +555,18 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >사람을<br></br>인식하는<br></br>AI 냉장고<br></br>만들기
+                                            >사람을<br></br>인식하는<br></br>AI 냉장고 만들기
                                             </div>
 
                                             {/* 내용*/}
@@ -575,15 +574,14 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	얼굴 사진 데이터 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	AI 냉장고 도우미 프로그램 만들기
+1. 이미지를 인식하는 머신러닝 모델 만들기<br></br>
+2. 이미지 인식에 사용하는 명령 블록 활용하기<br></br>
+3. 사람의 시선을 인식하는 AI 냉장고 프로그램 만들기<br></br>
                                             </div>
                                         </div>
 
@@ -601,18 +599,18 @@ const ScratchAI = () => {
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >강아지를<br></br>구조하는<br></br>AI 게임<br></br>만들기
+                                            >강아지를<br></br>구조하는<br></br>AI 게임 만들기
                                             </div>
 
                                             {/* 내용*/}
@@ -620,15 +618,14 @@ const ScratchAI = () => {
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-                                            1.	머신러닝 모델 만들기<br></br>
-                                            -	화살표 데이터 입력하기<br></br>
-                                            -	입력 데이터 학습 및 평가하기<br></br>
-                                            2.	강아지 구하기 프로그램 만들기
+1. 방향을 인식하는 머신러닝 모델 만들기<br></br>
+2. 방향 인식에 사용하는 명령 블록 활용하기<br></br>
+3. 강아지를 구조하는 AI 게임 프로그램 만들기
                                             </div>
                                         </div>
 

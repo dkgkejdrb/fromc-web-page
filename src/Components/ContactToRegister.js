@@ -485,6 +485,9 @@ const ContactToRegister = () => {
                 <select
                 onChange={onChangeTownInfo}
                 value={userInfo.willIntroductionGugun}
+                style={{
+                    backgroundColor: 'white'
+                }}
                 >
                 <option key='' value=''>구/군 선택</option>
                 <option key='2' value='강남구' >강남구</option>
@@ -500,6 +503,9 @@ const ContactToRegister = () => {
                 <select
                 onChange={onChangeTownInfo}
                 value={userInfo.willIntroductionGugun}
+                style={{
+                    backgroundColor: 'white'
+                }}
                 >
                 <option key='' value='' >구/군 선택</option>
                 <option key='1' value='성남시'>성남시</option>
@@ -708,6 +714,13 @@ const ContactToRegister = () => {
         let _date = date.toLocaleDateString().replace('. ', '-');
         let __date = _date.replace('. ', '-');
         let ___date = __date.replace('.', '');
+        if(___date[6] === '-') {
+            ___date = ___date.slice(0, 5) + '0' + ___date.slice(5);
+        }
+        if(___date.length !== 10) {
+            ___date = ___date.slice(0, 8) + '0' + ___date.slice(8);
+        }
+
         if (pointer === 0) {
             barInfo[0].date = ___date;
         }

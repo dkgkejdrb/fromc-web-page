@@ -134,14 +134,14 @@ return (
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -150,9 +150,9 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -170,31 +170,32 @@ return (
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >About VCA</div>
+                                            >아두이노<br></br>시작하기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 피지컬 컴퓨팅, 아두이노 이해하기<br></br>
-2. VCA 환경 살펴보기
+1. LED를 키는데 필요한 명령어 알아보기<br></br>
+2. LED를 활용하여 신호등 동작시키기<br></br>
+3. 변수와 출력 명령어를 사용하여 화면에 메시지 출력해보기
                                             </div>
                                         </div>
 
@@ -212,35 +213,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >가상환경<br></br>시뮬레이션</div>
+                                            >아두이노<br></br>확장하기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 문자열 출력하기<br></br>
-2. 변수와 연산자<br></br>
-3. 거리 감지 센서<br></br>
-{/* - analogRead()<br></br>
-- digitalWrite()<br></br>
-- tone() */}
+1. 버튼으로 전등 제어하기<br></br>
+2. 반복 명령어 알아보기<br></br>
+3. 버튼을 눌러 전등을 깜빡이게 해보기
                                             </div>
                                         </div>
 
@@ -258,32 +256,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >추가<br></br>활동하기</div>
+                                            >아두이노<br></br>확장하기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 저장하기<br></br>
-2. 프로젝트 열기<br></br>
-3. Lesson 풀어 보기
+1. 거리를 측정하는데 필요한 명령어 알아보기<br></br>
+2. 장애물까지의 거리를 측정해보기<br></br>
+3. 사람을 감지하는 자동 조명 시스템 만들어보기
                                             </div>
                                         </div>
                                     </div>
@@ -352,14 +350,14 @@ return (
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -368,9 +366,9 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -388,31 +386,32 @@ return (
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >VCA<br></br>알아보기</div>
+                                            >아두이노<br></br>시작하기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 피지컬 컴퓨팅, 아두이노 이해하기<br></br>
-2. VCA 환경 살펴보기 1
+1. LED를 키는데 필요한 명령어 알아보기<br></br>
+2. LED를 활용하여 신호등 동작시키기<br></br>
+3. 변수와 출력 명령어를 사용하여 화면에 메시지 출력해보기<br></br>
                                             </div>
                                         </div>
 
@@ -430,35 +429,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >가상환경<br></br>시뮬레이션</div>
+                                            >아두이노<br></br>확장하기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 문자열 출력하기<br></br>
-2. 변수와 연산자<br></br>
-3. 거리 감지 센서<br></br>
-{/* - analogRead()<br></br>
-- digitalWrite()<br></br> */}
-{/* - tone() */}
+1. 버튼으로 전등 제어하기<br></br>
+2. 필요한 반복 명령어 알아보기<br></br>
+3. 버튼을 눌러 전등을 깜빡이게 해보기<br></br>
                                             </div>
                                         </div>
 
@@ -476,32 +472,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >추가<br></br>활동하기</div>
+                                            >아두이노<br></br>확장하기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 저장하기<br></br>
-2. 프로젝트 열기<br></br>
-- Lesson 풀어 보기<br></br>
+1. 거리를 측정하는데 필요한 명령어 알아보기<br></br>
+2. 장애물까지의 거리를 측정해보기<br></br>
+3. 사람을 감지하는 자동 조명 시스템 만들어보기
                                             </div>
                                         </div>
 
@@ -519,30 +515,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >VCA<br></br>더 알아보기</div>
+                                            >아두이노<br></br>활용하기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell4_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. VCA 환경 살펴보기 2
+1. 소리를 출력하는데 필요한 명령어 알아보기<br></br>
+2. 필요한 조건 명령어 알아보기<br></br>
+3. 침입자를 감지하는 방범 시스템 만들어보기
                                             </div>
                                         </div>
 
@@ -560,18 +558,18 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >‘장애물<br></br>인식 자동차’<br></br>가상환경<br></br>만들기
+                                            >아두이노<br></br>활용하기 2
                                             </div>
 
                                             {/* 내용*/}
@@ -579,13 +577,14 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 가상환경 둘러보기<br></br>
-2. 자동차 움직임 명령어 출력하기
+1. 빛 센서를 활용하여 방 안의 밝기를 측정해보기<br></br>
+2. 필요한 조건 명령어 알아보기<br></br>
+3. 밝기가 자동으로 변하는 조명 시스템 만들기
                                             </div>
                                         </div>
 
@@ -603,18 +602,18 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >추가<br></br>활동하기
+                                            >아두이노<br></br>활용하기 3
                                             </div>
 
                                             {/* 내용*/}
@@ -622,13 +621,14 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 자동차 움직이기<br></br>
-2. 후방 충돌 방지 기능 추가하기
+1. 충돌 감지를 통해 충돌 경고 시스템 만들어보기<br></br>
+2. 자동차 모터 제어 방법 알아보기<br></br>
+3. 자동차 조종 시스템 만들어보기
                                             </div>
                                         </div>
 

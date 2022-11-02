@@ -135,14 +135,14 @@ return (
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -151,9 +151,9 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -171,31 +171,32 @@ return (
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>알아보기</div>
+                                            >캐글과 타이타닉<br></br>알아보기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 파이썬 이해하기<br></br>
-2. 객체와 명령어 알아보기 1
+1. 캐글(kaggle) 사이트 살펴보기<br></br>
+2. 타이타닉 문제(Titanic - Machine Learning from Disaster) 알아보기<br></br>
+3. 타이타닉 문제 데이터셋 살펴보기
                                             </div>
                                         </div>
 
@@ -213,31 +214,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 1</div>
+                                            >구글 스프레드<br></br>시트를 활용하여<br></br>예측하기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 주사위 기능 넣기
+1. 피봇테이블, 함수 등 구글 스프레드 시트의 기능 익히기<br></br>
+2. 성별 데이터에 따른 생존 확률 분석하기<br></br>
+3. 분석 결과를 캐글에 제출하기
                                             </div>
                                         </div>
 
@@ -255,31 +257,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 2</div>
+                                            >구글 스프레드<br></br>시트를 활용하여<br></br>예측하기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 성별과 좌석등급에 따른 생존 확률 예측하기<br></br>
+2. 다양한 데이터를 활용하여 생존 확률 예측하기<br></br>
+3. 친구들과 어떻게 점수를 높일 수 있는지 토의하기
                                             </div>
                                         </div>
                                     </div>
@@ -348,14 +351,14 @@ return (
                                             {/* 테이블 헤더-교시 */}
                                             <div className="cell0_0 cellStyle1" 
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >교시</div>
 
                                             {/* 테이블 헤더-주제 */}
                                             <div className="cell0_1 cellStyle1"
                                             style={{
-                                                width: '121px'
+                                                width: '147px'
                                             }}
                                             >주제</div>
 
@@ -364,9 +367,9 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >내용</div>
                                         </div>
@@ -384,31 +387,32 @@ return (
                                             {/* 교시 1 */}
                                             <div className="cell1_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >1</div>
 
                                             {/* 주제 */}
                                             <div className="cell1_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>알아보기</div>
+                                            >캐글과 타이타닉<br></br>알아보기</div>
 
                                             {/* 내용 */}
                                             <div className="cell1_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 파이썬 이해하기<br></br>
-2. 객체와 명령어 알아보기 1
+1. 캐글(kaggle) 사이트 살펴보기<br></br>
+2. 타이타닉 문제(Titanic - Machine Learning from Disaster)<br></br>알아보기<br></br>
+3. 타이타닉 문제 데이터셋 살펴보기
                                             </div>
                                         </div>
 
@@ -426,31 +430,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell2_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >2</div>
 
                                             {/* 주제 */}
                                             <div className="cell2_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 1</div>
+                                            >구글 스프레드<br></br>시트를 활용하여<br></br>예측하기 1</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 주사위 기능 넣기
+1. 피봇테이블, 함수 등 구글 스프레드 시트의 기능 익히기<br></br>
+2. 성별 데이터에 따른 생존 확률 분석하기<br></br>
+3. 분석 결과를 캐글에 제출하기
                                             </div>
                                         </div>
 
@@ -468,31 +473,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell3_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >3</div>
 
                                             {/* 주제 */}
                                             <div className="cell3_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Dice game<br></br>만들기 2</div>
+                                            >구글 스프레드<br></br>시트를 활용하여<br></br>예측하기 2</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 성별과 좌석등급에 따른 생존 확률 예측하기<br></br>
+2. 다양한 데이터를 활용하여 생존 확률 예측하기<br></br>
+3. 친구들과 어떻게 점수를 높일 수 있는지 토의하기
                                             </div>
                                         </div>
 
@@ -510,30 +516,32 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell4_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >4</div>
 
                                             {/* 주제 */}
                                             <div className="cell4_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Python<br></br>더 알아보기</div>
+                                            >머신러닝<br></br>알아보기</div>
 
                                             {/* 내용*/}
                                             <div className="cell4_2 cellStyle3"
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 객체와 명령어 알아보기 2
+1. 인공지능, 머신러닝, 딥러닝에 대한 개념 이해하기<br></br>
+2. 머신러닝, 딥러닝 기술을 활용한 다양한 사례 살펴보기<br></br>
+3. 의사결정나무(Decision Tree)모델 알아보기
                                             </div>
                                         </div>
 
@@ -551,18 +559,18 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell5_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >5</div>
 
                                             {/* 주제 */}
                                             <div className="cell5_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Up & Down<br></br>게임 만들기 1
+                                            >데이터 시각화와<br></br>전처리하기
                                             </div>
 
                                             {/* 내용*/}
@@ -570,13 +578,14 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 프로젝트 시작하기<br></br>
-2. 숫자 입력 기능 넣기
+1. 파이썬 데이터 분석 도구인 판다스 소개하기<br></br>
+2. 다양한 시각화 도구를 사용해보기<br></br>
+3. 판다스를 활용하여 타이타닉 데이터 전처리하기
                                             </div>
                                         </div>
 
@@ -594,19 +603,18 @@ return (
                                             {/* 교시 2 */}
                                             <div className="cell6_0 cellStyle2"
                                             style={{
-                                                width: '100px'
+                                                width: '80px'
                                             }}
                                             >6</div>
 
                                             {/* 주제 */}
                                             <div className="cell6_1 cellStyle3"
                                             style={{
-                                                width: '121px',
+                                                width: '147px',
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >Up & Down<br></br>
-                                            게임 만들기 2
+                                            >의사결정나무<br></br>모델을 활용하여<br></br>예측하기
                                             </div>
 
                                             {/* 내용*/}
@@ -614,13 +622,14 @@ return (
                                             style={{
                                                 width: '561px',
                                                 textAlign: 'start',
-                                                paddingLeft: '48px',
+                                                paddingLeft: '38px',
                                                 marginLeft: '7px',
-                                                marginRight: '88px'
+                                                marginRight: '28px'
                                             }}
                                             >
-1. 게임 결과 확인하기<br></br>
-2. 프로젝트 구현하기
+1. 사이킷런(Scikit-learn) 모듈을 활용하여 타이타닉 문제 모델링하기<br></br>
+2. 머신러닝 모델에게 데이터 학습시키기<br></br>
+3. 머신러닝 모델에게 데이터 예측시키기
                                             </div>
                                         </div>
 
