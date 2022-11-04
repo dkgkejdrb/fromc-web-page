@@ -67,15 +67,30 @@ const ProgramPage5 = () => {
                                     <div className="top"
                                         style={{letterSpacing: '-1px'}}
                                     >메타버스 가상공간에서<br></br>실시간 인터랙티브 파이썬 실습</div>
-                                    <div className="bottom">메타버스 코딩교육 플랫폼인 코드얼라이브를<br></br>이용하면 실시간으로 상호작용하는 게임을<br></br>만드는 것처럼 재미있게 파이썬을 배울 수<br></br>있습니다.
-<br></br>가상세계 속의 캐릭터와 사물이 원하는 대로<br></br>움직이도록 파이썬 코드를 작성하는 연습을<br></br>하면서 자연스럽게 파이썬 기초 문법을<br></br>익히게 됩니다.</div>
+                                    <div className="bottom"
+                                    style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '350px' }}>
+                                    메타버스 코딩교육 플랫폼인 코드얼라이브를 이용하면<br></br>
+실시간으로 상호 작용하는 게임을 만드는 것처럼<br></br>
+재미있게 파이썬을 배울 수 있습니다.<br></br>
+가상세계 속의 캐릭터와 사물이 원하는 대로 움직이도록<br></br>
+파이썬 코드를 작성하는 연습을 하면서 자연스럽게<br></br>
+파이썬 기초 문법을 익히게 됩니다.
+                                    </div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
                                     <div className="top">파이썬 기반의<br></br>3D 게임 프로그램 개발</div>
-                                        <div className="bottom">유니티의 실시간 인터랙티브 3D 게임 엔진을<br></br>이용하여 실감나게 구현한 가상세계 속의<br></br>캐릭터와 사물을 활용하여 파이썬 기반의<br></br>게임 프로그램을 만들어 봅니다.
-<br></br>다양한 분야에서 쓰이는 프로그래밍 언어인<br></br>파이썬을 활용하여 3D 게임을 제작해 보면서<br></br>파이썬을 응용하는 능력을 키우고 프로젝트<br></br>완성의 성취감을 얻게 될 것입니다.</div>
+                                        <div className="bottom"
+                                        style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '360px' }}>
+                                        유니티의 실시간 인터랙티브 3D 게임 엔진을 이용하여<br></br>
+실감나게 구현한 가상세계 속에서 캐릭터와 사물을 활용하여<br></br>
+파이썬 기반의 게임 프로그램을 만들어 봅니다.<br></br>
+다양한 분야에서 쓰이는 프로그래밍 언어인 파이썬으로<br></br>
+3D 게임을 제작해 보면서 파이썬을 응용하는 능력을 키우고<br></br>
+프로젝트 완성의 성취감을 얻게 될 것입니다.<br></br>
+
+                                        </div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

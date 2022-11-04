@@ -11,7 +11,9 @@ const ProgramPage2 = () => {
             <Header />
             <Contact1 />
             <div className="wrap">
+                <div className="left">
                 <Navigation higlightLine={2} />
+                </div>
                 <div className="right">
                     <div className="image_program second">
                         <div className="Wrap">
@@ -63,15 +65,29 @@ const ProgramPage2 = () => {
                                 </div>
                                 <div className="Right">
                                     <div className="top">MIT의 AI 학습 도구를<br></br>이용한 머신러닝 개념 이해</div>
-                                    <div className="bottom">MIT에서 개발한 PIC와 PAC는 분류가 이루어진 이미지와 음성 데이터를 학습하고,<br></br>새로운 데이터를 분류해주는 머신러닝 모델을<br></br>만들어 줍니다.
-<br></br>코드 작성 없이 머신러닝 모델을 생성하고 이미지 인식, 음성 인식에 활용해 보는 과정을 통해 머신러닝의 개념을 쉽게 이해할 수 있습니다.</div>
+                                    <div className="bottom" style={{ lineHeight: '1.5' }}>
+                                    MIT에서 개발한 PIC와 PAC는 분류가 이루어진<br></br>
+이미지와 음성 데이터를 학습하고, 새로운 데이터를<br></br>
+분류해주는 머신러닝 모델을 만들어 줍니다.<br></br>
+코드 작성 없이 머신러닝 모델을 생성하고<br></br>
+이미지 인식, 음성 인식에 활용해 보는 과정을 통해<br></br>
+머신러닝의 개념을 쉽게 이해할 수 있습니다.
+                                    </div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
                                     <div className="top">앱인벤터를 이용한<br></br>AI 모바일 앱 개발</div>
-                                        <div className="bottom">앱인벤터는 블록으로 된 명령어만으로 모바일<br></br>앱을 만들 수 있어서 초보자도 어려움없이<br></br>앱 개발의 기본 원리를 익힐 수 있는 최적의<br></br>도구입니다.
-<br></br>AI를 구현하는 핵심 부분인 머신러닝 모델도<br></br>다룰 수 있어 사람처럼 이미지와 음성을 인식하여<br></br>반응하는 AI 모바일 앱을 쉽게 만들 수 있습니다.</div>
+                                        <div className="bottom" 
+                                            style={{ letterSpacing: '-1px', lineHeight: '1.5' }}
+                                        >
+                                        앱인벤터는 블록으로 된 명령어만으로 모바일 앱을<br></br>
+만들 수 있어서 초보자도 어려움 없이 앱 개발의<br></br>
+기본 원리를 익힐 수 있는 최적의 도구입니다.<br></br>
+AI를 구현하는 핵심 부분인 머신러닝 모델도<br></br>
+다룰 수 있어 사람처럼 이미지와 음성을 인식하여<br></br> 
+반응하는 AI 모바일 앱을 쉽게 만들 수 있습니다.
+                                        </div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">
@@ -220,7 +236,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >강아지와 고양이를<br></br>구별하는 앱<br></br>만들기</div>
+                                            >강아지와 고양이를<br></br>구별하는 앱 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
@@ -263,7 +279,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >위험 알림 앱<br></br>만들기</div>
+                                            >위험 알림<br></br>앱 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
@@ -436,7 +452,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >강아지와 고양이를<br></br>구별하는 앱<br></br>만들기</div>
+                                            >강아지와 고양이를<br></br>구별하는 앱 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell2_2 cellStyle3"
@@ -479,7 +495,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >위험 알림 앱<br></br>만들기</div>
+                                            >위험 알림<br></br>앱 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
@@ -565,7 +581,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >텔레파시<br></br>게임 앱<br></br>만들기
+                                            >텔레파시 게임<br></br>앱 만들기
                                             </div>
 
                                             {/* 내용*/}
@@ -609,7 +625,7 @@ const ProgramPage2 = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >가위바위보<br></br>게임 앱<br></br>만들기
+                                            >가위바위보 게임<br></br>앱 만들기
                                             </div>
 
                                             {/* 내용*/}

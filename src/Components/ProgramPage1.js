@@ -11,7 +11,9 @@ const ScratchAI = () => {
             <Header />
             <Contact1 />
             <div className="wrap">
+                <div className="left">
                 <Navigation higlightLine={1} />
+                </div>
                 <div className="right">
                     <div className="image_program first">
                         <div className="Wrap">
@@ -63,13 +65,23 @@ const ScratchAI = () => {
                                 </div>
                                 <div className="Right">
                                     <div className="top">구글의 티처블 머신을 이용한 머신러닝 개념 이해</div>
-                                    <div className="bottom">구글에서 만든 티처블 머신은 샘플 데이터를<br></br>학습하고 새로운 데이터를 분류해주는 머신러닝 모델을 간편하게 만들 수 있는 도구입니다.<br></br>코드 작성 없이 이미지와 음성 데이터로 직접<br></br>머신러닝 모델을 생성하고 활용해 보는 과정을<br></br>통해 머신러닝의 개념을 쉽게 이해할 수 있습니다.</div>
+                                    <div className="bottom"
+                                        style={{ letterSpacing: '-1px', lineHeight: '1.5' }}
+                                    >구글에서 만든 티처블 머신은 샘플 데이터를 학습하고<br></br>새로운 데이터를 분류해주는 머신러닝 모델을<br></br>간편하게 만들 수 있는 도구입니다.<br></br>코드 작성 없이 이미지와 음성 데이터로 직접<br></br>머신러닝 모델을 생성하고 활용해 보는 과정을 통해<br></br>머신러닝의 개념을 쉽게 이해할 수 있습니다.</div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
                                     <div className="top">스크래치를 이용한<br></br>AI 프로그램 개발</div>
-                                        <div className="bottom">스크래치는 모든 연령층에서 프로그래밍 입문을 위해 배울 수 있는 교육용 언어로서 블록을<br></br>연결하듯 명령어를 연결하면 프로그램이<br></br>완성되는 구조를 가지고 있습니다.<br></br>블록으로 된 명령어로 머신러닝 모델도 다룰 수<br></br>있어서 사람처럼 이미지와 음성을 인식하고<br></br>반응하는 AI 프로그램도 쉽게 만들 수 있습니다.</div>
+                                        <div className="bottom"
+                                        style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '335px' }}
+                                        >스크래치는 프로그래밍 경험이 없는 학생들이 쉽게<br></br>
+프로그래밍을 접할 수 있도록 해 주는 교육용<br></br>
+프로그래밍 언어로서, 블록을 연결하듯 명령어를<br></br>
+연결하면 프로그램이 완성되는 구조를 가지고 있습니다.<br></br>
+블록으로 된 명령어로 머신러닝 모델도 다룰 수 있어<br></br>
+사람처럼 이미지와 음성을 인식하고 반응하는<br></br>
+AI 프로그램도 쉽게 만들 수 있습니다.</div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">
@@ -218,7 +230,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 표정을<br></br>따라하는<br></br>
+                                            >내 표정을 따라하는<br></br>
                                             AI 로봇 만들기</div>
 
                                             {/* 내용*/}
@@ -262,7 +274,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 말을<br></br>알아듣는<br></br>AI 강아지 만들기</div>
+                                            >내 말을 알아듣는<br></br>AI 강아지 만들기</div>
 
                                             {/* 내용*/}
                                             <div className="cell3_2 cellStyle3"
@@ -435,7 +447,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 표정을<br></br>따라하는<br></br>
+                                            >내 표정을 따라하는<br></br>
                                             AI 로봇 만들기</div>
 
                                             {/* 내용*/}
@@ -479,7 +491,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >내 말을<br></br>알아듣는<br></br>
+                                            >내 말을 알아듣는<br></br>
                                             AI 강아지 만들기</div>
 
                                             {/* 내용*/}
@@ -566,7 +578,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >사람을<br></br>인식하는<br></br>AI 냉장고 만들기
+                                            >사람을 인식하는<br></br>AI 냉장고 만들기
                                             </div>
 
                                             {/* 내용*/}
@@ -610,7 +622,7 @@ const ScratchAI = () => {
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >강아지를<br></br>구조하는<br></br>AI 게임 만들기
+                                            >강아지를 구조하는<br></br>AI 게임 만들기
                                             </div>
 
                                             {/* 내용*/}

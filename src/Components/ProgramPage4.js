@@ -11,7 +11,9 @@ return (
         <Header />
         <Contact1 />
         <div className="wrap">
+            <div className="left">
             <Navigation higlightLine={4}/>
+            </div>
             <div className="right">
             <div className="image_program fourth">
                         <div className="Wrap">
@@ -63,8 +65,16 @@ return (
                                 </div>
                                 <div className="Right">
                                     <div className="top">메타버스 가상공간에서<br></br>피지컬 컴퓨팅 원리 이해</div>
-                                    <div className="bottom">피지컬 컴퓨팅은 외부에서 입력된 정보를<br></br>처리하여 물리적인 장치가 동작하도록 하는<br></br>것으로써 처리를 담당하는 컴퓨터가 이해할<br></br>수 있는 프로그램을 만드는 것이 핵심입니다.
-<br></br>물리적인 하드웨어 없이 메타버스 공간의<br></br>사물들을 이용한 피지컬 컴퓨팅을 경험함으로써 컴퓨터와 프로그래밍의 기초를 쉽고 재미있게<br></br>익힐 수 있습니다.</div>
+                                    <div className="bottom"
+                                    style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '370px' }}
+                                    >
+                                    피지컬 컴퓨팅은 외부에서 입력된 정보를 처리하여 물리적인<br></br>
+장치가 동작하도록 하는 것으로써 처리를 담당하는 컴퓨터가<br></br>
+이해할 수 있는 프로그램을 만드는 것이 핵심입니다.<br></br>
+물리적인 하드웨어 없이 메타버스 공간의 사물들을 이용한<br></br>
+피지컬 컴퓨팅을 경험함으로써 컴퓨터와 프로그래밍의 기초를<br></br>
+쉽고 재미있게 익힐 수 있습니다.
+                                    </div>
                                 </div>
                             </div>
                             <div className="fourthLine">
@@ -74,8 +84,16 @@ return (
                                             letterSpacing: '.05px'
                                         }}
                                     >가상의 아두이노 프로그램<br></br>개발</div>
-                                        <div className="bottom">피지컬 컴퓨팅 도구인 아두이노는 입출력 장치를 통해 현실세계와 상호작용하는 물리적인 시스템을 만들기 위해 사용하는 소형 컴퓨터입니다.
-<br></br>아두이노 하드웨어에 익숙하지 않더라도<br></br>메타버스 공간 속 사물을 제어하는 프로그램을<br></br>시뮬레이션하면서 아두이노를 이용한 피지컬<br></br>컴퓨팅에 익숙해 질 수 있습니다.</div>
+                                        <div className="bottom"
+                                        style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '360px' }}
+                                        >
+                                        피지컬 컴퓨팅 도구인 아두이노는 입출력 장치를 통해<br></br>
+현실세계와 상호작용하는 물리적인 시스템을 만들기 위해<br></br>
+사용하는 소형 컴퓨터입니다.<br></br>
+아두이노 하드웨어에 익숙하지 않더라도 메타버스 공간 속<br></br>
+사물을 제어하는 프로그램을 시뮬레이션하면서 아두이노를<br></br>
+이용한 피지컬 컴퓨팅에 익숙해 질 수 있습니다.
+                                        </div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">

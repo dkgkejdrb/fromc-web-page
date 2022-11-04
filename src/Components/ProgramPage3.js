@@ -11,7 +11,9 @@ return (
         <Header />
         <Contact1 />
         <div className="wrap">
+            <div className="left">
             <Navigation higlightLine={3} />
+            </div>
             <div className="right">
             <div className="image_program third">
                         <div className="Wrap">
@@ -68,15 +70,29 @@ return (
                                 </div>
                                 <div className="Right">
                                     <div className="top">캐글 대회의 문제 해결을<br></br>위한 데이터 분석 실습</div>
-                                    <div className="bottom">데이터 과학과 머신러닝 경진대회 플랫폼인<br></br>캐글에서 가장 유명한 타이타닉 생존자 예측 문제를 해결해 봅니다.
-<br></br>구글 스프레드 시트를 활용하여 데이터 전처리와 시각화 등 데이터 분석의 기본 과정을 익히고<br></br>탑승객의 특성에 따른 생존율 예측 모델을 만들어 봅니다.</div>
+                                    <div className="bottom"
+                                    style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '350px' }}
+                                    >
+                                    데이터 과학과 머신러닝 경진대회 플랫폼인 캐글에서<br></br>
+가장 유명한 타이타닉 생존자 예측 문제를 해결해 봅니다.<br></br>
+구글 스프레드 시트를 활용하여 데이터 전처리와 시각화 등<br></br>
+데이터 분석의 기본 과정을 익히고 탑승객의 특성에 따른<br></br>
+생존율 예측 모델을 만들어 봅니다.
+                                    </div>
                                 </div>
                             </div>
                             <div className="fourthLine">
                                 <div className="Left">
                                     <div className="top">머신러닝을 이용한<br></br>예측 프로그램 개발</div>
-                                        <div className="bottom">머신러닝 모델에 기반하여 타이타닉 탑승객의<br></br>생존율을 예측하는 프로그램을 만들고<br></br>캐글 대회에 도전해 봅니다.
-<br></br>대회 성적 향상을 목표로 모델의 예측 정확도를<br></br>높이기 위한 다양한 방법을 적용해 봄으로써<br></br>머신러닝 모델의 원리를 자연스럽게 이해할<br></br>수 있습니다.</div>
+                                        <div className="bottom"
+                                        style={{ letterSpacing: '-1px', lineHeight: '1.5', width: '350px' }}
+                                        >
+                                        머신러닝 모델에 기반하여 타이타닉 탑승객의 생존율을<br></br>
+예측하는 프로그램을 만들고 캐글 대회에 도전해 봅니다.<br></br>
+대회 성적 향상을 목표로 모델의 예측 정확도를 높이기 위한<br></br>
+다양한 방법을 적용해 봄으로써 머신러닝 모델의 원리를<br></br>
+자연스럽게 이해할 수 있습니다.<br></br>
+                                        </div>
                                     </div>
                                 <div className="Right">
                                     <div className="image">
@@ -614,7 +630,7 @@ return (
                                                 display: 'flex',
                                                 justifyContent: 'center'
                                             }}
-                                            >의사결정나무<br></br>모델을 활용하여<br></br>예측하기
+                                            >의사결정나무 모델을<br></br>활용하여 예측하기
                                             </div>
 
                                             {/* 내용*/}
